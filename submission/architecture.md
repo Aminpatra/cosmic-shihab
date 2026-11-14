@@ -2,7 +2,7 @@
 
 FLARE is a web application in three parts: an offline **pipeline** that reads NASA PSI once and
 writes plain files, a read-only **API** that serves those files, and a **website** that lets people
-explore, rank and compare. It is deployed on Vercel at https://flare-sandy.vercel.app.
+explore, rank and compare. It is deployed on Vercel at https://cosmic-shihab.vercel.app.
 
 ```
 NASA PSI web service

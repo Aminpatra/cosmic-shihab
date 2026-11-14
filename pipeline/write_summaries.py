@@ -4,7 +4,7 @@
     python3 pipeline/write_summaries.py --only PSI-69    # one or more
     python3 pipeline/write_summaries.py --force --only PSI-69   # replace an existing summary
     python3 pipeline/write_summaries.py --readings       # the preset comparison readings instead
-    python3 pipeline/write_summaries.py --via https://flare-sandy.vercel.app   # generate on the deployed site
+    python3 pipeline/write_summaries.py --via https://cosmic-shihab.vercel.app   # generate on the deployed site
 
 Needs ANTHROPIC_API_KEY and the backend's packages (backend/pyproject.toml). Uses the assistant's
 own evidence gathering and model call (backend/app/assistant.py), so a summary rests on the same

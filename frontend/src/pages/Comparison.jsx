@@ -3,10 +3,12 @@ import { Link, useSearchParams } from 'react-router'
 import { ArrowRight, CircleDashed, Equal, EqualNot, Orbit, RotateCcw } from 'lucide-react'
 import { getJSON, useApi } from '../api.js'
 import { nameOf } from '../catalogue.js'
+import AiSummary from '../components/AiSummary.jsx'
 import ConditionLanes from '../components/ConditionLanes.jsx'
 import { LoadError, Loading } from '../components/ApiState.jsx'
 import { PLACES, formatValue, hasScenario, paramsToForm, rankPath } from './ScenarioParams.js'
 import { LANE_VARIABLES, countsOf, figuresFor, formatCell, parsePicks } from './ComparisonLanes.js'
+import { presetForm, presetLink, readingFor } from './ComparisonReading.js'
 import './Comparison.css'
 
 const MAX_PICKS = 3
@@ -263,9 +265,65 @@ function ClosestTests({ items }) {
   )
 }
 
+// The stored AI reading of this ranking (#28), when the scenario is one a reading was written for.
+function Reading({ match }) {
+  const { reading } = match
+  if (!match.shown) {
+    return (
+      <p className="cmp-message">
+        An AI reading was written for “{reading.label}”, but the ranking has changed since, so it is not shown: it would
+        explain an order this page no longer displays.
+      </p>
+    )
+  }
+  return (
+    <div className="cmp-reading">
+      <AiSummary
+        id="reading"
+        title="Reading of this ranking"
+        data={reading}
+        intro={
+          <>
+            Written for “{reading.label}”, a scenario whose values the Flame in Freefall challenge page states. It explains
+            the ranking below and does not change it.
+          </>
+        }
+      />
+    </div>
+  )
+}
+
+// The scenarios a reading was written for, as links, so the empty page offers a start.
+function PresetLinks() {
+  const readings = useApi('/assistant/readings')
+  if (readings.status !== 'ready' || readings.data.length === 0) return null
+  return (
+    <div className="cmp-presets">
+      <p>Or start from a scenario the challenge page gives values for, with an AI reading of its ranking:</p>
+      <ul>
+        {readings.data.map((reading) => {
+          const form = presetForm(reading.scenario)
+          return (
+            <li key={reading.preset}>
+              <Link to={presetLink(reading)}>
+                {reading.label}
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+              <span>
+                {form.oxygen} % oxygen, {form.pressure} psi
+              </span>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+  )
+}
+
 function Results({ params, setParams }) {
   const ranking = useRanking(rankPath(params))
   const options = useApi('/rank/options')
+  const readings = useApi('/assistant/readings')
   const data = ranking.data
   // The lanes draw in once, when the first figures appear; later picks and re-ranks just update.
   const ready = Boolean(data) && options.status !== 'loading'
@@ -302,6 +360,8 @@ function Results({ params, setParams }) {
   }
   const pickedItems = data.items.filter((item) => picks.includes(item.accession))
   const figures = figuresFor(data, picks, options.data)
+  // A reading is extra: while it loads or if it fails, the ranking shows without it.
+  const reading = readings.status === 'ready' ? readingFor(params, readings.data, data.items) : null
   const source = (
     <>
       Source: the experimental tables of{' '}
@@ -323,6 +383,7 @@ function Results({ params, setParams }) {
           {data.gravity_note}
         </p>
       )}
+      {reading && <Reading match={reading} />}
       <Weights method={data.method} params={params} setParams={setParams} />
 
       {data.items.length === 0 ? (
@@ -409,6 +470,7 @@ export default function Comparison() {
             Set a scenario
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
+          <PresetLinks />
         </div>
       )}
     </div>
