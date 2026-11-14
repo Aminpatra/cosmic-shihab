@@ -1,0 +1,232 @@
+accession,table,row_is,column,unit,unit_inferred,standard_field,role,rows,number,list,range,text,missing_empty,missing_text,missing_dash,missing_spreadsheet_error,filled_pct,distinct,min,max,flagged
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,Flame Type,,,,,120,0,0,0,120,0,0,0,0,100.0,1,,,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,Day,,,,,120,120,0,0,0,0,0,0,0,100.0,8,1,8,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,Test,,,,,120,0,0,0,120,0,0,0,0,100.0,120,,,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,XO2,mole fraction,yes,oxygen,condition,120,109,0,0,11,0,0,0,0,100.0,60,0.212017175,0.849977932,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,mO2 (mg/s),mg/s,,,,120,112,0,0,8,0,0,0,0,100.0,114,1.523649805,9.799337625,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,mN2 (mg/s),mg/s,,,,120,109,0,0,11,0,0,0,0,100.0,111,0.235437505,9.611028728,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,mtot (mg/s),mg/s,,,,120,109,0,0,11,0,0,0,0,100.0,111,1.75908731,13.75969736,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,XC2H4 initial,,,,,120,120,0,0,0,0,0,0,0,100.0,120,0.080313163,0.658125963,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,XC2H4 final,,,,,120,120,0,0,0,0,0,0,0,100.0,120,0.080092897,0.657133201,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,pinit (atm),atm,,,,120,120,0,0,0,0,0,0,0,100.0,69,0.42460704,3.0076332,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,pfinal (atm),atm,,,,120,120,0,0,0,0,0,0,0,100.0,72,0.42732888,3.02872746,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,pmean (atm),atm,,pressure,condition,120,120,0,0,0,0,0,0,0,100.0,89,0.42596796,3.01818033,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,mean Zst,,,,,120,109,0,0,11,0,0,0,0,100.0,111,0.09531966,0.75847983,0
+PSI-10,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,test,Tad (K),K,,,,120,109,0,0,11,0,0,0,0,100.0,111,2074.412212,2974.456119,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,Flame Type,,,,,207,0,0,0,207,0,0,0,0,100.0,1,,,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,Day,,,,,207,207,0,0,0,0,0,0,0,100.0,14,0,13,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,Fuel,,,fuel,condition,207,0,0,0,207,0,0,0,0,100.0,2,,,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,Test,,,,,207,0,0,0,207,0,0,0,0,100.0,207,,,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,Xfuel,,,,,207,147,0,0,60,0,0,0,0,100.0,98,0.04984099,1,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,mfuel (mg/s),mg/s,,,,207,147,0,0,60,0,0,0,0,100.0,142,0.312674102,2.521308315,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,mN2 (mg/s),mg/s,,,,207,147,0,0,60,0,0,0,0,100.0,99,0,20.24022519,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,mtot (mg/s),mg/s,,,,207,147,0,0,60,0,0,0,0,100.0,144,0.312674102,21.54065076,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,XO2 (init),mole fraction,yes,oxygen,condition,207,207,0,0,0,0,0,0,0,100.0,188,0.198048193,0.4,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,XO2 (final),mole fraction,yes,,,207,187,0,0,0,20,0,0,0,90.3,188,0.197475265,0.397248069,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,pinit (atm),atm,,,,207,207,0,0,0,0,0,0,0,100.0,80,0.931972789,1.29695676,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,pfinal (atm),atm,,,,207,187,0,0,0,20,0,0,0,90.3,92,0.99279114,1.32417516,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,pmean (atm),atm,,pressure,condition,207,187,0,0,0,20,0,0,0,90.3,113,0.99211068,1.31056596,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,mean Zst,,,,,207,147,0,0,60,0,0,0,0,100.0,135,0.060917462,0.715418162,0
+PSI-10,PSI-10_Experimental table_Flame Design_Normal Flame.csv,test,Tad (K),K,,,,207,147,0,0,60,0,0,0,0,100.0,135,1682.720497,2830.663435,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Year,,,,,18,18,0,0,0,0,0,0,0,100.0,3,2019,2021,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Month,,,,,18,0,0,0,18,0,0,0,0,100.0,7,,,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Date,,,,,18,18,0,0,0,0,0,0,0,100.0,12,1,28,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Burner Size (mm),mm,,,,18,18,0,0,0,0,0,0,0,100.0,2,25,50,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Fuel Bottle,,,fuel,condition,18,0,0,0,18,0,0,0,0,100.0,4,,,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Oxygen Conc (percent),%,,oxygen,condition,18,2,16,0,0,0,0,0,0,100.0,10,2100,3400,2
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Flames Ignited,,,,,18,18,0,0,0,0,0,0,0,100.0,12,0,21,0
+PSI-20,PSI-20_Experimental table_ACME BRE.csv,test_day,Notes,,,,,18,0,0,0,2,16,0,0,0,11.1,3,,,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Test Type,,,,,32,0,0,0,32,0,0,0,0,100.0,3,,,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Test Day,,,,,32,32,0,0,0,0,0,0,0,100.0,32,17319,21062,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Fuel MFC,,,,,32,32,0,0,0,0,0,0,0,100.0,2,0.1,0.2,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,N2 MFC,,,,,32,32,0,0,0,0,0,0,0,100.0,4,0.02,0.2,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Fuel Bottle,,,fuel,condition,32,0,0,0,32,0,0,0,0,100.0,30,,,15
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Fuel conc. Range,,,,,32,6,0,26,0,0,0,0,0,100.0,18,40,100,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Flames ignited,,,,,32,32,0,0,0,0,0,0,0,100.0,15,2,18,0
+PSI-21,PSI-21_Experimental table_CLD Flame.csv,test_day,Notes,,,,,32,0,0,0,1,31,0,0,0,3.1,2,,,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Test Type,,,,,32,0,0,0,21,11,0,0,0,65.6,3,,,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Test Day,,,,,32,21,0,0,0,11,0,0,0,65.6,21,18073,18319,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Year,,,,,32,21,0,0,0,11,0,0,0,65.6,2,2018,2018,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Month,,,,,32,21,0,0,0,11,0,0,0,65.6,7,3,11,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Date,,,,,32,21,0,0,0,11,0,0,0,65.6,19,1,29,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Mesh Polarity,,,,,32,0,0,0,21,11,0,0,0,65.6,3,,,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Fuel Bottle,,,fuel,condition,32,0,0,0,21,11,0,0,0,65.6,5,,,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Fuel Conc,,,,,32,32,0,0,0,0,0,0,0,100.0,7,25,100,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Flames Ignited,,,,,32,21,0,0,0,11,0,0,0,65.6,8,8,15,0
+PSI-22,PSI-22_Experimental table_ACME E-FIELD Flames.csv,test_day,Notes,,,,,32,0,0,0,4,28,0,0,0,12.5,5,,,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Test Type,,,,,18,0,0,0,18,0,0,0,0,100.0,2,,,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Test Day*,,,,,18,18,0,0,0,0,0,0,0,100.0,18,19254,20190,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Year,,,,,18,18,0,0,0,0,0,0,0,100.0,2,2019,2020,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Month,,,,,18,0,0,0,18,0,0,0,0,100.0,8,,,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Date,,,,,18,18,0,0,0,0,0,0,0,100.0,13,3,31,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Atmosphere*,,,,,18,0,0,0,18,0,0,0,0,100.0,9,,,6
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Fuel Bottle,,,fuel,condition,18,0,0,0,18,0,0,0,0,100.0,16,,,2
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Flames Ignited*,,,,,18,18,0,0,0,0,0,0,0,100.0,12,7,23,0
+PSI-23,PSI-23_Experimental table_ACME s-Flame.csv,test_day,Notes,,,,,18,0,0,0,3,15,0,0,0,16.7,4,,,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,PI,,,,,129,0,0,0,129,0,0,0,0,100.0,6,,,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Test #,,,,,129,0,0,0,129,0,0,0,0,100.0,129,,,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Date,,,,,129,0,0,0,129,0,0,0,0,100.0,30,,,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,GMT,,,,,129,129,0,0,0,0,0,0,0,100.0,29,45,216,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Sample #,,,,,129,22,0,0,107,0,0,0,0,100.0,107,128,227,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Fuel Sample Material,,,fuel,condition,129,0,0,0,129,0,0,0,0,100.0,51,,,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Flow restrictor,,,,,129,129,0,0,0,0,0,0,0,100.0,3,0,2,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Fan display,,,,,129,19,34,0,63,13,0,0,0,89.9,100,1.3,80122,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Air display,,,,,129,26,39,0,60,4,0,0,0,96.9,91,0,15,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Radiometer gain   (1000   250   50   10),,,,,129,110,9,0,10,0,0,0,0,100.0,14,10,1000,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Total Frames Shot,,,,,129,123,0,0,5,0,1,0,0,99.2,110,2,316,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Calibrated  initial O2 % by vol ,% by vol,,oxygen,condition,129,129,0,0,0,0,0,0,0,100.0,50,13.6,22.2,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Calibrated final O2 % by vol,% by vol,,,,129,127,0,0,0,0,2,0,0,98.4,66,0.6,40.4,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Initial CO2 % by vol,% by vol,,,,129,127,0,0,0,0,2,0,0,98.4,53,0,1.85,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Final CO2 % by vol,% by vol,,,,129,123,0,0,0,1,5,0,0,95.3,82,0.2,3.22,0
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Initial CO (ppm),ppm,,,,129,126,0,0,1,0,2,0,0,98.4,67,-3,950,13
+PSI-25,PSI-25_Experimental table_BASS-II.csv,test,Final CO (ppm),ppm,,,,129,121,0,0,3,1,4,0,0,96.1,101,0.3,950,0
+PSI-26,PSI-26_Experimental table_BASS.csv,test,Date,,,,,122,0,0,0,122,0,0,0,0,100.0,33,,,0
+PSI-26,PSI-26_Experimental table_BASS.csv,test,GMT,,,,,122,122,0,0,0,0,0,0,0,100.0,31,90,234,0
+PSI-26,PSI-26_Experimental table_BASS.csv,test,As Run Test #,,,,,122,121,0,0,0,1,0,0,0,99.2,117,1,116,0
+PSI-26,PSI-26_Experimental table_BASS.csv,test,Test #,,,,,122,106,0,0,15,1,0,0,0,99.2,118,1,119,0
+PSI-26,PSI-26_Experimental table_BASS.csv,test,Sample #,,,,,122,121,0,0,0,1,0,0,0,99.2,41,2,44,0
+PSI-26,PSI-26_Experimental table_BASS.csv,test,Fuel Sample Material,,,fuel,condition,122,0,0,0,122,0,0,0,0,100.0,34,,,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Flex Number,,,,,87,87,0,0,0,0,0,0,0,100.0,79,1206,1387,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Test Date,,,,,87,0,0,0,87,0,0,0,0,100.0,23,,,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Local Time,,,,,87,0,0,0,87,0,0,0,0,100.0,79,,,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,CIR ,,,,,87,0,0,0,87,0,0,0,0,100.0,79,,,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Pressure,,,pressure,condition,87,87,0,0,0,0,0,0,0,100.0,7,0.5,5,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Oxygen,mole fraction,yes,oxygen,condition,87,87,0,0,0,0,0,0,0,100.0,2,0.17,0.21,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Nitrogen,mole fraction,yes,,,87,87,0,0,0,0,0,0,0,100.0,5,0.2,0.83,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Helium,mole fraction,yes,,,87,87,0,0,0,0,0,0,0,100.0,3,0,0.59,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Fiber,,,,,87,0,0,0,78,9,0,0,0,89.7,3,,,0
+PSI-39,PSI-39_Experimental table_CFI.csv,test,Fuel ,,,fuel,condition,87,0,0,0,87,0,0,0,0,100.0,3,,,0
+PSI-47,PSI-47_Experimental table_DAFT.csv,session,Session Name,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-47,PSI-47_Experimental table_DAFT.csv,session,Actual Day,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-47,PSI-47_Experimental table_DAFT.csv,session,Hardware Description,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-47,PSI-47_Experimental table_DAFT.csv,session,Sample Material,,,,,2,0,0,0,2,0,0,0,0,100.0,1,,,0
+PSI-47,PSI-47_Experimental table_DAFT.csv,session,Sampled Location,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary,Sample (Fuel Type),,,fuel,condition,8,0,0,0,8,0,0,0,0,100.0,8,,,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary,Initial Droplet Diameter (mm),mm,,,,8,0,0,8,0,0,0,0,0,100.0,1,,,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary,Ambient Gas Mixture ,,,,,8,0,0,0,8,0,0,0,0,100.0,1,,,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary,Oxygen Mole Fraction,mole fraction,,oxygen,condition,8,0,8,0,0,0,0,0,0,100.0,1,,,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary,Ambient Pressure (atm),atm,,pressure,condition,8,0,8,0,0,0,0,0,0,100.0,1,,,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary, Ambient Temperature (C),C,,,,8,8,0,0,0,0,0,0,0,100.0,1,25,25,0
+PSI-68,PSI-68_Experimental table_Flex2.csv,fuel_summary,Flow Velocity (cm/s),cm/s,,flow_velocity,condition,8,0,0,8,0,0,0,0,0,100.0,1,,,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,FLEX Test #,,,,,274,274,0,0,0,0,0,0,0,100.0,274,1,274,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,FLEX Identifier,,,,,274,0,0,0,274,0,0,0,0,100.0,273,,,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Test Date,,,,,274,0,0,0,274,0,0,0,0,100.0,80,,,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Test GMT,,,,,274,0,0,0,273,1,0,0,0,99.6,270,,,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Fuel,,,fuel,condition,274,0,0,0,274,0,0,0,0,100.0,2,,,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Ambient pressure; mmHg,mmHg,,pressure,condition,274,274,0,0,0,0,0,0,0,100.0,183,0,2319.9,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,O initial ambient composition; mole fraction,mole fraction,,oxygen,condition,274,274,0,0,0,0,0,0,0,100.0,15,0.12,0.34,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,N initial ambient composition; mole fraction,mole fraction,,,,274,274,0,0,0,0,0,0,0,100.0,33,0.09,0.88,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,CO initial ambient composition; mole fraction,mole fraction,,,,274,274,0,0,0,0,0,0,0,100.0,14,0,0.7,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,He initial ambient composition; mole fraction,mole fraction,,,,274,274,0,0,0,0,0,0,0,100.0,10,0,0.45,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Droplet initial diameter; mm,mm,,,,274,262,0,0,0,6,0,6,0,95.6,165,1.1,4.67,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Visible flame extinction diameter; mm,mm,,,,274,197,0,0,0,49,0,28,0,71.9,147,0,4.6,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Burning rate; mm,mm,,,,274,258,0,0,0,16,0,0,0,94.2,61,0.05,1.06,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Burn time; s,s,,burn_time,outcome,274,268,0,0,0,6,0,0,0,97.8,165,0.3,39.2,0
+PSI-69,PSI-69_Experimental table_FLEX.csv,test,Test end,,,test_end,outcome,274,0,0,0,274,0,0,0,0,100.0,3,,,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Sample Number ,,,,,4,0,0,0,4,0,0,0,0,100.0,4,,,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Material,,,fuel,condition,4,0,0,0,4,0,0,0,0,100.0,3,,,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Sample Thickness (cm),cm,,,,4,2,0,0,0,2,0,0,0,50.0,2,0.37,0.37,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Sample Length (cm),cm,,,,4,2,0,0,0,2,0,0,0,50.0,2,40.6,40.6,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Sample Width (cm),cm,,,,4,2,0,0,0,2,0,0,0,50.0,2,94,94,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Air Flow (cm/s),cm/s,,flow_velocity,condition,4,2,0,0,0,2,0,0,0,50.0,2,20,20,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Percent O2,%,,oxygen,condition,4,1,0,1,0,2,0,0,0,50.0,3,21.5,21.5,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Ignition Power (W),W,,,,4,2,0,0,0,2,0,0,0,50.0,2,182,182,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Ignition Time (s),s,,,,4,2,0,0,0,2,0,0,0,50.0,2,8,8,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Burn Time (s),s,,burn_time,outcome,4,2,0,0,0,2,0,0,0,50.0,3,70,420,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Flow Direction ,,,,,4,0,0,0,2,2,0,0,0,50.0,3,,,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Camera 1,,,,,4,0,0,0,2,2,0,0,0,50.0,3,,,0
+PSI-98,PSI-98_Experimental table_SAFFIRE-1.csv,test,Camera 2,,,,,4,0,0,0,2,2,0,0,0,50.0,3,,,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Sample Number,,,,,15,0,0,9,6,0,0,0,0,100.0,15,,,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Material,,,fuel,condition,15,0,0,0,9,6,0,0,0,60.0,7,,,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Samle Thickness ,,,,,15,7,1,0,1,6,0,0,0,60.0,8,0.27,37,3
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Sample Length ,,,,,15,8,1,0,0,6,0,0,0,60.0,3,29,29,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Sample Width (cm),cm,,,,15,9,0,0,0,6,0,0,0,60.0,2,5,5,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Air Flow (cm/s),cm/s,,flow_velocity,condition,15,9,0,0,0,6,0,0,0,60.0,2,20,20,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Percent O2 (Note 1),%,,oxygen,condition,15,7,0,2,0,6,0,0,0,60.0,5,21.5,22.1,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Ignition Power (W),W,,,,15,9,0,0,0,6,0,0,0,60.0,3,80,97,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Ignition Time (s),s,,,,15,9,0,0,0,6,0,0,0,60.0,3,9.2,30,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Burn Time (s),s,,burn_time,outcome,15,5,0,0,4,6,0,0,0,60.0,7,115,900,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Flow Direction,,,,,15,0,0,0,9,6,0,0,0,60.0,3,,,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,?-g Burn Length,,,,,15,6,0,0,3,6,0,0,0,60.0,6,0,29,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,?-g Spread Length,,,,,15,2,0,0,3,6,4,0,0,33.3,6,2.1,2.6,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,1-g Burn Length,,,,,15,2,0,0,7,6,0,0,0,60.0,5,0,7.6,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,1-g Spread Rate,,,,,15,2,0,0,6,6,1,0,0,53.3,6,0.6,1.2,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Camera 1,,,,,15,0,0,0,7,7,1,0,0,46.7,9,,,0
+PSI-99,PSI-99_Experimental table_SAFFIRE-2.csv,test,Camera 2,,,,,15,0,0,0,6,6,3,0,0,40.0,8,,,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Sample Number ,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Material,,,fuel,condition,2,0,0,0,2,0,0,0,0,100.0,1,,,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Sample Thickness,,,,,2,2,0,0,0,0,0,0,0,100.0,1,0.33,0.33,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Sample Length,,,,,2,2,0,0,0,0,0,0,0,100.0,1,94,94,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Sample Width,,,,,2,2,0,0,0,0,0,0,0,100.0,1,40.6,40.6,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Air Flow ,,,flow_velocity,condition,2,2,0,0,0,0,0,0,0,100.0,1,30,30,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Direction,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Camera 1,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-100,PSI-100_Experimental table_SAFFIRE-3.csv,test,Camera 2,,,,,2,0,0,0,2,0,0,0,0,100.0,2,,,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Sample Type,,,fuel,condition,109,0,0,0,109,0,0,0,0,100.0,5,,,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,SAME Test #,,,,,109,67,0,0,42,0,0,0,0,100.0,108,48,114,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Description,,,,,109,0,0,0,109,0,0,0,0,100.0,34,,,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Date,,,,,109,0,0,0,109,0,0,0,0,100.0,17,,,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Inlet velocity (cm/s),cm/s,,flow_velocity,condition,109,109,0,0,0,0,0,0,0,100.0,5,0,8.1,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Rt/R0,,,,,109,109,0,0,0,0,0,0,0,100.0,20,1.22,1.48,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Duration (sec),s,,,,109,68,0,0,0,41,0,0,0,62.4,3,60,120,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Primary aging time (sec),s,,,,109,67,0,0,0,42,0,0,0,61.5,4,1,720,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Primary mixing time (sec),s,,,,109,67,0,0,0,42,0,0,0,61.5,2,8,8,0
+PSI-101,PSI-101_Experimental table_SAME-R.csv,test,Net aging time (sec),s,,,,109,104,0,0,0,0,5,0,0,95.4,67,21,1923,0
+PSI-102,PSI-102_Experimental table_SAME.csv,test,Sample #,,,,,8,8,0,0,0,0,0,0,0,100.0,8,1,8,0
+PSI-102,PSI-102_Experimental table_SAME.csv,test,Sample Material  ,,,fuel,condition,8,0,0,0,8,0,0,0,0,100.0,5,,,0
+PSI-102,PSI-102_Experimental table_SAME.csv,test,Air Flow (cm/s),cm/s,,flow_velocity,condition,8,4,0,0,0,4,0,0,0,50.0,3,5,10,0
+PSI-102,PSI-102_Experimental table_SAME.csv,test,Weight loss rate (mg/min),mg/min,,,,8,4,0,0,0,4,0,0,0,50.0,3,1,2,0
+PSI-102,PSI-102_Experimental table_SAME.csv,test,Aging Duration (minutes),min,,,,8,4,0,0,0,4,0,0,0,50.0,3,1,20,0
+PSI-106,PSI-106_Experimental table_Slice.csv,test_day,Test Date,,,,,12,0,0,0,12,0,0,0,0,100.0,12,,,0
+PSI-106,PSI-106_Experimental table_Slice.csv,test_day,Fuel Type,,,fuel,condition,12,0,0,0,12,0,0,0,0,100.0,9,,,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,GMT date,,,,,469,469,0,0,0,0,0,0,0,100.0,11,45,174,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,GMT ignition,,,,,469,2,0,0,466,0,1,0,0,99.8,151,1744,1746,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,GMT  Flame Off ,,,,,469,0,0,0,457,11,1,0,0,97.4,144,,,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,Fuel,,,fuel,condition,469,0,0,0,469,0,0,0,0,100.0,7,,,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,Nozzle (mm),mm,,,,469,469,0,0,0,0,0,0,0,100.0,3,0.4064,1.6002,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,Fuel Rate (sccm),sccm,,,,469,457,0,0,0,12,0,0,0,97.4,285,0,231.6,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,Fuel Rate (mg/s),mg/s,,,,469,457,0,0,0,12,0,0,0,97.4,276,0,4.397,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,HC Fuel Rate (mg/s),mg/s,,,,469,469,0,0,0,0,0,0,0,100.0,269,0,4.397,0
+PSI-107,PSI-107_Experimental table_Spice.csv,test,Air Rate (cm/s),cm/s,,flow_velocity,condition,469,444,0,0,0,25,0,0,0,94.7,63,-5.92,85.28,0
+PSI-142,PSI-142_Experimental table_Data Summary Table.csv,published_figure,Data ID,,,,,8,8,0,0,0,0,0,0,0,100.0,8,1,8,0
+PSI-142,PSI-142_Experimental table_Data Summary Table.csv,published_figure,Data Description,,,,,8,0,0,0,8,0,0,0,0,100.0,8,,,0
+PSI-142,PSI-142_Experimental table_Data Summary Table.csv,published_figure,Reference Publication Link,,,,,8,0,0,0,8,0,0,0,0,100.0,6,,,0
+PSI-142,PSI-142_Experimental table_Data Summary Table.csv,published_figure,Figure ID in Reference,,,,,8,8,0,0,0,0,0,0,0,100.0,6,2,9,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Flame Type,,,,,154,0,0,0,154,0,0,0,0,100.0,2,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Day,,,,,154,154,0,0,0,0,0,0,0,100.0,12,1,12,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Fuel,,,fuel,condition,154,0,0,0,154,0,0,0,0,100.0,3,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Test,,,,,154,0,0,0,154,0,0,0,0,100.0,154,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Xf  before test,,,,,154,154,0,0,0,0,0,0,0,100.0,140,0.056479312,0.4287,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Xf  after test,,,,,154,154,0,0,0,0,0,0,0,100.0,141,0.055626433,0.427799337,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,approx p (bar),bar,,pressure,condition,154,154,0,0,0,0,0,0,0,100.0,6,0.4953817,3.3099,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,XO2,mole fraction,yes,oxygen,condition,154,154,0,0,0,0,0,0,0,100.0,12,0.12,0.85,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,HC burnrate (mg/s),mg/s,,,,154,154,0,0,0,0,0,0,0,100.0,17,0.25,2.5,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,O2 flow rate (mg/s),mg/s,,,,154,154,0,0,0,0,0,0,0,100.0,30,0.931125707,9.084062394,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,TFP,,,,,154,0,0,0,154,0,0,0,0,100.0,2,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Tad (K),K,,,,154,154,0,0,0,0,0,0,0,100.0,145,1567.030825,2978.371796,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Zst,,,,,154,154,0,0,0,0,0,0,0,100.0,145,0.105556515,0.783917907,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Hot ignition,,,,,154,0,0,0,154,0,0,0,0,100.0,5,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,burn time (sec),s,,burn_time,outcome,154,154,0,0,0,0,0,0,0,100.0,51,0,152,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Self -ext or flow term,,,test_end,outcome,154,0,0,0,139,0,0,15,0,90.3,3,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Peak burner Temp (C),C,,,,154,151,0,0,0,1,0,2,0,98.1,143,25.6,651.5,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Peak burner temp (K),K,,,,154,152,0,0,0,0,0,0,2,98.7,143,273.15,924.65,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Color,,,,,154,0,0,0,120,10,0,24,0,77.9,9,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,test,Comments,,,,,154,0,0,0,39,115,0,0,0,25.3,22,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Flame Type,,,,,179,0,0,0,179,0,0,0,0,100.0,1,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Day,,,,,179,179,0,0,0,0,0,0,0,100.0,11,1,11,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Fuel,,,fuel,condition,179,0,0,0,179,0,0,0,0,100.0,6,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Test,,,,,179,0,0,0,179,0,0,0,0,100.0,179,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Cool flame?,,,,,179,0,0,0,8,171,0,0,0,4.5,9,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test, XO2 before test,mole fraction,yes,oxygen,condition,179,179,0,0,0,0,0,0,0,100.0,139,0.179685675,0.3997,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,XO2  after test,mole fraction,yes,,,179,179,0,0,0,0,0,0,0,100.0,136,0.17939183,0.397258964,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,approx p (bar),bar,,pressure,condition,179,179,0,0,0,0,0,0,0,100.0,5,0.50665,3.0399,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Xf,,,,,179,179,0,0,0,0,0,0,0,100.0,14,0,1,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,mHC (mg/s),mg/s,,,,179,179,0,0,0,0,0,0,0,100.0,25,0,3.215,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,TFP,,,,,179,0,0,0,179,0,0,0,0,100.0,2,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Tad (K),K,,,,179,177,0,0,0,0,0,0,2,98.9,145,1397.031071,2729.986983,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Zst,,,,,179,177,0,0,0,0,0,0,2,98.9,145,0.058763347,0.762145755,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Hot ignition,,,,,179,0,0,0,179,0,0,0,0,100.0,2,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,burn time (sec),s,,burn_time,outcome,179,175,0,0,0,4,0,0,0,97.8,79,0,304,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Self-ext or flow term,,,test_end,outcome,179,0,0,0,133,0,0,46,0,74.3,3,,,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Peak burner T (C ),C,,,,179,133,0,0,0,0,0,46,0,74.3,130,32,532.162657,0
+PSI-159,PSI-159_Experimental table_CFI-G_Normal Flames.csv,test,Comments,,,,,179,0,0,0,44,135,0,0,0,24.6,33,,,0
