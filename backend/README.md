@@ -22,6 +22,7 @@ Interactive docs: `/api/docs`. Schema: `/api/openapi.json`.
 | `GET /api/investigations` | All 24 investigations, summary fields only: `accession`, `title`, `investigationAcronym`, `doi`, `licenseIdentifier`, `researchArea`, `subResearchArea`, `projectType`, `flightProgram`, `experimentHardware`, `investigationStartDate`, `investigationEndDate`, `derived` |
 | `GET /api/investigations/{accession}` | The whole stored record (objective, hypothesis, approach, contacts, publications, ...). 404 if unknown |
 | `GET /api/files` | `{total, limit, offset, items}`, one item per `files.csv` row. Filters: `accession` (404 if unknown), `kind`, `category`. `limit` 1 to 500, default 100; `offset` from 0 |
+| `GET /api/search?q=` | `{query, total, limit, offset, items}`: passages of about 150 words from PSI documents matching any word of `q`, best first. Each item: `accession`, `title`, `investigationAcronym`, `doi`, `file_id`, `file_name`, `category`, `page` (PDF page or slide from 1; `null` for Word), `snippet` (matched words between `[[` and `]]`), `text` (the whole passage). Filter: `accession` (404 if unknown). `limit` 1 to 50, default 10. 422 if `q` has no words; 503 if `data/search.sqlite` is not built |
 
 Field names are PSI's own; what FLARE computed is under `derived` (see `data/README.md`). In file
 items, a blank `subcategory` or `updated` comes back as `null`.
@@ -36,6 +37,7 @@ services share one domain, and in development the Vite dev server proxies `/api`
 |---|---|
 | `main.py` | Defines `app`, Vercel's entrypoint, and includes each router |
 | `app/catalogue.py` | Loads `data/` once per process |
+| `app/search.py` | Queries `data/search.sqlite` read-only (written by `pipeline/build_search_index.py`) |
 | `app/routes/` | One module per group of endpoints, each defining `router` |
 | `tests/` | Endpoint tests against the committed `data/` |
 | `pyproject.toml` | Runtime dependencies only; this is what Vercel installs |
