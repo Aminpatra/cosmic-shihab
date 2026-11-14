@@ -1,0 +1,187 @@
+{
+ "accession": "PSI-100",
+ "tables": [
+  {
+   "file": "PSI-100_Experimental table_SAFFIRE-3.csv",
+   "psi_file_name": "PSI-100_Experimental table_SAFFIRE-3.csv",
+   "doi_url": "https://doi.org/10.60555/040q-4h36",
+   "encoding": "utf-8",
+   "row_is": "test",
+   "row_count": 2,
+   "columns": [
+    {
+     "name": "Sample Number ",
+     "unit": null
+    },
+    {
+     "name": "Material",
+     "unit": null
+    },
+    {
+     "name": "Sample Thickness",
+     "unit": null
+    },
+    {
+     "name": "Sample Length",
+     "unit": null
+    },
+    {
+     "name": "Sample Width",
+     "unit": null
+    },
+    {
+     "name": "Air Flow ",
+     "unit": null
+    },
+    {
+     "name": "Direction",
+     "unit": null
+    },
+    {
+     "name": "Camera 1",
+     "unit": null
+    },
+    {
+     "name": "Camera 2",
+     "unit": null
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Material",
+    "flow_velocity": "Air Flow "
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "S1",
+     "cells": {
+      "Sample Number ": {
+       "raw": "S1",
+       "kind": "text"
+      },
+      "Material": {
+       "raw": "SIBAL Fabric",
+       "kind": "text"
+      },
+      "Sample Thickness": {
+       "raw": ".33 cm",
+       "kind": "number",
+       "value": 0.33,
+       "unit": "cm"
+      },
+      "Sample Length": {
+       "raw": "94 cm",
+       "kind": "number",
+       "value": 94,
+       "unit": "cm"
+      },
+      "Sample Width": {
+       "raw": "40.6 cm",
+       "kind": "number",
+       "value": 40.6,
+       "unit": "cm"
+      },
+      "Air Flow ": {
+       "raw": "30 cm/s",
+       "kind": "number",
+       "value": 30,
+       "unit": "cm/s"
+      },
+      "Direction": {
+       "raw": "Concurrent ",
+       "kind": "text"
+      },
+      "Camera 1": {
+       "raw": "S1C1",
+       "kind": "text"
+      },
+      "Camera 2": {
+       "raw": "S1C2",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Material",
+       "role": "condition",
+       "text": "SIBAL Fabric",
+       "material": "SIBAL",
+       "shape": "fabric"
+      },
+      "flow_velocity": {
+       "column": "Air Flow ",
+       "role": "condition",
+       "value": 30.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "S2",
+     "cells": {
+      "Sample Number ": {
+       "raw": "S2",
+       "kind": "text"
+      },
+      "Material": {
+       "raw": "SIBAL Fabric",
+       "kind": "text"
+      },
+      "Sample Thickness": {
+       "raw": ".33 cm",
+       "kind": "number",
+       "value": 0.33,
+       "unit": "cm"
+      },
+      "Sample Length": {
+       "raw": "94 cm",
+       "kind": "number",
+       "value": 94,
+       "unit": "cm"
+      },
+      "Sample Width": {
+       "raw": "40.6 cm",
+       "kind": "number",
+       "value": 40.6,
+       "unit": "cm"
+      },
+      "Air Flow ": {
+       "raw": "30 cm/s",
+       "kind": "number",
+       "value": 30,
+       "unit": "cm/s"
+      },
+      "Direction": {
+       "raw": "Opposed",
+       "kind": "text"
+      },
+      "Camera 1": {
+       "raw": "S2C1",
+       "kind": "text"
+      },
+      "Camera 2": {
+       "raw": "S2C2",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Material",
+       "role": "condition",
+       "text": "SIBAL Fabric",
+       "material": "SIBAL",
+       "shape": "fabric"
+      },
+      "flow_velocity": {
+       "column": "Air Flow ",
+       "role": "condition",
+       "value": 30.0,
+       "unit": "cm/s"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

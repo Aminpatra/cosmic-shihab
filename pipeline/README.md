@@ -6,6 +6,7 @@ is never deployed. Standard library only; tested on Python 3.12 to 3.15.
 ```
 python3 pipeline/harvest.py            # fetch records, file lists and experimental tables from PSI
 python3 pipeline/build_catalogue.py    # write backend/data/ and datasets/SOURCES.csv
+python3 pipeline/process_tables.py     # write backend/data/runs/ from the tables in datasets/
 python3 -m unittest discover -s pipeline/tests -v
 ```
 
@@ -14,6 +15,7 @@ python3 -m unittest discover -s pipeline/tests -v
 | `psi_client.py` | The four PSI calls, each checking the response's shape and failing loudly |
 | `harvest.py` | Saves raw responses to `.cache/psi/raw/` (ignored by git) and the experimental tables to `datasets/`. Skips what is already there; pauses a second between calls |
 | `build_catalogue.py` | Normalizes the raw responses into `backend/data/` |
+| `process_tables.py` | Reads the 22 experimental tables in `datasets/` into `backend/data/runs/`: every cell kept as written, with what it says read out beside it |
 | `tests/` | Client tests on small saved responses; checks on the committed catalogue |
 
 A first harvest takes about twenty minutes, because PSI's larger records are slow. It downloads

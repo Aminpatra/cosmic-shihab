@@ -1,0 +1,464 @@
+{
+ "accession": "PSI-98",
+ "tables": [
+  {
+   "file": "PSI-98_Experimental table_SAFFIRE-1.csv",
+   "psi_file_name": "PSI-98_Experimental table_SAFFIRE-1.csv",
+   "doi_url": "https://doi.org/10.60555/0t15-1z43",
+   "encoding": "utf-8",
+   "row_is": "test",
+   "row_count": 4,
+   "columns": [
+    {
+     "name": "Sample Number ",
+     "unit": null
+    },
+    {
+     "name": "Material",
+     "unit": null
+    },
+    {
+     "name": "Sample Thickness (cm)",
+     "unit": "cm"
+    },
+    {
+     "name": "Sample Length (cm)",
+     "unit": "cm"
+    },
+    {
+     "name": "Sample Width (cm)",
+     "unit": "cm"
+    },
+    {
+     "name": "Air Flow (cm/s)",
+     "unit": "cm/s"
+    },
+    {
+     "name": "Percent O2",
+     "unit": "%"
+    },
+    {
+     "name": "Ignition Power (W)",
+     "unit": "W"
+    },
+    {
+     "name": "Ignition Time (s)",
+     "unit": "s"
+    },
+    {
+     "name": "Burn Time (s)",
+     "unit": "s"
+    },
+    {
+     "name": "Flow Direction ",
+     "unit": null
+    },
+    {
+     "name": "Camera 1",
+     "unit": null
+    },
+    {
+     "name": "Camera 2",
+     "unit": null
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Material",
+    "oxygen": "Percent O2",
+    "flow_velocity": "Air Flow (cm/s)",
+    "burn_time": "Burn Time (s)"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "S1",
+     "cells": {
+      "Sample Number ": {
+       "raw": "S1",
+       "kind": "text"
+      },
+      "Material": {
+       "raw": "SIBAL Fabric",
+       "kind": "text"
+      },
+      "Sample Thickness (cm)": {
+       "raw": "0.37",
+       "kind": "number",
+       "value": 0.37
+      },
+      "Sample Length (cm)": {
+       "raw": "40.6",
+       "kind": "number",
+       "value": 40.6
+      },
+      "Sample Width (cm)": {
+       "raw": "94",
+       "kind": "number",
+       "value": 94
+      },
+      "Air Flow (cm/s)": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Percent O2": {
+       "raw": "21.5 - 21.7",
+       "kind": "range",
+       "range": [
+        21.5,
+        21.7
+       ]
+      },
+      "Ignition Power (W)": {
+       "raw": "182",
+       "kind": "number",
+       "value": 182
+      },
+      "Ignition Time (s)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Burn Time (s)": {
+       "raw": "420",
+       "kind": "number",
+       "value": 420
+      },
+      "Flow Direction ": {
+       "raw": "Concurrent",
+       "kind": "text"
+      },
+      "Camera 1": {
+       "raw": "S1C1",
+       "kind": "text"
+      },
+      "Camera 2": {
+       "raw": "S1C2",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Material",
+       "role": "condition",
+       "text": "SIBAL Fabric",
+       "material": "SIBAL",
+       "shape": "fabric"
+      },
+      "oxygen": {
+       "column": "Percent O2",
+       "role": "condition",
+       "range": [
+        0.215,
+        0.217
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "range": [
+         21.5,
+         21.7
+        ],
+        "unit": "%"
+       }
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "value": 20.0,
+       "unit": "cm/s"
+      },
+      "burn_time": {
+       "column": "Burn Time (s)",
+       "role": "outcome",
+       "value": 420.0,
+       "unit": "s"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "S2",
+     "cells": {
+      "Sample Number ": {
+       "raw": "S2",
+       "kind": "text"
+      },
+      "Material": {
+       "raw": "SIBAL Fabric",
+       "kind": "text"
+      },
+      "Sample Thickness (cm)": {
+       "raw": "0.37",
+       "kind": "number",
+       "value": 0.37
+      },
+      "Sample Length (cm)": {
+       "raw": "40.6",
+       "kind": "number",
+       "value": 40.6
+      },
+      "Sample Width (cm)": {
+       "raw": "94",
+       "kind": "number",
+       "value": 94
+      },
+      "Air Flow (cm/s)": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Percent O2": {
+       "raw": "~ 21.5",
+       "kind": "number",
+       "value": 21.5,
+       "approx": true
+      },
+      "Ignition Power (W)": {
+       "raw": "182",
+       "kind": "number",
+       "value": 182
+      },
+      "Ignition Time (s)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Burn Time (s)": {
+       "raw": "70",
+       "kind": "number",
+       "value": 70
+      },
+      "Flow Direction ": {
+       "raw": "Opposed",
+       "kind": "text"
+      },
+      "Camera 1": {
+       "raw": "S2C1",
+       "kind": "text"
+      },
+      "Camera 2": {
+       "raw": "S2C2",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Material",
+       "role": "condition",
+       "text": "SIBAL Fabric",
+       "material": "SIBAL",
+       "shape": "fabric"
+      },
+      "oxygen": {
+       "column": "Percent O2",
+       "role": "condition",
+       "value": 0.215,
+       "unit": "mole fraction",
+       "approx": true,
+       "calculated": true,
+       "original": {
+        "value": 21.5,
+        "unit": "%"
+       }
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "value": 20.0,
+       "unit": "cm/s"
+      },
+      "burn_time": {
+       "column": "Burn Time (s)",
+       "role": "outcome",
+       "value": 70.0,
+       "unit": "s"
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": "F1C1/F1C2",
+     "cells": {
+      "Sample Number ": {
+       "raw": "F1C1/F1C2",
+       "kind": "text"
+      },
+      "Material": {
+       "raw": "Pre-test flow visulation data for sample 1",
+       "kind": "text"
+      },
+      "Sample Thickness (cm)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Sample Length (cm)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Sample Width (cm)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Percent O2": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Ignition Power (W)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Ignition Time (s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Burn Time (s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Flow Direction ": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Camera 1": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Camera 2": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Material",
+       "role": "condition",
+       "text": "Pre-test flow visulation data for sample 1"
+      },
+      "oxygen": {
+       "column": "Percent O2",
+       "role": "condition",
+       "missing": "empty"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "missing": "empty"
+      },
+      "burn_time": {
+       "column": "Burn Time (s)",
+       "role": "outcome",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": "F2C1/F2C2",
+     "cells": {
+      "Sample Number ": {
+       "raw": "F2C1/F2C2",
+       "kind": "text"
+      },
+      "Material": {
+       "raw": "Pre-test flow visulation data for sample 2",
+       "kind": "text"
+      },
+      "Sample Thickness (cm)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Sample Length (cm)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Sample Width (cm)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Percent O2": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Ignition Power (W)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Ignition Time (s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Burn Time (s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Flow Direction ": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Camera 1": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Camera 2": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Material",
+       "role": "condition",
+       "text": "Pre-test flow visulation data for sample 2"
+      },
+      "oxygen": {
+       "column": "Percent O2",
+       "role": "condition",
+       "missing": "empty"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "missing": "empty"
+      },
+      "burn_time": {
+       "column": "Burn Time (s)",
+       "role": "outcome",
+       "missing": "empty"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
