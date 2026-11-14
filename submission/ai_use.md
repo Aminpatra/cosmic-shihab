@@ -49,8 +49,8 @@ its sources.
 - **Text in the product:** the assistant's answers and stored summaries are labelled
   AI-generated, with the model's name.
 - **Images:** our team logo is our own work, not made with AI. The illustrations in our pitch
-  opening and the two flame drawings on FLARE's Methodology and Scenario pages were made with AI
-  (Claude Code) and each carries a visible "Illustration made with AI" watermark. No AI-made
+  opening, the two flame drawings on FLARE's Methodology and Scenario pages and the astronaut on its
+  Home page were made with AI (Claude Code) and each carries a visible "Illustration made with AI" watermark. No AI-made
   content uses or alters NASA logos, flags or mission identifiers.
 - **No other AI tools** were used outside the repository.
 

@@ -1,0 +1,368 @@
+/* The scenario bar: a ruled strip on the page ground, not a card. It stays under the top bar
+   while the charts scroll past, so a slider can be moved with any chart in view. */
+.probe {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: var(--space-3) var(--space-7);
+  align-items: center;
+  max-width: 72rem;
+  margin-top: var(--space-6);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--ramp-3);
+  border-bottom: 1px solid var(--ramp-3);
+  background: var(--ramp-0);
+  font-size: var(--text-data);
+}
+
+@media (min-width: 45em) and (min-height: 40em) {
+  .probe {
+    position: sticky;
+    top: var(--bar-height);
+    z-index: 5;
+  }
+}
+
+.probe-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  align-items: center;
+}
+
+.probe-title {
+  font: 700 var(--text-data) / 1.2 var(--font-title);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.probe-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.probe-preset {
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem 0.4rem;
+}
+
+.probe-preset[aria-pressed='true'] {
+  border-color: var(--neon-yellow);
+  box-shadow: inset 0 0 0 2px var(--neon-yellow);
+}
+
+.probe-clear {
+  min-height: 2.25rem;
+  padding: 0.5rem 0.5rem 0.4rem;
+  border: 0;
+  background: none;
+  color: var(--ramp-6);
+  font: 600 var(--text-data) / 1 var(--font-body);
+  text-decoration: underline;
+  text-decoration-color: var(--ramp-4);
+  text-underline-offset: 0.22em;
+  cursor: pointer;
+}
+
+.probe-clear:hover:not(:disabled) {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.probe-clear:disabled {
+  color: var(--ramp-4);
+  text-decoration: none;
+  cursor: default;
+}
+
+.probe-vars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2) var(--space-6);
+}
+
+.probe-var {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 var(--space-3);
+}
+
+.probe-var label {
+  display: flex;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.probe-name {
+  font-weight: 700;
+}
+
+.probe-unit {
+  color: var(--ramp-5);
+}
+
+.probe-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
+  color: var(--ramp-6);
+}
+
+.probe-window {
+  color: var(--ramp-5);
+}
+
+.probe-var.is-unset .probe-readout {
+  color: var(--ramp-5);
+}
+
+/* The slider: a ramp-1 track and a Neon Yellow thumb, since the thumb is both a control and the
+   scenario's position. Unset, the thumb is hollow: the scenario has no value yet. */
+.probe-var input[type='range'] {
+  width: 100%;
+  height: 1.75rem;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.probe-var input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--ramp-3);
+}
+
+.probe-var input[type='range']::-moz-range-track {
+  height: 4px;
+  background: var(--ramp-3);
+}
+
+.probe-var input[type='range']::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1.25rem;
+  margin-top: calc(-0.625rem + 2px);
+  border: 2px solid var(--neon-yellow);
+  border-radius: 2px;
+  background: var(--neon-yellow);
+  appearance: none;
+}
+
+.probe-var input[type='range']::-moz-range-thumb {
+  width: 1rem;
+  height: 1.25rem;
+  border: 2px solid var(--neon-yellow);
+  border-radius: 2px;
+  background: var(--neon-yellow);
+}
+
+.probe-var.is-unset input[type='range']::-webkit-slider-thumb {
+  border-color: var(--ramp-4);
+  background: var(--ramp-0);
+}
+
+.probe-var.is-unset input[type='range']::-moz-range-thumb {
+  border-color: var(--ramp-4);
+  background: var(--ramp-0);
+}
+
+.probe-var input[type='range']:focus-visible {
+  outline: 2px solid var(--neon-yellow);
+  outline-offset: 3px;
+}
+
+/* --- marks the charts draw for the scenario ------------------------------------------------ */
+
+/* The tick: the lane vocabulary's 3px Neon Yellow scenario mark. It glides to a new value. */
+.probe-tick {
+  stroke: var(--neon-yellow);
+  stroke-width: 3;
+  transition: transform 320ms var(--ease-out);
+}
+
+.probe-tick.is-off {
+  stroke-dasharray: 4 4;
+}
+
+/* The window: the ranking's tolerance around the scenario, outlined, never filled behind text. */
+.probe-box {
+  fill: none;
+  stroke: rgb(234 254 7 / 0.7);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  vector-effect: non-scaling-stroke;
+  transition: transform 320ms var(--ease-out);
+}
+
+/* Tests outside the window step back; the ones near the scenario keep full weight. */
+.is-far {
+  opacity: 0.25;
+}
+
+.dot-own,
+.dot-ring,
+.dot-other,
+.dot-other-ring,
+.bin {
+  transition: opacity 240ms var(--ease-out), fill 240ms var(--ease-out);
+}
+
+@media (max-width: 63.9375em) {
+  .probe {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 44.9375em) {
+  .probe-vars {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* The key under a figure's legend while a scenario is set */
+.probe-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin-top: var(--space-2);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.probe-key svg {
+  overflow: visible;
+}
+
+.probe-key svg + svg,
+.probe-key svg:not(:first-child) {
+  margin-left: var(--space-3);
+}
+
+.probe-key-note {
+  flex-basis: 100%;
+  color: var(--ramp-5);
+}
+
+/* --- How many NASA tests sit near your scenario ----------------------------------------------- */
+
+.density-lanes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-6);
+  margin-top: var(--space-5);
+}
+
+.density-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-2);
+  align-items: baseline;
+  font-size: var(--text-data);
+}
+
+.density-n {
+  margin-left: auto;
+  color: var(--ramp-6);
+}
+
+.density-box {
+  margin-top: var(--space-2);
+}
+
+.density-box svg {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.bin {
+  fill: var(--mark-other);
+}
+
+.bin-near {
+  fill: var(--mark-own);
+}
+
+/* One row per test table: name, a bar of its tests in the window, the count out of the tests it can compare. */
+.near-list {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 54rem;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-data);
+}
+
+.near-list li {
+  display: grid;
+  grid-template-columns: minmax(10rem, 20rem) minmax(4rem, 1fr) 13.5rem;
+  gap: var(--space-3);
+  align-items: center;
+  min-height: 2rem;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.near-name {
+  overflow-wrap: anywhere;
+}
+
+.near-bar {
+  height: 1rem;
+  background: var(--ramp-1);
+}
+
+.near-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--band-fill);
+  box-shadow: inset 0 0 0 1px var(--band-edge);
+  transform: scaleX(var(--w));
+  transform-origin: left;
+  transition: transform 320ms var(--ease-out);
+}
+
+.near-absent {
+  background: var(--hatch), var(--ramp-1);
+}
+
+.near-n {
+  color: var(--ramp-6);
+}
+
+.near-missing {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  color: var(--ramp-5);
+}
+
+.near-action {
+  margin-top: var(--space-5);
+}
+
+.near-action a {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  font-weight: 700;
+}
+
+@media (max-width: 63.9375em) {
+  .density-lanes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 44.9375em) {
+  .near-list li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding-block: var(--space-2);
+  }
+
+  .near-list .near-bar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

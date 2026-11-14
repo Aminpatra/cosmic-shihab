@@ -1,0 +1,85 @@
+/* The astronaut sits under the hero's note, spaced off, never boxed. */
+.astro {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+  gap: var(--space-3) var(--space-5);
+  align-items: center;
+  max-width: 31rem;
+  margin: var(--space-6) 0 0;
+}
+
+.astro-scene {
+  display: flex;
+  align-items: center;
+}
+
+.astro-art {
+  flex: 0 0 auto;
+  width: 8.5rem;
+  height: auto;
+  overflow: visible;
+}
+
+.astro-flame {
+  flex: 0 0 auto;
+  width: 4.75rem;
+  height: auto;
+  margin-left: -1.25rem;
+  margin-top: -2.5rem;
+  overflow: visible;
+}
+
+/* Weightless drift: a slow rise and turn, so the figure reads as floating, not standing.
+   Under reduced motion the global rule stops it and the astronaut holds still. */
+.astro-body {
+  transform-box: fill-box;
+  transform-origin: 50% 55%;
+  animation: astro-drift 7.5s ease-in-out infinite;
+}
+
+@keyframes astro-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-body {
+    animation: none;
+  }
+}
+
+.astro-caption {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+  line-height: 1.5;
+}
+
+.astro-source {
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 44.9375em) {
+  .astro {
+    grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+
+  .astro-art {
+    width: 6.5rem;
+  }
+
+  .astro-flame {
+    width: 3.75rem;
+    margin-left: -1rem;
+  }
+}
