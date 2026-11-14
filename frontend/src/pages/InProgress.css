@@ -1,0 +1,48 @@
+.slot {
+  max-width: 56rem;
+  padding: var(--space-8) var(--gutter) var(--space-9);
+}
+
+.slot-lede {
+  max-width: 50ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.slot-status {
+  margin-top: var(--space-7);
+  font-size: var(--text-data);
+}
+
+/* An empty, hatched lane: the same mark FLARE uses for anything not recorded */
+.slot-track {
+  display: flex;
+  align-items: center;
+  height: 2.6rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--ramp-4);
+  background: var(--hatch);
+  color: var(--ramp-6);
+}
+
+.slot-track span {
+  padding: 0.1rem var(--space-2) 0;
+  background: var(--ramp-0);
+}
+
+.slot-status p {
+  margin-top: var(--space-3);
+  color: var(--ramp-5);
+}
+
+.slot-icon {
+  display: inline-block;
+  margin-right: var(--space-2);
+  vertical-align: -0.15em;
+}
+
+.slot-next {
+  max-width: 60ch;
+  margin-top: var(--space-6);
+}

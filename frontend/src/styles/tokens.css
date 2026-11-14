@@ -1,0 +1,59 @@
+/*
+ * FLARE design tokens. The palette is the NASA Space Apps brand palette
+ * (Space Apps Brand Guidelines, updated 25 June 2026). Neon Yellow is an accent:
+ * it marks what can be acted on and where the visitor's scenario sits, never a
+ * fill behind text blocks and never a headline. Rocket Red is never a background.
+ */
+:root {
+  --deep-blue: #07173f;
+  --electric-blue: #0042a6;
+  --neon-blue: #0960e1;
+  --blue-yonder: #2e96f5;
+  --neon-yellow: #eafe07;
+  --rocket-red: #e43700;
+  --white: #ffffff;
+
+  /* One stepped ramp from Deep Blue toward white. Every neutral comes from here. */
+  --ramp-0: #07173f; /* page ground */
+  --ramp-1: #0a1d4d; /* lane track, raised band */
+  --ramp-2: #0e2760; /* hover and focus lift */
+  --ramp-3: #28467f; /* hairline rules and unit ticks */
+  --ramp-4: #5c77ae; /* hatch strokes, inactive marks */
+  --ramp-5: #b9c6e4; /* secondary text: 9.5:1 on ramp-1 */
+  --ramp-6: #e6ecf8; /* lede text */
+  --on-electric: #d3defa; /* secondary text on Electric Blue: 6.6:1 */
+
+  /* Lane materials */
+  --band-fill: rgb(46 150 245 / 0.42);
+  --band-edge: var(--blue-yonder);
+  --tick: var(--neon-yellow);
+  --hatch: repeating-linear-gradient(135deg, var(--ramp-4) 0 1px, transparent 1px 7px);
+
+  /* Type: Fira Sans for titles, Overpass for reading, Fira Code for identifiers */
+  --font-title: 'Fira Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Overpass', 'Segoe UI', sans-serif;
+  --font-id: 'Fira Code', ui-monospace, monospace;
+
+  --text-data: 0.9375rem; /* the one size inside data regions */
+  --text-body: 1.0625rem;
+  --text-lede: 1.25rem;
+  --text-h3: 1.0625rem;
+  --text-h2: clamp(1.625rem, 1.2rem + 1.4vw, 2.25rem);
+  --text-h1: clamp(2.25rem, 1.4rem + 2.8vw, 3.25rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6rem;
+
+  --gutter: clamp(1rem, 0.2rem + 4vw, 4.5rem);
+  --bar-height: 4rem;
+  --radius: 4px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
