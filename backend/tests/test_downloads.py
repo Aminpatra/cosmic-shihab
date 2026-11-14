@@ -18,7 +18,9 @@ from main import app
 DATA = Path(__file__).resolve().parent.parent / "data"
 with open(DATA / "files.csv", newline="", encoding="utf-8") as f:
     ROW = next(row for row in csv.DictReader(f) if row["file_name"] == "PSI-10_Engineering Documents_ACME Engineering Implementation Rpt..pdf")
-GOOD = f"https://{psi_links.LINK_HOST}/psi-data/PSI-10/x.pdf?X-Amz-Signature=abc"
+GOOD = "https://psi-repo-prod.s3.amazonaws.com/psi-data/PSI-10/x.pdf?X-Amz-Signature=abc"
+# PSI serves older ("legacy") files from a second bucket; seen live on 15 November 2026 (#73).
+LEGACY = "https://psi-curation-prod.s3.amazonaws.com/legacy/Filestreamdb/7292/FLEX_EIRD_v4?X-Amz-Signature=abc"
 client = TestClient(app, follow_redirects=False)
 
 
@@ -35,6 +37,15 @@ class DownloadLink(unittest.TestCase):
         self.assertEqual(response.headers["cache-control"], "no-store")
         fetch.assert_called_once()
 
+    def test_redirects_to_psis_legacy_bucket_too(self):
+        with fake_psi(LEGACY.encode() + b"\n"):
+            response = client.get(f"/api/files/{ROW['file_id']}/download")
+        self.assertEqual(response.status_code, 307)
+        self.assertEqual(response.headers["location"], LEGACY)
+
+    def test_accepts_exactly_psis_two_buckets(self):
+        self.assertEqual(psi_links.LINK_HOSTS, {"psi-repo-prod.s3.amazonaws.com", "psi-curation-prod.s3.amazonaws.com"})
+
     def test_asks_psi_for_the_right_file(self):
         with fake_psi(GOOD.encode()) as fetch:
             client.get(f"/api/files/{ROW['file_id']}/download")
@@ -49,14 +60,21 @@ class DownloadLink(unittest.TestCase):
         fetch.assert_not_called()
 
     def test_refuses_anything_but_psi_storage(self):
-        host = psi_links.LINK_HOST
+        lookalikes = [
+            answer
+            for host in sorted(psi_links.LINK_HOSTS)
+            for answer in (
+                f"https://{host}.evil.example/x.pdf",
+                f"http://{host}/x.pdf",
+                f"https://user@{host}/x.pdf",
+                f"https://{host}:8443/x.pdf",
+                f"https://{host}/x.pdf\r\nSet-Cookie: a=b",
+            )
+        ]
         for answer in (
             "https://example.com/x.pdf",
-            f"https://{host}.evil.example/x.pdf",
-            f"http://{host}/x.pdf",
-            f"https://user@{host}/x.pdf",
-            f"https://{host}:8443/x.pdf",
-            f"https://{host}/x.pdf\r\nSet-Cookie: a=b",
+            "https://psi-other-prod.s3.amazonaws.com/x.pdf",
+            *lookalikes,
             '{"message": "File not found"}',
             "",
         ):

@@ -10,7 +10,9 @@ import urllib.parse
 import urllib.request
 
 BASE = "https://psi.nasa.gov/geode-py/ws"
-LINK_HOST = "psi-repo-prod.s3.amazonaws.com"
+# PSI's own S3 buckets, and nothing else: current files, and older ("legacy") files, which PSI
+# has served from psi-curation-prod since at least 15 November 2026 (#73).
+LINK_HOSTS = frozenset({"psi-repo-prod.s3.amazonaws.com", "psi-curation-prod.s3.amazonaws.com"})
 USER_AGENT = "FLARE-SpaceApps-2026 (student research project)"
 TIMEOUT_SECONDS = 20
 
@@ -34,7 +36,7 @@ def download_link(accession: str, file_name: str) -> str:
     raw = fetch(f"{BASE}/studies/{urllib.parse.quote(accession)}/download?{query}")
     link = raw.decode(errors="replace").strip()
     parts = urllib.parse.urlsplit(link)
-    # netloc must be the bare host: no user info, no port, no lookalike suffix.
-    if parts.scheme != "https" or parts.netloc != LINK_HOST or any(c.isspace() for c in link):
-        raise PSILinkError(f"PSI answered with something other than a {LINK_HOST} link: {link[:80]!r}")
+    # netloc must be one of the bare hosts: no user info, no port, no lookalike suffix.
+    if parts.scheme != "https" or parts.netloc not in LINK_HOSTS or any(c.isspace() for c in link):
+        raise PSILinkError(f"PSI answered with something other than a link to its own storage: {link[:80]!r}")
     return link
