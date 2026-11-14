@@ -164,6 +164,26 @@
         "rows": 109,
         "columns": 10
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "SAME hardware (Comparative Soot Diagnostic hardware) in the glovebox",
+        "platform": "ISS",
+        "fuel_phase": "solid",
+        "fire_safety_role": "detection",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; record.approach: 'SAME-R utilized the SAME hardware used on-orbit'; glovebox from PSI-102 record.approach",
+        "platform": "record.flightProgram",
+        "fuel_phase": "table column 'Sample Type': Kapton, silicone, lampwick, Pyrell, Teflon",
+        "fire_safety_role": "record.hypothesis: 'affect the response of the smoke detectors and possibly result in some detectors not producing an alarm'",
+        "gravity_level": "record.approach: 'SAME-R flight tests were conducted from July 16, to September 9, 2010'",
+        "flare_data": "datasets: one row per test"
+      },
+      "notes": "Samples were heated to make smoke; the record studies smoke particles, not flames."
+    }
   }
 }

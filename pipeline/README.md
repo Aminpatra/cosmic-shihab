@@ -7,6 +7,7 @@ is never deployed. Standard library only, except `pypdf` for the search index
 ```
 python3 pipeline/harvest.py              # fetch records, file lists and experimental tables from PSI
 python3 pipeline/build_catalogue.py      # write backend/data/ and datasets/SOURCES.csv
+python3 pipeline/process_tables.py       # write backend/data/runs/ from the tables in datasets/
 
 python3 -m pip install -r pipeline/requirements.txt   # once, for the search index
 python3 pipeline/fetch_documents.py      # download PSI's reports and presentations into .cache/
@@ -20,6 +21,7 @@ python3 -m unittest discover -s pipeline/tests -v
 | `psi_client.py` | The four PSI calls, each checking the response's shape and failing loudly |
 | `harvest.py` | Saves raw responses to `.cache/psi/raw/` (ignored by git) and the experimental tables to `datasets/`. Skips what is already there; pauses a second between calls |
 | `build_catalogue.py` | Normalizes the raw responses into `backend/data/` |
+| `process_tables.py` | Reads the 22 experimental tables in `datasets/` into `backend/data/runs/`: every cell kept as written, with what it says read out beside it |
 | `fetch_documents.py` | Downloads every non-"Raw Data" document in a readable format (PDF, Word, PowerPoint) to `.cache/psi/documents/`, named by PSI file id. Resumable; one request a second to PSI |
 | `build_search_index.py` | Cuts the documents' text into passages of about 150 words and writes `backend/data/search.sqlite`, with every document's status (indexed, no text, unreadable format, not downloaded, failed) |
 | `tests/` | Client tests on small saved responses; checks on the committed catalogue |

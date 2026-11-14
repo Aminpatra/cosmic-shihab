@@ -1,0 +1,51 @@
+.api-loading {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5) 0;
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.api-loading-track {
+  display: block;
+  height: 2.6rem;
+  background: var(--ramp-1);
+  background-image: linear-gradient(90deg, transparent, rgb(46 150 245 / 0.18), transparent);
+  background-size: 40% 100%;
+  background-repeat: no-repeat;
+  animation: api-sweep 1.4s var(--ease-out) infinite;
+}
+
+@keyframes api-sweep {
+  from {
+    background-position: -40% 0;
+  }
+  to {
+    background-position: 140% 0;
+  }
+}
+
+.api-error {
+  display: flex;
+  gap: var(--space-4);
+  max-width: 44rem;
+  padding: var(--space-5);
+  border: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+  font-size: var(--text-data);
+}
+
+.api-error svg {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--neon-yellow);
+}
+
+.api-error p {
+  margin-bottom: var(--space-4);
+  color: var(--ramp-6);
+}
+
+.api-error strong {
+  color: var(--white);
+}

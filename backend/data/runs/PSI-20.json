@@ -1,0 +1,1346 @@
+{
+ "accession": "PSI-20",
+ "tables": [
+  {
+   "file": "PSI-20_Experimental table_ACME BRE.csv",
+   "psi_file_name": "PSI-20_Experimental table_ACME BRE.csv",
+   "doi_url": "https://doi.org/10.60555/vb93-3y72",
+   "encoding": "utf-8",
+   "row_is": "test_day",
+   "row_count": 18,
+   "columns": [
+    {
+     "name": "Year",
+     "unit": null
+    },
+    {
+     "name": "Month",
+     "unit": null
+    },
+    {
+     "name": "Date",
+     "unit": null
+    },
+    {
+     "name": "Burner Size (mm)",
+     "unit": "mm"
+    },
+    {
+     "name": "Fuel Bottle",
+     "unit": null
+    },
+    {
+     "name": "Oxygen Conc (percent)",
+     "unit": "%"
+    },
+    {
+     "name": "Flames Ignited",
+     "unit": null
+    },
+    {
+     "name": "Notes",
+     "unit": null
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Fuel Bottle",
+    "oxygen": "Oxygen Conc (percent)"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Feb",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "21; 26.5; 40",
+       "kind": "list",
+       "values": [
+        21,
+        26.5,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "Oxygen Conc. (as diluted with nitrogen on a volume basis) was varied between tests where approximate concentrations for tests that ignited are listed. The chamber pressures were also varied but are not identified in this summary table.",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.21,
+        0.265,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         21,
+         26.5,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Feb",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "26.5; 34",
+       "kind": "list",
+       "values": [
+        26.5,
+        34
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Notes": {
+       "raw": "Flames Ignited is the number ignited on that day (neglecting the day change on ISS).",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.265,
+        0.34
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         26.5,
+         34
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Feb",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "21; 26.5; 34; 40",
+       "kind": "list",
+       "values": [
+        21,
+        26.5,
+        34,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.21,
+        0.265,
+        0.34,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         21,
+         26.5,
+         34,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "March",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "26.5; 40",
+       "kind": "list",
+       "values": [
+        26.5,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.265,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         26.5,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "March",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "3400%",
+       "kind": "number",
+       "value": 3400,
+       "unit": "%",
+       "flags": [
+        "percent_over_100"
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "value": 34.0,
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "value": 3400,
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "March",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "26.5; 34",
+       "kind": "list",
+       "values": [
+        26.5,
+        34
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.265,
+        0.34
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         26.5,
+         34
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "March",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100%C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "26.5; 34",
+       "kind": "list",
+       "values": [
+        26.5,
+        34
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100%C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.265,
+        0.34
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         26.5,
+         34
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "April",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100%C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "2100%",
+       "kind": "number",
+       "value": 2100,
+       "unit": "%",
+       "flags": [
+        "percent_over_100"
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100%C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "value": 21.0,
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "value": 2100,
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 10,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "April",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100%C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "21; 26.5; 34",
+       "kind": "list",
+       "values": [
+        21,
+        26.5,
+        34
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100%C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.21,
+        0.265,
+        0.34
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         21,
+         26.5,
+         34
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 11,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Sept",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Burner Size (mm)": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "25; 34; 40",
+       "kind": "list",
+       "values": [
+        25,
+        34,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.25,
+        0.34,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         25,
+         34,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 12,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Oct",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "26.5; 34",
+       "kind": "list",
+       "values": [
+        26.5,
+        34
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.265,
+        0.34
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         26.5,
+         34
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 13,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Dec",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "25; 34; 40",
+       "kind": "list",
+       "values": [
+        25,
+        34,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.25,
+        0.34,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         25,
+         34,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 14,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Dec",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "25; 40",
+       "kind": "list",
+       "values": [
+        25,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.25,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         25,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 15,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Dec",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "25; 40",
+       "kind": "list",
+       "values": [
+        25,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.25,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         25,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 16,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Dec",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "34; 40",
+       "kind": "list",
+       "values": [
+        34,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.34,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         34,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 17,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Dec",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "25; 34; 40",
+       "kind": "list",
+       "values": [
+        25,
+        34,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.25,
+        0.34,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         25,
+         34,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 18,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2021",
+       "kind": "number",
+       "value": 2021
+      },
+      "Month": {
+       "raw": "Jan",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Burner Size (mm)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "21; 26.5; 34",
+       "kind": "list",
+       "values": [
+        21,
+        26.5,
+        34
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.21,
+        0.265,
+        0.34
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         21,
+         26.5,
+         34
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    },
+    {
+     "line": 19,
+     "run_id": null,
+     "cells": {
+      "Year": {
+       "raw": "2021",
+       "kind": "number",
+       "value": 2021
+      },
+      "Month": {
+       "raw": "Jan",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      },
+      "Burner Size (mm)": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Oxygen Conc (percent)": {
+       "raw": "25; 34; 40",
+       "kind": "list",
+       "values": [
+        25,
+        34,
+        40
+       ]
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      },
+      "oxygen": {
+       "column": "Oxygen Conc (percent)",
+       "role": "condition",
+       "values": [
+        0.25,
+        0.34,
+        0.4
+       ],
+       "unit": "mole fraction",
+       "calculated": true,
+       "original": {
+        "values": [
+         25,
+         34,
+         40
+        ],
+        "unit": "%"
+       }
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

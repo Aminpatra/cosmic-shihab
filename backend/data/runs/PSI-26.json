@@ -1,0 +1,5771 @@
+{
+ "accession": "PSI-26",
+ "tables": [
+  {
+   "file": "PSI-26_Experimental table_BASS.csv",
+   "psi_file_name": "PSI-26_Experimental table_BASS.csv",
+   "doi_url": "https://doi.org/10.60555/58h4-dy80",
+   "encoding": "utf-8",
+   "row_is": "test",
+   "row_count": 122,
+   "columns": [
+    {
+     "name": "Date",
+     "unit": null
+    },
+    {
+     "name": "GMT",
+     "unit": null
+    },
+    {
+     "name": "As Run Test #",
+     "unit": null
+    },
+    {
+     "name": "Test #",
+     "unit": null
+    },
+    {
+     "name": "Sample #",
+     "unit": null
+    },
+    {
+     "name": "Fuel Sample Material",
+     "unit": null
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Fuel Sample Material"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "1",
+     "cells": {
+      "Date": {
+       "raw": "3/30/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "90",
+       "kind": "number",
+       "value": 90
+      },
+      "As Run Test #": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Test #": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Sample #": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "2",
+     "cells": {
+      "Date": {
+       "raw": "3/30/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "90",
+       "kind": "number",
+       "value": 90
+      },
+      "As Run Test #": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Test #": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": "3",
+     "cells": {
+      "Date": {
+       "raw": "3/30/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "90",
+       "kind": "number",
+       "value": 90
+      },
+      "As Run Test #": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Test #": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Sample #": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 1 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": "4",
+     "cells": {
+      "Date": {
+       "raw": "4/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "96",
+       "kind": "number",
+       "value": 96
+      },
+      "As Run Test #": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Test #": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Sample #": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": "5",
+     "cells": {
+      "Date": {
+       "raw": "4/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "96",
+       "kind": "number",
+       "value": 96
+      },
+      "As Run Test #": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Test #": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Sample #": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": "6",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "100",
+       "kind": "number",
+       "value": 100
+      },
+      "As Run Test #": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Test #": {
+       "raw": "43",
+       "kind": "number",
+       "value": 43
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": "7",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "100",
+       "kind": "number",
+       "value": 100
+      },
+      "As Run Test #": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Test #": {
+       "raw": "44",
+       "kind": "number",
+       "value": 44
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": "8",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "100",
+       "kind": "number",
+       "value": 100
+      },
+      "As Run Test #": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Test #": {
+       "raw": "45",
+       "kind": "number",
+       "value": 45
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 10,
+     "run_id": "9",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "123",
+       "kind": "number",
+       "value": 123
+      },
+      "As Run Test #": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Test #": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Sample #": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 1 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 11,
+     "run_id": "10",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "123",
+       "kind": "number",
+       "value": 123
+      },
+      "As Run Test #": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Test #": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Sample #": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 1 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 12,
+     "run_id": "11",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "123",
+       "kind": "number",
+       "value": 123
+      },
+      "As Run Test #": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Test #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Sample #": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 1 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 13,
+     "run_id": "12",
+     "cells": {
+      "Date": {
+       "raw": "5/10/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "131",
+       "kind": "number",
+       "value": 131
+      },
+      "As Run Test #": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Test #": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Sample #": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 14,
+     "run_id": "13",
+     "cells": {
+      "Date": {
+       "raw": "5/10/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "131",
+       "kind": "number",
+       "value": 131
+      },
+      "As Run Test #": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Test #": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Sample #": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 1 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 15,
+     "run_id": "14",
+     "cells": {
+      "Date": {
+       "raw": "5/10/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "131",
+       "kind": "number",
+       "value": 131
+      },
+      "As Run Test #": {
+       "raw": "14",
+       "kind": "number",
+       "value": 14
+      },
+      "Test #": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Sample #": {
+       "raw": "27",
+       "kind": "number",
+       "value": 27
+      },
+      "Fuel Sample Material": {
+       "raw": "Nomex blend 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Nomex blend 2 cm",
+       "material": "Nomex",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 16,
+     "run_id": "15",
+     "cells": {
+      "Date": {
+       "raw": "5/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "132",
+       "kind": "number",
+       "value": 132
+      },
+      "As Run Test #": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Test #": {
+       "raw": "54",
+       "kind": "number",
+       "value": 54
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 17,
+     "run_id": "16",
+     "cells": {
+      "Date": {
+       "raw": "5/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "132",
+       "kind": "number",
+       "value": 132
+      },
+      "As Run Test #": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Test #": {
+       "raw": "55",
+       "kind": "number",
+       "value": 55
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 18,
+     "run_id": "17",
+     "cells": {
+      "Date": {
+       "raw": "5/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "132",
+       "kind": "number",
+       "value": 132
+      },
+      "As Run Test #": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Test #": {
+       "raw": "56",
+       "kind": "number",
+       "value": 56
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 19,
+     "run_id": "18",
+     "cells": {
+      "Date": {
+       "raw": "5/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "132",
+       "kind": "number",
+       "value": 132
+      },
+      "As Run Test #": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Test #": {
+       "raw": "57",
+       "kind": "number",
+       "value": 57
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 20,
+     "run_id": "19",
+     "cells": {
+      "Date": {
+       "raw": "5/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "132",
+       "kind": "number",
+       "value": 132
+      },
+      "As Run Test #": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Test #": {
+       "raw": "110",
+       "kind": "number",
+       "value": 110
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 21,
+     "run_id": "20",
+     "cells": {
+      "Date": {
+       "raw": "6/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "157",
+       "kind": "number",
+       "value": 157
+      },
+      "As Run Test #": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Test #": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      },
+      "Sample #": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 22,
+     "run_id": "21",
+     "cells": {
+      "Date": {
+       "raw": "6/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "157",
+       "kind": "number",
+       "value": 157
+      },
+      "As Run Test #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Test #": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      },
+      "Sample #": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 23,
+     "run_id": "22",
+     "cells": {
+      "Date": {
+       "raw": "6/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "157",
+       "kind": "number",
+       "value": 157
+      },
+      "As Run Test #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Test #": {
+       "raw": "32",
+       "kind": "number",
+       "value": 32
+      },
+      "Sample #": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 24,
+     "run_id": "23",
+     "cells": {
+      "Date": {
+       "raw": "6/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "157",
+       "kind": "number",
+       "value": 157
+      },
+      "As Run Test #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Test #": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      },
+      "Sample #": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 25,
+     "run_id": "24",
+     "cells": {
+      "Date": {
+       "raw": "6/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "157",
+       "kind": "number",
+       "value": 157
+      },
+      "As Run Test #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Test #": {
+       "raw": "12-R",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "27",
+       "kind": "number",
+       "value": 27
+      },
+      "Fuel Sample Material": {
+       "raw": "Nomex blend 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Nomex blend 2 cm",
+       "material": "Nomex",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 26,
+     "run_id": "24",
+     "cells": {
+      "Date": {
+       "raw": "6/5/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "157",
+       "kind": "number",
+       "value": 157
+      },
+      "As Run Test #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Test #": {
+       "raw": "12-R2",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "27",
+       "kind": "number",
+       "value": 27
+      },
+      "Fuel Sample Material": {
+       "raw": "Nomex blend 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Nomex blend 2 cm",
+       "material": "Nomex",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 27,
+     "run_id": "25",
+     "cells": {
+      "Date": {
+       "raw": "6/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "163",
+       "kind": "number",
+       "value": 163
+      },
+      "As Run Test #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Test #": {
+       "raw": "46",
+       "kind": "number",
+       "value": 46
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 28,
+     "run_id": "26",
+     "cells": {
+      "Date": {
+       "raw": "6/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "163",
+       "kind": "number",
+       "value": 163
+      },
+      "As Run Test #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Test #": {
+       "raw": "47",
+       "kind": "number",
+       "value": 47
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 29,
+     "run_id": "27",
+     "cells": {
+      "Date": {
+       "raw": "6/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "163",
+       "kind": "number",
+       "value": 163
+      },
+      "As Run Test #": {
+       "raw": "27",
+       "kind": "number",
+       "value": 27
+      },
+      "Test #": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 30,
+     "run_id": "28",
+     "cells": {
+      "Date": {
+       "raw": "6/11/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "163",
+       "kind": "number",
+       "value": 163
+      },
+      "As Run Test #": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      },
+      "Test #": {
+       "raw": "49",
+       "kind": "number",
+       "value": 49
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 31,
+     "run_id": "29",
+     "cells": {
+      "Date": {
+       "raw": "6/14/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "166",
+       "kind": "number",
+       "value": 166
+      },
+      "As Run Test #": {
+       "raw": "29",
+       "kind": "number",
+       "value": 29
+      },
+      "Test #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Sample #": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 32,
+     "run_id": "30",
+     "cells": {
+      "Date": {
+       "raw": "6/14/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "166",
+       "kind": "number",
+       "value": 166
+      },
+      "As Run Test #": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      },
+      "Test #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Sample #": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 33,
+     "run_id": "31",
+     "cells": {
+      "Date": {
+       "raw": "6/14/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "166",
+       "kind": "number",
+       "value": 166
+      },
+      "As Run Test #": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      },
+      "Test #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Sample #": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 34,
+     "run_id": "32",
+     "cells": {
+      "Date": {
+       "raw": "6/14/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "166",
+       "kind": "number",
+       "value": 166
+      },
+      "As Run Test #": {
+       "raw": "32",
+       "kind": "number",
+       "value": 32
+      },
+      "Test #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Sample #": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 35,
+     "run_id": "33",
+     "cells": {
+      "Date": {
+       "raw": "6/18/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "170",
+       "kind": "number",
+       "value": 170
+      },
+      "As Run Test #": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      },
+      "Test #": {
+       "raw": "58",
+       "kind": "number",
+       "value": 58
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 36,
+     "run_id": "34",
+     "cells": {
+      "Date": {
+       "raw": "6/18/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "170",
+       "kind": "number",
+       "value": 170
+      },
+      "As Run Test #": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      },
+      "Test #": {
+       "raw": "59",
+       "kind": "number",
+       "value": 59
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 37,
+     "run_id": "35",
+     "cells": {
+      "Date": {
+       "raw": "6/18/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "170",
+       "kind": "number",
+       "value": 170
+      },
+      "As Run Test #": {
+       "raw": "35",
+       "kind": "number",
+       "value": 35
+      },
+      "Test #": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 38,
+     "run_id": "36",
+     "cells": {
+      "Date": {
+       "raw": "6/18/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "170",
+       "kind": "number",
+       "value": 170
+      },
+      "As Run Test #": {
+       "raw": "36",
+       "kind": "number",
+       "value": 36
+      },
+      "Test #": {
+       "raw": "61",
+       "kind": "number",
+       "value": 61
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 39,
+     "run_id": "37",
+     "cells": {
+      "Date": {
+       "raw": "6/28/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "180",
+       "kind": "number",
+       "value": 180
+      },
+      "As Run Test #": {
+       "raw": "37",
+       "kind": "number",
+       "value": 37
+      },
+      "Test #": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Sample #": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 40,
+     "run_id": "38",
+     "cells": {
+      "Date": {
+       "raw": "6/28/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "180",
+       "kind": "number",
+       "value": 180
+      },
+      "As Run Test #": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      },
+      "Test #": {
+       "raw": "14",
+       "kind": "number",
+       "value": 14
+      },
+      "Sample #": {
+       "raw": "29",
+       "kind": "number",
+       "value": 29
+      },
+      "Fuel Sample Material": {
+       "raw": "Nomex III Natural",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Nomex III Natural",
+       "material": "Nomex"
+      }
+     }
+    },
+    {
+     "line": 41,
+     "run_id": "39",
+     "cells": {
+      "Date": {
+       "raw": "6/28/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "180",
+       "kind": "number",
+       "value": 180
+      },
+      "As Run Test #": {
+       "raw": "39",
+       "kind": "number",
+       "value": 39
+      },
+      "Test #": {
+       "raw": "66",
+       "kind": "number",
+       "value": 66
+      },
+      "Sample #": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA slab",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 42,
+     "run_id": "40",
+     "cells": {
+      "Date": {
+       "raw": "6/28/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "180",
+       "kind": "number",
+       "value": 180
+      },
+      "As Run Test #": {
+       "raw": "40",
+       "kind": "number",
+       "value": 40
+      },
+      "Test #": {
+       "raw": "67",
+       "kind": "number",
+       "value": 67
+      },
+      "Sample #": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA slab",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 43,
+     "run_id": "41",
+     "cells": {
+      "Date": {
+       "raw": "6/29/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "181",
+       "kind": "number",
+       "value": 181
+      },
+      "As Run Test #": {
+       "raw": "41",
+       "kind": "number",
+       "value": 41
+      },
+      "Test #": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      },
+      "Sample #": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 44,
+     "run_id": "42",
+     "cells": {
+      "Date": {
+       "raw": "6/29/`12",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "181",
+       "kind": "number",
+       "value": 181
+      },
+      "As Run Test #": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      },
+      "Test #": {
+       "raw": "35",
+       "kind": "number",
+       "value": 35
+      },
+      "Sample #": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 45,
+     "run_id": "43",
+     "cells": {
+      "Date": {
+       "raw": "6/29/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "181",
+       "kind": "number",
+       "value": 181
+      },
+      "As Run Test #": {
+       "raw": "43",
+       "kind": "number",
+       "value": 43
+      },
+      "Test #": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Sample #": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      },
+      "Fuel Sample Material": {
+       "raw": "ultem sheet",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "ultem sheet",
+       "material": "Ultem"
+      }
+     }
+    },
+    {
+     "line": 46,
+     "run_id": "44",
+     "cells": {
+      "Date": {
+       "raw": "6/29/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "181",
+       "kind": "number",
+       "value": 181
+      },
+      "As Run Test #": {
+       "raw": "44",
+       "kind": "number",
+       "value": 44
+      },
+      "Test #": {
+       "raw": "5b",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm   opposed flow ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm   opposed flow",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 47,
+     "run_id": "45",
+     "cells": {
+      "Date": {
+       "raw": "7/3/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "185",
+       "kind": "number",
+       "value": 185
+      },
+      "As Run Test #": {
+       "raw": "45",
+       "kind": "number",
+       "value": 45
+      },
+      "Test #": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Sample #": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 48,
+     "run_id": "46",
+     "cells": {
+      "Date": {
+       "raw": "7/3/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "185",
+       "kind": "number",
+       "value": 185
+      },
+      "As Run Test #": {
+       "raw": "46",
+       "kind": "number",
+       "value": 46
+      },
+      "Test #": {
+       "raw": "82",
+       "kind": "number",
+       "value": 82
+      },
+      "Sample #": {
+       "raw": "35",
+       "kind": "number",
+       "value": 35
+      },
+      "Fuel Sample Material": {
+       "raw": "candle",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 49,
+     "run_id": "47",
+     "cells": {
+      "Date": {
+       "raw": "7/3/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "185",
+       "kind": "number",
+       "value": 185
+      },
+      "As Run Test #": {
+       "raw": "47",
+       "kind": "number",
+       "value": 47
+      },
+      "Test #": {
+       "raw": "82a",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "35",
+       "kind": "number",
+       "value": 35
+      },
+      "Fuel Sample Material": {
+       "raw": "candle",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 50,
+     "run_id": "48",
+     "cells": {
+      "Date": {
+       "raw": "7/3/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "185",
+       "kind": "number",
+       "value": 185
+      },
+      "As Run Test #": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      },
+      "Test #": {
+       "raw": "82b",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "35",
+       "kind": "number",
+       "value": 35
+      },
+      "Fuel Sample Material": {
+       "raw": "candle",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 51,
+     "run_id": "49",
+     "cells": {
+      "Date": {
+       "raw": "7/3/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "185",
+       "kind": "number",
+       "value": 185
+      },
+      "As Run Test #": {
+       "raw": "49",
+       "kind": "number",
+       "value": 49
+      },
+      "Test #": {
+       "raw": "68",
+       "kind": "number",
+       "value": 68
+      },
+      "Sample #": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma slab",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 52,
+     "run_id": "50",
+     "cells": {
+      "Date": {
+       "raw": "7/12/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "194",
+       "kind": "number",
+       "value": 194
+      },
+      "As Run Test #": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      },
+      "Test #": {
+       "raw": "69",
+       "kind": "number",
+       "value": 69
+      },
+      "Sample #": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma slab",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 53,
+     "run_id": "51",
+     "cells": {
+      "Date": {
+       "raw": "7/12/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "194",
+       "kind": "number",
+       "value": 194
+      },
+      "As Run Test #": {
+       "raw": "51",
+       "kind": "number",
+       "value": 51
+      },
+      "Test #": {
+       "raw": "111",
+       "kind": "number",
+       "value": 111
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere   wake ign",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere   wake ign",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 54,
+     "run_id": "52",
+     "cells": {
+      "Date": {
+       "raw": "7/12/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "194",
+       "kind": "number",
+       "value": 194
+      },
+      "As Run Test #": {
+       "raw": "52",
+       "kind": "number",
+       "value": 52
+      },
+      "Test #": {
+       "raw": "112",
+       "kind": "number",
+       "value": 112
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere   wake ign",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere   wake ign",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 55,
+     "run_id": "53",
+     "cells": {
+      "Date": {
+       "raw": "7/12/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "194",
+       "kind": "number",
+       "value": 194
+      },
+      "As Run Test #": {
+       "raw": "53",
+       "kind": "number",
+       "value": 53
+      },
+      "Test #": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "Sample #": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere   wake ign",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere   wake ign",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 56,
+     "run_id": "54",
+     "cells": {
+      "Date": {
+       "raw": "7/19/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "201",
+       "kind": "number",
+       "value": 201
+      },
+      "As Run Test #": {
+       "raw": "54",
+       "kind": "number",
+       "value": 54
+      },
+      "Test #": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Sample #": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 57,
+     "run_id": "55",
+     "cells": {
+      "Date": {
+       "raw": "7/19/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "201",
+       "kind": "number",
+       "value": 201
+      },
+      "As Run Test #": {
+       "raw": "55",
+       "kind": "number",
+       "value": 55
+      },
+      "Test #": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Sample #": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 58,
+     "run_id": "56",
+     "cells": {
+      "Date": {
+       "raw": "7/19/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "201",
+       "kind": "number",
+       "value": 201
+      },
+      "As Run Test #": {
+       "raw": "56",
+       "kind": "number",
+       "value": 56
+      },
+      "Test #": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Sample #": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      },
+      "Fuel Sample Material": {
+       "raw": "nomex natural III",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "nomex natural III",
+       "material": "Nomex"
+      }
+     }
+    },
+    {
+     "line": 59,
+     "run_id": "57",
+     "cells": {
+      "Date": {
+       "raw": "7/19/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "201",
+       "kind": "number",
+       "value": 201
+      },
+      "As Run Test #": {
+       "raw": "57",
+       "kind": "number",
+       "value": 57
+      },
+      "Test #": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Sample #": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      },
+      "Fuel Sample Material": {
+       "raw": "Nomex blend 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Nomex blend 2 cm",
+       "material": "Nomex",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 60,
+     "run_id": "58",
+     "cells": {
+      "Date": {
+       "raw": "7/19/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "201",
+       "kind": "number",
+       "value": 201
+      },
+      "As Run Test #": {
+       "raw": "58",
+       "kind": "number",
+       "value": 58
+      },
+      "Test #": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Sample #": {
+       "raw": "32",
+       "kind": "number",
+       "value": 32
+      },
+      "Fuel Sample Material": {
+       "raw": "ultem sheet",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "ultem sheet",
+       "material": "Ultem"
+      }
+     }
+    },
+    {
+     "line": 61,
+     "run_id": "59",
+     "cells": {
+      "Date": {
+       "raw": "7/19/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "201",
+       "kind": "number",
+       "value": 201
+      },
+      "As Run Test #": {
+       "raw": "59",
+       "kind": "number",
+       "value": 59
+      },
+      "Test #": {
+       "raw": "114",
+       "kind": "number",
+       "value": 114
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma sphere",
+       "material": "PMMA",
+       "shape": "sphere"
+      }
+     }
+    },
+    {
+     "line": 62,
+     "run_id": "60",
+     "cells": {
+      "Date": {
+       "raw": "7/23/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "205",
+       "kind": "number",
+       "value": 205
+      },
+      "As Run Test #": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Test #": {
+       "raw": "62",
+       "kind": "number",
+       "value": 62
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 63,
+     "run_id": "61",
+     "cells": {
+      "Date": {
+       "raw": "7/23/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "205",
+       "kind": "number",
+       "value": 205
+      },
+      "As Run Test #": {
+       "raw": "61",
+       "kind": "number",
+       "value": 61
+      },
+      "Test #": {
+       "raw": "63",
+       "kind": "number",
+       "value": 63
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 64,
+     "run_id": "62",
+     "cells": {
+      "Date": {
+       "raw": "7/23/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "205",
+       "kind": "number",
+       "value": 205
+      },
+      "As Run Test #": {
+       "raw": "62",
+       "kind": "number",
+       "value": 62
+      },
+      "Test #": {
+       "raw": "64",
+       "kind": "number",
+       "value": 64
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 65,
+     "run_id": "63",
+     "cells": {
+      "Date": {
+       "raw": "7/23/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "205",
+       "kind": "number",
+       "value": 205
+      },
+      "As Run Test #": {
+       "raw": "63",
+       "kind": "number",
+       "value": 63
+      },
+      "Test #": {
+       "raw": "65",
+       "kind": "number",
+       "value": 65
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 66,
+     "run_id": "64",
+     "cells": {
+      "Date": {
+       "raw": "7/23/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "205",
+       "kind": "number",
+       "value": 205
+      },
+      "As Run Test #": {
+       "raw": "64",
+       "kind": "number",
+       "value": 64
+      },
+      "Test #": {
+       "raw": "118",
+       "kind": "number",
+       "value": 118
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 67,
+     "run_id": "",
+     "cells": {
+      "Date": {
+       "raw": "8/3/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "216",
+       "kind": "number",
+       "value": 216
+      },
+      "As Run Test #": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test #": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Sample #": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Sample Material": {
+       "raw": "SOOT Cleaning",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SOOT Cleaning"
+      }
+     }
+    },
+    {
+     "line": 68,
+     "run_id": "65",
+     "cells": {
+      "Date": {
+       "raw": "8/9/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "222",
+       "kind": "number",
+       "value": 222
+      },
+      "As Run Test #": {
+       "raw": "65",
+       "kind": "number",
+       "value": 65
+      },
+      "Test #": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Sample #": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 1 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 69,
+     "run_id": "66",
+     "cells": {
+      "Date": {
+       "raw": "8/9/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "222",
+       "kind": "number",
+       "value": 222
+      },
+      "As Run Test #": {
+       "raw": "66",
+       "kind": "number",
+       "value": 66
+      },
+      "Test #": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Sample #": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Fuel Sample Material": {
+       "raw": "SIBAL 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "SIBAL 2 cm",
+       "material": "SIBAL",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 70,
+     "run_id": "67",
+     "cells": {
+      "Date": {
+       "raw": "8/9/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "222",
+       "kind": "number",
+       "value": 222
+      },
+      "As Run Test #": {
+       "raw": "67",
+       "kind": "number",
+       "value": 67
+      },
+      "Test #": {
+       "raw": "102",
+       "kind": "number",
+       "value": 102
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA sphere 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA sphere 2 cm",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 71,
+     "run_id": "68",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "68",
+       "kind": "number",
+       "value": 68
+      },
+      "Test #": {
+       "raw": "83a",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "36",
+       "kind": "number",
+       "value": 36
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 72,
+     "run_id": "69",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "69",
+       "kind": "number",
+       "value": 69
+      },
+      "Test #": {
+       "raw": "83b",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "36",
+       "kind": "number",
+       "value": 36
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 73,
+     "run_id": "70",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "70",
+       "kind": "number",
+       "value": 70
+      },
+      "Test #": {
+       "raw": "83c",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "36",
+       "kind": "number",
+       "value": 36
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 74,
+     "run_id": "71",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "71",
+       "kind": "number",
+       "value": 71
+      },
+      "Test #": {
+       "raw": "84a",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "37",
+       "kind": "number",
+       "value": 37
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 75,
+     "run_id": "72",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "72",
+       "kind": "number",
+       "value": 72
+      },
+      "Test #": {
+       "raw": "84b",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "37",
+       "kind": "number",
+       "value": 37
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 76,
+     "run_id": "73",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "73",
+       "kind": "number",
+       "value": 73
+      },
+      "Test #": {
+       "raw": "86a",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 77,
+     "run_id": "74",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "74",
+       "kind": "number",
+       "value": 74
+      },
+      "Test #": {
+       "raw": "86b",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 78,
+     "run_id": "75",
+     "cells": {
+      "Date": {
+       "raw": "8/16/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "229",
+       "kind": "number",
+       "value": 229
+      },
+      "As Run Test #": {
+       "raw": "75",
+       "kind": "number",
+       "value": 75
+      },
+      "Test #": {
+       "raw": "86c",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      },
+      "Fuel Sample Material": {
+       "raw": "Japan Wax Candle   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "Japan Wax Candle   wake",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 79,
+     "run_id": "76",
+     "cells": {
+      "Date": {
+       "raw": "8/21/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "234",
+       "kind": "number",
+       "value": 234
+      },
+      "As Run Test #": {
+       "raw": "76",
+       "kind": "number",
+       "value": 76
+      },
+      "Test #": {
+       "raw": "70",
+       "kind": "number",
+       "value": 70
+      },
+      "Sample #": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA slab",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 80,
+     "run_id": "77",
+     "cells": {
+      "Date": {
+       "raw": "8/21/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "234",
+       "kind": "number",
+       "value": 234
+      },
+      "As Run Test #": {
+       "raw": "77",
+       "kind": "number",
+       "value": 77
+      },
+      "Test #": {
+       "raw": "71",
+       "kind": "number",
+       "value": 71
+      },
+      "Sample #": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA slab",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 81,
+     "run_id": "78",
+     "cells": {
+      "Date": {
+       "raw": "8/21/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "234",
+       "kind": "number",
+       "value": 234
+      },
+      "As Run Test #": {
+       "raw": "78",
+       "kind": "number",
+       "value": 78
+      },
+      "Test #": {
+       "raw": "74",
+       "kind": "number",
+       "value": 74
+      },
+      "Sample #": {
+       "raw": "41",
+       "kind": "number",
+       "value": 41
+      },
+      "Fuel Sample Material": {
+       "raw": "paraffin wax slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "paraffin wax slab",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 82,
+     "run_id": "79",
+     "cells": {
+      "Date": {
+       "raw": "8/21/2012",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "234",
+       "kind": "number",
+       "value": 234
+      },
+      "As Run Test #": {
+       "raw": "79",
+       "kind": "number",
+       "value": 79
+      },
+      "Test #": {
+       "raw": "75",
+       "kind": "number",
+       "value": 75
+      },
+      "Sample #": {
+       "raw": "41",
+       "kind": "number",
+       "value": 41
+      },
+      "Fuel Sample Material": {
+       "raw": "parrafin wax slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "parrafin wax slab",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 83,
+     "run_id": "80",
+     "cells": {
+      "Date": {
+       "raw": "4/5/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "95",
+       "kind": "number",
+       "value": 95
+      },
+      "As Run Test #": {
+       "raw": "80",
+       "kind": "number",
+       "value": 80
+      },
+      "Test #": {
+       "raw": "98",
+       "kind": "number",
+       "value": 98
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 84,
+     "run_id": "81",
+     "cells": {
+      "Date": {
+       "raw": "4/5/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "95",
+       "kind": "number",
+       "value": 95
+      },
+      "As Run Test #": {
+       "raw": "81",
+       "kind": "number",
+       "value": 81
+      },
+      "Test #": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 85,
+     "run_id": "82",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "As Run Test #": {
+       "raw": "82",
+       "kind": "number",
+       "value": 82
+      },
+      "Test #": {
+       "raw": "114",
+       "kind": "number",
+       "value": 114
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "PMMA 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "PMMA 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 86,
+     "run_id": "83",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "As Run Test #": {
+       "raw": "83",
+       "kind": "number",
+       "value": 83
+      },
+      "Test #": {
+       "raw": "115",
+       "kind": "number",
+       "value": 115
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 87,
+     "run_id": "84",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "As Run Test #": {
+       "raw": "84",
+       "kind": "number",
+       "value": 84
+      },
+      "Test #": {
+       "raw": "116",
+       "kind": "number",
+       "value": 116
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 88,
+     "run_id": "85",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "As Run Test #": {
+       "raw": "85",
+       "kind": "number",
+       "value": 85
+      },
+      "Test #": {
+       "raw": "117",
+       "kind": "number",
+       "value": 117
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 89,
+     "run_id": "85",
+     "cells": {
+      "Date": {
+       "raw": "4/9/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "As Run Test #": {
+       "raw": "85",
+       "kind": "number",
+       "value": 85
+      },
+      "Test #": {
+       "raw": "117a",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 90,
+     "run_id": "86",
+     "cells": {
+      "Date": {
+       "raw": "4/12/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "102",
+       "kind": "number",
+       "value": 102
+      },
+      "As Run Test #": {
+       "raw": "86",
+       "kind": "number",
+       "value": 86
+      },
+      "Test #": {
+       "raw": "100",
+       "kind": "number",
+       "value": 100
+      },
+      "Sample #": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 2 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 2 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 91,
+     "run_id": "87",
+     "cells": {
+      "Date": {
+       "raw": "4/12/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "102",
+       "kind": "number",
+       "value": 102
+      },
+      "As Run Test #": {
+       "raw": "87",
+       "kind": "number",
+       "value": 87
+      },
+      "Test #": {
+       "raw": "85",
+       "kind": "number",
+       "value": 85
+      },
+      "Sample #": {
+       "raw": "43",
+       "kind": "number",
+       "value": 43
+      },
+      "Fuel Sample Material": {
+       "raw": "candle    paraffin   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle    paraffin   wake",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 92,
+     "run_id": "88",
+     "cells": {
+      "Date": {
+       "raw": "4/12/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "102",
+       "kind": "number",
+       "value": 102
+      },
+      "As Run Test #": {
+       "raw": "88",
+       "kind": "number",
+       "value": 88
+      },
+      "Test #": {
+       "raw": "93",
+       "kind": "number",
+       "value": 93
+      },
+      "Sample #": {
+       "raw": "43",
+       "kind": "number",
+       "value": 43
+      },
+      "Fuel Sample Material": {
+       "raw": "candle    paraffin   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle    paraffin   wake",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 93,
+     "run_id": "89",
+     "cells": {
+      "Date": {
+       "raw": "4/16/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "106",
+       "kind": "number",
+       "value": 106
+      },
+      "As Run Test #": {
+       "raw": "89",
+       "kind": "number",
+       "value": 89
+      },
+      "Test #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Sample #": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 94,
+     "run_id": "90",
+     "cells": {
+      "Date": {
+       "raw": "4/16/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "106",
+       "kind": "number",
+       "value": 106
+      },
+      "As Run Test #": {
+       "raw": "90",
+       "kind": "number",
+       "value": 90
+      },
+      "Test #": {
+       "raw": "27",
+       "kind": "number",
+       "value": 27
+      },
+      "Sample #": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 95,
+     "run_id": "91",
+     "cells": {
+      "Date": {
+       "raw": "4/16/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "106",
+       "kind": "number",
+       "value": 106
+      },
+      "As Run Test #": {
+       "raw": "91",
+       "kind": "number",
+       "value": 91
+      },
+      "Test #": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      },
+      "Sample #": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma 1 cm",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma 1 cm",
+       "material": "PMMA",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 96,
+     "run_id": "89",
+     "cells": {
+      "Date": {
+       "raw": "4/23/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "As Run Test #": {
+       "raw": "89",
+       "kind": "number",
+       "value": 89
+      },
+      "Test #": {
+       "raw": "87",
+       "kind": "number",
+       "value": 87
+      },
+      "Sample #": {
+       "raw": "40",
+       "kind": "number",
+       "value": 40
+      },
+      "Fuel Sample Material": {
+       "raw": "candle   Japan wax",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle   Japan wax",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 97,
+     "run_id": "90",
+     "cells": {
+      "Date": {
+       "raw": "4/23/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "As Run Test #": {
+       "raw": "90",
+       "kind": "number",
+       "value": 90
+      },
+      "Test #": {
+       "raw": "103",
+       "kind": "number",
+       "value": 103
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 98,
+     "run_id": "91",
+     "cells": {
+      "Date": {
+       "raw": "4/23/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "As Run Test #": {
+       "raw": "91",
+       "kind": "number",
+       "value": 91
+      },
+      "Test #": {
+       "raw": "104",
+       "kind": "number",
+       "value": 104
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 99,
+     "run_id": "92",
+     "cells": {
+      "Date": {
+       "raw": "4/23/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "As Run Test #": {
+       "raw": "92",
+       "kind": "number",
+       "value": 92
+      },
+      "Test #": {
+       "raw": "105",
+       "kind": "number",
+       "value": 105
+      },
+      "Sample #": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 100,
+     "run_id": "93",
+     "cells": {
+      "Date": {
+       "raw": "4/26/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "As Run Test #": {
+       "raw": "93",
+       "kind": "number",
+       "value": 93
+      },
+      "Test #": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      },
+      "Sample #": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm sphere   wake",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm sphere   wake",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 101,
+     "run_id": "94",
+     "cells": {
+      "Date": {
+       "raw": "4/26/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "116",
+       "kind": "number",
+       "value": 116
+      },
+      "As Run Test #": {
+       "raw": "94",
+       "kind": "number",
+       "value": 94
+      },
+      "Test #": {
+       "raw": "39",
+       "kind": "number",
+       "value": 39
+      },
+      "Sample #": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm wake sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm wake sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 102,
+     "run_id": "95",
+     "cells": {
+      "Date": {
+       "raw": "4/26/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "116",
+       "kind": "number",
+       "value": 116
+      },
+      "As Run Test #": {
+       "raw": "95",
+       "kind": "number",
+       "value": 95
+      },
+      "Test #": {
+       "raw": "40",
+       "kind": "number",
+       "value": 40
+      },
+      "Sample #": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Fuel Sample Material": {
+       "raw": "1 cm wake sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "1 cm wake sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 1,
+         "unit": "cm",
+         "text": "1 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 103,
+     "run_id": "96",
+     "cells": {
+      "Date": {
+       "raw": "4/26/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "116",
+       "kind": "number",
+       "value": 116
+      },
+      "As Run Test #": {
+       "raw": "96",
+       "kind": "number",
+       "value": 96
+      },
+      "Test #": {
+       "raw": "72",
+       "kind": "number",
+       "value": 72
+      },
+      "Sample #": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma slab opposed",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma slab opposed",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 104,
+     "run_id": "97",
+     "cells": {
+      "Date": {
+       "raw": "4/26/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "116",
+       "kind": "number",
+       "value": 116
+      },
+      "As Run Test #": {
+       "raw": "97",
+       "kind": "number",
+       "value": 97
+      },
+      "Test #": {
+       "raw": "73",
+       "kind": "number",
+       "value": 73
+      },
+      "Sample #": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma slab   oppsed",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma slab   oppsed",
+       "material": "PMMA",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 105,
+     "run_id": "98",
+     "cells": {
+      "Date": {
+       "raw": "4/29/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "119",
+       "kind": "number",
+       "value": 119
+      },
+      "As Run Test #": {
+       "raw": "98",
+       "kind": "number",
+       "value": 98
+      },
+      "Test #": {
+       "raw": "118",
+       "kind": "number",
+       "value": 118
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm pmma sphere ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm pmma sphere",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 106,
+     "run_id": "99",
+     "cells": {
+      "Date": {
+       "raw": "4/29/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "119",
+       "kind": "number",
+       "value": 119
+      },
+      "As Run Test #": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "Test #": {
+       "raw": "119",
+       "kind": "number",
+       "value": 119
+      },
+      "Sample #": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm pmma sphere ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm pmma sphere",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 107,
+     "run_id": "100",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "122",
+       "kind": "number",
+       "value": 122
+      },
+      "As Run Test #": {
+       "raw": "100",
+       "kind": "number",
+       "value": 100
+      },
+      "Test #": {
+       "raw": "89",
+       "kind": "number",
+       "value": 89
+      },
+      "Sample #": {
+       "raw": "44",
+       "kind": "number",
+       "value": 44
+      },
+      "Fuel Sample Material": {
+       "raw": "parrafin wax candle",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "parrafin wax candle",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 108,
+     "run_id": "101",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "122",
+       "kind": "number",
+       "value": 122
+      },
+      "As Run Test #": {
+       "raw": "101",
+       "kind": "number",
+       "value": 101
+      },
+      "Test #": {
+       "raw": "95",
+       "kind": "number",
+       "value": 95
+      },
+      "Sample #": {
+       "raw": "44",
+       "kind": "number",
+       "value": 44
+      },
+      "Fuel Sample Material": {
+       "raw": "paraffin wax candle",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "paraffin wax candle",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 109,
+     "run_id": "102",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "122",
+       "kind": "number",
+       "value": 122
+      },
+      "As Run Test #": {
+       "raw": "102",
+       "kind": "number",
+       "value": 102
+      },
+      "Test #": {
+       "raw": "92",
+       "kind": "number",
+       "value": 92
+      },
+      "Sample #": {
+       "raw": "40",
+       "kind": "number",
+       "value": 40
+      },
+      "Fuel Sample Material": {
+       "raw": "candle   Japan wax",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "candle   Japan wax",
+       "material": "Japan Wax",
+       "shape": "candle"
+      }
+     }
+    },
+    {
+     "line": 110,
+     "run_id": "103",
+     "cells": {
+      "Date": {
+       "raw": "5/2/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "122",
+       "kind": "number",
+       "value": 122
+      },
+      "As Run Test #": {
+       "raw": "103",
+       "kind": "number",
+       "value": 103
+      },
+      "Test #": {
+       "raw": "78",
+       "kind": "number",
+       "value": 78
+      },
+      "Sample #": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      },
+      "Fuel Sample Material": {
+       "raw": "paraffin wax slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "paraffin wax slab",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 111,
+     "run_id": "104",
+     "cells": {
+      "Date": {
+       "raw": "5/15/2103",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "135",
+       "kind": "number",
+       "value": 135
+      },
+      "As Run Test #": {
+       "raw": "104",
+       "kind": "number",
+       "value": 104
+      },
+      "Test #": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm pmma sphere ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm pmma sphere",
+       "material": "PMMA",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 112,
+     "run_id": "105",
+     "cells": {
+      "Date": {
+       "raw": "5/15/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "135",
+       "kind": "number",
+       "value": 135
+      },
+      "As Run Test #": {
+       "raw": "105",
+       "kind": "number",
+       "value": 105
+      },
+      "Test #": {
+       "raw": "51",
+       "kind": "number",
+       "value": 51
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 113,
+     "run_id": "106",
+     "cells": {
+      "Date": {
+       "raw": "5/15/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "135",
+       "kind": "number",
+       "value": 135
+      },
+      "As Run Test #": {
+       "raw": "106",
+       "kind": "number",
+       "value": 106
+      },
+      "Test #": {
+       "raw": "52",
+       "kind": "number",
+       "value": 52
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 114,
+     "run_id": "107",
+     "cells": {
+      "Date": {
+       "raw": "5/15/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "135",
+       "kind": "number",
+       "value": 135
+      },
+      "As Run Test #": {
+       "raw": "107",
+       "kind": "number",
+       "value": 107
+      },
+      "Test #": {
+       "raw": "53",
+       "kind": "number",
+       "value": 53
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 115,
+     "run_id": "108",
+     "cells": {
+      "Date": {
+       "raw": "5/17/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "137",
+       "kind": "number",
+       "value": 137
+      },
+      "As Run Test #": {
+       "raw": "108",
+       "kind": "number",
+       "value": 108
+      },
+      "Test #": {
+       "raw": "106",
+       "kind": "number",
+       "value": 106
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 116,
+     "run_id": "109",
+     "cells": {
+      "Date": {
+       "raw": "5/17/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "137",
+       "kind": "number",
+       "value": 137
+      },
+      "As Run Test #": {
+       "raw": "109",
+       "kind": "number",
+       "value": 109
+      },
+      "Test #": {
+       "raw": "107",
+       "kind": "number",
+       "value": 107
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 117,
+     "run_id": "110",
+     "cells": {
+      "Date": {
+       "raw": "5/17/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "137",
+       "kind": "number",
+       "value": 137
+      },
+      "As Run Test #": {
+       "raw": "110",
+       "kind": "number",
+       "value": 110
+      },
+      "Test #": {
+       "raw": "108",
+       "kind": "number",
+       "value": 108
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 118,
+     "run_id": "111",
+     "cells": {
+      "Date": {
+       "raw": "6/1/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "137",
+       "kind": "number",
+       "value": 137
+      },
+      "As Run Test #": {
+       "raw": "111",
+       "kind": "number",
+       "value": 111
+      },
+      "Test #": {
+       "raw": "109",
+       "kind": "number",
+       "value": 109
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "2 cm sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "2 cm sphere",
+       "shape": "sphere",
+       "sizes": [
+        {
+         "value": 2,
+         "unit": "cm",
+         "text": "2 cm"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "line": 119,
+     "run_id": "112",
+     "cells": {
+      "Date": {
+       "raw": "6/1/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "150",
+       "kind": "number",
+       "value": 150
+      },
+      "As Run Test #": {
+       "raw": "112",
+       "kind": "number",
+       "value": 112
+      },
+      "Test #": {
+       "raw": "79",
+       "kind": "number",
+       "value": 79
+      },
+      "Sample #": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      },
+      "Fuel Sample Material": {
+       "raw": "flat wax slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "flat wax slab",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 120,
+     "run_id": "113",
+     "cells": {
+      "Date": {
+       "raw": "6/1/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "150",
+       "kind": "number",
+       "value": 150
+      },
+      "As Run Test #": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "Test #": {
+       "raw": "80",
+       "kind": "number",
+       "value": 80
+      },
+      "Sample #": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      },
+      "Fuel Sample Material": {
+       "raw": "flat wax slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "flat wax slab",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 121,
+     "run_id": "114",
+     "cells": {
+      "Date": {
+       "raw": "6/1/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "150",
+       "kind": "number",
+       "value": 150
+      },
+      "As Run Test #": {
+       "raw": "114",
+       "kind": "number",
+       "value": 114
+      },
+      "Test #": {
+       "raw": "75",
+       "kind": "number",
+       "value": 75
+      },
+      "Sample #": {
+       "raw": "41",
+       "kind": "number",
+       "value": 41
+      },
+      "Fuel Sample Material": {
+       "raw": "flat wax slab",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "flat wax slab",
+       "shape": "slab"
+      }
+     }
+    },
+    {
+     "line": 122,
+     "run_id": "115",
+     "cells": {
+      "Date": {
+       "raw": "6/1/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "150",
+       "kind": "number",
+       "value": 150
+      },
+      "As Run Test #": {
+       "raw": "115",
+       "kind": "number",
+       "value": 115
+      },
+      "Test #": {
+       "raw": "53",
+       "kind": "number",
+       "value": 53
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma sphere",
+       "material": "PMMA",
+       "shape": "sphere"
+      }
+     }
+    },
+    {
+     "line": 123,
+     "run_id": "116",
+     "cells": {
+      "Date": {
+       "raw": "6/1/2013",
+       "kind": "text"
+      },
+      "GMT": {
+       "raw": "150",
+       "kind": "number",
+       "value": 150
+      },
+      "As Run Test #": {
+       "raw": "116",
+       "kind": "number",
+       "value": 116
+      },
+      "Test #": {
+       "raw": "53a",
+       "kind": "text"
+      },
+      "Sample #": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Fuel Sample Material": {
+       "raw": "pmma sphere",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Sample Material",
+       "role": "condition",
+       "text": "pmma sphere",
+       "material": "PMMA",
+       "shape": "sphere"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

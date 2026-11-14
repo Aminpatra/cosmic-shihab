@@ -4,9 +4,11 @@
 
 Reads  .cache/psi/raw/        (written by pipeline/harvest.py)
        datasets/              (the experimental tables)
+       research/investigation_tags.csv   (hand-written tags, each with its source)
 Writes backend/data/investigations/<ACCESSION>.json   one per investigation
        backend/data/files.csv                         one row per PSI file
        datasets/SOURCES.csv                           where each dataset file came from
+       research/investigation_inventory.csv           one row per investigation, tags included
 
 Every value copied from PSI keeps PSI's own field name and is not changed.
 Anything FLARE computed sits under the "derived" key. Contact e-mail addresses
@@ -32,6 +34,7 @@ import psi_client as psi  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, ".cache", "psi", "raw")
 DATASETS = os.path.join(ROOT, "datasets")
+RESEARCH = os.path.join(ROOT, "research")
 OUT = os.path.join(ROOT, "backend", "data")
 
 # Copied from the PSI record exactly as given.
@@ -54,6 +57,19 @@ KINDS = {
     "text": {".txt", ".log", ".asc"},
     "numeric": {".dat"},
 }
+# Allowed values of each tag in research/investigation_tags.csv; "; " joins several.
+# hardware_facility is free text. Every tag needs a non-empty *_source column.
+TAG_VALUES = {
+    "platform": {"ISS", "Cygnus (after leaving the ISS)", "computation",
+                 "ground laboratory and computation"},
+    "fuel_phase": {"solid", "liquid", "gas", "none (no fuel burned)", "not stated"},
+    "fire_safety_role": {"prevention", "detection", "suppression", "not stated"},
+    "gravity_level": {"microgravity", "normal gravity", "not stated"},
+    "flare_data": {"run table", "test-day log", "test matrix", "figure index",
+                   "catalogue metadata only"},
+}
+TAGS = ("hardware_facility", *TAG_VALUES)
+
 MANIFEST_COLUMNS = (
     "accession", "file_id", "file_name", "category", "subcategory",
     "extension", "kind", "bytes", "version", "updated",
@@ -92,7 +108,29 @@ def retrieved_on(path: str) -> str:
     return stamp.strftime("%Y-%m-%d")
 
 
-def normalize(accession: str) -> tuple[dict, list[dict]]:
+def load_tags() -> dict[str, dict]:
+    """Read the hand-written tags, refusing unknown values and missing sources."""
+    path = os.path.join(RESEARCH, "investigation_tags.csv")
+    with open(path, newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    tags = {}
+    for row in rows:
+        accession = row["accession"]
+        for tag in TAGS:
+            if not row[tag].strip() or not row[f"{tag}_source"].strip():
+                raise ValueError(f"{path}: {accession} lacks {tag} or its source")
+            allowed = TAG_VALUES.get(tag)
+            if allowed and not set(row[tag].split("; ")) <= allowed:
+                raise ValueError(f"{path}: {accession} {tag}={row[tag]!r} is not one of {allowed}")
+        tags[accession] = {
+            "values": {tag: row[tag] for tag in TAGS},
+            "sources": {tag: row[f"{tag}_source"] for tag in TAGS},
+            "notes": row["notes"],
+        }
+    return tags
+
+
+def normalize(accession: str, tags: dict) -> tuple[dict, list[dict]]:
     record_path = os.path.join(RAW, f"inv_{accession}.json")
     record = psi.check_record(load(record_path, accession), accession)
     missing = [key for key in COPIED if key not in record]
@@ -169,6 +207,12 @@ def normalize(accession: str) -> tuple[dict, list[dict]]:
         "bytes_listed": int(psi.listed_bytes(tree)),
         "files_by_kind": dict(sorted(by_kind.items())),
         "experimental_tables": tables,
+        "tags": {
+            "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude "
+                    "Code (Claude Opus 5.5); each tag cites a field of this record "
+                    "(record.<field>) or a dataset file.",
+            **tags,
+        },
     }
     return out, rows
 
@@ -219,6 +263,30 @@ def write_sources(investigations: dict[str, dict], manifest: list[dict]) -> None
         writer.writerows(lines)
 
 
+def write_inventory(investigations: dict[str, dict]) -> None:
+    """One row per investigation: PSI's facts, FLARE's counts and the tags."""
+    columns = ("accession", "acronym", "title", "project_type", "flight_program",
+               "start_date", "end_date", "doi_url", "page_url", "licence", "file_count",
+               "bytes_listed", "experimental_tables", "table_rows", *TAGS, "retrieved")
+    with open(os.path.join(RESEARCH, "investigation_inventory.csv"), "w", newline="",
+              encoding="utf-8") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow(columns)
+        for accession, record in investigations.items():
+            derived = record["derived"]
+            tables = derived["experimental_tables"]
+            writer.writerow([
+                accession, record["investigationAcronym"], record["title"],
+                record["projectType"], record["flightProgram"],
+                record["investigationStartDate"], record["investigationEndDate"],
+                derived["doi_url"], derived["page_url"],
+                record["licenseIdentifier"] or "not stated",
+                derived["file_count"], derived["bytes_listed"], len(tables),
+                sum(table["rows"] for table in tables),
+                *(derived["tags"]["values"][tag] for tag in TAGS), derived["retrieved"],
+            ])
+
+
 def main() -> None:
     accessions = sorted(
         (name[4:-5] for name in os.listdir(RAW) if name.startswith("inv_") and name.endswith(".json")),
@@ -226,10 +294,13 @@ def main() -> None:
     )
     if not accessions:
         sys.exit(f"nothing in {RAW}; run pipeline/harvest.py first")
+    tags = load_tags()
+    if set(tags) != set(accessions):
+        sys.exit(f"tags and PSI records differ: {sorted(set(tags) ^ set(accessions))}")
     os.makedirs(os.path.join(OUT, "investigations"), exist_ok=True)
     investigations, manifest = {}, []
     for accession in accessions:
-        investigation, rows = normalize(accession)
+        investigation, rows = normalize(accession, tags[accession])
         investigations[accession] = investigation
         manifest.extend(rows)
         path = os.path.join(OUT, "investigations", f"{accession}.json")
@@ -241,6 +312,7 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(manifest)
     write_sources(investigations, manifest)
+    write_inventory(investigations)
     total = sum(row["bytes"] for row in manifest)
     print(f"{len(investigations)} investigations, {len(manifest)} files, {total / 1e12:.2f} TB")
 

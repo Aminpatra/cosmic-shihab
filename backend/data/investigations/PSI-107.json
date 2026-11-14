@@ -153,6 +153,26 @@
         "rows": 469,
         "columns": 9
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Microgravity Science Glovebox (MSG) with a flow duct and burner nozzles",
+        "platform": "ISS",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; record.approach: 'a flow duct with integrated nozzles'",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.approach: 'methane, ethylene, propane, propylene, and propylene mixtures'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.objective: 'observing flames in a microgravity environment aboard the International Space Station'",
+        "flare_data": "datasets: one row per flame"
+      },
+      "notes": "record.subResearchArea is 'Fire Safety' but no role is named. record.objective also mentions 'analogous ground experiments'; the table does not say whether any rows come from them."
+    }
   }
 }
