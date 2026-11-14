@@ -145,6 +145,26 @@
         "bytes": 281272
       }
     },
-    "experimental_tables": []
+    "experimental_tables": [],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "not applicable (OpenFOAM simulation validated against FLEX)",
+        "platform": "computation",
+        "fuel_phase": "liquid",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "catalogue metadata only"
+      },
+      "sources": {
+        "hardware_facility": "record.projectType: 'Ground Investigation'; record.approach",
+        "platform": "record.projectType: 'Ground Investigation'",
+        "fuel_phase": "record.approach: 'n-alkane droplet cool flames'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.approach: 'droplet cool flames in microgravity'",
+        "flare_data": "no experimental table at PSI"
+      },
+      "notes": ""
+    }
   }
 }

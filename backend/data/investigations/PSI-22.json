@@ -274,6 +274,26 @@
         "rows": 32,
         "columns": 10
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Combustion Integrated Rack (CIR) with the ACME modular hardware",
+        "platform": "ISS",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "test-day log"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.approach: 'conducted with gas-fueled flames'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "table note: 'the day change on ISS'",
+        "flare_data": "datasets: one row per test day with the number of flames ignited"
+      },
+      "notes": ""
+    }
   }
 }

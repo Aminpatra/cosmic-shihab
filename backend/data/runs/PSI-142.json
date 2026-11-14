@@ -1,0 +1,234 @@
+{
+ "accession": "PSI-142",
+ "tables": [
+  {
+   "file": "PSI-142_Experimental table_Data Summary Table.csv",
+   "psi_file_name": "PSI-142_Experimental table_Data Summary Table.csv",
+   "doi_url": "https://doi.org/10.60555/80qf-vj95",
+   "encoding": "utf-8",
+   "row_is": "published_figure",
+   "row_count": 8,
+   "columns": [
+    {
+     "name": "Data ID",
+     "unit": null
+    },
+    {
+     "name": "Data Description",
+     "unit": null
+    },
+    {
+     "name": "Reference Publication Link",
+     "unit": null
+    },
+    {
+     "name": "Figure ID in Reference",
+     "unit": null
+    }
+   ],
+   "standard_columns": {},
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "1",
+     "cells": {
+      "Data ID": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Data Description": {
+       "raw": "CFE limit with ozone",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "http://dx.doi.org/10.1016/j.combustflame.2017.01.028",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 3,
+     "run_id": "2",
+     "cells": {
+      "Data ID": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Data Description": {
+       "raw": "CFE limit without ozone",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "http://dx.doi.org/10.1016/j.combustflame.2017.01.028",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 4,
+     "run_id": "3",
+     "cells": {
+      "Data ID": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Data Description": {
+       "raw": "CFE and HFE Predicted vs Measured ",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "http://dx.doi.org/10.1016/j.combustflame.2017.01.028",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 5,
+     "run_id": "4",
+     "cells": {
+      "Data ID": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Data Description": {
+       "raw": "Measured and computed DME/O2/O3 CFE and HFE",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "https://doi.org/10.1016/j.proci.2018.07.050",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 6,
+     "run_id": "5",
+     "cells": {
+      "Data ID": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Data Description": {
+       "raw": "CH2O PLIF and thermometry",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "https://doi.org/10.1016/j.combustflame.2018.03.013",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 7,
+     "run_id": "6",
+     "cells": {
+      "Data ID": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Data Description": {
+       "raw": "nC7/nC10/nC12 chemiluminescence",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "https://doi.org/10.1016/j.proci.2018.06.161",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 8,
+     "run_id": "7",
+     "cells": {
+      "Data ID": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Data Description": {
+       "raw": "nC12 chemiluminescence",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "https://doi.org/10.1016/j.proci.2018.06.162",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 9,
+     "run_id": "8",
+     "cells": {
+      "Data ID": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Data Description": {
+       "raw": "nC12 thermometry",
+       "kind": "text"
+      },
+      "Reference Publication Link": {
+       "raw": "https://doi.org/10.1016/j.proci.2018.06.163",
+       "kind": "text"
+      },
+      "Figure ID in Reference": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      }
+     },
+     "standard": {}
+    }
+   ]
+  }
+ ]
+}

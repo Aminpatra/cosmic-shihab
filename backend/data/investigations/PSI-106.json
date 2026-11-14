@@ -147,6 +147,26 @@
         "rows": 12,
         "columns": 2
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Fan-driven flow duct with exchangeable burner tubes, in the Microgravity Science Glovebox (MSG)",
+        "platform": "ISS",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "test-day log"
+      },
+      "sources": {
+        "hardware_facility": "record.approach: 'a fan-driven flow duct, exchangeable burner tubes'; record.experimentHardware is blank; MSG from the challenge page",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.approach: 'methane, ethylene, and nitrogen-diluted mixtures'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.flightProgram: 'International Space Station (ISS)'",
+        "flare_data": "datasets: one row per test day with the fuel only"
+      },
+      "notes": "record.experimentHardware, subResearchArea and both investigation dates are blank at PSI."
+    }
   }
 }

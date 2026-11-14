@@ -1,0 +1,389 @@
+{
+ "accession": "PSI-102",
+ "tables": [
+  {
+   "file": "PSI-102_Experimental table_SAME.csv",
+   "psi_file_name": "PSI-102_Experimental table_SAME.csv",
+   "doi_url": "https://doi.org/10.60555/gd4k-8h62",
+   "encoding": "utf-8",
+   "row_is": "test",
+   "row_count": 8,
+   "columns": [
+    {
+     "name": "Sample #",
+     "unit": null
+    },
+    {
+     "name": "Sample Material  ",
+     "unit": null
+    },
+    {
+     "name": "Air Flow (cm/s)",
+     "unit": "cm/s"
+    },
+    {
+     "name": "Weight loss rate (mg/min)",
+     "unit": "mg/min"
+    },
+    {
+     "name": "Aging Duration (minutes)",
+     "unit": "min"
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Sample Material  ",
+    "flow_velocity": "Air Flow (cm/s)"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "1",
+     "cells": {
+      "Sample #": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Sample Material  ": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Aging Duration (minutes)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "value": 5.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "2",
+     "cells": {
+      "Sample #": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Sample Material  ": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Aging Duration (minutes)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "value": 5.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": "3",
+     "cells": {
+      "Sample #": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Sample Material  ": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Aging Duration (minutes)": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "value": 5.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": "4",
+     "cells": {
+      "Sample #": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Sample Material  ": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Aging Duration (minutes)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "value": 10.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": "5",
+     "cells": {
+      "Sample #": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Sample Material  ": {
+       "raw": "Kapton: same conditions as 1-4",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Aging Duration (minutes)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Kapton: same conditions as 1-4",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": "6",
+     "cells": {
+      "Sample #": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Sample Material  ": {
+       "raw": "Silicone Rubber: same conditions as 1-4",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Aging Duration (minutes)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Silicone Rubber: same conditions as 1-4",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": "7",
+     "cells": {
+      "Sample #": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Sample Material  ": {
+       "raw": "Lampwick: same conditions as 1-4",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Aging Duration (minutes)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Lampwick: same conditions as 1-4",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": "8",
+     "cells": {
+      "Sample #": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Sample Material  ": {
+       "raw": "Dibutyl Phthalate: same conditions as 1-4",
+       "kind": "text"
+      },
+      "Air Flow (cm/s)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Weight loss rate (mg/min)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Aging Duration (minutes)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Material  ",
+       "role": "condition",
+       "text": "Dibutyl Phthalate: same conditions as 1-4",
+       "material": "Dibutyl Phthalate"
+      },
+      "flow_velocity": {
+       "column": "Air Flow (cm/s)",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

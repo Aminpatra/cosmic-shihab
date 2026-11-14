@@ -128,6 +128,26 @@
         "rows": 179,
         "columns": 18
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Combustion Integrated Rack (CIR) with the ACME modular hardware",
+        "platform": "ISS",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware",
+        "platform": "record.approach",
+        "fuel_phase": "record.objective: 'propane, n-butane, and n-pentane'; table: ethane, propane, butane",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.approach: 'spherical diffusion flame tests aboard the International Space Station'",
+        "flare_data": "datasets: two CFI-G tables, one row per test"
+      },
+      "notes": "The table's fuels (ethane, propane, butane) differ from the fuels in record.objective (propane, n-butane, n-pentane)."
+    }
   }
 }

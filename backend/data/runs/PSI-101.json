@@ -1,0 +1,7322 @@
+{
+ "accession": "PSI-101",
+ "tables": [
+  {
+   "file": "PSI-101_Experimental table_SAME-R.csv",
+   "psi_file_name": "PSI-101_Experimental table_SAME-R.csv",
+   "doi_url": "https://doi.org/10.60555/2np7-jv14",
+   "encoding": "utf-8",
+   "row_is": "test",
+   "row_count": 109,
+   "columns": [
+    {
+     "name": "Sample Type",
+     "unit": null
+    },
+    {
+     "name": "SAME Test #",
+     "unit": null
+    },
+    {
+     "name": "Description",
+     "unit": null
+    },
+    {
+     "name": "Date",
+     "unit": null
+    },
+    {
+     "name": "Inlet velocity (cm/s)",
+     "unit": "cm/s"
+    },
+    {
+     "name": "Rt/R0",
+     "unit": null
+    },
+    {
+     "name": "Duration (sec)",
+     "unit": "s"
+    },
+    {
+     "name": "Primary aging time (sec)",
+     "unit": "s"
+    },
+    {
+     "name": "Primary mixing time (sec)",
+     "unit": "s"
+    },
+    {
+     "name": "Net aging time (sec)",
+     "unit": "s"
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Sample Type",
+    "flow_velocity": "Inlet velocity (cm/s)"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "51",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "51",
+       "kind": "number",
+       "value": 51
+      },
+      "Description": {
+       "raw": "B.L. new formula",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "21-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "51a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "51a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "B.L. new formula",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "22-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "261",
+       "kind": "number",
+       "value": 261
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": "61",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "61",
+       "kind": "number",
+       "value": 61
+      },
+      "Description": {
+       "raw": "Baseline Aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "2-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": "61a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "61a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "2-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "807",
+       "kind": "number",
+       "value": 807
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": "62",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "62",
+       "kind": "number",
+       "value": 62
+      },
+      "Description": {
+       "raw": "High Temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "2-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "39",
+       "kind": "number",
+       "value": 39
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": "62a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "62a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "2-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "808",
+       "kind": "number",
+       "value": 808
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": "70",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "70",
+       "kind": "number",
+       "value": 70
+      },
+      "Description": {
+       "raw": "High temp aged STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "720",
+       "kind": "number",
+       "value": 720
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "747",
+       "kind": "number",
+       "value": 747
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": "73",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "73",
+       "kind": "number",
+       "value": 73
+      },
+      "Description": {
+       "raw": "Baseline Aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 10,
+     "run_id": "73a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "73a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "560",
+       "kind": "number",
+       "value": 560
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 11,
+     "run_id": "75",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "75",
+       "kind": "number",
+       "value": 75
+      },
+      "Description": {
+       "raw": "Mid Temp aging (no Ptrak)",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "32",
+       "kind": "number",
+       "value": 32
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 12,
+     "run_id": "75a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "75a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "563",
+       "kind": "number",
+       "value": 563
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 13,
+     "run_id": "77",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "77",
+       "kind": "number",
+       "value": 77
+      },
+      "Description": {
+       "raw": "High Temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 14,
+     "run_id": "77a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "77a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "559",
+       "kind": "number",
+       "value": 559
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 15,
+     "run_id": "85",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "85",
+       "kind": "number",
+       "value": 85
+      },
+      "Description": {
+       "raw": "Mid Temp aging run. Repeat 75",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 16,
+     "run_id": "85a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "85a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "563",
+       "kind": "number",
+       "value": 563
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 17,
+     "run_id": "90",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "90",
+       "kind": "number",
+       "value": 90
+      },
+      "Description": {
+       "raw": "Mid Temp aging reburn 85",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 18,
+     "run_id": "90a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "90a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "569",
+       "kind": "number",
+       "value": 569
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 19,
+     "run_id": "92",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "92",
+       "kind": "number",
+       "value": 92
+      },
+      "Description": {
+       "raw": "Baseline STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.38",
+       "kind": "number",
+       "value": 1.38
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "35",
+       "kind": "number",
+       "value": 35
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 20,
+     "run_id": "93",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "93",
+       "kind": "number",
+       "value": 93
+      },
+      "Description": {
+       "raw": "Mid Temp aging run 75 repeat",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "36",
+       "kind": "number",
+       "value": 36
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 21,
+     "run_id": "93a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "93a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "568",
+       "kind": "number",
+       "value": 568
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 22,
+     "run_id": "94",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "94",
+       "kind": "number",
+       "value": 94
+      },
+      "Description": {
+       "raw": "Mid Temp aging run mid high",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 23,
+     "run_id": "94a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "94a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "567",
+       "kind": "number",
+       "value": 567
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 24,
+     "run_id": "101",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "101",
+       "kind": "number",
+       "value": 101
+      },
+      "Description": {
+       "raw": "No flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "29",
+       "kind": "number",
+       "value": 29
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 25,
+     "run_id": "101a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "101a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "561",
+       "kind": "number",
+       "value": 561
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 26,
+     "run_id": "102",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "102",
+       "kind": "number",
+       "value": 102
+      },
+      "Description": {
+       "raw": "No flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "120",
+       "kind": "number",
+       "value": 120
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 27,
+     "run_id": "102a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "102a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "563",
+       "kind": "number",
+       "value": 563
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 28,
+     "run_id": "108",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "108",
+       "kind": "number",
+       "value": 108
+      },
+      "Description": {
+       "raw": "Low flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 1.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 29,
+     "run_id": "108a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "108a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Rt/R0": {
+       "raw": "1.48",
+       "kind": "number",
+       "value": 1.48
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "560",
+       "kind": "number",
+       "value": 560
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 1.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 30,
+     "run_id": "114",
+     "cells": {
+      "Sample Type": {
+       "raw": "Kapton",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "114",
+       "kind": "number",
+       "value": 114
+      },
+      "Description": {
+       "raw": "low flow run w STS no Ptrak",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Rt/R0": {
+       "raw": "1.43",
+       "kind": "number",
+       "value": 1.43
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Kapton",
+       "material": "Kapton"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 2.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 31,
+     "run_id": "48",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      },
+      "Description": {
+       "raw": "Low Temp",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "16-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Rt/R0": {
+       "raw": "1.304",
+       "kind": "number",
+       "value": 1.304
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "62",
+       "kind": "number",
+       "value": 62
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 32,
+     "run_id": "53",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "53",
+       "kind": "number",
+       "value": 53
+      },
+      "Description": {
+       "raw": "HighTemp",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "22-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "52",
+       "kind": "number",
+       "value": 52
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 33,
+     "run_id": "59",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "59",
+       "kind": "number",
+       "value": 59
+      },
+      "Description": {
+       "raw": "baseline aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.327",
+       "kind": "number",
+       "value": 1.327
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 34,
+     "run_id": "59a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "59a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.327",
+       "kind": "number",
+       "value": 1.327
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "856",
+       "kind": "number",
+       "value": 856
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 35,
+     "run_id": "60",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Description": {
+       "raw": "Htemp ageing",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "49",
+       "kind": "number",
+       "value": 49
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 36,
+     "run_id": "60a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "60a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "856",
+       "kind": "number",
+       "value": 856
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 37,
+     "run_id": "65",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "65",
+       "kind": "number",
+       "value": 65
+      },
+      "Description": {
+       "raw": "Baseline long aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.327",
+       "kind": "number",
+       "value": 1.327
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 38,
+     "run_id": "65a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "65a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.327",
+       "kind": "number",
+       "value": 1.327
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "1923",
+       "kind": "number",
+       "value": 1923
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 39,
+     "run_id": "66",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "66",
+       "kind": "number",
+       "value": 66
+      },
+      "Description": {
+       "raw": "High T aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.36",
+       "kind": "number",
+       "value": 1.36
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 40,
+     "run_id": "66a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "66a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.36",
+       "kind": "number",
+       "value": 1.36
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "837",
+       "kind": "number",
+       "value": 837
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 41,
+     "run_id": "67",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "67",
+       "kind": "number",
+       "value": 67
+      },
+      "Description": {
+       "raw": "High temp aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "720",
+       "kind": "number",
+       "value": 720
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "751",
+       "kind": "number",
+       "value": 751
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 42,
+     "run_id": "72",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "72",
+       "kind": "number",
+       "value": 72
+      },
+      "Description": {
+       "raw": "Baseline STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "25-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.327",
+       "kind": "number",
+       "value": 1.327
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "42",
+       "kind": "number",
+       "value": 42
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 43,
+     "run_id": "86",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "86",
+       "kind": "number",
+       "value": 86
+      },
+      "Description": {
+       "raw": "Mid temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.345",
+       "kind": "number",
+       "value": 1.345
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 44,
+     "run_id": "86a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "86a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.345",
+       "kind": "number",
+       "value": 1.345
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "628",
+       "kind": "number",
+       "value": 628
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 45,
+     "run_id": "91",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "91",
+       "kind": "number",
+       "value": 91
+      },
+      "Description": {
+       "raw": "Baseline STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.327",
+       "kind": "number",
+       "value": 1.327
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "46",
+       "kind": "number",
+       "value": 46
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 46,
+     "run_id": "99",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "99",
+       "kind": "number",
+       "value": 99
+      },
+      "Description": {
+       "raw": "No flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 47,
+     "run_id": "99a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "99a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "627",
+       "kind": "number",
+       "value": 627
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 48,
+     "run_id": "103",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "103",
+       "kind": "number",
+       "value": 103
+      },
+      "Description": {
+       "raw": "low flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 1.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 49,
+     "run_id": "103a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "103a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "619",
+       "kind": "number",
+       "value": 619
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 1.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 50,
+     "run_id": "104",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "104",
+       "kind": "number",
+       "value": 104
+      },
+      "Description": {
+       "raw": "No flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "51",
+       "kind": "number",
+       "value": 51
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 51,
+     "run_id": "104a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "104a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "636",
+       "kind": "number",
+       "value": 636
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 52,
+     "run_id": "109",
+     "cells": {
+      "Sample Type": {
+       "raw": "Silicone",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "109",
+       "kind": "number",
+       "value": 109
+      },
+      "Description": {
+       "raw": "low flow run w STS",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Rt/R0": {
+       "raw": "1.35",
+       "kind": "number",
+       "value": 1.35
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Silicone",
+       "material": "Silicone"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 2.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 53,
+     "run_id": "49",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "49",
+       "kind": "number",
+       "value": 49
+      },
+      "Description": {
+       "raw": "B.L. High RT/R0",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "19-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Rt/R0": {
+       "raw": "1.251",
+       "kind": "number",
+       "value": 1.251
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "51",
+       "kind": "number",
+       "value": 51
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 54,
+     "run_id": "54",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "54",
+       "kind": "number",
+       "value": 54
+      },
+      "Description": {
+       "raw": "Baseline",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "57",
+       "kind": "number",
+       "value": 57
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 55,
+     "run_id": "55",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "55",
+       "kind": "number",
+       "value": 55
+      },
+      "Description": {
+       "raw": "High RT/R0 test aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "47",
+       "kind": "number",
+       "value": 47
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 56,
+     "run_id": "55a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "55a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "218",
+       "kind": "number",
+       "value": 218
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 57,
+     "run_id": "57",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "57",
+       "kind": "number",
+       "value": 57
+      },
+      "Description": {
+       "raw": "High RT/R0 reburn sample",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.253",
+       "kind": "number",
+       "value": 1.253
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "n/a",
+       "kind": "missing",
+       "missing": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 58,
+     "run_id": "68",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "68",
+       "kind": "number",
+       "value": 68
+      },
+      "Description": {
+       "raw": "High temp aged STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "720",
+       "kind": "number",
+       "value": 720
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "747",
+       "kind": "number",
+       "value": 747
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 59,
+     "run_id": "78",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "78",
+       "kind": "number",
+       "value": 78
+      },
+      "Description": {
+       "raw": "Baseline aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "37",
+       "kind": "number",
+       "value": 37
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 60,
+     "run_id": "78a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "78a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "581",
+       "kind": "number",
+       "value": 581
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 61,
+     "run_id": "80",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "80",
+       "kind": "number",
+       "value": 80
+      },
+      "Description": {
+       "raw": "High temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "40",
+       "kind": "number",
+       "value": 40
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 62,
+     "run_id": "80a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "80a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "580",
+       "kind": "number",
+       "value": 580
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 63,
+     "run_id": "82",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "82",
+       "kind": "number",
+       "value": 82
+      },
+      "Description": {
+       "raw": "Mid temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.265",
+       "kind": "number",
+       "value": 1.265
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "39",
+       "kind": "number",
+       "value": 39
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 64,
+     "run_id": "82a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "82a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "27-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.265",
+       "kind": "number",
+       "value": 1.265
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "579",
+       "kind": "number",
+       "value": 579
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 65,
+     "run_id": "88",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "88",
+       "kind": "number",
+       "value": 88
+      },
+      "Description": {
+       "raw": "Baseline STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "n/a",
+       "kind": "missing",
+       "missing": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 66,
+     "run_id": "96",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "96",
+       "kind": "number",
+       "value": 96
+      },
+      "Description": {
+       "raw": "No flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 67,
+     "run_id": "96a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "96a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.245",
+       "kind": "number",
+       "value": 1.245
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "582",
+       "kind": "number",
+       "value": 582
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 68,
+     "run_id": "98",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "98",
+       "kind": "number",
+       "value": 98
+      },
+      "Description": {
+       "raw": "No flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "37",
+       "kind": "number",
+       "value": 37
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 69,
+     "run_id": "98a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "98a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "585",
+       "kind": "number",
+       "value": 585
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 70,
+     "run_id": "106",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "106",
+       "kind": "number",
+       "value": 106
+      },
+      "Description": {
+       "raw": "No flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 71,
+     "run_id": "106a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "106a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "558",
+       "kind": "number",
+       "value": 558
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 72,
+     "run_id": "110",
+     "cells": {
+      "Sample Type": {
+       "raw": "Lampwick",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "110",
+       "kind": "number",
+       "value": 110
+      },
+      "Description": {
+       "raw": "low flow run w/STS",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Rt/R0": {
+       "raw": "1.28",
+       "kind": "number",
+       "value": 1.28
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Lampwick",
+       "material": "Lampwick"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 2.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 73,
+     "run_id": "50",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "50",
+       "kind": "number",
+       "value": 50
+      },
+      "Description": {
+       "raw": "B.L. High RT/R0",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "20-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.452",
+       "kind": "number",
+       "value": 1.452
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 74,
+     "run_id": "56",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "56",
+       "kind": "number",
+       "value": 56
+      },
+      "Description": {
+       "raw": "Baseline",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.445",
+       "kind": "number",
+       "value": 1.445
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "41",
+       "kind": "number",
+       "value": 41
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 75,
+     "run_id": "57",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "57",
+       "kind": "number",
+       "value": 57
+      },
+      "Description": {
+       "raw": "High RT/R0 reburn sample",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.253",
+       "kind": "number",
+       "value": 1.253
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "n/a",
+       "kind": "missing",
+       "missing": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 76,
+     "run_id": "58",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "58",
+       "kind": "number",
+       "value": 58
+      },
+      "Description": {
+       "raw": "Baseline aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.445",
+       "kind": "number",
+       "value": 1.445
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "34",
+       "kind": "number",
+       "value": 34
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 77,
+     "run_id": "58a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "58a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.445",
+       "kind": "number",
+       "value": 1.445
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "805",
+       "kind": "number",
+       "value": 805
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 78,
+     "run_id": "69",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "69",
+       "kind": "number",
+       "value": 69
+      },
+      "Description": {
+       "raw": "High temp aged STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "720",
+       "kind": "number",
+       "value": 720
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "745",
+       "kind": "number",
+       "value": 745
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 79,
+     "run_id": "79",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "79",
+       "kind": "number",
+       "value": 79
+      },
+      "Description": {
+       "raw": "Baseline aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.445",
+       "kind": "number",
+       "value": 1.445
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "33",
+       "kind": "number",
+       "value": 33
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 80,
+     "run_id": "79a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "79a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.445",
+       "kind": "number",
+       "value": 1.445
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "560",
+       "kind": "number",
+       "value": 560
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 81,
+     "run_id": "81",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "81",
+       "kind": "number",
+       "value": 81
+      },
+      "Description": {
+       "raw": "High temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 82,
+     "run_id": "81a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "81a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "27-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "559",
+       "kind": "number",
+       "value": 559
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 83,
+     "run_id": "83",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "83",
+       "kind": "number",
+       "value": 83
+      },
+      "Description": {
+       "raw": "Mid temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.448",
+       "kind": "number",
+       "value": 1.448
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "30",
+       "kind": "number",
+       "value": 30
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 84,
+     "run_id": "83a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "83a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "27-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.448",
+       "kind": "number",
+       "value": 1.448
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "557",
+       "kind": "number",
+       "value": 557
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 85,
+     "run_id": "89",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "89",
+       "kind": "number",
+       "value": 89
+      },
+      "Description": {
+       "raw": "Baseline STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.445",
+       "kind": "number",
+       "value": 1.445
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 86,
+     "run_id": "100",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "100",
+       "kind": "number",
+       "value": 100
+      },
+      "Description": {
+       "raw": "No flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "29",
+       "kind": "number",
+       "value": 29
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 87,
+     "run_id": "100a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "100a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "560",
+       "kind": "number",
+       "value": 560
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 88,
+     "run_id": "105",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "105",
+       "kind": "number",
+       "value": 105
+      },
+      "Description": {
+       "raw": "No flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 89,
+     "run_id": "105a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "105a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "559",
+       "kind": "number",
+       "value": 559
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 90,
+     "run_id": "111",
+     "cells": {
+      "Sample Type": {
+       "raw": "Teflon",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "111",
+       "kind": "number",
+       "value": 111
+      },
+      "Description": {
+       "raw": "low flow run w/ STS",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Rt/R0": {
+       "raw": "1.45",
+       "kind": "number",
+       "value": 1.45
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "43",
+       "kind": "number",
+       "value": 43
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Teflon",
+       "material": "Teflon"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 2.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 91,
+     "run_id": "52",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "52",
+       "kind": "number",
+       "value": 52
+      },
+      "Description": {
+       "raw": "Baseline",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "22-Jul",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "n/a",
+       "kind": "missing",
+       "missing": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 92,
+     "run_id": "63",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "63",
+       "kind": "number",
+       "value": 63
+      },
+      "Description": {
+       "raw": "Baseline Aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "56",
+       "kind": "number",
+       "value": 56
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 93,
+     "run_id": "63a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "63a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "840",
+       "kind": "number",
+       "value": 840
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 94,
+     "run_id": "64",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "64",
+       "kind": "number",
+       "value": 64
+      },
+      "Description": {
+       "raw": "High Temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "47",
+       "kind": "number",
+       "value": 47
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 95,
+     "run_id": "64a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "64a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "23-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "842",
+       "kind": "number",
+       "value": 842
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 96,
+     "run_id": "71",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "71",
+       "kind": "number",
+       "value": 71
+      },
+      "Description": {
+       "raw": "High temp aged STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "720",
+       "kind": "number",
+       "value": 720
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "750",
+       "kind": "number",
+       "value": 750
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 97,
+     "run_id": "74",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "74",
+       "kind": "number",
+       "value": 74
+      },
+      "Description": {
+       "raw": "Baseline Aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 98,
+     "run_id": "74a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "74a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "623",
+       "kind": "number",
+       "value": 623
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 99,
+     "run_id": "76",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "76",
+       "kind": "number",
+       "value": 76
+      },
+      "Description": {
+       "raw": "High Temp aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "51",
+       "kind": "number",
+       "value": 51
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 100,
+     "run_id": "76a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "76a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "26-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "625",
+       "kind": "number",
+       "value": 625
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 101,
+     "run_id": "84",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "84",
+       "kind": "number",
+       "value": 84
+      },
+      "Description": {
+       "raw": "Mid Temp aging retry",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.225",
+       "kind": "number",
+       "value": 1.225
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "53",
+       "kind": "number",
+       "value": 53
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 102,
+     "run_id": "84a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "84a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.225",
+       "kind": "number",
+       "value": 1.225
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "632",
+       "kind": "number",
+       "value": 632
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 103,
+     "run_id": "87",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "87",
+       "kind": "number",
+       "value": 87
+      },
+      "Description": {
+       "raw": "Baseline STS det",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "30-Aug",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "8.1",
+       "kind": "number",
+       "value": 8.1
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "45",
+       "kind": "number",
+       "value": 45
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 8.1,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 104,
+     "run_id": "95",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "95",
+       "kind": "number",
+       "value": 95
+      },
+      "Description": {
+       "raw": "No flow run w/ aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "38",
+       "kind": "number",
+       "value": 38
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 105,
+     "run_id": "95a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "95a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "7-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.22",
+       "kind": "number",
+       "value": 1.22
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "n/a",
+       "kind": "missing",
+       "missing": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 106,
+     "run_id": "97",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "97",
+       "kind": "number",
+       "value": 97
+      },
+      "Description": {
+       "raw": "No flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "48",
+       "kind": "number",
+       "value": 48
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 107,
+     "run_id": "97a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "97a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "0",
+       "kind": "number",
+       "value": 0
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "624",
+       "kind": "number",
+       "value": 624
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 0.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 108,
+     "run_id": "107",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "107",
+       "kind": "number",
+       "value": 107
+      },
+      "Description": {
+       "raw": "Low flow run w/aging",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "32",
+       "kind": "number",
+       "value": 32
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 1.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 109,
+     "run_id": "107a",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "107a",
+       "kind": "text"
+      },
+      "Description": {
+       "raw": "aged",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary aging time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Primary mixing time (sec)": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Net aging time (sec)": {
+       "raw": "559",
+       "kind": "number",
+       "value": 559
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 1.0,
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 110,
+     "run_id": "113",
+     "cells": {
+      "Sample Type": {
+       "raw": "Pyrell",
+       "kind": "text"
+      },
+      "SAME Test #": {
+       "raw": "113",
+       "kind": "number",
+       "value": 113
+      },
+      "Description": {
+       "raw": "low flow run w STS",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "9-Sep",
+       "kind": "text"
+      },
+      "Inlet velocity (cm/s)": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Rt/R0": {
+       "raw": "1.23",
+       "kind": "number",
+       "value": 1.23
+      },
+      "Duration (sec)": {
+       "raw": "60",
+       "kind": "number",
+       "value": 60
+      },
+      "Primary aging time (sec)": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Primary mixing time (sec)": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Net aging time (sec)": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample Type",
+       "role": "condition",
+       "text": "Pyrell",
+       "material": "Pyrell"
+      },
+      "flow_velocity": {
+       "column": "Inlet velocity (cm/s)",
+       "role": "condition",
+       "value": 2.0,
+       "unit": "cm/s"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

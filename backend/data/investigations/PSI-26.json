@@ -170,6 +170,26 @@
         "rows": 122,
         "columns": 6
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Microgravity Science Glovebox (MSG) with a fan-driven flow duct",
+        "platform": "ISS",
+        "fuel_phase": "solid",
+        "fire_safety_role": "prevention; suppression",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; record.approach: 'Airflow was controlled using a variable speed fan'",
+        "platform": "record.approach: 'aboard the International Space Station (ISS)'",
+        "fuel_phase": "record.approach: 'fabric samples consisting of 75% cotton and 25% fiberglass ... Nomex fabric and Ultem'",
+        "fire_safety_role": "record.objective: 'bridge the gap between the normal gravity NASA-STD-6001 Test#1 method ... and actual material flammability' (material screening, tagged prevention); 'Assess the effectiveness of an inert, gaseous extinguishing agent'",
+        "gravity_level": "record.approach: 'conducted aboard the International Space Station (ISS) inside the Microgravity Glove Box'",
+        "flare_data": "datasets: one row per test"
+      },
+      "notes": "The table names the sample only; it has no flow or oxygen columns."
+    }
   }
 }
