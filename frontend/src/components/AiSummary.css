@@ -1,0 +1,237 @@
+/* A stored AI-generated text, set apart from NASA's own text as one raised band (ramp-1). The
+   cited / own-words treatment matches the Assistant's answers. */
+.ai-summary {
+  max-width: 48rem;
+  padding: var(--space-5);
+  border: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+}
+
+.ai-h {
+  margin: 0;
+}
+
+.ai-mark,
+.ai-review,
+.ai-intro,
+.ai-legend {
+  max-width: 72ch;
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.ai-mark {
+  margin-top: var(--space-3);
+}
+
+.ai-review {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin-top: var(--space-2);
+  color: var(--ramp-6);
+}
+
+.ai-review svg {
+  flex: none;
+  margin-top: 0.1rem;
+}
+
+.ai-review strong {
+  color: var(--white);
+}
+
+.ai-review-yes {
+  color: var(--blue-yonder);
+}
+
+.ai-review-no {
+  color: var(--neon-yellow);
+}
+
+.ai-intro {
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+}
+
+.ai-legend {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.ai-legend-source,
+.ai-said {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--blue-yonder);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.ai-own {
+  color: var(--ramp-5);
+}
+
+.ai-text {
+  max-width: 72ch;
+  margin-top: var(--space-4);
+  font: 400 var(--text-body) / 1.65 var(--font-body);
+}
+
+.ai-text p + p {
+  margin-top: var(--space-4);
+}
+
+.ai-cite {
+  display: inline-block;
+  min-width: 1.4rem;
+  margin: 0 0.1rem 0 0.2rem;
+  padding: 0.1rem 0.3rem 0;
+  border: 1px solid var(--ramp-4);
+  border-radius: var(--radius);
+  color: var(--ramp-6);
+  font: 700 0.75rem / 1.2 var(--font-body);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: 0.15em;
+}
+
+.ai-cite:hover {
+  border-color: var(--neon-yellow);
+  color: var(--neon-yellow);
+}
+
+/* The source register, folded under the text */
+.ai-register {
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+}
+
+.ai-register > summary {
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+  min-height: 2.75rem;
+  padding-top: var(--space-3);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ai-register > summary:hover {
+  color: var(--neon-yellow);
+}
+
+.ai-count {
+  color: var(--ramp-5);
+  font-weight: 400;
+}
+
+.ai-sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-source {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--ramp-3);
+  scroll-margin-top: calc(var(--bar-height) + var(--space-4));
+}
+
+.ai-source:target {
+  background: var(--ramp-2);
+}
+
+.ai-source-n {
+  color: var(--ramp-5);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.ai-source-body {
+  min-width: 0;
+}
+
+.ai-source-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  align-items: baseline;
+}
+
+.ai-source-kind {
+  color: var(--ramp-5);
+}
+
+.ai-source-link {
+  min-width: 0;
+  color: var(--ramp-6);
+  text-decoration-color: var(--ramp-4);
+  overflow-wrap: anywhere;
+}
+
+.ai-source-link:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.ai-source-link svg {
+  display: inline;
+  margin-left: var(--space-1);
+  vertical-align: -0.1em;
+}
+
+.ai-quotes {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding: 0;
+  list-style: none;
+  color: var(--white);
+}
+
+.ai-full {
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+}
+
+.ai-full summary {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  min-height: 2rem;
+  cursor: pointer;
+}
+
+.ai-full summary:hover {
+  color: var(--white);
+}
+
+/* The passage steps down to the page ground, a well inside the raised band. */
+.ai-full p {
+  max-width: 80ch;
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--deep-blue);
+  color: var(--ramp-6);
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 44.9375em) {
+  .ai-summary {
+    padding: var(--space-4);
+  }
+
+  .ai-source {
+    grid-template-columns: 1.5rem 1fr;
+  }
+}

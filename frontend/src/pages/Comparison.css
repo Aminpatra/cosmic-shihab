@@ -458,6 +458,57 @@
   background: var(--hatch), var(--ramp-1);
 }
 
+/* The scenarios a stored reading was written for: quiet links, values beside each. */
+.cmp-presets {
+  width: 100%;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+}
+
+.cmp-presets p {
+  color: var(--ramp-6);
+}
+
+.cmp-presets ul {
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmp-presets li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.cmp-presets a {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  min-height: 2rem;
+  color: var(--white);
+  font-weight: 700;
+  text-decoration-color: var(--ramp-4);
+}
+
+.cmp-presets a:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.cmp-presets span {
+  color: var(--ramp-5);
+}
+
+/* The stored AI reading sits between the scenario notes and the weights. */
+.cmp-reading {
+  margin-top: var(--space-5);
+}
+
 @media (max-width: 44.9375em) {
   .cmp-scenario {
     display: grid;

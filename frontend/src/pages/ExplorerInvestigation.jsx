@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useApi } from '../api.js'
 import { formatDate, formatNumber, nameOf } from '../catalogue.js'
 import { LoadError, Loading } from '../components/ApiState.jsx'
+import AiSummary from '../components/AiSummary.jsx'
 import ExplorerSearch from './ExplorerSearch.jsx'
 import { FILTERS, tagValues } from './ExplorerFilters.js'
 import './Explorer.css'
@@ -343,6 +344,19 @@ function People({ rec }) {
   )
 }
 
+// The stored AI summary (#28). An investigation without one shows nothing in its place.
+function StoredSummary({ accession }) {
+  const summary = useApi(`/assistant/summaries/${encodeURIComponent(accession)}`)
+  if (summary.status === 'error' && summary.error?.status === 404) return null
+  return (
+    <div className="rec-summary">
+      {summary.status === 'loading' && <Loading label="Loading the AI summary…" />}
+      {summary.status === 'error' && <LoadError what="The AI summary" retry={summary.retry} error={summary.error} />}
+      {summary.status === 'ready' && <AiSummary id="summary" title="AI summary" data={summary.data} />}
+    </div>
+  )
+}
+
 export default function ExplorerInvestigation() {
   const { accession } = useParams()
   const rec = useRecord(accession)
@@ -375,6 +389,7 @@ export default function ExplorerInvestigation() {
           <div className="rec-body">
             <Facts rec={rec.data} />
             <div className="rec-text">
+              <StoredSummary accession={rec.data.accession} />
               <h2 className="ex-h2">From the PSI record</h2>
               <p className="ex-note">NASA's own text for this investigation, unchanged.</p>
               {TEXT_FIELDS.filter(([field]) => rec.data[field]?.trim()).map(([field, label]) => (
