@@ -171,6 +171,26 @@
         "rows": 8,
         "columns": 4
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Principal investigator's laboratory hardware (ozone-sensitized counterflow flames)",
+        "platform": "ground laboratory and computation",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "normal gravity",
+        "flare_data": "figure index"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; record.objective",
+        "platform": "record.projectType: 'Ground Investigation'",
+        "fuel_phase": "record.approach: 'n-heptane/air mixture' and 'dimethyl ether (DME) flames'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.objective: 'ground-based experiments using ozone-sensitized counterflow flames'",
+        "flare_data": "datasets: 8 rows, each pointing to a figure in a publication; no test data"
+      },
+      "notes": "Builds on FLEX data (record.objective)."
+    }
   }
 }

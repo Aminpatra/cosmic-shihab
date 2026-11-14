@@ -221,6 +221,26 @@
         "rows": 8,
         "columns": 5
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "SAME near-field hardware in the glovebox, with a Far Field Box",
+        "platform": "ISS",
+        "fuel_phase": "solid; liquid",
+        "fire_safety_role": "detection",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.approach: 'installed the near field hardware in the Glovebox, attached the Far Field Box'",
+        "platform": "record.flightProgram",
+        "fuel_phase": "table column 'Sample Material': Kapton, lampwick, silicone rubber, dibutyl phthalate (a liquid)",
+        "fire_safety_role": "record.hypothesis: 'affect the response of the smoke detectors and possibly result in some detectors not producing an alarm'",
+        "gravity_level": "record.approach: the crew ran the tests in the glovebox; record.flightProgram: 'International Space Station (ISS)'",
+        "flare_data": "datasets: one row per sample (4 with conditions, 4 'same conditions as 1-4')"
+      },
+      "notes": "record.approach also describes 1-g ground tests run after the flight; they are not in the table."
+    }
   }
 }

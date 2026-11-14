@@ -232,6 +232,26 @@
         "rows": 129,
         "columns": 17
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Microgravity Science Glovebox (MSG) with a small wind tunnel",
+        "platform": "ISS",
+        "fuel_phase": "solid",
+        "fire_safety_role": "prevention; detection; suppression",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; record.approach: 'The wind tunnel was installed in the Microgravity Science Glovebox'",
+        "platform": "record.approach: 'performed aboard the International Space Station'",
+        "fuel_phase": "record.objective: 'solid fuels burning in low-velocity forced flows'; table: PMMA, SIBAL, Nomex, wax candle",
+        "fire_safety_role": "record.objective: 'models used in the design of fire detection and suppression systems'; 'bridge the gap between the normal gravity NASA-STD-6001 Test #1 method ... and actual material flammability in microgravity' (material screening, tagged prevention)",
+        "gravity_level": "record.approach: 'microgravity combustion tests were performed aboard the International Space Station'",
+        "flare_data": "datasets: one row per test"
+      },
+      "notes": "Also has a test-matrix workbook in datasets/ (BASS-II Test Matrix by PI Final.xlsx)."
+    }
   }
 }

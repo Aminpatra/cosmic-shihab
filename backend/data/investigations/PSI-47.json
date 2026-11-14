@@ -104,6 +104,26 @@
         "rows": 2,
         "columns": 5
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Modified TSI P-Trak particle counter compared with a DustTrak; facility not stated",
+        "platform": "ISS",
+        "fuel_phase": "none (no fuel burned)",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "test-day log"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; table column 'Hardware Description'",
+        "platform": "table column 'Sampled Location': 'Sampled air near Express rack 4'",
+        "fuel_phase": "record.approach: 'Arizona Red Dust (ARD) was chosen as an aerosol standard'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.flightProgram: 'International Space Station (ISS)'",
+        "flare_data": "datasets: one row per session (2 sessions)"
+      },
+      "notes": "Checked the instrument SAME used to measure smoke (record.objective). record.researchImpacts names 'novel fire and smoke detection systems' as an expected benefit, and the challenge page describes DAFT as reusing a SAME smoke-detection instrument; neither states detection as the investigation's own aim, so the role is not stated."
+    }
   }
 }

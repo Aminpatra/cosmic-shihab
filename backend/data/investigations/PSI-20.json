@@ -220,6 +220,26 @@
         "rows": 18,
         "columns": 8
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Combustion Integrated Rack (CIR) with the ACME modular hardware",
+        "platform": "ISS",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "test-day log"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.objective: 'CH4/N2 and C2H4/N2 mixtures on porous circular burners'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "table note: 'the day change on ISS'",
+        "flare_data": "datasets: one row per test day with the number of flames ignited"
+      },
+      "notes": "The burner emulates condensed fuels (record.objective). record.objective lists the spacecraft atmospheres tested (14.7 psia 21%, 10.2 psia 26.5%, 8.2 psia 34% O2). record.approach says normal-gravity tests continue on the ground; those are not in the table."
+    }
   }
 }

@@ -354,6 +354,26 @@
         "rows": 207,
         "columns": 15
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Combustion Integrated Rack (CIR) with the ACME modular hardware",
+        "platform": "ISS",
+        "fuel_phase": "gas",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.objective: 'C2H4 and CH4 flames'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.approach: 'tests in drop towers and aboard the International Space Station'",
+        "flare_data": "datasets: two Flame Design tables, one row per test"
+      },
+      "notes": "PSI states no licence for this investigation. The normal-flame table also lists C3H8 as a fuel."
+    }
   }
 }
