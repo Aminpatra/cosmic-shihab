@@ -1,3 +1,6 @@
 # Pipeline only; never deployed, so never in backend/pyproject.toml.
 # Everything else in pipeline/ uses the standard library.
-pypdf==7.1.0   # build_search_index.py: text from PDF documents
+pypdf==7.1.0          # build_search_index.py: text from PDF documents
+scikit-learn==1.9.1   # train_flex_model.py: baseline, models, grouped cross-validation
+shap==0.54.1          # train_flex_model.py: explanations of the chosen model
+numpy==2.5.4          # pinned so the stored results can be reproduced exactly
