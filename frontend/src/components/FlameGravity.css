@@ -1,0 +1,141 @@
+/* One flame, two gravities: the pitch opening's flames as a Methodology figure.
+   Flat ramp-1 band split by a hairline, caption and footnote as every FLARE figure has them. */
+
+.fg {
+  max-width: 68ch;
+  margin: var(--space-6) 0 0;
+}
+
+.fg-caption {
+  margin-bottom: var(--space-3);
+  font: 700 var(--text-data) / 1.3 var(--font-title);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Two panels on one raised band, divided by a 1px ramp-3 rule (the gap shows the rule). */
+.fg-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--ramp-3);
+  border: 1px solid var(--ramp-3);
+}
+
+.fg-panel {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--space-1);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  background: var(--ramp-1);
+  font-size: var(--text-data);
+  text-align: center;
+}
+
+.fg-art {
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+  margin-bottom: var(--space-2);
+  overflow: visible;
+}
+
+.fg-arrow {
+  stroke: var(--ramp-5);
+}
+
+.fg-name {
+  font-weight: 700;
+}
+
+.fg-note {
+  max-width: 28ch;
+  color: var(--ramp-5);
+}
+
+.fg-source {
+  padding-top: var(--space-3);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* The opening's ambient flicker: slow, alternating, no entrance. */
+.fg-amb {
+  animation-duration: var(--d, 4s);
+  animation-delay: var(--delay, 0s);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.fg-tall {
+  animation-name: fg-tall;
+  transform-origin: 50% 100%; /* the teardrop grows from its base */
+}
+
+.fg-glow {
+  animation-name: fg-glow;
+}
+
+.fg-flick-a {
+  animation-name: fg-flick-a;
+}
+
+.fg-flick-b {
+  animation-name: fg-flick-b;
+}
+
+.fg-flick-c {
+  animation-name: fg-flick-c;
+}
+
+.fg-core {
+  animation-name: fg-core;
+}
+
+@keyframes fg-tall {
+  from { transform: scale(1, 1); }
+  to { transform: scale(0.95, 1.07); }
+}
+
+@keyframes fg-glow {
+  from { transform: scale(0.9); opacity: 0.72; }
+  to { transform: scale(1.07); opacity: 1; }
+}
+
+@keyframes fg-flick-a {
+  from { transform: scale(1, 1) rotate(0deg); }
+  to { transform: scale(1.08, 0.94) rotate(7deg); }
+}
+
+@keyframes fg-flick-b {
+  from { transform: translate(0, 0) scale(0.95); }
+  to { transform: translate(2px, -2px) scale(1.06); }
+}
+
+@keyframes fg-flick-c {
+  from { transform: rotate(0deg) scale(1.04, 0.96); }
+  to { transform: rotate(-9deg) scale(0.95, 1.05); }
+}
+
+@keyframes fg-core {
+  from { transform: scale(0.94); }
+  to { transform: scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fg-amb {
+    animation: none;
+  }
+}
+
+@media (max-width: 44.9375em) {
+  .fg-panel {
+    padding: var(--space-4) var(--space-2) var(--space-3);
+  }
+}

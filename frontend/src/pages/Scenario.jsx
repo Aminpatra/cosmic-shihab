@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router'
 import { ArrowRight, TriangleAlert } from 'lucide-react'
 import { useApi } from '../api.js'
 import { LoadError } from '../components/ApiState.jsx'
+import GravityScale from '../components/GravityScale.jsx'
 import {
   PLACES,
   PRESSURE_UNITS,
@@ -286,6 +287,8 @@ export default function Scenario() {
             </div>
           </div>
         )}
+
+        <GravityScale place={form.place} customGravity={form.gravity} environments={gravityOf} />
 
         <NumberRow
           id="oxygen"

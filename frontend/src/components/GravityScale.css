@@ -1,0 +1,42 @@
+/* Gravity tested: one Scenario row. Layout and the lane come from Scenario.css; this file adds only
+   the hatched untested gap, the two flames and the credit line. */
+
+.gs-gap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--hatch);
+}
+
+/* "1 g" sits at the lane's right edge; without this it wraps under itself. */
+.gs .span-scale span {
+  white-space: nowrap;
+}
+
+.gs-flames {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-end;
+}
+
+.gs-flame {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.gs-art {
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: visible;
+}
+
+.gs-credit {
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
