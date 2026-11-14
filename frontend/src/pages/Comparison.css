@@ -1,0 +1,489 @@
+.comparison {
+  padding: var(--space-8) var(--gutter) var(--space-9);
+  font-variant-numeric: tabular-nums;
+}
+
+.cmp-lede {
+  max-width: 50ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.cmp-label {
+  margin: 0;
+  padding: 0;
+  font: 700 var(--text-data) / 1.3 var(--font-title);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cmp-count {
+  color: var(--ramp-5);
+}
+
+.cmp-intro,
+.cmp-pick-note {
+  max-width: 68ch;
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.comparison .api-loading,
+.comparison .api-error {
+  margin-top: var(--space-6);
+}
+
+/* What the visitor entered, as one ruled strip */
+.cmp-scenario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-7);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--ramp-3);
+  border-bottom: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+}
+
+.cmp-conditions {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  margin: 0;
+}
+
+.cmp-conditions dt {
+  color: var(--ramp-5);
+}
+
+.cmp-conditions dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cmp-gravity {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 72ch;
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.cmp-gravity svg {
+  flex: none;
+  margin-top: 0.05rem;
+  color: var(--blue-yonder);
+}
+
+.cmp-message {
+  max-width: 72ch;
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  border: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+}
+
+/* Weights: quiet controls under the scenario; the ranking follows them after a short pause. */
+.cmp-weights {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  margin: 0;
+  padding: var(--space-4) 0;
+  border: 0;
+  border-bottom: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+}
+
+.cmp-weights > legend {
+  float: left;
+}
+
+.weight-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+}
+
+.weight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.weight-name {
+  color: var(--ramp-5);
+}
+
+.weight input[type='range'] {
+  width: 7rem;
+  accent-color: var(--neon-yellow);
+  cursor: pointer;
+}
+
+.weight-value {
+  min-width: 2ch;
+  font-weight: 700;
+  text-align: right;
+}
+
+.weight-foot {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+  color: var(--ramp-5);
+}
+
+.weight-foot p {
+  max-width: 68ch;
+}
+
+.comparison .button-quiet {
+  text-decoration: none;
+}
+
+.comparison .button-quiet:disabled {
+  border-color: var(--ramp-3);
+  color: var(--ramp-5);
+  cursor: default;
+}
+
+/* Ranking beside the figures on wide screens; stacked below 1280px. */
+.cmp-body {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-7);
+}
+
+.cmp-body > * {
+  min-width: 0;
+  transition: opacity 160ms var(--ease-out);
+}
+
+.cmp-body[data-refreshing] > * {
+  opacity: 0.6;
+}
+
+@media (min-width: 1280px) {
+  .cmp-body {
+    grid-template-columns: minmax(22rem, 28rem) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-7);
+  }
+
+  .cmp-ranked {
+    position: sticky;
+    top: calc(var(--bar-height) + var(--space-4));
+    max-height: calc(100vh - var(--bar-height) - var(--space-6));
+    padding-right: var(--space-3);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: var(--ramp-4) var(--ramp-1);
+    scrollbar-width: thin;
+  }
+}
+
+.cmp-notice {
+  max-width: 60ch;
+  margin-top: var(--space-2);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.ranked {
+  margin-top: var(--space-4);
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+}
+
+.ranked-row {
+  display: grid;
+  grid-template-columns: 1.25rem 1.5rem minmax(0, 1fr) auto;
+  gap: 0 var(--space-3);
+  padding: var(--space-3) var(--space-2);
+  border-bottom: 1px solid var(--ramp-3);
+  transition: background-color 160ms var(--ease-out);
+}
+
+.ranked-row:hover,
+.ranked-row[data-picked] {
+  background: var(--ramp-1);
+}
+
+.ranked-row[data-picked]:hover {
+  background: var(--ramp-2);
+}
+
+.ranked-pick {
+  padding-top: 0.1rem;
+}
+
+.ranked-pick input {
+  appearance: none;
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  border: 1px solid var(--ramp-5);
+  border-radius: var(--radius);
+  background: transparent center / 0.8rem no-repeat;
+  cursor: pointer;
+}
+
+.ranked-pick input:checked {
+  border-color: var(--neon-yellow);
+  background-color: var(--neon-yellow);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2307173f' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+.ranked-pick input:disabled {
+  border-color: var(--ramp-3);
+  cursor: not-allowed;
+}
+
+.ranked-rank {
+  color: var(--ramp-5);
+}
+
+.ranked-name {
+  font-weight: 700;
+}
+
+.ranked-name a,
+.not-ranked a {
+  color: var(--white);
+  text-decoration-color: var(--ramp-4);
+}
+
+.ranked-name a:hover,
+.not-ranked a:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.ranked-name .id,
+.not-ranked .id {
+  color: var(--ramp-5);
+}
+
+.ranked-title {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--ramp-5);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-4);
+  margin-top: var(--space-1);
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.count-match svg {
+  color: var(--blue-yonder);
+}
+
+.count-differs svg {
+  color: var(--rocket-red);
+}
+
+.count-missing svg {
+  color: var(--ramp-5);
+}
+
+.ranked-close {
+  color: var(--ramp-5);
+}
+
+.ranked-score {
+  min-width: 2.5ch;
+  font-weight: 700;
+  text-align: right;
+}
+
+.ranked-more {
+  margin-top: var(--space-4);
+}
+
+.not-ranked {
+  margin-top: var(--space-6);
+  font-size: var(--text-data);
+}
+
+.not-ranked ul {
+  margin-top: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.not-ranked li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.not-ranked-reason {
+  display: block;
+  color: var(--ramp-5);
+}
+
+/* The figures: one per condition, the legend shown once. */
+.cmp-figures .lanes-figure {
+  margin-top: var(--space-6);
+}
+
+.cmp-figures .lanes-figure + .lanes-figure .lanes-legend {
+  display: none;
+}
+
+.cmp-figures .readout {
+  white-space: normal;
+}
+
+.cmp-tests {
+  margin-top: var(--space-8);
+}
+
+.tests-group {
+  margin-top: var(--space-5);
+  font-size: var(--text-data);
+}
+
+.tests-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  font: 700 var(--text-data) / 1.4 var(--font-body);
+}
+
+.tests-head > .id {
+  color: var(--ramp-5);
+  font-weight: 400;
+}
+
+.tests-doi {
+  margin-left: auto;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ramp-6);
+  font-weight: 400;
+  text-decoration-color: var(--ramp-4);
+}
+
+.tests-doi:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.tests {
+  margin-top: var(--space-2);
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ramp-3);
+}
+
+.test {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.test-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-4);
+  color: var(--ramp-6);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.test-head .id {
+  font-weight: 400;
+}
+
+.test-values {
+  margin: var(--space-1) 0 0;
+}
+
+.test-values div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-4);
+  padding-top: var(--space-1);
+}
+
+.test-values dt {
+  color: var(--ramp-5);
+}
+
+.test-values dd {
+  margin: 0;
+  text-align: right;
+}
+
+/* No scenario yet: an empty, hatched lane and the way back to the form */
+.cmp-empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+  max-width: 40rem;
+  margin-top: var(--space-7);
+}
+
+.cmp-empty-lane {
+  display: block;
+  width: 100%;
+  height: 2.25rem;
+  background: var(--hatch), var(--ramp-1);
+}
+
+@media (max-width: 719px) {
+  .cmp-scenario {
+    display: grid;
+    justify-items: start;
+  }
+
+  .cmp-conditions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .test-values div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .test-values dd {
+    text-align: left;
+  }
+
+  .tests-doi {
+    margin-left: 0;
+  }
+
+  .weight input[type='range'] {
+    width: 6rem;
+  }
+}
