@@ -41,7 +41,8 @@ How we meet the code and data rule:
 These are facts only the team knows. Do not fill them in by guessing.
 
 - [ ] Who came up with the FLARE idea, and that it was not an AI tool.
-- [ ] Whether `Logo.jpg` was made with an AI tool. If it was, it needs a visible watermark.
+- [x] The team logo is the team's own work, not made with AI (confirmed 2026-11-15). The AI-made
+      `Logo.jpg` was replaced by the logos in `brand/`, so it needs no watermark.
 - [ ] Every AI tool used outside this repo (chat assistants, image tools, translation).
 
 ## AI inside the product

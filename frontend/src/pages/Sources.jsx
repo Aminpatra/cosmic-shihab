@@ -13,7 +13,7 @@ import {
   tierOf,
 } from '../catalogue.js'
 import { Empty, LoadError, Loading } from '../components/ApiState.jsx'
-import logo from '../assets/cosmic-shihab-logo.jpg'
+import logo from '../assets/cosmic-shihab-logo-white.png'
 import './Sources.css'
 
 const SECTIONS = [
@@ -186,8 +186,8 @@ export default function Sources() {
                 <img
                   className="team-logo"
                   src={logo}
-                  width="1446"
-                  height="1087"
+                  width="1073"
+                  height="743"
                   alt="Cosmic Shihab logo: a shooting star crossing a ring, with the words COSMIC SHIHAB"
                 />
                 <div>
