@@ -413,6 +413,8 @@
 .rec-field p {
   margin-top: var(--space-3);
   color: var(--ramp-6);
+  /* PSI's text carries bare URLs (PSI-142's approach has a 53-character one): break them at 320px */
+  overflow-wrap: anywhere;
 }
 
 .rec-facts {
@@ -548,6 +550,8 @@
 
 .rec-people {
   display: grid;
+  /* minmax(0, …): an implicit column grows to its longest unbreakable string (a DOI), wider than a phone */
+  grid-template-columns: minmax(0, 1fr);
   gap: 0 var(--space-7);
 }
 
@@ -570,6 +574,8 @@
   gap: var(--space-1);
   padding: var(--space-3) 0;
   border-bottom: 1px solid var(--ramp-3);
+  /* Long titles, author strings and DOIs break where they must at 320px */
+  overflow-wrap: anywhere;
 }
 
 .rec-pub-title {

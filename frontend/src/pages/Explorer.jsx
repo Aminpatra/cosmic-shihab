@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from 'react-router'
 import { useApi } from '../api.js'
-import { byAccession, formatNumber, nameOf } from '../catalogue.js'
-import { LoadError, Loading } from '../components/ApiState.jsx'
+import { byAccession, countOf, formatNumber, nameOf } from '../catalogue.js'
+import { Empty, LoadError, Loading } from '../components/ApiState.jsx'
 import ExplorerSearch from './ExplorerSearch.jsx'
 import { FILTERS, matchesFilters, optionsFor, readFilters, tagValues } from './ExplorerFilters.js'
 import './Explorer.css'
@@ -137,14 +137,17 @@ function Investigations({ investigations, params, setParams }) {
 export default function Explorer() {
   const [params, setParams] = useSearchParams()
   const list = useApi('/investigations')
+  // The count comes from the API, never the copy: PSI adds investigations over time (#47).
+  const count = list.status === 'ready' ? list.data.length : 0
 
   return (
     <div className="explorer">
       <header className="ex-head">
         <h1>NASA Research Explorer</h1>
         <p className="ex-lede">
-          The 24 NASA combustion investigations in PSI. Search inside their documents, filter them by what they tested,
-          and open any one for its record and its NASA files.
+          The {count > 0 ? countOf(count, 'NASA combustion investigation') : 'NASA combustion investigations'} in PSI.
+          Search inside their documents, filter them by what they tested, and open any one for its record and its NASA
+          files.
         </p>
       </header>
 
@@ -152,7 +155,10 @@ export default function Explorer() {
 
       {list.status === 'loading' && <Loading label="Loading the PSI catalogue…" />}
       {list.status === 'error' && <LoadError what="The PSI catalogue" retry={list.retry} />}
-      {list.status === 'ready' && <Investigations investigations={list.data} params={params} setParams={setParams} />}
+      {list.status === 'ready' && count === 0 && <Empty what="The PSI catalogue" retry={list.retry} />}
+      {list.status === 'ready' && count > 0 && (
+        <Investigations investigations={list.data} params={params} setParams={setParams} />
+      )}
     </div>
   )
 }
