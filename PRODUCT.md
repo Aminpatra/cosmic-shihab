@@ -79,8 +79,11 @@ tool, never a fire predictor or safety assessment.
   accent only, contrast at least 4.5:1, and no NASA insignia.
 - The brief asks for the feel of a professional scientific research platform, dark and
   high-contrast, with no excessive animation or decoration.
-- A FLARE logo or mark exists (pending: file location not yet provided).
-- Team members are to be credited on the site (pending: names not yet provided).
+- Team: **Cosmic Shihab**. Team logo: `Logo.jpg` (silver-white shooting star crossing a ring,
+  four-point stars, "COSMIC SHIHAB" wordmark, on black; JPG, no transparent version yet). It is
+  the team's mark, not a FLARE product logo; FLARE has no separate mark yet.
+- Team members to credit on the site, in this order: Amin Mohamed Amin, Gheath Wahab, Mohammed
+  Al-julandani, Samin Rezaei, Rahaf Abubaker Mustafa Mubarak, Ruayma Khair Mohammed Albalushi.
 
 ## Evidence on Hand
 
