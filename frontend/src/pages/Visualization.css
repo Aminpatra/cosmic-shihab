@@ -154,6 +154,8 @@
 /* The chosen cell */
 .chosen {
   margin: var(--space-6) 0 0;
+  /* Clear the sticky top bar when a phone scrolls the figure into view */
+  scroll-margin-top: calc(var(--bar-height) + var(--space-3));
 }
 
 .chosen h3 {
@@ -232,6 +234,12 @@
 
 .dot-other {
   fill: var(--mark-other);
+}
+
+.dot-other-ring {
+  fill: var(--deep-blue);
+  stroke: var(--mark-other);
+  stroke-width: 1.5;
 }
 
 .dot-ring {

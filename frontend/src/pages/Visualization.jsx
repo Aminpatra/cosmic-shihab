@@ -212,7 +212,7 @@ function NumberStrip({ field, lanes }) {
                 {lane.label} ({lane.points.length})
               </text>
               {lane.points.map((p, i) => (
-                <circle key={i} cx={x(p.v)} cy={cy + jitter(i) * 13} r={lane.own ? 4.5 : 3.5} className={lane.own ? 'dot-own' : lane.ring ? 'dot-ring' : 'dot-other'}>
+                <circle key={i} cx={x(p.v)} cy={cy + jitter(i) * 13} r={lane.own ? 4.5 : 3.5} className={lane.own ? 'dot-own' : lane.ring ? 'dot-other-ring' : 'dot-other'}>
                   <title>{`${fmt(p.v)} ${field.unit}${p.label ? ` · ${p.label}` : ''}`}</title>
                 </circle>
               ))}
@@ -377,7 +377,7 @@ function ConditionSpace({ model }) {
       <figcaption>
         <h3>Where the tests sit in oxygen and pressure</h3>
         <p>
-          Each panel: one table's tests over every table's tests. Empty areas were not tested in these tables. Oxygen as
+          Each panel: one table's tests over every other table's tests. Empty areas were not tested in these tables. Oxygen as
           a mole fraction, pressure in atm.
         </p>
       </figcaption>
