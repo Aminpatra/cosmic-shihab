@@ -252,14 +252,18 @@
   color: var(--blue-yonder);
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 79.9375em) {
+  .fm-tables {
+    grid-template-columns: minmax(0, max-content);
+  }
+
   .fm-shap {
     grid-template-columns: 1fr;
     max-width: 36rem;
   }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375em) {
   .fm-bar {
     grid-template-columns: 1fr;
     gap: var(--space-1);
@@ -283,7 +287,25 @@
 
   .fm-table th,
   .fm-table td {
-    padding: var(--space-2) var(--space-1);
+    padding: var(--space-2) 2px;
+  }
+
+  .fm-table caption {
+    overflow-wrap: anywhere;
+  }
+
+  /* The caption says the columns are what the model gave; the word is dropped so the narrowest
+     phones keep all four columns without scrolling */
+  .fm-given {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .fm-table {
+    font-size: 0.875rem;
   }
 
   .fm-table thead th {

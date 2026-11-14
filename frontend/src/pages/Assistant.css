@@ -354,6 +354,8 @@
 
 .answer-text {
   max-width: 72ch;
+  /* Answers quote file names and identifiers with no spaces; let them wrap */
+  overflow-wrap: anywhere;
   margin-top: var(--space-5);
   font: 400 var(--text-body) / 1.65 var(--font-body);
 }
@@ -452,6 +454,7 @@
 
 .source-body {
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .source-head {
@@ -549,7 +552,7 @@
   text-decoration-color: var(--neon-yellow);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 63.9375em) {
   .scope-tiers {
     grid-template-columns: 8fr 12fr 4fr;
     gap: var(--space-3);
@@ -561,7 +564,7 @@
   }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375em) {
   .ask-row {
     flex-direction: column;
   }
