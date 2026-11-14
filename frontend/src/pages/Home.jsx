@@ -79,7 +79,7 @@ export default function Home() {
         {facts && (
           <p className="provenance">
             Source: NASA Physical Sciences Informatics, retrieved {formatDate(facts.retrieved)}. How the tiers were set:{' '}
-            <Link to="/sources#reading">Sources and methodology</Link>.
+            <Link to="/methodology#tables">Methodology</Link>.
           </p>
         )}
       </section>
@@ -90,8 +90,8 @@ export default function Home() {
           Each investigation links to its NASA record and DOI. Read how FLARE gathered the data, what it assumes, and what
           it cannot tell you.
         </p>
-        <Link className="home-close-link" to="/sources">
-          Sources and methodology
+        <Link className="home-close-link" to="/methodology">
+          Methodology
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>

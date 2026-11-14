@@ -11,3 +11,9 @@ dependencies = [
 
 [tool.vercel]
 entrypoint = "main:app"
+
+# Vercel installs this folder as a package. Name the code so setuptools does not
+# stop at "multiple top-level packages" (app/ and data/ side by side).
+[tool.setuptools]
+py-modules = ["main"]
+packages = { find = { include = ["app*"] } }

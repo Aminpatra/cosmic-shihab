@@ -1,0 +1,47 @@
+/* Methodology reuses the Sources page layout (Sources.css); these are its own parts. */
+.method-lead {
+  max-width: 68ch;
+  margin-bottom: var(--space-4);
+}
+
+.method-terms {
+  display: grid;
+  max-width: 68ch;
+  margin: 0 0 var(--space-4);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.method-terms > div {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.method-terms dt {
+  font-weight: 700;
+}
+
+.method-terms dd {
+  margin: 0;
+  color: var(--ramp-6);
+}
+
+.method-formula {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.method .id {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 719px) {
+  .method-terms > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}

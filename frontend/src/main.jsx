@@ -22,6 +22,7 @@ import Scenario from './pages/Scenario.jsx'
 import Comparison from './pages/Comparison.jsx'
 import Explorer from './pages/Explorer.jsx'
 import ExplorerInvestigation from './pages/ExplorerInvestigation.jsx'
+import Methodology from './pages/Methodology.jsx'
 import InProgress from './pages/InProgress.jsx'
 import NotFound from './pages/NotFound.jsx'
 import { PAGES } from './pages.js'
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: 'explorer/:accession', element: <ExplorerInvestigation /> },
       { path: 'scenario', element: <Scenario /> },
       { path: 'comparison', element: <Comparison /> },
+      { path: 'methodology', element: <Methodology /> },
       ...slots,
       { path: '*', element: <NotFound /> },
     ],

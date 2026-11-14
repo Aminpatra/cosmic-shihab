@@ -67,6 +67,12 @@
   max-width: 68ch;
 }
 
+.sources-note {
+  margin-top: var(--space-3);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+}
+
 .facts-list,
 .ref-list {
   display: grid;

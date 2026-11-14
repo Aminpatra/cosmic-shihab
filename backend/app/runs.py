@@ -22,3 +22,19 @@ def runs() -> dict[str, dict]:
     if not data:
         raise FileNotFoundError(f"No runs files in {DATA_DIR / 'runs'}")
     return dict(sorted(data.items(), key=lambda item: _accession_number(item[0])))
+
+
+def tables() -> list[dict]:
+    """Every table with its accession, in accession then file order."""
+    return [table | {"accession": accession}
+            for accession, entry in runs().items() for table in entry["tables"]]
+
+
+def rows(accession: str | None = None, table: str | None = None) -> list[dict]:
+    """Rows as stored, each with the `accession` and `table` (file name) it came from."""
+    return [
+        {"accession": t["accession"], "table": t["file"]} | row
+        for t in tables()
+        if (accession is None or t["accession"] == accession) and (table is None or t["file"] == table)
+        for row in t["rows"]
+    ]
