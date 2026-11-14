@@ -1,0 +1,6 @@
+# Local only: the database (it holds who holds what), the virtualenv, caches.
+coordinator.db
+*.db-journal
+.venv/
+__pycache__/
+.pytest_cache/

@@ -1,6 +1,6 @@
 ---
 name: team-claim
-description: Claim a task so the other Claude agents on this repo know it is taken. Assigns the GitHub issue (creating one if needed) and publishes a branch from fresh main.
+description: Claim a task so the other Claude agents on this repo know it is taken. Claims it in the coordinator, assigns the GitHub issue (creating one if needed) and publishes a branch from fresh main.
 argument-hint: <issue number | short task description>
 disable-model-invocation: true
 ---
@@ -14,7 +14,11 @@ The human typed this command, so pushing the branch is authorized.
    - A number: `gh issue view <n> --json number,title,state,assignees`. If it is assigned to someone else, stop and tell the human who holds it.
    - A description: if an open issue in the digest already covers it, use that one. Otherwise create it: `gh issue create --title "<imperative, under 60 chars>" --body "<one or two lines: scope and the files or areas it will touch>"`.
 3. **Check for overlap.** Compare the areas this task will touch with "In flight" in the digest. If another branch is already in those areas, tell the human which branch and whose it is, and wait for their call.
-4. **Claim it.** `gh issue edit <n> --add-assignee @me`
+4. **Claim it, coordinator first.** With `agent` = `gh api user -q .login`:
+   - Call the coordinator's `claim(agent, <n>)`. If it answers that the task is not on the board, register it with `add_task` (number, title, `blocked_by` from the issue's "Depends on", `touches` from the areas it edits) and claim again.
+   - If the claim is refused (held by someone else, blocked, or overlapping held work), stop and tell the human why. Don't assign the issue.
+   - Only after `ok: true`: `gh issue edit <n> --add-assignee @me`, for visibility.
+   - If the coordinator can't be reached, say so and fall back to `gh issue edit <n> --add-assignee @me` alone.
 5. **Branch from fresh main and publish it** so the claim shows up in everyone's digest:
    ```
    git fetch origin
