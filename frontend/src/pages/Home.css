@@ -103,6 +103,24 @@
   white-space: nowrap;
 }
 
+/* Laptop widths: a narrower intro so the lanes keep a track wide enough for their labels */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .home-hero,
+  .home-section-head {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
+    column-gap: var(--space-7);
+  }
+
+  .home-close {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 34rem) auto;
+    column-gap: var(--space-7);
+  }
+
+  .home-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 1279px) {
   .home-hero {
     grid-template-columns: 1fr;

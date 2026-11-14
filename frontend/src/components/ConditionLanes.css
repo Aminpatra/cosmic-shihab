@@ -135,8 +135,10 @@
   text-decoration-color: var(--neon-yellow);
 }
 
+/* Column widths come from measured text: the longest unit ("phase, material") and the
+   longest one-line readout, so the track keeps every remaining pixel. */
 .lane-label {
-  width: 9.5rem;
+  width: 8.5rem;
   padding-right: var(--space-4);
 }
 
@@ -152,8 +154,12 @@
 }
 
 .lane-result {
-  width: 13.5rem;
+  width: 12.5rem;
   padding-left: var(--space-4);
+}
+
+.readout {
+  white-space: nowrap;
 }
 
 .status {
@@ -268,7 +274,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--space-1);
+  padding: 0 var(--space-3);
+  white-space: nowrap;
   border-left: 1px solid var(--ramp-3);
   color: var(--ramp-5);
   text-align: center;

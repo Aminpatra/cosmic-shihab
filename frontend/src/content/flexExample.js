@@ -27,9 +27,10 @@ export const FLEX_EXAMPLE = {
       label: 'Gravity',
       unit: 'level',
       kind: 'stops',
-      stops: ['Earth 1 g', 'Mars 0.38 g', 'Moon 0.17 g', 'Micro­gravity'],
-      band: 3,
-      value: 3,
+      // FLARE's scenarios are spacecraft, lunar, Mars or custom, so Earth is not a stop.
+      stops: ['Mars 0.38 g', 'Moon 0.17 g', 'Microgravity'],
+      band: 2,
+      value: 2,
       status: 'match',
       readout: 'Both in microgravity',
       source: 'the PSI record of PSI-69, flight program International Space Station (ISS).',
@@ -44,7 +45,7 @@ export const FLEX_EXAMPLE = {
       value: 0.21,
       status: 'match',
       statusLabel: 'In range',
-      readout: '0.12 to 0.34; yours 0.21',
+      readout: '0.12–0.34; yours 0.21',
       source: 'column “O initial ambient composition; mole fraction”, all 274 runs.',
     },
     {
@@ -57,7 +58,7 @@ export const FLEX_EXAMPLE = {
       value: 760,
       status: 'match',
       statusLabel: 'In range',
-      readout: '526.3 to 2,319.9; yours 760',
+      readout: '526.3–2,319.9; yours 760',
       source: 'column “Ambient pressure; mmHg”, 273 of 274 runs; one run records 0 and is left out.',
     },
     {
