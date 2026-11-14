@@ -41,7 +41,8 @@ OUT = os.path.join(ROOT, "backend", "data", "summaries")
 INSTRUCTION = """Summarise this NASA investigation for a researcher or mission planner, in about \
 150 to 250 words: what it set out to learn, what was burned or measured and under which conditions, \
 the hardware and platform, and what data FLARE holds for it. Say what the sources do not state \
-(for example results, if no source gives them). Use only the documents provided."""
+(for example results, if no source gives them). Use only the documents provided. Write plain \
+text without Markdown."""
 
 
 def search_words(record: dict) -> str:
@@ -103,7 +104,8 @@ in about 150 to 250 words: which NASA investigations rank highest for this scena
 conditions that match), what differs, and what the investigations did not record. Keep the order \
 and the scores exactly as the ranking document gives them; do not re-rank, add investigations or \
 estimate missing values. Say that a relevance score is not a safety assessment. If the ranking \
-document has a gravity note, include it. Use only the documents provided."""
+document has a gravity note, include it. Use only the documents provided. Write plain text \
+without Markdown."""
 
 TOP = 5  # investigations described in the ranking document
 
@@ -253,9 +255,9 @@ def reading_question(preset: dict, result: dict) -> str:
                      f"missing {missing}.")
     if result["gravity_note"]:
         parts.append(result["gravity_note"])
-    parts.append("Explain in plain language why these rank highest, what differs and what was not "
-                 "recorded. Keep this order and these scores. Say a relevance score is not a safety "
-                 "assessment.")
+    parts.append("In about 200 words of plain text without Markdown, explain why these rank highest, "
+                 "what differs and what was not recorded. Keep this order and these scores. Say a "
+                 "relevance score is not a safety assessment.")
     return " ".join(parts)
 
 
