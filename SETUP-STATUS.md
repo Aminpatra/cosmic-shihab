@@ -42,7 +42,7 @@ Resume with: `Read claude-starter-kit/MASTER-PROMPT.md and finish the setup.`
   today (96% cache reads), no active 5-hour block. `/impeccable init` wrote PRODUCT.md (primary
   user: researchers; laptop + projected demo). No image tool, so no buildPath recorded; live mode
   skipped until the app runs. Node is installed but VS Code's PATH is stale: restart VS Code fully.
-  Team name (Cosmic Shihab), logo (`Logo.jpg`) and the six members are recorded in PRODUCT.md.
+  Team name (Cosmic Shihab), logo (the PNGs in `brand/`) and the six members are recorded in PRODUCT.md.
 - [x] Step 6 · Cheat sheet given (2026-11-14). Setup COMPLETE.
 - `.claude/skills/` is committed (user's choice, 2026-11-14) so every teammate's Claude gets the
   same skills. impeccable's binary is gitignored; it downloads itself on first run.
