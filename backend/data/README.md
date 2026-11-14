@@ -13,6 +13,7 @@ do not edit by hand. Rebuild with the commands in `pipeline/README.md`.
 | `runs/<ACCESSION>.json` | PSI's experimental tables for 20 investigations (22 tables, 2,009 rows): every cell as PSI wrote it, what FLARE read from it, and a few conditions in common units. Shape below |
 | `files.csv` | One row for each of PSI's 60,866 files for those investigations: name, category, type, size, version, date. 13.5 TB is listed; none of it is stored here |
 | `search.sqlite` | Keyword index (21.5 MB) of the text of 256 PSI documents: 18,036 passages of about 150 words. Its `documents` table lists all 352 documents in scope (every non-"Raw Data" document) with a status: 256 indexed, 72 with no text (mostly engineering drawings), 15 in old .ppt/.doc formats, 7 that PSI could not serve on 14 November 2026 (5 of them SAFFIRE), 2 broken PDFs |
+| `flex_model/results.json` | Results of the FLEX test-outcome model (`pipeline/train_flex_model.py`): scores against a majority baseline, confusion matrices, a chance check, SHAP summaries and limitations. Computed by FLARE from NASA's FLEX table; a pattern in those tests, not a prediction of a real fire |
 
 In the investigation files, every field except `derived` is copied from PSI under PSI's own name
 and with its value unchanged. `derived` holds what FLARE computed: the links, file counts by kind,
