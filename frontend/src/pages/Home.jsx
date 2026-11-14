@@ -90,8 +90,8 @@ export default function Home() {
           Each investigation links to its NASA record and DOI. Read how FLARE gathered the data, what it assumes, and what
           it cannot tell you.
         </p>
-        <Link className="home-close-link" to="/sources">
-          Sources and methodology
+        <Link className="home-close-link" to="/methodology">
+          Methodology
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>

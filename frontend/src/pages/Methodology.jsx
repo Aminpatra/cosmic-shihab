@@ -120,8 +120,8 @@ export default function Methodology() {
               </dl>
               <p>
                 Three groups follow from the tables. <strong>Rank and compare</strong>: eight investigations with 87 to
-                469 runs each. <strong>Show and compare</strong>: twelve with 2 to 32 runs, shown in full but too few to
-                model. <strong>Catalogue only</strong>: four ground-based modelling studies with no run table.
+                469 runs each. <strong>Show and compare</strong>: twelve with 2 to 32 rows each, shown in full but too few to
+                model (PSI-142's rows are published figures, not tests). <strong>Catalogue only</strong>: four ground-based modelling studies with no run table.
               </p>
             </section>
 
@@ -198,9 +198,9 @@ export default function Methodology() {
                 </div>
               </dl>
               <p>
-                No investigation here ran in lunar or Martian gravity. For a partial-gravity scenario every result says
-                its evidence comes from microgravity, and gravity is left out of the score, because nothing could match
-                it.
+                No investigation here ran in lunar or Martian gravity. For a partial-gravity scenario every result names
+                the gravity its own tests ran in, microgravity or normal gravity, and says it is not partial gravity.
+                Gravity is left out of the score, because nothing could match it.
               </p>
             </section>
 
@@ -250,8 +250,9 @@ export default function Methodology() {
                   a safety assessment, and FLARE never predicts whether a real fire will start or spread.
                 </li>
                 <li>
-                  Every flight investigation here ran in microgravity. None tested lunar or Martian gravity, so for a
-                  partial-gravity scenario FLARE says the evidence comes from microgravity.
+                  Every flight investigation here ran in microgravity; one ground study ran in normal gravity. None
+                  tested lunar or Martian gravity, so for a partial-gravity scenario FLARE names the gravity the evidence
+                  comes from and says it is not partial gravity.
                 </li>
                 <li>
                   A condition an investigation did not record is shown as not recorded, never estimated. Of the 14 test
