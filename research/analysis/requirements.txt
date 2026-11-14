@@ -1,0 +1,2 @@
+# Offline analysis only (research/analysis/explore_runs.py); never installed in backend/.
+matplotlib==3.10.3

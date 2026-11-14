@@ -1,0 +1,7 @@
+fuel,oxygen_band,tests,completion,disruption,extinction
+Heptane,below 0.18,25,5,1,19
+Heptane,0.18 to 0.22,59,10,15,34
+Heptane,above 0.22,33,4,22,7
+Methanol,below 0.18,54,0,0,54
+Methanol,0.18 to 0.22,68,3,6,59
+Methanol,above 0.22,35,5,17,13
