@@ -37,8 +37,9 @@ writes data.
   (SQLite full-text search, one passage of about 150 words per result).
 - `train_flex_model.py` trains FLARE's one machine-learning model (scikit-learn, explained with
   SHAP) on the FLEX tests and stores its results; the live site only reads them.
-- `write_summaries.py` asks the assistant for a cited summary of each investigation and stores
-  it marked "not reviewed" until a team member has checked it against its sources.
+- `write_summaries.py` asks the assistant for a cited summary of each investigation, and a plain
+  reading of the ranking for the three scenarios the challenge page states, and stores each marked
+  "not reviewed" until a team member has checked it against its sources. All 27 have been reviewed.
 
 ## API (backend, Python FastAPI)
 
@@ -53,12 +54,14 @@ visitor to change. Every route starts with `/api`.
 | Ranking | `/api/rank` ranks every investigation against a scenario and explains each score; `/api/rank/options` gives the real ranges and fuels in the data |
 | Search | `/api/search` searches the indexed documents |
 | Model | `/api/flex-model` serves the stored model results with their limitations |
-| Assistant | `/api/assistant/status`, `/api/assistant/ask`, `/api/assistant/summaries/{accession}` |
+| Assistant | `/api/assistant/status`, `/api/assistant/ask`, `/api/assistant/summaries/{accession}`, `/api/assistant/readings` |
 
 **The assistant** gathers the investigation records and document passages that match a question
 and sends them to Claude Opus 5.5 (Anthropic) with the instruction to answer only from those
-sources and cite them. Every sentence links back to its source. Without an API key it still
-works: it returns the matching NASA passages and facts with their links, and no generated text.
+sources and cite them. Every sentence that rests on a source cites the words it uses; the
+assistant's own explanation is marked apart. The live site has a key set and answers with Claude
+Opus 5.5. Without an API key it still works: it returns the matching NASA passages and facts with
+their links, and no generated text.
 
 ## Website (frontend, React)
 
@@ -94,11 +97,12 @@ the Detailed Project Description, issue #36. Sources:
   this session measured it).
 - 14 endpoints: the endpoint table in backend/README.md.
 - Read-only, no CORS, /api prefix, fresh PSI links: docs/DECISIONS.md (#8, #19).
-- Assistant behaviour: backend/app/assistant.py, docs/DECISIONS.md (#10, #41). Whether the live
-  site has ANTHROPIC_API_KEY set is not stated here on purpose; say it in #15 once it is known.
+- Assistant behaviour: backend/app/assistant.py, docs/DECISIONS.md (#10, #41). The live site's key:
+  GET /api/assistant/status on https://cosmic-shihab.vercel.app gave {"mode": "generated", "model":
+  "claude-opus-5-5"} on 15 Nov 2026 (#15). 27 reviewed: backend/data/summaries/ (#63).
 - ~150-word passages: docs/DECISIONS.md (#18).
 - Model: pipeline/train_flex_model.py, backend/data/flex_model/results.json, DECISIONS (#16).
-  No metric is quoted; results belong to #15.
+  No metric is quoted here; the results are in submission/description.md and limitations.md (#15).
 - Frontend stack: frontend/package.json (react 19.3.1, react-router 8.5.1, vite 8.3.8,
   lucide-react 1.73.0, @fontsource fira-sans, fira-code, overpass). SVG charts:
   frontend/src/pages/Visualization.jsx (no chart library in package.json; CLAUDE.md mentions

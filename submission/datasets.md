@@ -89,5 +89,5 @@ For the team (not for the form). Draft for the "NASA Data" field, issue #36. Sou
 - 1,147 / 1,001 / 570: GET /api/rank/options on the committed data.
 - 117 suspect values: research/analysis/suspect_values.csv.
 - FLEX 274 tests, the model's scope: backend/data/flex_model/results.json `question`, `notice`.
-  No model result is quoted here; those go in #15.
+  No model result is quoted here; they are in submission/description.md and limitations.md (#15).
 -->
