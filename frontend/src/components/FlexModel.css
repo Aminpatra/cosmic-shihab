@@ -1,0 +1,296 @@
+/* The FLEX model panel on the Visualization page. Colours and sizes from tokens.css and the
+   page's validated data colours (--mark-own, --mark-other, set on .viz). */
+.fm-notice {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 64rem;
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+  color: var(--white);
+  font-size: var(--text-data);
+}
+
+.fm-notice svg {
+  flex: none;
+  margin-top: 0.1rem;
+  color: var(--blue-yonder);
+}
+
+.fm-lead {
+  max-width: 72ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.fm-scores {
+  max-width: 52rem;
+  margin-top: var(--space-5);
+}
+
+.fm-bars {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-data);
+}
+
+.fm-bar {
+  display: grid;
+  grid-template-columns: 15rem 1fr 13rem;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.fm-bar-name {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-2);
+  align-items: baseline;
+  font-weight: 700;
+}
+
+.fm-tag {
+  color: var(--ramp-5);
+  font-weight: 400;
+}
+
+.fm-bar-track {
+  position: relative;
+  height: 1.6rem;
+  background: var(--ramp-1);
+}
+
+.fm-bar-fill {
+  position: absolute;
+  inset: 0.3rem auto 0.3rem 0;
+  width: calc(var(--v) * 100%);
+  background: var(--mark-other);
+}
+
+.fm-chosen .fm-bar-fill {
+  background: var(--mark-own);
+}
+
+/* Cross-validation spread: mean ± one standard deviation, drawn as a thin white line */
+.fm-bar-cv {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--lo) * 100%);
+  width: calc((var(--hi) - var(--lo)) * 100%);
+  min-width: 2px;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--white);
+}
+
+.fm-bar-cv::before,
+.fm-bar-cv::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 2px;
+  height: 12px;
+  background: var(--white);
+}
+
+.fm-bar-cv::before {
+  left: 0;
+}
+
+.fm-bar-cv::after {
+  right: 0;
+}
+
+.fm-bar-value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.fm-bar-cvtext {
+  display: block;
+  color: var(--ramp-5);
+  font-weight: 400;
+}
+
+.fm-scale {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--space-1) calc(13rem + var(--space-4)) 0 calc(15rem + var(--space-4));
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.fm-key {
+  max-width: 72ch;
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.fm-tables {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: var(--space-5) var(--space-7);
+  margin-top: var(--space-5);
+}
+
+.fm-table {
+  border-collapse: collapse;
+  font-size: var(--text-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.fm-table caption {
+  max-width: 30ch;
+  margin-bottom: var(--space-2);
+  color: var(--ramp-6);
+  text-align: left;
+}
+
+.fm-table th,
+.fm-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--ramp-3);
+  text-align: right;
+}
+
+.fm-table thead th {
+  color: var(--ramp-5);
+  font-weight: 700;
+}
+
+.fm-table th:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.fm-diag {
+  background: var(--ramp-1);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.fm-subhead {
+  margin-top: var(--space-6);
+  font: 600 var(--text-body) / 1.3 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.fm-shap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-6);
+  margin-top: var(--space-3);
+}
+
+.fm-shap-warn {
+  margin-bottom: var(--space-2);
+  color: var(--ramp-6);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.fm-shap-group h5 {
+  margin-bottom: var(--space-2);
+  font: 700 var(--text-data) / 1.2 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fm-shap-group ul {
+  display: grid;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-data);
+}
+
+.fm-shap-group li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr 3.2rem 4.5rem;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.fm-shap-bar {
+  height: 0.8rem;
+  width: calc(var(--w) * 100%);
+  min-width: 2px;
+  background: var(--mark-own);
+}
+
+.fm-shap-value {
+  color: var(--ramp-6);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.fm-shap-dir {
+  color: var(--ramp-5);
+}
+
+.fm-limits {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 72ch;
+  margin-top: var(--space-3);
+  padding-left: 1.1rem;
+  font-size: var(--text-data);
+}
+
+.fm-limits li::first-letter {
+  text-transform: uppercase;
+}
+
+.fm-limits li::marker {
+  color: var(--blue-yonder);
+}
+
+@media (max-width: 1279px) {
+  .fm-shap {
+    grid-template-columns: 1fr;
+    max-width: 36rem;
+  }
+}
+
+@media (max-width: 719px) {
+  .fm-bar {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .fm-scale {
+    margin: var(--space-1) 0 0;
+  }
+
+  .fm-tables {
+    grid-template-columns: 1fr;
+  }
+
+  .fm-table {
+    width: 100%;
+  }
+
+  .fm-table caption {
+    max-width: none;
+  }
+
+  .fm-table th,
+  .fm-table td {
+    padding: var(--space-2) var(--space-1);
+  }
+
+  .fm-table thead th {
+    vertical-align: bottom;
+  }
+
+  .fm-shap-group li {
+    grid-template-columns: 7rem 1fr 3rem 3.5rem;
+  }
+}

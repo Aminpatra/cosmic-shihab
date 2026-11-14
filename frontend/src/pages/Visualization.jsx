@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { getJSON } from '../api.js'
 import { LoadError, Loading } from '../components/ApiState.jsx'
+import FlexModel from '../components/FlexModel.jsx'
 import './Visualization.css'
 
 // Charts follow research/analysis/README.md (#32): only tables whose rows are tests, suspect values
@@ -553,6 +554,9 @@ export default function Visualization() {
             </div>
             <div className="viz-block">
               <FlexBurningRate flexRows={runs.data.flexRows} />
+            </div>
+            <div className="viz-block">
+              <FlexModel />
             </div>
             <p className="viz-provenance">
               Drawn from NASA PSI's experimental tables, processed by FLARE; only tables whose rows are tests. How the
