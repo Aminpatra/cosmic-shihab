@@ -240,15 +240,23 @@ def generate(question: str, sources: list[dict], client=None) -> dict:
             "model": response.model, "blocks": blocks, "sources": sources}
 
 
+def _no_key_reason(sources: list[dict]) -> str:
+    """Why the reply is sources only, saying plainly when no document passage matched."""
+    no_key = "No AI key is configured, so FLARE shows sources without a generated answer."
+    if any(source["kind"] == "document" for source in sources):
+        return no_key
+    names = " or ".join(dict.fromkeys(source["label"] for source in sources))
+    return (f"No passage in the documents of {names} matches these words. {no_key} "
+            "Below are the investigations' PSI records only.")
+
+
 def answer(question: str, accessions: list[str] | None = None, client=None) -> dict:
     """The full reply to one question. Raises KeyError for an unknown accession."""
     sources = gather(question, accessions)
     if not sources:
         return retrieval_only(question, [], "No NASA source in FLARE matches this question.")
     if client is None and not key_present():
-        return retrieval_only(question, sources,
-                              "No AI key is configured, so FLARE shows the matching NASA sources "
-                              "without a generated answer.")
+        return retrieval_only(question, sources, _no_key_reason(sources))
     import anthropic
 
     try:

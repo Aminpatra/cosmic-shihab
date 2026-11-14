@@ -92,6 +92,7 @@
 
 /* The scope: the catalogue lane, one toggle per investigation */
 .scope-block {
+  max-width: 64rem;
   margin-top: var(--space-6);
 }
 
@@ -116,6 +117,36 @@
 .scope-segment {
   display: flex;
   gap: 3px;
+}
+
+.scope-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
+  align-items: baseline;
+  min-height: 1.6rem;
+  margin-bottom: var(--space-2);
+}
+
+.scope-readout-title {
+  color: var(--ramp-5);
+}
+
+.scope-count {
+  margin-left: auto;
+  color: var(--ramp-5);
+  font-variant-numeric: tabular-nums;
+}
+
+.scope-tiers {
+  display: grid;
+  grid-template-columns: 8fr 12fr 6fr;
+  gap: var(--space-6);
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+  font: 700 var(--text-data) / 1.3 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .scope-cell {
@@ -435,9 +466,7 @@
 }
 
 .source-link {
-  display: inline-flex;
-  gap: var(--space-1);
-  align-items: center;
+  display: inline;
   min-width: 0;
   color: var(--ramp-6);
   text-decoration-color: var(--ramp-4);
@@ -450,7 +479,9 @@
 }
 
 .source-link svg {
-  flex: none;
+  display: inline;
+  margin-left: var(--space-1);
+  vertical-align: -0.1em;
 }
 
 .source-quotes {
@@ -519,6 +550,11 @@
 }
 
 @media (max-width: 1023px) {
+  .scope-tiers {
+    grid-template-columns: 8fr 12fr 4fr;
+    gap: var(--space-3);
+  }
+
   .scope-track {
     grid-template-columns: 8fr 12fr 4fr;
     gap: var(--space-3);
@@ -537,6 +573,20 @@
 
   .scope-segment {
     gap: 2px;
+  }
+
+  /* 10px cells are below a usable tap target: on phones the lane only shows, the select chooses */
+  .scope-cell {
+    pointer-events: none;
+  }
+
+  .scope-readout {
+    display: none;
+  }
+
+  .scope-tiers {
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
   }
 
   .scope-add {

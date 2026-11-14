@@ -33,7 +33,7 @@ function Marked({ text }) {
 }
 
 // The catalogue lane as a scope control: each cell is a toggle for one investigation.
-function ScopeLane({ investigations, chosen, onToggle }) {
+function ScopeLane({ investigations, chosen, onToggle, onPoint }) {
   const groups = TIERS.map((tier) => ({
     ...tier,
     items: investigations
@@ -43,6 +43,7 @@ function ScopeLane({ investigations, chosen, onToggle }) {
   const full = chosen.length >= MAX_SCOPE
 
   return (
+    <>
     <div className="scope-track" role="group" aria-label="Investigations to ask about">
       {groups.map((group) => (
         <div key={group.id} className="scope-segment">
@@ -57,6 +58,10 @@ function ScopeLane({ investigations, chosen, onToggle }) {
                 disabled={full && !on}
                 title={`${nameOf(inv)} · ${inv.accession}`}
                 onClick={() => onToggle(inv.accession)}
+                onMouseEnter={() => onPoint(inv)}
+                onMouseLeave={() => onPoint(null)}
+                onFocus={() => onPoint(inv)}
+                onBlur={() => onPoint(null)}
               >
                 <span className="visually-hidden">
                   {nameOf(inv)}, {inv.accession}
@@ -67,10 +72,17 @@ function ScopeLane({ investigations, chosen, onToggle }) {
         </div>
       ))}
     </div>
+    <div className="scope-tiers" aria-hidden="true">
+      {groups.map((group) => (
+        <span key={group.id}>{group.label}</span>
+      ))}
+    </div>
+    </>
   )
 }
 
 function Scope({ catalogue, chosen, setChosen }) {
+  const [pointed, setPointed] = useState(null)
   if (catalogue.status === 'loading') return <Loading label="Loading the 24 investigations…" />
   if (catalogue.status === 'error') return <LoadError what="The investigation list" retry={catalogue.retry} />
 
@@ -87,7 +99,20 @@ function Scope({ catalogue, chosen, setChosen }) {
 
   return (
     <div className="scope">
-      <ScopeLane investigations={catalogue.data} chosen={chosen} onToggle={toggle} />
+      <p className="scope-readout" aria-hidden="true">
+        {pointed ? (
+          <>
+            <strong>{nameOf(pointed)}</strong> <span className="id">{pointed.accession}</span>
+            {pointed.investigationAcronym?.trim() && <span className="scope-readout-title">{pointed.title}</span>}
+          </>
+        ) : (
+          <span className="scope-readout-title">Point at a cell to see its investigation.</span>
+        )}
+        <span className="scope-count">
+          {chosen.length} of {MAX_SCOPE} chosen
+        </span>
+      </p>
+      <ScopeLane investigations={catalogue.data} chosen={chosen} onToggle={toggle} onPoint={setPointed} />
       <div className="scope-controls">
         <label className="scope-add">
           <span>Add an investigation</span>
@@ -162,7 +187,7 @@ function SourceList({ sources, quotes }) {
                   <Marked text={source.snippet} />
                 </p>
               ) : (
-                <p className="source-snippet">{source.title}</p>
+                <p className="source-snippet">{source.title.replace(/^PSI record [^:]+: /, '')}</p>
               )}
               <details className="source-full">
                 <summary>
@@ -220,7 +245,10 @@ function Result({ result, retry }) {
         {result.sources.length > 0 ? (
           <>
             <h2 className="answer-h">
-              Matching NASA sources <span className="answer-count">{result.sources.length}</span>
+              {result.sources.every((s) => s.kind === 'record')
+                ? 'Records of the investigations asked about'
+                : 'Matching NASA sources'}{' '}
+              <span className="answer-count">{result.sources.length}</span>
             </h2>
             <SourceList sources={result.sources} quotes={{}} />
           </>
@@ -243,8 +271,9 @@ function Result({ result, retry }) {
         </p>
       </div>
       <p className="answer-legend">
-        <span className="legend-source">Underlined text</span> is stated in a cited NASA source; the number after it
-        opens the source. <span className="legend-own">Plain text</span> is the assistant's own explanation.
+        <span className="legend-source">White underlined text</span> is stated in a cited NASA source; the number after
+        it opens the source. <span className="legend-own">Lighter text without an underline</span> is the assistant's own
+        explanation.
       </p>
       <div className="answer-text">
         {paragraphs(result.blocks).map((para, p) => (
@@ -350,7 +379,7 @@ export default function Assistant() {
               <ArrowRight size={18} aria-hidden="true" />
             </button>
           </div>
-          {mode === 'retrieval_only' && (
+          {mode === 'retrieval_only' && state.status !== 'ready' && (
             <p className="ask-mode">
               <Info size={16} aria-hidden="true" />
               No AI key is configured here, so answers show the matching NASA sources without generated text.

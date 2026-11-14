@@ -32,7 +32,7 @@ FIRST VIEWPORT: H1 and lede at left; a full-width question field with the one Ne
 button; directly below, the catalogue lane at full width labelled SCOPE, chosen cells framed in
 Neon Yellow with removable chips naming them; the answer region starts below with its mode label.
 
-FORM: Scope on the catalogue lane, position 6 of 7 on my list. seed: none (unavailable)
+FORM: Scope on the catalogue lane, position 6 of 7 on my list. seed:46acdf79d5c30217
 SIGNATURE MOVE: picking cells on the catalogue lane narrows the question. In the answer, text
 that rests on a NASA source carries a 1px Blue Yonder underline and numbered citation links; the
 assistant's own explanation is set in ramp-5 without them; a legend says so in words. (Revised

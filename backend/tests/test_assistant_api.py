@@ -146,6 +146,7 @@ class Endpoints(unittest.TestCase):
         self.assertEqual(body["mode"], "retrieval_only")
         self.assertEqual(body["blocks"], [])
         self.assertIn("No AI key", body["reason"])
+        self.assertNotIn("No passage", body["reason"])
         self.assertEqual(body["sources"][0]["id"], "record:PSI-69")
 
     def test_ask_scoped(self):
@@ -160,6 +161,12 @@ class Endpoints(unittest.TestCase):
         many = ["PSI-10", "PSI-20", "PSI-21", "PSI-22", "PSI-23"]
         self.assertEqual(client.post("/api/assistant/ask", json={"question": "abc def", "accessions": many}).status_code, 422)
         self.assertEqual(client.post("/api/assistant/ask", json={"question": "a"}).status_code, 422)
+
+    def test_scoped_question_with_no_matching_passage_says_so(self):
+        body = client.post("/api/assistant/ask",
+                           json={"question": "zzzqx vbnmw", "accessions": ["PSI-107", "PSI-69"]}).json()
+        self.assertEqual({s["kind"] for s in body["sources"]}, {"record"})
+        self.assertIn("No passage in the documents of SPICE or FLEX matches", body["reason"])
 
     def test_nothing_found(self):
         body = client.post("/api/assistant/ask", json={"question": "zzzqx vbnmw"}).json()
