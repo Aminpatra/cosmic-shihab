@@ -3,6 +3,7 @@ import { useApi } from '../api.js'
 import {
   TIERS,
   byAccession,
+  countOf,
   formatDate,
   formatNumber,
   formatTB,
@@ -11,7 +12,7 @@ import {
   summarise,
   tierOf,
 } from '../catalogue.js'
-import { LoadError, Loading } from '../components/ApiState.jsx'
+import { Empty, LoadError, Loading } from '../components/ApiState.jsx'
 import logo from '../assets/cosmic-shihab-logo.jpg'
 import './Sources.css'
 
@@ -37,7 +38,9 @@ function InvestigationTable({ investigations }) {
   return (
     <div className="inv-table-wrap">
       <table className="inv-table">
-        <caption className="visually-hidden">The 24 NASA PSI combustion investigations FLARE uses</caption>
+        <caption className="visually-hidden">
+          The {countOf(rows.length, 'NASA PSI combustion investigation')} FLARE uses
+        </caption>
         <thead>
           <tr>
             <th scope="col">Accession</th>
@@ -55,10 +58,16 @@ function InvestigationTable({ investigations }) {
           {rows.map((inv) => {
             const runs = runsOf(inv)
             const flown = inv.flightProgram?.trim()
+            const doi = inv.doi?.trim()
             return (
               <tr key={inv.accession}>
                 <td data-label="Accession">
-                  <a className="id" href={inv.derived?.page_url} target="_blank" rel="noreferrer">
+                  <a
+                    className="id"
+                    href={inv.derived?.page_url ?? `https://psi.nasa.gov/physci/repo/data/investigations/${inv.accession}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {inv.accession}
                   </a>
                 </td>
@@ -90,9 +99,13 @@ function InvestigationTable({ investigations }) {
                   {inv.licenseIdentifier?.trim() || <span className="absent">Not stated</span>}
                 </td>
                 <td data-label="DOI">
-                  <a className="id" href={inv.derived?.doi_url ?? `https://doi.org/${inv.doi}`} target="_blank" rel="noreferrer">
-                    {inv.doi}
-                  </a>
+                  {doi ? (
+                    <a className="id" href={inv.derived?.doi_url ?? `https://doi.org/${doi}`} target="_blank" rel="noreferrer">
+                      {doi}
+                    </a>
+                  ) : (
+                    <span className="absent">Not stated</span>
+                  )}
                 </td>
               </tr>
             )
@@ -105,7 +118,8 @@ function InvestigationTable({ investigations }) {
 
 export default function Sources() {
   const catalogue = useApi('/investigations')
-  const facts = catalogue.status === 'ready' ? summarise(catalogue.data) : null
+  const empty = catalogue.status === 'ready' && catalogue.data.length === 0
+  const facts = catalogue.status === 'ready' && !empty ? summarise(catalogue.data) : null
 
   return (
     <>
@@ -142,15 +156,18 @@ export default function Sources() {
                 {facts && (
                   <>
                     {' '}
-                    It lists {facts.count} investigations and {formatNumber(facts.files)} files ({formatTB(facts.bytes)}),
-                    retrieved on {formatDate(facts.retrieved)}. Cite each one by its DOI.
+                    It lists {countOf(facts.count, 'investigation')} and {countOf(facts.files, 'file')} (
+                    {formatTB(facts.bytes)}), retrieved on {formatDate(facts.retrieved)}. Cite each one by its DOI.
                   </>
                 )}
               </p>
-              {catalogue.status === 'loading' && <Loading label="Loading the 24 investigations…" />}
-              {catalogue.status === 'error' && <LoadError what="The investigation list" retry={catalogue.retry} />}
-              {catalogue.status === 'ready' && <InvestigationTable investigations={catalogue.data} />}
-              {catalogue.status === 'ready' && (
+              {catalogue.status === 'loading' && <Loading label="Loading the investigations…" />}
+              {catalogue.status === 'error' && (
+                <LoadError what="The investigation list" retry={catalogue.retry} error={catalogue.error} />
+              )}
+              {empty && <Empty what="The investigation list" retry={catalogue.retry} />}
+              {facts && <InvestigationTable investigations={catalogue.data} />}
+              {facts && (
                 <p className="sources-note">
                   How the three groups in the FLARE use column were set:{' '}
                   <Link to="/methodology#tables">Methodology</Link>.
