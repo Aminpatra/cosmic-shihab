@@ -1,5 +1,5 @@
 .explorer,
-.inv-page {
+.rec-page {
   padding: var(--space-8) var(--gutter) var(--space-9);
   font-variant-numeric: tabular-nums;
 }
@@ -40,8 +40,8 @@
 
 .explorer .api-loading,
 .explorer .api-error,
-.inv-page .api-loading,
-.inv-page .api-error {
+.rec-page .api-loading,
+.rec-page .api-error {
   margin-top: var(--space-5);
 }
 
@@ -130,14 +130,14 @@
 
 .hit-meta a,
 .ex-name,
-.inv-page a:not(.button):not(.button-quiet) {
+.rec-page a:not(.button):not(.button-quiet) {
   color: var(--white);
   text-decoration-color: var(--ramp-4);
 }
 
 .hit-meta a:hover,
 .ex-name:hover,
-.inv-page a:not(.button):not(.button-quiet):hover {
+.rec-page a:not(.button):not(.button-quiet):hover {
   color: var(--neon-yellow);
   text-decoration-color: var(--neon-yellow);
 }
@@ -351,4 +351,221 @@
   .ex-table .num {
     text-align: left;
   }
+}
+
+/* One investigation: PSI's text in a reading column, the facts beside it */
+.rec-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-data);
+}
+
+.rec-head {
+  margin-top: var(--space-5);
+}
+
+.rec-body {
+  display: grid;
+  gap: var(--space-7);
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--ramp-3);
+}
+
+@media (min-width: 1024px) {
+  .rec-body {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    grid-template-areas: 'text facts';
+    align-items: start;
+  }
+
+  .rec-facts {
+    grid-area: facts;
+    position: sticky;
+    top: calc(var(--bar-height) + var(--space-5));
+  }
+
+  .rec-text {
+    grid-area: text;
+  }
+}
+
+.rec-text {
+  min-width: 0;
+}
+
+.rec-field {
+  max-width: 70ch;
+  margin-top: var(--space-6);
+}
+
+.rec-field h3 {
+  margin: 0;
+}
+
+.rec-field p {
+  margin-top: var(--space-3);
+  color: var(--ramp-6);
+}
+
+.rec-facts {
+  min-width: 0;
+  font-size: var(--text-data);
+}
+
+.rec-dl {
+  margin: 0;
+  border-top: 1px solid var(--ramp-3);
+}
+
+.rec-dl div {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.rec-dl dt {
+  color: var(--ramp-5);
+}
+
+.rec-dl dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.rec-link-line,
+.rec-cite {
+  display: block;
+}
+
+.rec-cite {
+  margin-top: var(--space-1);
+  color: var(--ramp-5);
+}
+
+.rec-h3 {
+  margin: var(--space-6) 0 var(--space-2);
+  font: 600 var(--text-h3) / 1.3 var(--font-body);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rec-tables {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rec-tables li {
+  display: grid;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--ramp-3);
+  overflow-wrap: anywhere;
+}
+
+.rec-muted {
+  color: var(--ramp-5);
+}
+
+.rec-compare {
+  margin-top: var(--space-4);
+  text-decoration: none;
+}
+
+.rec-footnote {
+  margin-top: var(--space-3);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.rec-section {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.rec-section > .ex-search {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.rec-count {
+  color: var(--ramp-5);
+}
+
+.rec-kinds {
+  margin-top: var(--space-4);
+}
+
+.rec-kind::first-letter {
+  text-transform: uppercase;
+}
+
+.rec-kind {
+  display: inline-block;
+}
+
+.rec-file {
+  overflow-wrap: anywhere;
+}
+
+.rec-files tbody th {
+  min-width: 0;
+}
+
+.rec-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.rec-pager p {
+  margin-right: auto;
+}
+
+.rec-pager .button-quiet:disabled,
+.rec-people .button-quiet:disabled {
+  border-color: var(--ramp-3);
+  color: var(--ramp-5);
+  cursor: default;
+}
+
+.rec-people {
+  display: grid;
+  gap: 0 var(--space-7);
+}
+
+@media (min-width: 1024px) {
+  .rec-people {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+}
+
+.rec-list {
+  margin: var(--space-4) 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+}
+
+.rec-list li {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.rec-pub-title {
+  font-weight: 600;
 }

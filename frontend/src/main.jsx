@@ -21,6 +21,7 @@ import Assistant from './pages/Assistant.jsx'
 import Scenario from './pages/Scenario.jsx'
 import Comparison from './pages/Comparison.jsx'
 import Explorer from './pages/Explorer.jsx'
+import ExplorerInvestigation from './pages/ExplorerInvestigation.jsx'
 import InProgress from './pages/InProgress.jsx'
 import NotFound from './pages/NotFound.jsx'
 import { PAGES } from './pages.js'
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       { path: 'sources', element: <Sources /> },
       { path: 'assistant', element: <Assistant /> },
       { path: 'explorer', element: <Explorer /> },
+      { path: 'explorer/:accession', element: <ExplorerInvestigation /> },
       { path: 'scenario', element: <Scenario /> },
       { path: 'comparison', element: <Comparison /> },
       ...slots,
