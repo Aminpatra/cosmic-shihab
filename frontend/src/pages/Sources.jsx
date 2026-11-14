@@ -65,7 +65,7 @@ function InvestigationTable({ investigations }) {
                   </a>
                 </td>
                 <th scope="row" data-label="Investigation">
-                  <span className="inv-acronym">{nameOf(inv) !== inv.accession ? nameOf(inv) : ''}</span>
+                  {nameOf(inv) !== inv.accession && <span className="inv-acronym">{nameOf(inv)}</span>}
                   <span className="inv-full">{inv.title}</span>
                 </th>
                 <td data-label="Flown on">
@@ -78,7 +78,14 @@ function InvestigationTable({ investigations }) {
                   )}
                 </td>
                 <td data-label="Runs" className="num">
-                  {runs > 0 ? formatNumber(runs) : <span className="absent">No table</span>}
+                  {runs > 0 ? (
+                    <>
+                      {formatNumber(runs)}
+                      <span className="runs-unit"> runs</span>
+                    </>
+                  ) : (
+                    <span className="absent">No table</span>
+                  )}
                 </td>
                 <td data-label="FLARE use">{tierLabel[tierOf(inv)]}</td>
                 <td data-label="Licence">

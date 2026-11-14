@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { CircleDashed } from 'lucide-react'
+import { Construction } from 'lucide-react'
 import './InProgress.css'
 
 const ISSUES = 'https://github.com/gheathwahab/cosmic-shihab/issues/'
@@ -17,7 +17,7 @@ export default function InProgress({ page }) {
             <span>Not built yet</span>
           </span>
           <p>
-            <CircleDashed className="slot-icon" size={16} strokeWidth={2.25} aria-hidden="true" />
+            <Construction className="slot-icon" size={16} strokeWidth={2} aria-hidden="true" />
             This page is being built
             {page.issue && (
               <>

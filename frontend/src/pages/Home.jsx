@@ -20,8 +20,8 @@ export default function Home() {
         <div className="home-intro">
           <h1>Which NASA fire experiments match your mission?</h1>
           <p className="home-lede">
-            FLARE ranks NASA's 24 microgravity combustion investigations against the scenario you describe, and shows
-            why: what matches, what differs, and what was never recorded.
+            FLARE compares the scenario you describe with NASA's 24 PSI combustion investigations and shows why each
+            one fits: what matches, what differs, and what was never recorded.
           </p>
           <div className="home-actions">
             <Link className="button" to="/scenario">
@@ -44,16 +44,19 @@ export default function Home() {
             summary="3 match, 1 differs, 1 not recorded"
             theirsLabel={`FLEX tested range, ${FLEX_EXAMPLE.runs} runs`}
             lanes={FLEX_EXAMPLE.lanes}
+            source={
+              <>
+                Source: <span className="id">{FLEX_EXAMPLE.accession}</span> experimental table, {FLEX_EXAMPLE.runs}{' '}
+                runs,{' '}
+                <a href={`https://doi.org/${FLEX_EXAMPLE.doi}`} target="_blank" rel="noreferrer">
+                  doi:{FLEX_EXAMPLE.doi}
+                </a>
+                , retrieved {FLEX_EXAMPLE.retrieved}. The cabin values are an example, not NASA data. Point at a lane
+                to see its source column.
+              </>
+            }
             animate
           />
-          <p className="provenance">
-            Source: <span className="id">{FLEX_EXAMPLE.accession}</span> experimental table, {FLEX_EXAMPLE.runs} runs,{' '}
-            <a href={`https://doi.org/${FLEX_EXAMPLE.doi}`} target="_blank" rel="noreferrer">
-              doi:{FLEX_EXAMPLE.doi}
-            </a>
-            , retrieved {FLEX_EXAMPLE.retrieved}. One run records 0 mmHg and is left out of the pressure range. The cabin
-            values are an example, not NASA data.
-          </p>
         </div>
       </section>
 

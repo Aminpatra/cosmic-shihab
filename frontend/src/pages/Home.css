@@ -1,14 +1,18 @@
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 29rem) minmax(0, 1fr);
-  gap: var(--space-8);
+  grid-template-columns: minmax(0, 31rem) minmax(0, 1fr);
+  gap: var(--space-7) var(--space-8);
   align-items: start;
-  padding: var(--space-8) var(--gutter) var(--space-8);
+  padding: var(--space-6) var(--gutter) var(--space-5);
+}
+
+.home-hero h1 {
+  font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3rem);
 }
 
 .home-lede {
   margin-top: var(--space-5);
-  max-width: 34ch;
+  max-width: 36ch;
   color: var(--ramp-6);
   font: 300 var(--text-lede) / 1.5 var(--font-body);
 }
@@ -17,7 +21,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-4) var(--space-6);
+  gap: var(--space-4) var(--space-5);
   margin-top: var(--space-6);
 }
 
@@ -27,15 +31,11 @@
 
 .home-note {
   max-width: 26rem;
-  margin-top: var(--space-6);
-  padding-top: var(--space-4);
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
   border-top: 1px solid var(--ramp-3);
   color: var(--ramp-5);
   font-size: var(--text-data);
-}
-
-.home-record {
-  padding-top: var(--space-2);
 }
 
 .provenance {
@@ -57,7 +57,7 @@
 }
 
 .home-catalogue {
-  padding: var(--space-8) var(--gutter);
+  padding: var(--space-5) var(--gutter) var(--space-8);
   border-top: 1px solid var(--ramp-3);
   background: var(--ramp-1);
 }
@@ -72,10 +72,10 @@
 
 .home-section-head {
   display: grid;
-  grid-template-columns: minmax(0, 29rem) minmax(0, 40rem);
+  grid-template-columns: minmax(0, 31rem) minmax(0, 40rem);
   gap: var(--space-4) var(--space-8);
   align-items: end;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
 }
 
 .home-section-head p {
@@ -84,7 +84,7 @@
 
 .home-close {
   display: grid;
-  grid-template-columns: minmax(0, 29rem) minmax(0, 34rem) auto;
+  grid-template-columns: minmax(0, 31rem) minmax(0, 34rem) auto;
   gap: var(--space-4) var(--space-8);
   align-items: end;
   padding: var(--space-8) var(--gutter);

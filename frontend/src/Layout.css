@@ -84,8 +84,24 @@
   border-bottom-color: var(--neon-yellow);
 }
 
-.nav-pending {
+/* Pages another task is still building: dimmed, with a construction mark */
+.nav-link-pending {
   color: var(--on-electric);
+  font-weight: 400;
+}
+
+.nav-pending-icon {
+  color: var(--on-electric);
+}
+
+/* Read aloud everywhere, shown as words only in the phone menu */
+.nav-pending-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .menu-toggle {
@@ -157,11 +173,25 @@
     height: 3rem;
     padding: 0 var(--gutter);
     border-bottom: 0;
-    border-left: 3px solid transparent;
   }
 
-  .nav-link.active {
-    border-left-color: var(--neon-yellow);
+  .nav-link.active .nav-label {
+    text-decoration: underline 3px var(--neon-yellow);
+    text-underline-offset: 0.45em;
+  }
+
+  .nav-pending-icon {
+    display: none;
+  }
+
+  .nav-pending-text {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    color: var(--on-electric);
+    font-size: 0.875rem;
   }
 
   .site-footer {

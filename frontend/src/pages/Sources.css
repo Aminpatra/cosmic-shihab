@@ -235,7 +235,8 @@
     max-width: 14rem;
   }
 
-  /* Each investigation becomes a labelled block */
+  /* Each investigation becomes a four-line record: accession and name, title, one line of
+     facts, DOI. */
   .inv-table-wrap {
     overflow: visible;
   }
@@ -249,41 +250,65 @@
   }
 
   .inv-table,
-  .inv-table tbody,
-  .inv-table tr,
-  .inv-table th,
-  .inv-table td {
+  .inv-table tbody {
     display: block;
   }
 
   .inv-table tr {
-    padding: var(--space-4) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-1) 0;
+    padding: var(--space-3) 0;
     border-bottom: 1px solid var(--ramp-3);
   }
 
   .inv-table tbody th,
   .inv-table td {
-    display: grid;
-    grid-template-columns: 6.5rem minmax(0, 1fr);
-    gap: var(--space-3);
+    display: block;
     min-width: 0;
-    padding: var(--space-1) 0;
+    padding: 0;
     border: 0;
   }
 
-  .inv-table tbody th::before,
-  .inv-table td::before {
-    content: attr(data-label);
+  .inv-table td[data-label='Accession'] {
+    flex: 0 0 4.5rem;
+  }
+
+  .inv-table tbody th {
+    flex: 1 1 calc(100% - 4.5rem);
+    min-width: 0;
+  }
+
+  .inv-full {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .inv-table td[data-label='Flown on'] {
+    min-width: 0;
+    flex: 0 1 auto;
     color: var(--ramp-5);
-    font-weight: 400;
+  }
+
+  .inv-table td[data-label='Runs'],
+  .inv-table td[data-label='FLARE use'],
+  .inv-table td[data-label='Licence'] {
+    flex: 0 0 auto;
+    margin-left: var(--space-2);
+    padding-left: var(--space-2);
+    border-left: 1px solid var(--ramp-3);
+    color: var(--ramp-5);
+  }
+
+  .inv-table td[data-label='DOI'] {
+    flex: 0 0 100%;
   }
 
   .inv-table .num {
     text-align: left;
-  }
-
-  .inv-table tbody th > span {
-    grid-column: 2;
   }
 
   .inv-table a.id {
@@ -293,5 +318,15 @@
 
   .inv-table tbody tr:hover > * {
     background: none;
+  }
+}
+
+.runs-unit {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  .runs-unit {
+    display: inline;
   }
 }

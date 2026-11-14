@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, ScrollRestoration, useLocation } from 'react-router'
-import { CircleDashed, Menu, X } from 'lucide-react'
+import { Construction, Menu, X } from 'lucide-react'
 import { PAGES } from './pages.js'
 import './Layout.css'
 
@@ -35,12 +35,19 @@ export default function Layout() {
           <ul>
             {PAGES.map((page) => (
               <li key={page.path}>
-                <NavLink to={page.path} end={page.path === '/'} className="nav-link">
-                  {page.nav}
+                <NavLink
+                  to={page.path}
+                  end={page.path === '/'}
+                  className={({ isActive }) =>
+                    ['nav-link', !page.ready && 'nav-link-pending', isActive && 'active'].filter(Boolean).join(' ')
+                  }
+                  title={page.ready ? undefined : `${page.title}: in progress`}
+                >
+                  <span className="nav-label">{page.nav}</span>
                   {!page.ready && (
                     <>
-                      <CircleDashed className="nav-pending" size={12} strokeWidth={2.25} aria-hidden="true" />
-                      <span className="visually-hidden"> (in progress)</span>
+                      <Construction className="nav-pending-icon" size={14} strokeWidth={2} aria-hidden="true" />
+                      <span className="nav-pending-text"> in progress</span>
                     </>
                   )}
                 </NavLink>
