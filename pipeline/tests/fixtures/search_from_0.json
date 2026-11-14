@@ -1,0 +1,157 @@
+{
+ "hits": {
+  "total": 26,
+  "hits": [
+   {
+    "_source": {
+     "Accession": "PSI-22",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-10",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-159",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-107",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-106",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-100",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-102",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-69",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-39",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-21",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-68",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-26",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-117",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-23",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-20",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-142",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-60",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-62",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-99",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-25",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-115",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-47",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-98",
+     "Research Area": "Combustion Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-181",
+     "Research Area": "Materials Science"
+    }
+   },
+   {
+    "_source": {
+     "Accession": "PSI-108",
+     "Research Area": "Fluid Physics"
+    }
+   }
+  ]
+ }
+}

@@ -4,7 +4,7 @@
 > "Flame in Freefall" challenge: a research tool that lets researchers and mission planners explore,
 > compare and rank NASA microgravity combustion investigations (PSI data) for a chosen scenario.
 > Stack: React + Vite + Recharts + Lucide (plain CSS) · Python FastAPI + pandas + SQLite · deploy on
-> Vercel. Deadline: the Space Apps 2026 submission deadline. Full brief: `FLARE_Master_Execution_Prompt (1).md`.
+> Vercel. Deadline: Sunday 15 November 2026, 11:59 p.m. local. Full brief: `FLARE_Master_Execution_Prompt (1).md`.
 
 ## Priorities
 
@@ -13,6 +13,15 @@ usage budget, then images and video. When they compete, say so and let the team 
 
 Judging criteria and submission rules are in `CRITERIA.md`. Check features, slides and claims against it,
 especially the hard requirements (7-slide or 30-second demo, English, every external resource in References).
+
+## AI in the product, and the AI-use log
+
+- The assistant uses **Claude Opus 5.5** (`claude-opus-5-5`) through the Anthropic API (decided
+  2026-11-14). The key arrives later and is read from `ANTHROPIC_API_KEY` in `.env`. Everything
+  must still work without it. Load the `claude-api` skill before writing the integration.
+- The submission asks how we used AI. After each milestone, add a row to your own file in
+  `docs/ai-use/` (rules in its README), and mark AI-made content the way `CRITERIA.md` requires.
+- Which PSI investigations are reliable, and how PSI must be read, is in `docs/DATA_PLAN.md`.
 
 ## Skills: who owns what
 
