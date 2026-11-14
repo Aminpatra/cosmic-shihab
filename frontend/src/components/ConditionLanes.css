@@ -202,6 +202,7 @@
   position: absolute;
   top: 0.45rem;
   bottom: 0.45rem;
+  min-width: 3px; /* a range that is one value still shows */
   background: var(--band-fill);
   border: 1px solid var(--band-edge);
 }
@@ -298,6 +299,11 @@
   color: var(--white);
 }
 
+/* Nothing recorded for a named condition: the stops stay readable over the hatch. */
+.track-none {
+  background: var(--hatch), var(--ramp-1);
+}
+
 .track-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -318,6 +324,11 @@
 
 .pair-yours {
   border: 1px solid var(--tick);
+}
+
+.pair-theirs.pair-none {
+  background: var(--hatch);
+  border-color: var(--ramp-4);
 }
 
 /* The one authored moment: each band is drawn, then the scenario tick lands on it. */

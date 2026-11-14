@@ -10,8 +10,8 @@ import './ConditionLanes.css'
 // lanes: [{
 //   id, label, unit, status: 'match' | 'differs' | 'missing', statusLabel?, readout, source,
 //   kind: 'range'  -> axis: { min, max, ticks: [numbers] }, band: [lo, hi] | null, value: number | null, missingNote?
-//   kind: 'stops'  -> stops: [labels], band: index, value: index
-//   kind: 'pair'   -> theirs: text, yours: text
+//   kind: 'stops'  -> stops: [labels], band: index | [indexes] (none: hatched), value: index
+//   kind: 'pair'   -> theirs: text | null (null: hatched), yours: text
 // }]
 
 const STATUS = {
@@ -69,12 +69,15 @@ function RangeTrack({ lane }) {
 // On a lane of named stops the scenario is drawn as a Neon Yellow frame around its stop,
 // so the mark never crosses the stop's label.
 function StopsTrack({ lane }) {
+  const tested = [].concat(lane.band ?? [])
   return (
-    <div className="track track-stops">
+    <div className={tested.length ? 'track track-stops' : 'track track-stops track-none'}>
       {lane.stops.map((stop, i) => (
         <span
           key={stop}
-          className={['stop', i === lane.band && 'stop-tested', i === lane.value && 'stop-yours'].filter(Boolean).join(' ')}
+          className={['stop', tested.includes(i) && 'stop-tested', i === lane.value && 'stop-yours']
+            .filter(Boolean)
+            .join(' ')}
         >
           {stop}
         </span>
@@ -86,7 +89,11 @@ function StopsTrack({ lane }) {
 function PairTrack({ lane }) {
   return (
     <div className="track track-pair">
-      <span className="pair-theirs">{lane.theirs}</span>
+      {lane.theirs == null ? (
+        <span className="pair-theirs pair-none" />
+      ) : (
+        <span className="pair-theirs">{lane.theirs}</span>
+      )}
       <span className="pair-yours">{lane.yours}</span>
     </div>
   )
