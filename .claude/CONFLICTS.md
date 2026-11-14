@@ -63,6 +63,7 @@ pull in different directions.
 | Before each prompt | spendcap | Checks the budget; warns the person; blocks only in hard mode | Zero tokens |
 | Before Bash runs | git-guardrails (optional) | Blocks `git push`, `reset --hard`, `clean -f`, `branch -D` | Zero tokens. The team pushes themselves |
 | On Stop, only after it was invoked manually | taste-skill | Runs its browser check on a landing page | Runs Chrome; up to 10 minutes |
+| Session start, once | team-sync (this repo, `.claude/hooks/team-sync.sh`, PR #1) | Prints a 10–20 line digest: task owners, branches in flight, open PRs, team decisions | One short digest per session, not per turn; about 3.5 s |
 
 Never install: superpowers as a **plugin** (its session-start hook injects its rules every session;
 the skills are installed individually instead), caveman's hooks or status line, or any second
