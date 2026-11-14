@@ -1,0 +1,152 @@
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 31rem) minmax(0, 1fr);
+  gap: var(--space-7) var(--space-8);
+  align-items: start;
+  padding: var(--space-6) var(--gutter) var(--space-5);
+}
+
+.home-hero h1 {
+  font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3rem);
+}
+
+.home-lede {
+  margin-top: var(--space-5);
+  max-width: 36ch;
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.home-browse {
+  font-weight: 600;
+}
+
+.home-note {
+  max-width: 26rem;
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--ramp-3);
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.provenance {
+  margin-top: var(--space-4);
+  max-width: 72ch;
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.provenance a {
+  color: var(--ramp-6);
+  text-decoration-color: var(--ramp-4);
+}
+
+.provenance a:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.home-catalogue {
+  padding: var(--space-5) var(--gutter) var(--space-8);
+  border-top: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+}
+
+.home-catalogue .cell-show {
+  background: var(--ramp-0);
+}
+
+.home-catalogue .catalogue-group a:hover {
+  background: var(--ramp-2);
+}
+
+.home-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 31rem) minmax(0, 40rem);
+  gap: var(--space-4) var(--space-8);
+  align-items: end;
+  margin-bottom: var(--space-5);
+}
+
+.home-section-head p {
+  color: var(--ramp-6);
+}
+
+.home-close {
+  display: grid;
+  grid-template-columns: minmax(0, 31rem) minmax(0, 34rem) auto;
+  gap: var(--space-4) var(--space-8);
+  align-items: end;
+  padding: var(--space-8) var(--gutter);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.home-close p {
+  color: var(--ramp-6);
+}
+
+.home-close-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Laptop widths: a narrower intro so the lanes keep a track wide enough for their labels */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .home-hero,
+  .home-section-head {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
+    column-gap: var(--space-7);
+  }
+
+  .home-close {
+    grid-template-columns: minmax(0, 26rem) minmax(0, 34rem) auto;
+    column-gap: var(--space-7);
+  }
+
+  .home-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  .home-lede {
+    max-width: 52ch;
+  }
+
+  .home-section-head,
+  .home-close {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 719px) {
+  .home-hero {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-7);
+  }
+
+  .home-catalogue,
+  .home-close {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+  }
+}

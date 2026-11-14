@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T00:00:00Z",
+  "title": "Design System: FLARE",
+  "extensions": {
+    "colorMeta": {
+      "deep-blue": { "role": "primary", "displayName": "Deep Blue", "canonical": "#07173F", "tonalRamp": ["#07173F", "#0A1D4D", "#0E2760", "#28467F", "#5C77AE", "#B9C6E4", "#E6ECF8", "#FFFFFF"] },
+      "electric-blue": { "role": "primary", "displayName": "Electric Blue", "canonical": "#0042A6", "tonalRamp": ["#001233", "#00225A", "#003282", "#0042A6", "#2F68C4", "#6E95DA", "#AFC5EC", "#E4ECF9"] },
+      "neon-blue": { "role": "secondary", "displayName": "Neon Blue", "canonical": "#0960E1", "tonalRamp": ["#021738", "#052E6E", "#0746A7", "#0960E1", "#4384EA", "#7FA9F1", "#BBD0F7", "#E8F0FD"] },
+      "blue-yonder": { "role": "secondary", "displayName": "Blue Yonder", "canonical": "#2E96F5", "tonalRamp": ["#06223D", "#0D4273", "#1765AE", "#2E96F5", "#5DAFF8", "#8CC7FA", "#BEDFFC", "#EAF4FE"] },
+      "neon-yellow": { "role": "tertiary", "displayName": "Neon Yellow", "canonical": "#EAFE07", "tonalRamp": ["#3A3F02", "#5E6604", "#8A9605", "#B9C906", "#EAFE07", "#F2FF5C", "#F8FFA6", "#FDFFE0"] },
+      "neon-yellow-lift": { "role": "tertiary", "displayName": "Neon Yellow Lift", "canonical": "#F2FF5C" },
+      "rocket-red": { "role": "tertiary", "displayName": "Rocket Red", "canonical": "#E43700", "tonalRamp": ["#3A0E00", "#6B1A00", "#A32800", "#E43700", "#EC6433", "#F29270", "#F8C2AE", "#FDECE6"] },
+      "white": { "role": "neutral", "displayName": "White", "canonical": "#FFFFFF" },
+      "ramp-1": { "role": "neutral", "displayName": "Track Blue", "canonical": "#0A1D4D" },
+      "ramp-2": { "role": "neutral", "displayName": "Lift Blue", "canonical": "#0E2760" },
+      "ramp-3": { "role": "neutral", "displayName": "Hairline Blue", "canonical": "#28467F" },
+      "ramp-4": { "role": "neutral", "displayName": "Hatch Blue", "canonical": "#5C77AE" },
+      "ramp-5": { "role": "neutral", "displayName": "Secondary Text Blue", "canonical": "#B9C6E4" },
+      "ramp-6": { "role": "neutral", "displayName": "Lede Blue", "canonical": "#E6ECF8" },
+      "on-electric": { "role": "neutral", "displayName": "On-Electric Periwinkle", "canonical": "#D3DEFA" },
+      "band-fill": { "role": "secondary", "displayName": "Tested Band", "canonical": "rgb(46 150 245 / 0.42)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 only, Fira Sans Black in capitals, one per page." },
+      "headline": { "displayName": "Headline", "purpose": "H2 section heads, Overpass Regular, sentence case." },
+      "title": { "displayName": "Title", "purpose": "H3 group heads, Overpass SemiBold in capitals." },
+      "lede": { "displayName": "Lede", "purpose": "The one paragraph under an H1, in ramp-6." },
+      "body": { "displayName": "Body", "purpose": "Reading text, 68 to 72ch." },
+      "data": { "displayName": "Data", "purpose": "The one size inside every data region, tabular figures." },
+      "label": { "displayName": "Label", "purpose": "Lane results and table column heads, caps, tracked." },
+      "footnote": { "displayName": "Footnote", "purpose": "Provenance lines under figures." },
+      "identifier": { "displayName": "Identifier", "purpose": "Accession numbers, DOIs and file names only." }
+    },
+    "shadows": [
+      { "name": "overlay-drop", "value": "0 16px 32px rgb(3 10 30 / 0.5)", "purpose": "Phone menu panel only, where it lies over page content." }
+    ],
+    "materials": [
+      { "name": "hatch", "value": "repeating-linear-gradient(135deg, var(--ramp-4) 0 1px, transparent 1px 7px)", "purpose": "Not recorded. Never a colour, never a zero." },
+      { "name": "band-edge", "value": "1px solid var(--blue-yonder)", "purpose": "Edge of every tested-range band." },
+      { "name": "scenario-frame", "value": "inset 0 0 0 3px var(--neon-yellow)", "purpose": "The visitor's stop on a categorical lane." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Every transition and the lane entrance." },
+      { "name": "state-transition", "value": "160ms", "purpose": "Hover lift, button fill, nav underline." },
+      { "name": "lane-draw", "value": "640ms clip-path inset(0 100% 0 0) to inset(0), stagger 90ms per lane, delay 150ms", "purpose": "Each band drawn left to right; part of the one authored entrance." },
+      { "name": "tick-land", "value": "420ms opacity 0 and translateY(-0.6rem) to rest, stagger 90ms, delay 560ms", "purpose": "The scenario tick lands after its band; static under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "719px", "purpose": "Lanes and tables recompose into stacked records." },
+      { "name": "tablet", "value": "1023px", "purpose": "Phone menu, single-column footer and catalogue groups." },
+      { "name": "laptop", "value": "1279px", "purpose": "Home intro stacks; wordmark drops its full name." },
+      { "name": "laptop-wide", "value": "1280px-1439px", "purpose": "Home intro narrows to 26rem so lane tracks keep their width." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled Neon Yellow control on a screen.",
+      "html": "<button class=\"ds-btn-primary\">Start from a scenario <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 3rem; padding: 0.85rem 1.4rem 0.75rem; border: 0; border-radius: 4px; background: #EAFE07; color: #07173F; font: 700 1.0625rem/1 Overpass, 'Segoe UI', sans-serif; cursor: pointer; transition: transform 160ms cubic-bezier(0.16,1,0.3,1), background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary svg { transition: transform 200ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #F2FF5C; } .ds-btn-primary:hover svg { transform: translateX(3px); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #EAFE07; outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary action such as retry: outlined, Neon Yellow only on hover.",
+      "html": "<div style=\"background:#07173F;padding:16px\"><button class=\"ds-btn-quiet\">Try again</button></div>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.5rem; padding: 0.6rem 1rem 0.5rem; border: 1px solid #5C77AE; border-radius: 4px; background: transparent; color: #FFFFFF; font: 600 0.9375rem/1 Overpass, 'Segoe UI', sans-serif; cursor: pointer; } .ds-btn-quiet:hover { border-color: #EAFE07; } .ds-btn-quiet:focus-visible { outline: 2px solid #EAFE07; outline-offset: 3px; }"
+    },
+    {
+      "name": "Top Bar Navigation",
+      "kind": "nav",
+      "refersTo": "top-bar",
+      "description": "Electric Blue sticky bar; active link underlined Neon Yellow, unbuilt pages dimmed with a Construction mark.",
+      "html": "<nav class=\"ds-bar\"><a class=\"ds-wordmark\" href=\"#\">FLARE</a><ul><li><a class=\"ds-nav-link ds-active\" href=\"#\">Home</a></li><li><a class=\"ds-nav-link ds-pending\" href=\"#\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"6\" width=\"20\" height=\"8\" rx=\"1\"/><path d=\"M17 14v7\"/><path d=\"M7 14v7\"/><path d=\"M17 3v3\"/><path d=\"M7 3v3\"/><path d=\"M10 14 2.3 6.3\"/><path d=\"m14 6 7.7 7.7\"/><path d=\"m8 6 8 8\"/></svg>Explorer</a></li><li><a class=\"ds-nav-link\" href=\"#\">Sources</a></li></ul></nav>",
+      "css": ".ds-bar { display: flex; align-items: center; gap: 1.5rem; height: 4rem; padding: 0 1.5rem; background: #0042A6; } .ds-wordmark { color: #FFFFFF; text-decoration: none; font: 900 1.5rem/1 'Fira Sans', 'Segoe UI', sans-serif; letter-spacing: 0.05em; } .ds-bar ul { display: flex; margin: 0 0 0 auto; padding: 0; list-style: none; } .ds-nav-link { display: flex; align-items: center; gap: 0.35rem; height: 4rem; padding: 0.2rem 0.8rem 0; border-bottom: 3px solid transparent; color: #FFFFFF; font: 600 0.9375rem/1 Overpass, 'Segoe UI', sans-serif; text-decoration: none; transition: border-color 160ms cubic-bezier(0.16,1,0.3,1), background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover { background: rgb(255 255 255 / 0.08); } .ds-nav-link:focus-visible { outline: 2px solid #EAFE07; outline-offset: -4px; } .ds-nav-link.ds-active { border-bottom-color: #EAFE07; } .ds-nav-link.ds-pending { color: #D3DEFA; font-weight: 400; }"
+    },
+    {
+      "name": "Condition Lane",
+      "kind": "custom",
+      "refersTo": "lane-track",
+      "description": "Signature: one condition with the tested band, the scenario tick, and the result in words; lifts one ramp step on hover or focus.",
+      "html": "<div class=\"ds-lanes\"><div class=\"ds-lane\" tabindex=\"0\"><div class=\"ds-lane-label\"><b>Oxygen</b><span>% by volume</span></div><div class=\"ds-track\"><span class=\"ds-band\" style=\"left:30%;width:40%\"></span><span class=\"ds-tick\" style=\"left:52%\"></span></div><div class=\"ds-lane-result\"><span class=\"ds-status\"><svg class=\"ds-match\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><line x1=\"5\" x2=\"19\" y1=\"9\" y2=\"9\"/><line x1=\"5\" x2=\"19\" y1=\"15\" y2=\"15\"/></svg>Match</span><span class=\"ds-readout\">Yours 21, tested 15 to 40</span></div></div><div class=\"ds-lane\" tabindex=\"0\"><div class=\"ds-lane-label\"><b>Air flow</b><span>cm/s</span></div><div class=\"ds-track\"><span class=\"ds-hatch\"></span><span class=\"ds-tick\" style=\"left:20%\"></span></div><div class=\"ds-lane-result\"><span class=\"ds-status\"><svg class=\"ds-missing\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M10.1 2.18a9.93 9.93 0 0 1 3.8 0\"/><path d=\"M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7\"/><path d=\"M21.82 10.1a9.93 9.93 0 0 1 0 3.8\"/><path d=\"M20.29 17.6a9.95 9.95 0 0 1-2.7 2.69\"/><path d=\"M13.9 21.82a9.94 9.94 0 0 1-3.8 0\"/><path d=\"M6.4 20.29a9.95 9.95 0 0 1-2.69-2.7\"/><path d=\"M2.18 13.9a9.93 9.93 0 0 1 0-3.8\"/><path d=\"M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69\"/></svg>Not recorded</span></div></div></div>",
+      "css": ".ds-lanes { background: #07173F; color: #FFFFFF; font: 400 0.9375rem/1.4 Overpass, 'Segoe UI', sans-serif; font-variant-numeric: tabular-nums; padding: 8px; } .ds-lane { display: grid; grid-template-columns: 8.5rem 1fr 12.5rem; gap: 1rem; padding: 0.75rem 0.75rem 1.5rem; border-bottom: 1px solid #28467F; transition: background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-lane:hover, .ds-lane:focus-visible { background: #0E2760; } .ds-lane:focus-visible { outline: 2px solid #EAFE07; outline-offset: -2px; } .ds-lane-label b { display: block; } .ds-lane-label span, .ds-readout { display: block; color: #B9C6E4; } .ds-lane:hover .ds-readout { color: #E6ECF8; } .ds-track { position: relative; height: 2.25rem; background: #0A1D4D; } .ds-band { position: absolute; top: 0.45rem; bottom: 0.45rem; background: rgb(46 150 245 / 0.42); border: 1px solid #2E96F5; } .ds-hatch { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, #5C77AE 0 1px, transparent 1px 7px); } .ds-tick { position: absolute; top: -0.3rem; bottom: -0.3rem; width: 3px; margin-left: -1px; background: #EAFE07; } .ds-status { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; } .ds-match { color: #2E96F5; } .ds-missing { color: #B9C6E4; }"
+    },
+    {
+      "name": "Catalogue Cells",
+      "kind": "custom",
+      "refersTo": "catalogue-cell",
+      "description": "The PSI catalogue as one lane of cells by data tier: ranked as bands, show-only as edged ramp, catalogue-only hatched.",
+      "html": "<div class=\"ds-cat\"><span class=\"ds-cell ds-rank\"></span><span class=\"ds-cell ds-rank ds-hot\"></span><span class=\"ds-cell ds-rank\"></span><span class=\"ds-cell ds-show\"></span><span class=\"ds-cell ds-show\"></span><span class=\"ds-cell ds-catalogue\"></span><span class=\"ds-cell ds-catalogue\"></span></div>",
+      "css": ".ds-cat { display: flex; gap: 3px; height: 2.6rem; padding: 12px; background: #07173F; } .ds-cell { flex: 1 1 0; outline: 2px solid transparent; outline-offset: 2px; transition: outline-color 160ms cubic-bezier(0.16,1,0.3,1), transform 200ms cubic-bezier(0.16,1,0.3,1); } .ds-cell:hover, .ds-hot { outline-color: #EAFE07; transform: translateY(-3px); } .ds-rank { background: rgb(46 150 245 / 0.42); border: 1px solid #2E96F5; } .ds-show { background: #0A1D4D; border: 1px solid #2E96F5; } .ds-catalogue { background: repeating-linear-gradient(135deg, #5C77AE 0 1px, transparent 1px 7px); border: 1px solid #5C77AE; }"
+    },
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Neon Yellow link in prose; quiet ramp-6 link in provenance lines that turns yellow only when pointed at.",
+      "html": "<p class=\"ds-p\">Browse <a class=\"ds-a\" href=\"#\">all 24 investigations</a>. <span class=\"ds-prov\">Source: <a href=\"#\">PSI-69, column O2_pct</a></span></p>",
+      "css": ".ds-p { background: #07173F; color: #FFFFFF; padding: 12px; font: 400 1.0625rem/1.55 Overpass, 'Segoe UI', sans-serif; } .ds-a { color: #EAFE07; text-decoration-thickness: 1px; text-underline-offset: 0.22em; } .ds-a:hover { text-decoration-thickness: 2px; } .ds-a:focus-visible, .ds-prov a:focus-visible { outline: 2px solid #EAFE07; outline-offset: 3px; } .ds-prov { display: block; margin-top: 8px; color: #B9C6E4; font-size: 0.8125rem; line-height: 1.6; } .ds-prov a { color: #E6ECF8; text-decoration-color: #5C77AE; text-underline-offset: 0.22em; } .ds-prov a:hover { color: #EAFE07; text-decoration-color: #EAFE07; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Microgravity Test Record",
+    "overview": "FLARE reads like the log sheet of a combustion experiment, not a dashboard. Every comparison is a set of horizontal lanes, one per condition, laid on a shared measurement grid: the visitor's scenario is a Neon Yellow tick, an investigation's tested range is a translucent Blue Yonder band, and anything PSI never recorded is hatched. The world is the pinned NASA Space Apps brand palette on a Deep Blue ground, with every neutral drawn from one stepped blue ramp.\n\nThe system is flat and dense in the way a test record is dense: one text size inside data regions, rank carried by weight and case rather than by size, hairline rules dividing regions instead of cards or shadows. Provenance sits beside every claim, in a footnote under the figure that names the source column. Nothing is decorative; what is missing is drawn as missing.\n\nThe system refuses the category default for research tools: a sidebar dashboard of stat tiles and investigation cards.",
+    "keyCharacteristics": [
+      "Deep Blue ground, Electric Blue top bar as the shell's one committed colour field.",
+      "Lanes on a shared grid: band for tested, tick for the scenario, hatch for not recorded.",
+      "Neon Yellow has one job family: what can be acted on, focus, and where the scenario sits.",
+      "Flat surfaces, hairline rules, 4px corners, no cards.",
+      "Every result stated in words with an icon; colour never carries meaning alone."
+    ],
+    "rules": [
+      { "name": "The One Job Rule", "body": "Neon Yellow marks only what can be acted on, focus, and where the visitor's scenario sits. It is never a background behind text blocks and never a headline. One filled Neon Yellow control per screen.", "section": "colors" },
+      { "name": "The One Ramp Rule", "body": "Every neutral comes from the stepped Deep Blue ramp. No greys, no off-ramp tints.", "section": "colors" },
+      { "name": "The Words-First Rule", "body": "Colour never carries meaning alone. A result is always a word plus an icon; contrast is at least 4.5:1 for all text.", "section": "colors" },
+      { "name": "The Timetable Rule", "body": "Inside a data region there is one text size. Rank comes from weight, case and ramp step, never from a second size.", "section": "typography" },
+      { "name": "The Identifier Rule", "body": "Fira Code is for things a researcher would copy and paste into a search box. Never for labels, numbers or decoration.", "section": "typography" },
+      { "name": "The Measured Column Rule", "body": "Fixed columns come from measured text, not round numbers: the lane label is 8.5rem (the longest unit), the result 12.5rem (the longest one-line readout), and the track keeps every remaining pixel.", "section": "layout" },
+      { "name": "The Lift Rule", "body": "Hover and focus raise an element one ramp step; nothing rises by shadow, scale or glow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the lane vocabulary on every surface that compares conditions: Neon Yellow tick or frame for the scenario, Blue Yonder band for the tested range, 135° hatch for not recorded.",
+      "Do state every result in words with an icon (Match, Differs, Not recorded).",
+      "Do put provenance beside the claim: a footnote under the figure naming the PSI source.",
+      "Do keep one text size (0.9375rem) inside data regions, with tabular figures.",
+      "Do lift on hover and focus by one ramp step (ramp-1 to ramp-2).",
+      "Do mark pages still being built with the Construction icon and the words \"in progress\".",
+      "Do keep contrast at 4.5:1 or better and check every screen at 375px."
+    ],
+    "donts": [
+      "Don't use Neon Yellow as a background behind text blocks or for a headline.",
+      "Don't use Rocket Red as a background, or without the word \"Differs\" beside it.",
+      "Don't show missing data as a colour, a blank or a zero; hatch it and say \"Not recorded\".",
+      "Don't use CircleDashed for anything except missing data.",
+      "Don't build cards, stat tiles or shadowed panels; regions divide by hairline rules and ramp steps.",
+      "Don't use Fira Code for anything other than identifiers.",
+      "Don't use the NASA insignia.",
+      "Don't add a second authored entrance animation; the lane draw is the one moment."
+    ]
+  }
+}

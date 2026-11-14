@@ -1,0 +1,332 @@
+.sources {
+  padding: var(--space-8) var(--gutter) var(--space-9);
+}
+
+.sources-lede {
+  max-width: 48ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.sources-body {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.toc {
+  position: sticky;
+  top: calc(var(--bar-height) + var(--space-6));
+  align-self: start;
+}
+
+.toc ul {
+  padding: 0;
+  list-style: none;
+  border-left: 1px solid var(--ramp-3);
+}
+
+.toc a {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  margin-left: -1px;
+  border-left: 1px solid transparent;
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  border-left-color: var(--neon-yellow);
+  color: var(--white);
+}
+
+.sources-content {
+  min-width: 0;
+}
+
+.sources-content section {
+  scroll-margin-top: calc(var(--bar-height) + var(--space-5));
+}
+
+.sources-content section + section {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.sources-content h2 {
+  margin-bottom: var(--space-4);
+}
+
+.sources-content p,
+.facts-list,
+.ref-list {
+  max-width: 68ch;
+}
+
+.facts-list,
+.ref-list {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: 1.1rem;
+}
+
+.facts-list li::marker,
+.ref-list li::marker {
+  color: var(--blue-yonder);
+}
+
+/* The investigation table: one text size, rank by weight and case */
+.inv-table-wrap {
+  margin-top: var(--space-5);
+  overflow-x: auto;
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.inv-table th,
+.inv-table td {
+  padding: var(--space-3) var(--space-4) var(--space-3) 0;
+  border-bottom: 1px solid var(--ramp-3);
+  text-align: left;
+  vertical-align: top;
+}
+
+.inv-table thead th {
+  border-bottom-color: var(--ramp-4);
+  color: var(--ramp-5);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.inv-table tbody tr:hover > * {
+  background: var(--ramp-1);
+}
+
+.inv-table tbody th {
+  font-weight: 400;
+  min-width: 16rem;
+}
+
+.inv-table .num {
+  text-align: right;
+}
+
+.inv-acronym {
+  display: block;
+  font-weight: 700;
+}
+
+.inv-full {
+  display: block;
+  color: var(--ramp-5);
+}
+
+/* Two columns of links: quiet until pointed at, so Neon Yellow stays an accent */
+.inv-table a {
+  color: var(--white);
+  text-decoration-color: var(--ramp-4);
+}
+
+.inv-table a:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.inv-table a.id {
+  white-space: nowrap;
+}
+
+.inv-table td[data-label='Flown on'] {
+  min-width: 11rem;
+}
+
+.inv-table td[data-label='FLARE use'],
+.inv-table td[data-label='Runs'] {
+  white-space: nowrap;
+}
+
+.absent {
+  color: var(--ramp-5);
+  font-style: italic;
+}
+
+.team-body {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* The logo is a JPG on black; screen blending drops the black onto Deep Blue. */
+.team-logo {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: screen;
+}
+
+.team-list {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-4) 0;
+  padding-left: 1.4rem;
+  font-weight: 600;
+}
+
+.team-list li::marker {
+  color: var(--ramp-5);
+  font-weight: 400;
+}
+
+.ai-note {
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+@media (max-width: 1023px) {
+  .sources-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .toc {
+    position: static;
+  }
+
+  .toc ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-2);
+    border-left: 0;
+  }
+
+  .toc a {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--ramp-3);
+    border-radius: var(--radius);
+    margin-left: 0;
+  }
+
+  .toc a:hover {
+    border-color: var(--neon-yellow);
+  }
+}
+
+@media (max-width: 719px) {
+  .sources {
+    padding-top: var(--space-6);
+  }
+
+  .team-body {
+    grid-template-columns: 1fr;
+  }
+
+  .team-logo {
+    max-width: 14rem;
+  }
+
+  /* Each investigation becomes a four-line record: accession and name, title, one line of
+     facts, DOI. */
+  .inv-table-wrap {
+    overflow: visible;
+  }
+
+  .inv-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .inv-table,
+  .inv-table tbody {
+    display: block;
+  }
+
+  .inv-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-1) 0;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--ramp-3);
+  }
+
+  .inv-table tbody th,
+  .inv-table td {
+    display: block;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .inv-table td[data-label='Accession'] {
+    flex: 0 0 4.5rem;
+  }
+
+  .inv-table tbody th {
+    flex: 1 1 calc(100% - 4.5rem);
+    min-width: 0;
+  }
+
+  .inv-full {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .inv-table td[data-label='Flown on'] {
+    min-width: 0;
+    flex: 0 1 auto;
+    color: var(--ramp-5);
+  }
+
+  .inv-table td[data-label='Runs'],
+  .inv-table td[data-label='FLARE use'],
+  .inv-table td[data-label='Licence'] {
+    flex: 0 0 auto;
+    margin-left: var(--space-2);
+    padding-left: var(--space-2);
+    border-left: 1px solid var(--ramp-3);
+    color: var(--ramp-5);
+  }
+
+  .inv-table td[data-label='DOI'] {
+    flex: 0 0 100%;
+  }
+
+  .inv-table .num {
+    text-align: left;
+  }
+
+  .inv-table a.id {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .inv-table tbody tr:hover > * {
+    background: none;
+  }
+}
+
+.runs-unit {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  .runs-unit {
+    display: inline;
+  }
+}
