@@ -174,11 +174,10 @@
   align-items: start;
 }
 
-/* The logo is a JPG on black; screen blending drops the black onto Deep Blue. */
+/* The team's own logo, white on a transparent PNG, sits straight on Deep Blue. */
 .team-logo {
   width: 100%;
   height: auto;
-  mix-blend-mode: screen;
 }
 
 .team-list {

@@ -72,7 +72,6 @@ Playwright 1.65.1 and playwright-core (Apache-2.0) for browser QA.
   agent the team built FLARE with (see Use of SI).
 - **Anthropic API, Claude Opus 5.5:** the model behind FLARE's research assistant.
 - **Context7** (Upstash), an MCP server that gave the coding agents current library documentation.
-- **[AI image tool: team to confirm]:** used to make the team logo.
 
 ## Instructions for the coding agents
 
@@ -117,8 +116,9 @@ by source:
 
 ## Images
 
-- **Team logo** (Cosmic Shihab): made with an AI image tool, marked with a visible watermark
-  [TO DO before submitting].
+- **Team logo** (Cosmic Shihab): the team's own work, not made with AI (`brand/`).
+- **Illustrations:** the pitch opening's drawings and the flame drawings on the Methodology and
+  Scenario pages, made with AI (Claude Code), each marked "Illustration made with AI".
 - **Charts:** drawn by FLARE from NASA PSI data (SVG on the website; Matplotlib in our analysis).
 - No other images, and no copyrighted music, images or text.
 
@@ -140,7 +140,8 @@ field, issue #36. Sources:
   .claude/skills/usage-aware/SKILL.md; impeccable's licence: its SKILL.md frontmatter (source
   repo not recorded in the repo); Karpathy guidelines: CLAUDE.md.
 - Context7 MCP: .claude/rules/context7.md.
-- Logo: Logo.jpg and frontend/src/assets/cosmic-shihab-logo.jpg; AI-made per the team (2026-11-14).
+- Logo: brand/cosmic-shihab-logo-white.png (the copy in frontend/src/assets/ is on the Sources
+  page) and brand/cosmic-shihab-logo-black.png; the team's own, not AI-made (2026-11-15, #62).
 - Recharts and Motion are named in CLAUDE.md and PRODUCT.md but are not in frontend/package.json,
   so they are not listed. Add them if a later PR installs them.
 -->
