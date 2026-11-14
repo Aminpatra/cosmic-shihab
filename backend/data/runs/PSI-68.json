@@ -1,0 +1,811 @@
+{
+ "accession": "PSI-68",
+ "tables": [
+  {
+   "file": "PSI-68_Experimental table_Flex2.csv",
+   "psi_file_name": "PSI-68_Experimental table_Flex2.csv",
+   "doi_url": "https://doi.org/10.60555/byp8-h018",
+   "encoding": "utf-8",
+   "row_is": "fuel_summary",
+   "row_count": 8,
+   "columns": [
+    {
+     "name": "Sample (Fuel Type)",
+     "unit": null
+    },
+    {
+     "name": "Initial Droplet Diameter (mm)",
+     "unit": "mm"
+    },
+    {
+     "name": "Ambient Gas Mixture ",
+     "unit": null
+    },
+    {
+     "name": "Oxygen Mole Fraction",
+     "unit": "mole fraction"
+    },
+    {
+     "name": "Ambient Pressure (atm)",
+     "unit": "atm"
+    },
+    {
+     "name": " Ambient Temperature (C)",
+     "unit": "C"
+    },
+    {
+     "name": "Flow Velocity (cm/s)",
+     "unit": "cm/s"
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Sample (Fuel Type)",
+    "oxygen": "Oxygen Mole Fraction",
+    "pressure": "Ambient Pressure (atm)",
+    "flow_velocity": "Flow Velocity (cm/s)"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "IsoOctane (pure)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "IsoOctane (pure)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "n-Octane (pure)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "n-Octane (pure)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "Heptane (pure)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "Heptane (pure)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "Decane (pure)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "Decane (pure)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "Ethanol (pure)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "Ethanol (pure)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "Propanol (95%) Glycerol (5%) (mixture)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "Propanol (95%) Glycerol (5%) (mixture)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "Heptane (50%) IsoOctane (50%) (mixture)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "Heptane (50%) IsoOctane (50%) (mixture)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": null,
+     "cells": {
+      "Sample (Fuel Type)": {
+       "raw": "Propanol (80%) Glycerol (20%) (mixture)",
+       "kind": "text"
+      },
+      "Initial Droplet Diameter (mm)": {
+       "raw": "1.5 - 5",
+       "kind": "range",
+       "range": [
+        1.5,
+        5
+       ]
+      },
+      "Ambient Gas Mixture ": {
+       "raw": "O2/N2 or O2/He",
+       "kind": "text"
+      },
+      "Oxygen Mole Fraction": {
+       "raw": "0.17; 0.21;0.25; 0.3",
+       "kind": "list",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ]
+      },
+      "Ambient Pressure (atm)": {
+       "raw": "0.5; 1.0; 1.5; 2.0; or 3.0 ",
+       "kind": "list",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ]
+      },
+      " Ambient Temperature (C)": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Flow Velocity (cm/s)": {
+       "raw": "0.1 - 5",
+       "kind": "range",
+       "range": [
+        0.1,
+        5
+       ]
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Sample (Fuel Type)",
+       "role": "condition",
+       "text": "Propanol (80%) Glycerol (20%) (mixture)"
+      },
+      "oxygen": {
+       "column": "Oxygen Mole Fraction",
+       "role": "condition",
+       "values": [
+        0.17,
+        0.21,
+        0.25,
+        0.3
+       ],
+       "unit": "mole fraction"
+      },
+      "pressure": {
+       "column": "Ambient Pressure (atm)",
+       "role": "condition",
+       "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+       ],
+       "unit": "atm"
+      },
+      "flow_velocity": {
+       "column": "Flow Velocity (cm/s)",
+       "role": "condition",
+       "range": [
+        0.1,
+        5.0
+       ],
+       "unit": "cm/s"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
