@@ -222,7 +222,7 @@ function NumberStrip({ field, lanes, probe }) {
                   style={{ transform: `translate(${box[0]}px, ${cy - 20}px) scale(${box[1] - box[0]}, 40)` }} />
               )}
               <text x="24" y={cy - 26} className="strip-label">
-                {lane.label} ({lane.points.length})
+                {typeof lane.label === 'function' ? lane.label(W) : lane.label} ({lane.points.length})
               </text>
               {lane.points.map((p, i) => (
                 <circle key={i} cx={x(p.v)} cy={cy + jitter(i) * 13} r={lane.own ? 4.5 : 3.5} className={`${lane.own ? 'dot-own' : lane.ring ? 'dot-other-ring' : 'dot-other'}${far(lane, p.v) ? ' is-far' : ''}`}>
@@ -291,11 +291,11 @@ function ChosenCell({ model, chosen, figureRef, probe, tolerance }) {
       list.flatMap((c) => c.rows.map((r) => ({ v: usableNumber(r, field.id), label: shortName(c.table) }))).filter((p) => p.v !== null)
     const rest = model.coverage.filter((c) => c.table.file !== table.file && c.cells[field.id].recorded)
     const ownInverse = field.id === 'oxygen' && isInverse(table)
-    const lanes = [{ key: 'own', own: true, compare: !ownInverse, label: ownInverse ? 'This table, burner-stream oxygen' : 'This table', points: own }]
+    const lanes = [{ key: 'own', own: true, compare: !ownInverse, label: ownInverse ? (W => (W < 400 ? 'This table, burner stream' : 'This table, burner-stream oxygen')) : 'This table', points: own }]
     if (field.id === 'oxygen') {
       // Burner-stream oxygen (inverse flames) is not the gas around the flame: never one lane with it.
-      lanes.push({ key: 'ambient', label: 'Other tables, oxygen around the flame', points: pointsOf(rest.filter((c) => !isInverse(c.table))) })
-      lanes.push({ key: 'burner', ring: true, compare: false, label: 'Inverse flames, burner-stream oxygen', points: pointsOf(rest.filter((c) => isInverse(c.table))) })
+      lanes.push({ key: 'ambient', label: W => (W < 400 ? 'Others, around the flame' : 'Other tables, oxygen around the flame'), points: pointsOf(rest.filter((c) => !isInverse(c.table))) })
+      lanes.push({ key: 'burner', ring: true, compare: false, label: W => (W < 400 ? 'Inverse flames, burner stream' : 'Inverse flames, burner-stream oxygen'), points: pointsOf(rest.filter((c) => isInverse(c.table))) })
     } else {
       lanes.push({ key: 'others', label: 'All other test tables', points: pointsOf(rest) })
     }
@@ -778,7 +778,7 @@ export default function Visualization() {
   const choose = (next) => {
     setChosen(next)
     // On a phone the figure sits below the whole matrix: bring it into view so the choice shows.
-    if (window.matchMedia('(max-width: 719px)').matches) {
+    if (window.matchMedia('(max-width: 44.9375em)').matches) {
       const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
       requestAnimationFrame(() => figureRef.current?.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' }))
     }
