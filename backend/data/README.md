@@ -1,7 +1,8 @@
 # backend/data
 
-Read-only files the FLARE API serves. Everything here is written by `pipeline/build_catalogue.py`,
-except `runs/`, which `pipeline/process_tables.py` writes; do not edit by hand. Rebuild with the commands in `pipeline/README.md`.
+Read-only files the FLARE API serves. The catalogue is written by `pipeline/build_catalogue.py`,
+`runs/` by `pipeline/process_tables.py` and `search.sqlite` by `pipeline/build_search_index.py`;
+do not edit by hand. Rebuild with the commands in `pipeline/README.md`.
 
 **Source:** NASA Physical Sciences Informatics (PSI) repository, https://psi.nasa.gov, retrieved
 14 November 2026. Cite each investigation by its DOI.
@@ -11,6 +12,7 @@ except `runs/`, which `pipeline/process_tables.py` writes; do not edit by hand. 
 | `investigations/<ACCESSION>.json` | One PSI combustion investigation (24 in all): title, acronym, DOI, licence, objective, hypothesis, approach, hardware, people and publications |
 | `runs/<ACCESSION>.json` | PSI's experimental tables for 20 investigations (22 tables, 2,009 rows): every cell as PSI wrote it, what FLARE read from it, and a few conditions in common units. Shape below |
 | `files.csv` | One row for each of PSI's 60,866 files for those investigations: name, category, type, size, version, date. 13.5 TB is listed; none of it is stored here |
+| `search.sqlite` | Keyword index (21.5 MB) of the text of 256 PSI documents: 18,036 passages of about 150 words. Its `documents` table lists all 352 documents in scope (every non-"Raw Data" document) with a status: 256 indexed, 72 with no text (mostly engineering drawings), 15 in old .ppt/.doc formats, 7 that PSI could not serve on 14 November 2026 (5 of them SAFFIRE), 2 broken PDFs |
 
 In the investigation files, every field except `derived` is copied from PSI under PSI's own name
 and with its value unchanged. `derived` holds what FLARE computed: the links, file counts by kind,

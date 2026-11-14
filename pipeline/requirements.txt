@@ -1,0 +1,3 @@
+# Pipeline only; never deployed, so never in backend/pyproject.toml.
+# Everything else in pipeline/ uses the standard library.
+pypdf==7.1.0   # build_search_index.py: text from PDF documents

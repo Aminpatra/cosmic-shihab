@@ -19,6 +19,9 @@ import urllib.request
 
 BASE = "https://psi.nasa.gov/geode-py/ws"
 S3_PREFIX = "https://psi-repo-prod.s3.amazonaws.com/"
+# PSI's older bucket. PSI answers some files (all of PSI-20, some of PSI-22 and PSI-98) with a
+# link here; checked 2026-11-14: most download at the listed size, some are missing (404).
+LEGACY_S3_PREFIX = "https://psi-curation-prod.s3.amazonaws.com/"
 PAGE_URL = "https://psi.nasa.gov/physci/repo/data/investigations/{accession}"
 USER_AGENT = "FLARE-SpaceApps-2026 (student research project)"
 
@@ -172,13 +175,15 @@ def flatten_files(tree) -> list[dict]:
     return list(seen.values())
 
 
-def download_url(accession: str, file_name: str, fetch=fetch_bytes) -> str:
+def download_url(accession: str, file_name: str, fetch=fetch_bytes,
+                 allowed: tuple[str, ...] = (S3_PREFIX,)) -> str:
     """Ask PSI for a download link. It is a presigned S3 URL that expires after
-    about an hour, so callers use it at once and never store it."""
+    about an hour, so callers use it at once and never store it. A link that
+    starts with none of `allowed` is refused."""
     query = urllib.parse.urlencode({"file": file_name, "redirect": "false"})
     url = f"{BASE}/studies/{urllib.parse.quote(accession)}/download?{query}"
     link = fetch(url).decode(errors="replace").strip()
-    if not link.startswith(S3_PREFIX):
+    if not link.startswith(allowed):
         raise PSIFormatError(f"{accession}/{file_name}: unexpected download link {link[:60]!r}")
     return link
 
