@@ -43,10 +43,18 @@ curl -s $B/api/health                       # {"status":"ok","investigations":24
 curl -s -o /dev/null -w "%{http_code}\n" $B/explorer       # 200, text/html
 curl -s -o /dev/null -w "%{http_code}\n" $B/favicon.svg    # 200, image/svg+xml
 curl -s -o /dev/null -w "%{http_code}\n" $B/api/nope       # 404
+curl -s "$B/api/rank?oxygen=0.3&pressure=0.7" | head -c 200    # JSON with ranked items
 ```
 
-On 14 November 2026 every page, `/api/health`, `/api/investigations/{accession}`, `/api/files`,
-`/api/search`, the download redirect and `/api/docs` answered correctly.
+**Deploy log**
+
+| When (14 Nov 2026) | What was deployed | Result |
+|---|---|---|
+| First deploy | `main` at #24 plus `vercel.json` | Every page, `/api/health`, `/api/investigations/{accession}`, `/api/files`, `/api/search`, the download redirect and `/api/docs` answered correctly |
+| Redeploy | `main` at #34, adding the ranking API (#31) | All of the above plus `/api/rank` and `/api/rank/options` answered correctly. The download redirect returned 502 "PSI did not answer", because PSI's download-link service was timing out for everyone, even called directly; PSI's search and website were up |
+
+A 502 from `/api/files/{file_id}/download` means PSI is not answering, not that the deploy is broken.
+Call PSI directly to tell the two apart (see `download_url` in `pipeline/psi_client.py`).
 
 ## Test it locally
 
