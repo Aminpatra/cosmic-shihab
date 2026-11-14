@@ -1,0 +1,2 @@
+{ "mcpServers": { "coordinator": { "type": "http", "url": "${COORD_URL}",
+    "headers": { "Authorization": "Bearer ${COORD_TOKEN}" } } } }
