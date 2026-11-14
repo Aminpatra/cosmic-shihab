@@ -1,9 +1,11 @@
 # Deploying FLARE
 
-**Live site:** https://flare-sandy.vercel.app (first deployed 14 November 2026, #14)
+**Live site:** https://cosmic-shihab.vercel.app (chosen by the team 15 November 2026, #66)
 
-It is the Vercel project `flare` on @UncCodes's personal Vercel account (Hobby plan). Only that
-account can redeploy it until the project is moved or shared; see "Open points".
+The first deploy, https://flare-sandy.vercel.app (Vercel project `flare` on @UncCodes's personal
+account, #14), is an older build; don't send anyone there (`submission/test_report.md`, check 8).
+Which Vercel project and account serve cosmic-shihab.vercel.app is not recorded yet: its owner
+should add that here and replace `--project flare` below.
 
 ## How it is built
 
@@ -38,7 +40,7 @@ vercel deploy --prod --yes
 All of these must pass after every deploy, opened with no login:
 
 ```
-B=https://flare-sandy.vercel.app
+B=https://cosmic-shihab.vercel.app
 curl -s $B/api/health                       # {"status":"ok","investigations":24,"files":60866,...}
 curl -s -o /dev/null -w "%{http_code}\n" $B/explorer       # 200, text/html
 curl -s -o /dev/null -w "%{http_code}\n" $B/favicon.svg    # 200, image/svg+xml
