@@ -174,8 +174,14 @@ class Endpoints(unittest.TestCase):
         self.assertIn("No NASA source", body["reason"])
 
     def test_summary_absent(self):
-        self.assertEqual(client.get("/api/assistant/summaries/PSI-69").status_code, 404)
+        # Independent of which summaries have been written (#28): an unknown investigation is
+        # always 404, and so is a known one without a summary file.
         self.assertEqual(client.get("/api/assistant/summaries/PSI-1").status_code, 404)
+        folder = os.path.join(os.path.dirname(__file__), "..", "data", "summaries")
+        written = set(os.listdir(folder)) if os.path.isdir(folder) else set()
+        missing = [a for a in ("PSI-60", "PSI-62", "PSI-69") if f"{a}.json" not in written]
+        for accession in missing:
+            self.assertEqual(client.get(f"/api/assistant/summaries/{accession}").status_code, 404)
 
     def test_status_with_key(self):
         with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-test"}):
