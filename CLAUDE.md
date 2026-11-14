@@ -11,6 +11,9 @@
 Machine learning and design quality come first, then shipping a working demo inside the time and
 usage budget, then images and video. When they compete, say so and let the team choose.
 
+Judging criteria and submission rules are in `CRITERIA.md`. Check features, slides and claims against it,
+especially the hard requirements (7-slide or 30-second demo, English, every external resource in References).
+
 ## Skills: who owns what
 
 Each job has one owner skill; the full table and the rules for disagreements are in
