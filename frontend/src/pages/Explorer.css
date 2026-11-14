@@ -396,6 +396,11 @@
   min-width: 0;
 }
 
+/* The stored AI summary leads the text column, set apart from NASA's text that follows. */
+.rec-summary {
+  margin-bottom: var(--space-7);
+}
+
 .rec-field {
   max-width: 70ch;
   margin-top: var(--space-6);
