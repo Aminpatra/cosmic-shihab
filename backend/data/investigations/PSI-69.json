@@ -492,6 +492,26 @@
         "rows": 274,
         "columns": 15
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Combustion Integrated Rack (CIR) of the Fluids and Combustion Facility, with the Multi-user Droplet Combustion Apparatus (MDCA)",
+        "platform": "ISS",
+        "fuel_phase": "liquid",
+        "fire_safety_role": "suppression",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.objective: 'flammability limits of liquid fuels'; table: methanol, heptane",
+        "fire_safety_role": "record.objective: 'measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6'",
+        "gravity_level": "record.flightProgram: 'International Space Station (ISS)'",
+        "flare_data": "datasets: one row per test"
+      },
+      "notes": ""
+    }
   }
 }

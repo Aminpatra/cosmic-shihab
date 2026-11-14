@@ -131,6 +131,26 @@
         "rows": 15,
         "columns": 17
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Saffire flow-duct module inside the Cygnus Pressurized Cargo Module",
+        "platform": "Cygnus (after leaving the ISS)",
+        "fuel_phase": "solid",
+        "fire_safety_role": "prevention",
+        "gravity_level": "microgravity; normal gravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware; record.approach",
+        "platform": "record.approach: 'performed on the Orbital Science's Cygnus resupply vehicle after it deberthed from the ISS'",
+        "fuel_phase": "record.approach: 'SIBAL, silicone, structure PMMA, flat PMMA, and PMMA with Nomex'",
+        "fire_safety_role": "record.objective: 'low-g flammability limits compared to those obtained in NASA's normal gravity material flammability screening test' (material screening, tagged prevention)",
+        "gravity_level": "table columns '?-g Burn Length' and '1-g Burn Length' (the ? stands for the lost µ)",
+        "flare_data": "datasets: one row per sample (9 samples, 2 of them with no material given; plus 2 flow-visualisation rows and 4 footnote rows)"
+      },
+      "notes": ""
+    }
   }
 }

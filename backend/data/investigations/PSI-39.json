@@ -166,6 +166,26 @@
         "rows": 87,
         "columns": 10
       }
-    ]
+    ],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "Combustion Integrated Rack (CIR) with the Multi-user Droplet Combustion Apparatus (MDCA)",
+        "platform": "ISS",
+        "fuel_phase": "liquid",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity",
+        "flare_data": "run table"
+      },
+      "sources": {
+        "hardware_facility": "record.experimentHardware",
+        "platform": "record.flightProgram",
+        "fuel_phase": "record.objective: 'n-dodecane and mixtures of n-dodecane/iso-dodecane'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.flightProgram: 'International Space Station (ISS)'",
+        "flare_data": "datasets: one row per test"
+      },
+      "notes": ""
+    }
   }
 }

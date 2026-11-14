@@ -74,6 +74,26 @@
         "bytes": 253683467
       }
     },
-    "experimental_tables": []
+    "experimental_tables": [],
+    "tags": {
+      "note": "Written by FLARE in research/investigation_tags.csv, drafted with Claude Code (Claude Opus 5.5); each tag cites a field of this record (record.<field>) or a dataset file.",
+      "values": {
+        "hardware_facility": "not applicable (numerical simulation of SAME-like smoke)",
+        "platform": "computation",
+        "fuel_phase": "liquid",
+        "fire_safety_role": "not stated",
+        "gravity_level": "microgravity; normal gravity",
+        "flare_data": "catalogue metadata only"
+      },
+      "sources": {
+        "hardware_facility": "record.projectType: 'Ground Investigation'; record.approach",
+        "platform": "record.projectType: 'Ground Investigation'",
+        "fuel_phase": "record.approach: 'dibutyl-phthalate (DBP) particles' from 'pyrolysis vapor expelled from a heated sample'",
+        "fire_safety_role": "no role named in record.objective, hypothesis or approach",
+        "gravity_level": "record.objective: 'quantify the differences between microgravity and Earth gravity smoke'",
+        "flare_data": "no experimental table at PSI"
+      },
+      "notes": "record.researchImpacts names 'better smoke detection devices' as an expected benefit."
+    }
   }
 }
