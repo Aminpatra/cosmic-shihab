@@ -2,7 +2,7 @@
 // citations, sources and review state. Sentences tied to a cited NASA source read like the
 // Assistant's answers: white and underlined with a numbered citation; the assistant's own words are
 // lighter. AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
-import { Fragment, useMemo, useRef } from 'react'
+import { Fragment, useMemo, useRef, useState } from 'react'
 import { ExternalLink, FileText, TriangleAlert, UserCheck } from 'lucide-react'
 import { formatDate } from '../catalogue.js'
 import './AiSummary.css'
@@ -30,10 +30,10 @@ function paragraphs(blocks) {
 
 const KIND = { ranking: 'FLARE ranking', record: 'PSI record' }
 
-function Source({ source, n, id, quotes }) {
+function Source({ source, n, id, quotes, pointed }) {
   const where = KIND[source.kind] ?? (source.page ? `Document, page ${source.page}` : 'Document')
   return (
-    <li id={`${id}-src-${n}`} className="ai-source">
+    <li id={`${id}-src-${n}`} className={pointed ? 'ai-source is-pointed' : 'ai-source'} tabIndex={-1}>
       <span className="ai-source-n">{n}</span>
       <div className="ai-source-body">
         <p className="ai-source-head">
@@ -71,6 +71,7 @@ function Source({ source, n, id, quotes }) {
 // `data` is a stored summary or reading: { model, generated, reviewed, reviewed_by, blocks, sources }.
 export default function AiSummary({ id, title, intro, data }) {
   const register = useRef(null)
+  const [pointed, setPointed] = useState(null)
   const index = useMemo(() => Object.fromEntries(data.sources.map((s, i) => [s.id, i + 1])), [data])
   const quotes = useMemo(() => {
     const q = {}
@@ -78,9 +79,15 @@ export default function AiSummary({ id, title, intro, data }) {
       for (const c of block.citations ?? []) (q[c.source_id] ??= []).includes(c.cited_text) || q[c.source_id].push(c.cited_text)
     return q
   }, [data])
-  // A citation points into the source register; open it first so the browser can scroll there.
-  const openRegister = () => {
-    if (register.current) register.current.open = true
+  // A citation opens the folded register and brings its source into view. This is done here, not by
+  // the #hash: the router's scroll restoration would put a hash jump straight back.
+  const goTo = (event, n) => {
+    event.preventDefault()
+    register.current.open = true
+    const item = document.getElementById(`${id}-src-${n}`)
+    item.scrollIntoView({ block: 'start' })
+    item.focus({ preventScroll: true })
+    setPointed(n)
   }
 
   return (
@@ -121,7 +128,7 @@ export default function AiSummary({ id, title, intro, data }) {
                 <Fragment key={piece.key}>
                   <span className="ai-said">{piece.text}</span>
                   {[...new Set(piece.citations.map((c) => index[c.source_id]))].map((n) => (
-                    <a key={n} href={`#${id}-src-${n}`} className="ai-cite" aria-label={`Source ${n}`} onClick={openRegister}>
+                    <a key={n} href={`#${id}-src-${n}`} className="ai-cite" aria-label={`Source ${n}`} onClick={(event) => goTo(event, n)}>
                       {n}
                     </a>
                   ))}
@@ -141,7 +148,14 @@ export default function AiSummary({ id, title, intro, data }) {
         </summary>
         <ol className="ai-sources">
           {data.sources.map((source, i) => (
-            <Source key={source.id} source={source} n={i + 1} id={id} quotes={quotes[source.id] ?? []} />
+            <Source
+              key={source.id}
+              source={source}
+              n={i + 1}
+              id={id}
+              quotes={quotes[source.id] ?? []}
+              pointed={pointed === i + 1}
+            />
           ))}
         </ol>
       </details>

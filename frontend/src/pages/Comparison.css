@@ -504,6 +504,13 @@
   color: var(--ramp-5);
 }
 
+@media (max-width: 44.9375em) {
+  .cmp-presets li {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 /* The stored AI reading sits between the scenario notes and the weights. */
 .cmp-reading {
   margin-top: var(--space-5);

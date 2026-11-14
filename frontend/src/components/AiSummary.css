@@ -145,8 +145,14 @@
   scroll-margin-top: calc(var(--bar-height) + var(--space-4));
 }
 
-.ai-source:target {
+/* The source a citation was followed to, lifted one ramp step. Focus moves here too, so the ring
+   would double the mark; the lift is enough. */
+.ai-source.is-pointed {
   background: var(--ramp-2);
+}
+
+.ai-source:focus {
+  outline: none;
 }
 
 .ai-source-n {
