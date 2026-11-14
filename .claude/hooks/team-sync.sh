@@ -80,7 +80,7 @@ digest() {
   if [ "$have_base" = 0 ]; then
     echo "  origin has no ${base#origin/} branch yet: nothing to sync against."
   else
-    [ "$behind" != 0 ] && echo "  -> main moved: ask your human to run /team-sync."
+    [ "$behind" != 0 ] && echo "  -> main moved: commit, then merge origin/main into this branch before continuing."
     [ "$branch" = "${base#origin/}" ] && echo "  -> you are on ${base#origin/}: do not edit; ask your human to run /team-claim."
   fi
 
