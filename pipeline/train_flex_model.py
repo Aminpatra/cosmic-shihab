@@ -16,6 +16,7 @@ Method, following CLAUDE.md:
   refitted on all training days and scored once on the held-out days, beside the baseline.
 - Missing values (12 droplet diameters, one pressure of 0 mmHg read as missing) are filled with
   the training median inside each fit. Fixed seed; library versions are stored with the results.
+- A chance check retrains the chosen model on shuffled labels (SHUFFLES times).
 - SHAP explains the chosen model's predictions on the held-out tests.
 
 This is a pattern in NASA's FLEX experiments, not a prediction of a real fire.
@@ -54,6 +55,7 @@ RUNS = os.path.join(ROOT, "backend", "data", "runs", "PSI-69.json")
 OUT = os.path.join(ROOT, "backend", "data", "flex_model", "results.json")
 SEED = 20261114
 REPEATS = 5
+SHUFFLES = 40  # for the chance check; the smallest p it can show is 1/41
 CLASSES = ("Extinction", "Disruption", "Completion")
 NOTICE = ("A pattern in NASA's FLEX droplet-combustion tests aboard the International Space "
           "Station. It is not a prediction of a real fire.")
@@ -186,7 +188,46 @@ def shap_summary(name: str, fitted, X_train, X_test) -> dict:
     return summary
 
 
-def train(seed: int = SEED, repeats: int = REPEATS, path: str = RUNS) -> dict:
+def chance_check(model, X, y, groups, seed: int = SEED, shuffles: int = SHUFFLES) -> dict:
+    """Is the model better than chance? Its grouped-CV macro-F1 against the same model trained on
+    labels shuffled across all tests (shuffling within days would keep each day's atmosphere
+    tied to its labels and flatter chance)."""
+    real = float(np.mean(cv_scores(model, X, y, groups, seed, repeats=1)))
+    rng = np.random.default_rng(seed)
+    null = [float(np.mean(cv_scores(model, X, rng.permutation(y), groups, seed, repeats=1)))
+            for _ in range(shuffles)]
+    return {"method": "labels shuffled across all tests; same grouped 5-fold split", "on": "training days",
+            "shuffles": shuffles, "macro_f1": round(real, 3),
+            "shuffled_mean": round(float(np.mean(null)), 3), "shuffled_max": round(float(np.max(null)), 3),
+            "p_value": round((1 + sum(n >= real for n in null)) / (1 + shuffles), 3),
+            "smallest_possible_p": round(1 / (1 + shuffles), 3)}
+
+
+def limitations(result: dict) -> list[str]:
+    """Caveats written from the numbers, so they change when the results do."""
+    chosen, split = result["chosen_model"], result["split"]
+    report, cv = result["held_out"], result["cross_validation"]["scores"]
+    found = {c: report[chosen]["confusion_matrix"]["matrix"][k][k] for k, c in enumerate(CLASSES)}
+    notes = [
+        f"Held out: {split['held_out_tests']} tests on {split['held_out_days']} days, so one test "
+        f"moves a class score a lot; cross-validation on the training days varies by "
+        f"±{cv[chosen]['sd']} macro-F1.",
+        f"On the held-out days the {chosen.replace('_', ' ')} found {found['Completion']} of "
+        f"{split['held_out_tests_by_end']['Completion']} completions, {found['Disruption']} of "
+        f"{split['held_out_tests_by_end']['Disruption']} disruptions and {found['Extinction']} of "
+        f"{split['held_out_tests_by_end']['Extinction']} extinctions.",
+        "SHAP describes what the model relies on, not what causes a flame to go out.",
+        "Methanol and heptane droplets in FLEX's chamber only; nothing here carries over to other "
+        "fuels, materials or a spacecraft cabin.",
+    ]
+    better = [n for n in report if n not in ("baseline", chosen) and report[n]["macro_f1"] > report[chosen]["macro_f1"]]
+    if better:
+        notes.insert(1, f"{', '.join(b.replace('_', ' ') for b in better)} scored higher on the held-out "
+                        f"days; the choice was made beforehand, on cross-validation, and is kept.")
+    return notes
+
+
+def train(seed: int = SEED, repeats: int = REPEATS, path: str = RUNS, shuffles: int = SHUFFLES) -> dict:
     X, y, groups, tests, notes = load_flex(path)
     train_idx, test_idx = split_days(y, groups, seed)
     models = candidates(seed)
@@ -198,7 +239,7 @@ def train(seed: int = SEED, repeats: int = REPEATS, path: str = RUNS) -> dict:
         fitted_models[name] = clone(model).fit(X[train_idx], y[train_idx])
         held_out[name] = held_out_report(y[test_idx], fitted_models[name].predict(X[test_idx]))
     counts = {c: int((y == c).sum()) for c in CLASSES}
-    return {
+    result = {
         "notice": NOTICE,
         "question": "How did a FLEX droplet test end (Extinction, Disruption, Completion), "
                     "given only what was set before it?",
@@ -220,12 +261,16 @@ def train(seed: int = SEED, repeats: int = REPEATS, path: str = RUNS) -> dict:
         "chosen_model": chosen,
         "chosen_because": "highest mean cross-validated macro-F1 on the training days",
         "held_out": held_out,
+        "chance_check": chance_check(models[chosen], X[train_idx], y[train_idx], groups[train_idx],
+                                     seed, shuffles),
         "shap": {"model": chosen, "explained": "held-out tests",
                  "by_end": shap_summary(chosen, fitted_models[chosen], X[train_idx], X[test_idx])},
         "reproduce": {"command": "python3 pipeline/train_flex_model.py", "seed": seed,
                       "python": platform.python_version(), "scikit_learn": sklearn.__version__,
                       "shap": shap.__version__, "numpy": np.__version__},
     }
+    result["limitations"] = limitations(result)
+    return result
 
 
 def main() -> None:

@@ -271,6 +271,16 @@
       }
     }
   },
+  "chance_check": {
+    "method": "labels shuffled across all tests; same grouped 5-fold split",
+    "on": "training days",
+    "shuffles": 40,
+    "macro_f1": 0.537,
+    "shuffled_mean": 0.319,
+    "shuffled_max": 0.451,
+    "p_value": 0.024,
+    "smallest_possible_p": 0.024
+  },
   "shap": {
     "model": "random_forest",
     "explained": "held-out tests",
@@ -380,5 +390,12 @@
     "scikit_learn": "1.9.1",
     "shap": "0.54.1",
     "numpy": "2.5.4"
-  }
+  },
+  "limitations": [
+    "Held out: 54 tests on 17 days, so one test moves a class score a lot; cross-validation on the training days varies by \u00b10.109 macro-F1.",
+    "logistic regression scored higher on the held-out days; the choice was made beforehand, on cross-validation, and is kept.",
+    "On the held-out days the random forest found 0 of 6 completions, 11 of 12 disruptions and 26 of 36 extinctions.",
+    "SHAP describes what the model relies on, not what causes a flame to go out.",
+    "Methanol and heptane droplets in FLEX's chamber only; nothing here carries over to other fuels, materials or a spacecraft cabin."
+  ]
 }
