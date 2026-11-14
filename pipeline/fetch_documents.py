@@ -32,6 +32,13 @@ FILES_CSV = os.path.join(ROOT, "backend", "data", "files.csv")
 CACHE = os.path.join(ROOT, ".cache", "psi", "documents")
 PAUSE = 1.0  # seconds after each call to PSI: at most one request a second
 READABLE = (".pdf", ".docx", ".pptx")
+# Both of PSI's buckets: every file's size is checked against PSI's list, so a link to the older
+# bucket is as safe here as one to the current bucket.
+BUCKETS = (psi.S3_PREFIX, psi.LEGACY_S3_PREFIX)
+
+
+def document_link(accession: str, file_name: str, fetch=psi.fetch_bytes) -> str:
+    return psi.download_url(accession, file_name, fetch, allowed=BUCKETS)
 
 
 def documents(files_csv: str = FILES_CSV) -> list[dict]:
@@ -53,7 +60,7 @@ def is_cached(row: dict, cache: str = CACHE) -> bool:
     return os.path.exists(path) and os.path.getsize(path) == row["bytes"]
 
 
-def fetch_all(rows, cache=CACHE, link=psi.download_url, get=psi.fetch_bytes, sleep=time.sleep):
+def fetch_all(rows, cache=CACHE, link=document_link, get=psi.fetch_bytes, sleep=time.sleep):
     """Download every readable, uncached row. Returns (downloaded, skipped, failures)."""
     downloaded, skipped, failures = 0, 0, []
     for row in rows:

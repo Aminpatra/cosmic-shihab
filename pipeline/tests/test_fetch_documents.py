@@ -83,6 +83,18 @@ class FetchTests(unittest.TestCase):
         self.assertEqual(pauses, [fd.PAUSE, fd.PAUSE])
 
 
+class LinkTests(unittest.TestCase):
+    def test_both_psi_buckets_are_accepted_and_nothing_else(self):
+        for link in (psi.S3_PREFIX + "x.pdf?sig", psi.LEGACY_S3_PREFIX + "legacy/1/x.pdf?sig"):
+            self.assertEqual(fd.document_link("PSI-20", "x.pdf", lambda url: link.encode()), link)
+        with self.assertRaises(psi.PSIFormatError):
+            fd.document_link("PSI-20", "x.pdf", lambda url: b"https://example.com/x.pdf")
+
+    def test_the_client_default_still_refuses_the_older_bucket(self):
+        with self.assertRaises(psi.PSIFormatError):
+            psi.download_url("PSI-20", "x.pdf", lambda url: (psi.LEGACY_S3_PREFIX + "x").encode())
+
+
 class SelectionTests(unittest.TestCase):
     def test_covers_non_raw_documents_from_the_committed_manifest(self):
         rows = fd.documents()
