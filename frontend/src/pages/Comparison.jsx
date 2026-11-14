@@ -6,7 +6,7 @@ import { nameOf } from '../catalogue.js'
 import ConditionLanes from '../components/ConditionLanes.jsx'
 import { LoadError, Loading } from '../components/ApiState.jsx'
 import { PLACES, formatValue, hasScenario, paramsToForm, rankPath } from './ScenarioParams.js'
-import { LANE_VARIABLES, countsOf, figuresFor, parsePicks } from './ComparisonLanes.js'
+import { LANE_VARIABLES, countsOf, figuresFor, formatCell, parsePicks } from './ComparisonLanes.js'
 import './Comparison.css'
 
 const MAX_PICKS = 3
@@ -237,7 +237,7 @@ function ClosestTests({ items }) {
               {item.best_tests.map((t) => (
                 <li key={`${t.file}-${t.line}`} className="test">
                   <p className="test-head">
-                    <span>Run {t.run_id}</span>
+                    {t.run_id && <span>Run {t.run_id}</span>}
                     <span>
                       <span className="id">{t.file}</span>, line {t.line}
                     </span>
@@ -247,11 +247,7 @@ function ClosestTests({ items }) {
                     {Object.entries(t.values).map(([variable, v]) => (
                       <div key={variable}>
                         <dt>{v.column}</dt>
-                        <dd>
-                          {v.calculated && v.original
-                            ? `${v.original.value} ${v.original.unit} (${formatValue(v.value)} ${v.unit}, converted by FLARE)`
-                            : `${v.value} ${v.unit}`}
-                        </dd>
+                        <dd>{formatCell(v)}</dd>
                       </div>
                     ))}
                   </dl>

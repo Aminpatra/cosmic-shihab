@@ -140,3 +140,18 @@ export function parsePicks(param, items) {
   }
   return picks.slice(0, 3)
 }
+
+// One cell of a best test, in PSI's own terms. The API sends a single `value`, a list of
+// `values` (a summary row), a `range`, or `text` (fuel), and marks FLARE's conversions.
+export function formatCell(v) {
+  if (!v) return 'not recorded'
+  const unit = v.unit ? ` ${v.unit}` : ''
+  if (v.calculated && v.original) {
+    return `${v.original.value} ${v.original.unit} (${formatValue(v.value)}${unit}, converted by FLARE)`
+  }
+  if (v.value != null) return `${v.value}${unit}`
+  if (Array.isArray(v.values) && v.values.length) return `${v.values.join(', ')}${unit}`
+  if (Array.isArray(v.range) && v.range.length === 2) return `${v.range[0]}–${v.range[1]}${unit}`
+  if (v.text) return v.text
+  return 'not recorded'
+}

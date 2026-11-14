@@ -243,6 +243,7 @@
 /* The list: a ruled table, stacked records below 720px */
 .ex-table-wrap {
   margin-top: var(--space-3);
+  overflow-x: auto;
 }
 
 .ex-table {

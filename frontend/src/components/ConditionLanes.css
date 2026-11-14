@@ -307,13 +307,15 @@
 .track-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: auto;
+  min-height: 2.25rem; /* a long list of tested fuels grows the lane instead of spilling out */
 }
 
 .pair-theirs,
 .pair-yours {
   display: flex;
   align-items: center;
-  padding: 0 var(--space-3);
+  padding: 0.3rem var(--space-3);
   line-height: 1.2;
 }
 

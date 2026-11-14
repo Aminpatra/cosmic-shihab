@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { axisFor, statusOf, countsOf, laneFor, figuresFor, parsePicks } from './ComparisonLanes.js'
+import { axisFor, statusOf, countsOf, laneFor, figuresFor, parsePicks, formatCell } from './ComparisonLanes.js'
 
 // Shaped like GET /api/rank output. FLEX's numbers are its real ranges; TEST-1 is synthetic.
 const OPTIONS = {
@@ -129,4 +129,17 @@ test('picks ignore unknown accessions and default to the top two', () => {
   assert.deepEqual(parsePicks(null, RESULT.items), ['PSI-69', 'TEST-1'])
   assert.equal(parsePicks('PSI-69,TEST-1,PSI-69', RESULT.items).length, 2)
   assert.deepEqual(parsePicks('', RESULT.items), [])
+})
+
+test('best-test cells read every shape the API sends', () => {
+  // Shapes from BASS-II (PSI-25), ACME CLD Flame (PSI-21) and FLEX-2 (PSI-68) best tests.
+  assert.equal(
+    formatCell({ value: 0.222, unit: 'mole fraction', calculated: true, original: { value: 22.2, unit: '% by vol' } }),
+    '22.2 % by vol (0.222 mole fraction, converted by FLARE)',
+  )
+  assert.equal(formatCell({ value: 0.3, unit: 'mole fraction' }), '0.3 mole fraction')
+  assert.equal(formatCell({ text: '40% CH4' }), '40% CH4')
+  assert.equal(formatCell({ values: [0.17, 0.21, 0.25, 0.3], unit: 'mole fraction' }), '0.17, 0.21, 0.25, 0.3 mole fraction')
+  assert.equal(formatCell({ range: [0.1, 5], unit: 'cm/s' }), '0.1–5 cm/s')
+  assert.equal(formatCell({ column: 'Fuel Bottle' }), 'not recorded')
 })
