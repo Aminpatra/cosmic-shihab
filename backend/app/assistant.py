@@ -159,11 +159,14 @@ def gather(question: str, accessions: list[str] | None = None) -> list[dict]:
                 hits = search.search(words, None, MAX_PASSAGES)[1]
         except FileNotFoundError:
             hits = []  # no document index in this deployment: records only
+    seen: dict[str, int] = {}
     for hit in hits[:MAX_PASSAGES]:
         record = records[hit["accession"]]
         page = f", page {hit['page']}" if hit["page"] else ""
+        where = f"{hit['file_id']}:{hit['page'] or 0}"
+        seen[where] = seen.get(where, 0) + 1  # one page can hold several passages
         sources.append({
-            "id": f"passage:{hit['file_id']}:{hit['page'] or 0}",
+            "id": f"passage:{where}:{seen[where]}",
             "kind": "document",
             "accession": hit["accession"],
             "title": f"{hit['file_name']}{page} ({record['investigationAcronym'] or hit['accession']})",

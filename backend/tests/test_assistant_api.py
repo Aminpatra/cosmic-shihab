@@ -72,6 +72,11 @@ class Gathering(unittest.TestCase):
         self.assertTrue(all(s["url"].startswith("/api/files/") for s in passages))
         self.assertLessEqual(len(passages), assistant.MAX_PASSAGES)
 
+    def test_source_ids_are_unique(self):
+        # FLEX's EIRD has two matching passages on page 13; each needs its own id.
+        ids = [s["id"] for s in assistant.gather("Which gases did FLEX test as fire suppressants?")]
+        self.assertEqual(len(ids), len(set(ids)))
+
     def test_record_text_carries_tags_and_tables(self):
         text_ = assistant.gather("x", ["PSI-60"])[0]["text"]
         self.assertIn("catalogue metadata only", text_)
