@@ -57,11 +57,17 @@
 }
 
 .key-full {
-  background: var(--blue-yonder);
+  background: color-mix(in oklab, var(--blue-yonder) 70%, var(--ramp-1));
+}
+
+.key-group {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  margin-right: var(--space-4);
 }
 
 .key-absent {
-  margin-left: var(--space-3);
   border-color: var(--ramp-4);
   background: var(--hatch);
 }
@@ -128,11 +134,11 @@
   padding: 0 var(--space-2);
   border: 1px solid var(--band-edge);
   /* One hue, light to dark by share: the ramp ground mixed toward Blue Yonder */
-  background: color-mix(in oklab, var(--blue-yonder) calc(var(--share) * 85%), var(--ramp-1));
+  /* Capped at 70% so white numerals keep at least 5:1 on a full cell */
+  background: color-mix(in oklab, var(--blue-yonder) calc(var(--share) * 70%), var(--ramp-1));
   color: var(--white);
   font: 700 var(--text-data) / 1 var(--font-body);
   font-variant-numeric: tabular-nums;
-  text-shadow: 0 1px 2px rgb(3 10 30 / 0.6);
   cursor: pointer;
   transition: box-shadow 160ms var(--ease-out), transform 160ms var(--ease-out);
 }
@@ -186,7 +192,7 @@
 
 .strip-label {
   fill: var(--ramp-5);
-  font: 700 13px var(--font-body);
+  font: 700 15px var(--font-body);
 }
 
 .axis-line,
@@ -197,7 +203,16 @@
 
 .axis-label {
   fill: var(--ramp-5);
-  font: 400 12px var(--font-body);
+  font: 400 15px var(--font-body);
+}
+
+.axis-title {
+  fill: var(--ramp-6);
+  font: 700 15px var(--font-body);
+}
+
+.matrix-field {
+  display: none;
 }
 
 .grid {
@@ -313,8 +328,11 @@
 }
 
 .multiple-head {
+  /* Two lines reserved, so every plot in a row starts at the same height */
+  min-height: 3.2em;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 0 var(--space-3);
   align-items: baseline;
   font-size: var(--text-data);
@@ -383,14 +401,31 @@
     margin-top: var(--space-3);
   }
 
-  .matrix thead th:first-child {
+  /* Each cell names its field on phones, so the header row is not needed */
+  .matrix thead {
     display: none;
   }
 
-  .matrix thead th {
-    padding: 0 0 var(--space-1);
-    font-size: 0.6875rem;
-    letter-spacing: 0.03em;
+  .matrix-field {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--ramp-6);
+    font: 600 0.75rem / 1 var(--font-body);
+  }
+
+  .matrix td {
+    height: auto;
+    min-height: 2.9rem;
+  }
+
+  .matrix-absent {
+    padding: 4px 0 0 4px;
+  }
+
+  .matrix-absent .matrix-field {
+    display: inline-block;
+    padding: 1px 3px;
+    background: var(--ramp-0);
   }
 
   .matrix tbody th {
@@ -405,7 +440,8 @@
 
   .matrix-cell {
     min-width: 0;
-    padding: 0;
+    min-height: 2.9rem;
+    padding: 4px 0;
   }
 
   .counts li {

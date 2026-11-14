@@ -9,12 +9,12 @@ import './Visualization.css'
 // standard field of a test table), values written with ~, < or > left out of the FLEX panels.
 
 const FIELDS = [
-  { id: 'fuel', label: 'Fuel', kind: 'text' },
-  { id: 'oxygen', label: 'Oxygen', unit: 'mole fraction', kind: 'number' },
-  { id: 'pressure', label: 'Pressure', unit: 'atm', kind: 'number' },
-  { id: 'flow_velocity', label: 'Flow', full: 'Flow velocity', unit: 'cm/s', kind: 'number' },
-  { id: 'burn_time', label: 'Burn time', unit: 's', kind: 'number' },
-  { id: 'test_end', label: 'Test end', full: 'How the test ended', kind: 'text' },
+  { id: 'fuel', label: 'Fuel', short: 'Fuel', kind: 'text' },
+  { id: 'oxygen', label: 'Oxygen', short: 'O₂', unit: 'mole fraction', kind: 'number' },
+  { id: 'pressure', label: 'Pressure', short: 'Press.', unit: 'atm', kind: 'number' },
+  { id: 'flow_velocity', label: 'Flow', short: 'Flow', full: 'Flow velocity', unit: 'cm/s', kind: 'number' },
+  { id: 'burn_time', label: 'Burn time', short: 'Burn', unit: 's', kind: 'number' },
+  { id: 'test_end', label: 'Test end', short: 'End', full: 'How the test ended', kind: 'text' },
 ]
 const FLEX_FILE = 'PSI-69_Experimental table_FLEX.csv'
 const FLEX = {
@@ -51,6 +51,9 @@ function useRuns() {
   return { ...state, retry: () => setAttempt((n) => n + 1) }
 }
 
+// In inverse-flame tables the oxygen is the burner stream's, not the gas around the flame.
+const isInverse = (table) => /inverse/i.test(table.file)
+
 const shortName = (table) =>
   `${table.accession} ${table.file.replace(/^PSI-\d+_Experimental table_/, '').replace(/\.csv$/, '').replace(/_/g, ' ')}`
 
@@ -60,6 +63,7 @@ function usableNumber(row, field) {
   if (typeof value !== 'number') return null
   if (field === 'pressure' && value <= 0) return null
   if (field === 'flow_velocity' && value < 0) return null
+  if (field === 'oxygen' && (value < 0 || value > 1)) return null
   return value
 }
 
@@ -139,6 +143,7 @@ function CoverageMatrix({ coverage, chosen, onChoose }) {
                 if (!cell.recorded)
                   return (
                     <td key={f.id} className="matrix-absent">
+                      <span className="matrix-field" aria-hidden="true">{f.short}</span>
                       <span className="visually-hidden">No {f.label.toLowerCase()} column</span>
                     </td>
                   )
@@ -153,6 +158,7 @@ function CoverageMatrix({ coverage, chosen, onChoose }) {
                       style={{ '--share': cell.share }}
                       onClick={() => onChoose({ table: table.file, field: f.id })}
                     >
+                      <span className="matrix-field" aria-hidden="true">{f.short}</span>
                       {pct}%<span className="visually-hidden"> of {shortName(table)} has a usable {f.label.toLowerCase()}; show its values</span>
                     </button>
                   </td>
@@ -182,45 +188,47 @@ function useWidth() {
   return [ref, width]
 }
 
-function NumberStrip({ field, own, others }) {
+function NumberStrip({ field, lanes }) {
   const [ref, W] = useWidth()
-  const all = [...own, ...others].map((p) => p.v)
+  const all = lanes.flatMap((lane) => lane.points.map((p) => p.v))
   const lo = Math.min(...all)
   const hi = Math.max(...all)
   const ticks = niceTicks(lo, hi, W < 480 ? 4 : 5)
   const d0 = Math.min(lo, ticks[0])
   const d1 = Math.max(hi, ticks[ticks.length - 1])
   const x = scale(d0, d1, 24, W - 24)
-  const lanes = [
-    { key: 'own', label: 'This table', points: own, cy: 34, r: 4.5, cls: 'dot-own' },
-    { key: 'others', label: 'All other test tables', points: others, cy: 98, r: 3.5, cls: 'dot-other' },
-  ]
+  const step = 66
+  const axisY = 34 + lanes.length * step - 10
   return (
     <div ref={ref} className="strip-box">
-    <svg className="strip" viewBox={`0 0 ${W} 150`} width={W} height="150" role="img" aria-label={`${field.full ?? field.label} values`}>
-      {lanes.map((lane) => (
-        <g key={lane.key}>
-          <rect x="24" y={lane.cy - 22} width={W - 48} height="44" className="strip-track" />
-          <text x="24" y={lane.cy - 28} className="strip-label">
-            {lane.label} ({lane.points.length})
-          </text>
-          {lane.points.map((p, i) => (
-            <circle key={i} cx={x(p.v)} cy={lane.cy + jitter(i) * 14} r={lane.r} className={lane.cls}>
-              <title>{`${fmt(p.v)} ${field.unit}${p.label ? ` · ${p.label}` : ''}`}</title>
-            </circle>
-          ))}
-        </g>
-      ))}
-      {ticks.map((t) => (
-        <g key={t}>
-          <line x1={x(t)} x2={x(t)} y1="126" y2="131" className="axis-tick" />
-          <text x={x(t)} y="145" className="axis-label" textAnchor="middle">
-            {fmt(t)}
-          </text>
-        </g>
-      ))}
-      <line x1="24" x2={W - 24} y1="126" y2="126" className="axis-line" />
-    </svg>
+      <svg className="strip" viewBox={`0 0 ${W} ${axisY + 26}`} width={W} height={axisY + 26} role="img"
+        aria-label={`${field.full ?? field.label} values`}>
+        {lanes.map((lane, k) => {
+          const cy = 40 + k * step
+          return (
+            <g key={lane.key}>
+              <rect x="24" y={cy - 20} width={W - 48} height="40" className="strip-track" />
+              <text x="24" y={cy - 26} className="strip-label">
+                {lane.label} ({lane.points.length})
+              </text>
+              {lane.points.map((p, i) => (
+                <circle key={i} cx={x(p.v)} cy={cy + jitter(i) * 13} r={lane.own ? 4.5 : 3.5} className={lane.own ? 'dot-own' : lane.ring ? 'dot-ring' : 'dot-other'}>
+                  <title>{`${fmt(p.v)} ${field.unit}${p.label ? ` · ${p.label}` : ''}`}</title>
+                </circle>
+              ))}
+            </g>
+          )
+        })}
+        {ticks.map((t) => (
+          <g key={t}>
+            <line x1={x(t)} x2={x(t)} y1={axisY} y2={axisY + 5} className="axis-tick" />
+            <text x={x(t)} y={axisY + 21} className="axis-label" textAnchor="middle">
+              {fmt(t)}
+            </text>
+          </g>
+        ))}
+        <line x1="24" x2={W - 24} y1={axisY} y2={axisY} className="axis-line" />
+      </svg>
     </div>
   )
 }
@@ -250,7 +258,7 @@ function TextCounts({ values }) {
   )
 }
 
-function ChosenCell({ model, chosen }) {
+function ChosenCell({ model, chosen, figureRef }) {
   const field = FIELDS.find((f) => f.id === chosen.field)
   const entry = model.coverage.find((c) => c.table.file === chosen.table)
   const { table, rows, cells } = entry
@@ -262,11 +270,19 @@ function ChosenCell({ model, chosen }) {
   let stats = null
   if (field.kind === 'number') {
     const own = rows.map((r) => ({ v: usableNumber(r, field.id), label: r.run_id })).filter((p) => p.v !== null)
-    const others = model.coverage
-      .filter((c) => c.table.file !== table.file && c.cells[field.id].recorded)
-      .flatMap((c) => c.rows.map((r) => ({ v: usableNumber(r, field.id), label: shortName(c.table) })))
-      .filter((p) => p.v !== null)
-    figure = own.length ? <NumberStrip field={field} own={own} others={others} /> : null
+    const pointsOf = (list) =>
+      list.flatMap((c) => c.rows.map((r) => ({ v: usableNumber(r, field.id), label: shortName(c.table) }))).filter((p) => p.v !== null)
+    const rest = model.coverage.filter((c) => c.table.file !== table.file && c.cells[field.id].recorded)
+    const ownInverse = field.id === 'oxygen' && isInverse(table)
+    const lanes = [{ key: 'own', own: true, label: ownInverse ? 'This table, burner-stream oxygen' : 'This table', points: own }]
+    if (field.id === 'oxygen') {
+      // Burner-stream oxygen (inverse flames) is not the gas around the flame: never one lane with it.
+      lanes.push({ key: 'ambient', label: 'Other tables, oxygen around the flame', points: pointsOf(rest.filter((c) => !isInverse(c.table))) })
+      lanes.push({ key: 'burner', ring: true, label: 'Inverse flames, burner-stream oxygen', points: pointsOf(rest.filter((c) => isInverse(c.table))) })
+    } else {
+      lanes.push({ key: 'others', label: 'All other test tables', points: pointsOf(rest) })
+    }
+    figure = own.length ? <NumberStrip field={field} lanes={lanes.filter((l) => l.points.length)} /> : null
     if (own.length) {
       const v = own.map((p) => p.v)
       stats = `${own.length} values from ${fmt(Math.min(...v))} to ${fmt(Math.max(...v))} ${field.unit}, median ${fmt(median(v))}.`
@@ -278,7 +294,7 @@ function ChosenCell({ model, chosen }) {
   }
 
   return (
-    <figure className="chosen" aria-live="polite">
+    <figure className="chosen" aria-live="polite" ref={figureRef}>
       <figcaption>
         <h3>{title}</h3>
         <p>
@@ -288,7 +304,8 @@ function ChosenCell({ model, chosen }) {
       {figure ?? <p className="chosen-empty">No usable value to draw.</p>}
       <p className="footnote">
         Source: PSI column “{cell.column}” in <span className="id">{table.file}</span>. Suspect values left out.
-        {field.kind === 'number' && ' Both lanes share one scale, so this table sits among every test that records it.'}
+        {field.kind === 'number' && ' All lanes share one scale.'}
+        {field.id === 'oxygen' && ' Burner-stream oxygen from inverse flames is kept in its own lane: it does not describe the gas around the flame.'}
       </p>
     </figure>
   )
@@ -296,41 +313,49 @@ function ChosenCell({ model, chosen }) {
 
 // --- fixed figures -----------------------------------------------------------------------------
 
-function Scatter({ points, context, x, y, xTicks, yTicks, ringed, label }) {
-  const W = 320
-  const H = 240
-  const L = 44
-  const B = 34
+function Scatter({ points, context, x, y, xTicks, yTicks, ringed, label, xTitle, yTitle }) {
+  const [ref, W] = useWidth()
+  const H = Math.round(W * 0.74)
+  const L = 58
+  const B = 52
   const sx = scale(x[0], x[1], L, W - 10)
   const sy = scale(y[0], y[1], H - B, 10)
   return (
-    <svg className="scatter" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label}>
-      <rect x={L} y="10" width={W - L - 10} height={H - B - 10} className="plot-bg" />
-      {xTicks.map((t) => (
-        <g key={`x${t}`}>
-          <line x1={sx(t)} x2={sx(t)} y1="10" y2={H - B} className="grid" />
-          <text x={sx(t)} y={H - B + 16} textAnchor="middle" className="axis-label">
-            {fmt(t)}
-          </text>
-        </g>
-      ))}
-      {yTicks.map((t) => (
-        <g key={`y${t}`}>
-          <line x1={L} x2={W - 10} y1={sy(t)} y2={sy(t)} className="grid" />
-          <text x={L - 6} y={sy(t) + 4} textAnchor="end" className="axis-label">
-            {fmt(t)}
-          </text>
-        </g>
-      ))}
-      {context?.map((p, i) => (
-        <circle key={`c${i}`} cx={sx(p.x)} cy={sy(p.y)} r="2.5" className="dot-other" />
-      ))}
-      {points.map((p, i) => (
-        <circle key={i} cx={sx(p.x)} cy={sy(p.y)} r="4.5" className={ringed?.(p) ? 'dot-ring' : 'dot-own'}>
-          <title>{p.title}</title>
-        </circle>
-      ))}
-    </svg>
+    <div ref={ref}>
+      <svg className="scatter" viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-label={label}>
+        <rect x={L} y="10" width={W - L - 10} height={H - B - 10} className="plot-bg" />
+        {xTicks.map((t) => (
+          <g key={`x${t}`}>
+            <line x1={sx(t)} x2={sx(t)} y1="10" y2={H - B} className="grid" />
+            <text x={sx(t)} y={H - B + 18} textAnchor="middle" className="axis-label">
+              {fmt(t)}
+            </text>
+          </g>
+        ))}
+        {yTicks.map((t) => (
+          <g key={`y${t}`}>
+            <line x1={L} x2={W - 10} y1={sy(t)} y2={sy(t)} className="grid" />
+            <text x={L - 8} y={sy(t) + 5} textAnchor="end" className="axis-label">
+              {fmt(t)}
+            </text>
+          </g>
+        ))}
+        <text x={(L + W - 10) / 2} y={H - 8} textAnchor="middle" className="axis-title">
+          {xTitle}
+        </text>
+        <text transform={`translate(15 ${(10 + H - B) / 2}) rotate(-90)`} textAnchor="middle" className="axis-title">
+          {yTitle}
+        </text>
+        {context?.map((p, i) => (
+          <circle key={`c${i}`} cx={sx(p.x)} cy={sy(p.y)} r="2.5" className="dot-other" />
+        ))}
+        {points.map((p, i) => (
+          <circle key={i} cx={sx(p.x)} cy={sy(p.y)} r="4.5" className={ringed?.(p) ? 'dot-ring' : 'dot-own'}>
+            <title>{p.title}</title>
+          </circle>
+        ))}
+      </svg>
+    </div>
   )
 }
 
@@ -371,7 +396,9 @@ function ConditionSpace({ model }) {
               </p>
               <Scatter
                 points={own.map((p) => ({ ...p, title: `${fmt(p.x)} O₂, ${fmt(p.y)} atm · ${p.run}` }))}
-                context={every}
+                context={panels.filter((o) => o !== c).flatMap(pts)}
+                xTitle="Oxygen (mole fraction)"
+                yTitle="Pressure (atm)"
                 x={x}
                 y={y}
                 xTicks={xTicks}
@@ -452,6 +479,8 @@ function FlexBurningRate({ flexRows }) {
                 xTicks={xTicks}
                 yTicks={yTicks}
                 label={`FLEX ${fuel}: burning rate against initial oxygen`}
+                xTitle="Initial oxygen (mole fraction)"
+                yTitle="Burning rate (PSI: mm)"
               />
             </div>
           )
@@ -472,6 +501,15 @@ export default function Visualization() {
   const runs = useRuns()
   const model = useMemo(() => (runs.status === 'ready' ? build(runs.data) : null), [runs.status, runs.data])
   const [chosen, setChosen] = useState({ table: FLEX_FILE, field: 'oxygen' })
+  const figureRef = useRef(null)
+  const choose = (next) => {
+    setChosen(next)
+    // On a phone the figure sits below the whole matrix: bring it into view so the choice shows.
+    if (window.matchMedia('(max-width: 719px)').matches) {
+      const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      requestAnimationFrame(() => figureRef.current?.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' }))
+    }
+  }
   const testCount = model?.coverage.reduce((s, c) => s + c.rows.length, 0)
 
   return (
@@ -499,12 +537,16 @@ export default function Visualization() {
                 </span>
               </h2>
               <p className="viz-key">
-                <span className="key-swatch key-full" aria-hidden="true" /> Shade: share of the table's tests with one
-                usable value <span className="key-swatch key-absent" aria-hidden="true" /> Hatched: the table has no such
-                column
+                <span className="key-group">
+                  <span className="key-swatch key-full" aria-hidden="true" /> Shade: share of the table's tests with one
+                  usable value
+                </span>
+                <span className="key-group">
+                  <span className="key-swatch key-absent" aria-hidden="true" /> Hatched: the table has no such column
+                </span>
               </p>
-              <CoverageMatrix coverage={model.coverage} chosen={chosen} onChoose={setChosen} />
-              <ChosenCell model={model} chosen={chosen} />
+              <CoverageMatrix coverage={model.coverage} chosen={chosen} onChoose={choose} />
+              <ChosenCell model={model} chosen={chosen} figureRef={figureRef} />
             </div>
             <div className="viz-block">
               <ConditionSpace model={model} />
