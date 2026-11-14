@@ -74,7 +74,8 @@ function Confusion({ cm }) {
           <th scope="col">Ended in</th>
           {cm.labels.map((label) => (
             <th key={label} scope="col">
-              Given {label.toLowerCase()}
+              <span className="fm-given">Given </span>
+              {label.toLowerCase()}
             </th>
           ))}
         </tr>

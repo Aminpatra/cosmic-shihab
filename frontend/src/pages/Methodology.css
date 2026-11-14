@@ -39,7 +39,7 @@
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375em) {
   .method-terms > div {
     grid-template-columns: 1fr;
     gap: var(--space-1);
