@@ -317,6 +317,19 @@
   color: var(--ramp-5);
 }
 
+.ranked-gravity {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: var(--space-1);
+  color: var(--ramp-5);
+}
+
+.ranked-gravity svg {
+  flex: none;
+  margin-top: 0.2em;
+  color: var(--blue-yonder);
+}
+
 .ranked-score {
   min-width: 2.5ch;
   font-weight: 700;
