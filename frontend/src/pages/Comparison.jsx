@@ -182,6 +182,12 @@ function Ranked({ items, notRanked, picks, toggle, notice }) {
                   {item.close_tests} of {item.rows_scored.toLocaleString('en-US')}{' '}
                   {unitWord(item.row_unit, item.rows_scored)} close to your scenario
                 </p>
+                {item.gravity_note && (
+                  <p className="ranked-gravity">
+                    <Orbit size={14} strokeWidth={2.5} aria-hidden="true" />
+                    {item.gravity_note}
+                  </p>
+                )}
               </div>
               <p className="ranked-score">
                 <span className="visually-hidden">Relevance score </span>
