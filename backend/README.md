@@ -24,9 +24,15 @@ Interactive docs: `/api/docs`. Schema: `/api/openapi.json`.
 | `GET /api/files` | `{total, limit, offset, items}`, one item per `files.csv` row. Filters: `accession` (404 if unknown), `kind`, `category`. `limit` 1 to 500, default 100; `offset` from 0 |
 | `GET /api/files/{file_id}/download` | A `307` redirect to a fresh PSI download link, with `Cache-Control: no-store`. Asks PSI each time (about 2 s); the link expires after about an hour and is never stored. 404 if the id is not in the catalogue, 502 if PSI fails or answers with anything but a `psi-repo-prod.s3.amazonaws.com` link. Use it as a plain link: `<a href="/api/files/{file_id}/download">` |
 | `GET /api/search?q=` | `{query, total, limit, offset, items}`: passages of about 150 words from PSI documents matching any word of `q`, best first. Each item: `accession`, `title`, `investigationAcronym`, `doi`, `file_id`, `file_name`, `category`, `page` (PDF page or slide from 1; `null` for Word), `snippet` (matched words between `[[` and `]]`), `text` (the whole passage). Filter: `accession` (404 if unknown). `limit` 1 to 50, default 10. 422 if `q` has no words; 503 if `data/search.sqlite` is not built |
+| `GET /api/runs` | The 22 experimental tables, without rows: `accession`, `file`, `psi_file_name`, `doi_url`, `encoding`, `row_is`, `row_count`, `columns` (`[{name, unit, unit_inferred}]`, PSI's headers exactly), `standard_columns`. Filter: `accession` (404 if unknown; `[]` for an investigation with no table) |
+| `GET /api/runs/rows` | `{total, limit, offset, items}`, rows in accession, table and line order, each as stored in `data/runs/` plus its `accession` and `table`. Filters: `accession` (404 if unknown), `table` (a `file` from `/api/runs`; 404 if unknown). `cells=false` leaves out the per-column cells and keeps `standard`, enough for charts (500 rows: 174 KB instead of 580 KB). `limit` 1 to 500, default 100; `offset` from 0 |
 
 Field names are PSI's own; what FLARE computed is under `derived` (see `data/README.md`). In file
 items, a blank `subcategory` or `updated` comes back as `null`.
+
+Run rows keep each cell's original text in `raw`; the cell kinds, flags and `standard` fields are
+described in `data/README.md`. Check `row_is` before counting tests: some tables have one row per
+test day, session, fuel or published figure.
 
 The API sends no CORS headers. The frontend calls relative `/api/...` paths: on Vercel both
 services share one domain, and in development the Vite dev server proxies `/api` to
@@ -38,6 +44,7 @@ services share one domain, and in development the Vite dev server proxies `/api`
 |---|---|
 | `main.py` | Defines `app`, Vercel's entrypoint, and includes each router |
 | `app/catalogue.py` | Loads `data/` once per process |
+| `app/runs.py` | Loads `data/runs/` once per process (written by `pipeline/process_tables.py`); ranking can read rows from here too |
 | `app/search.py` | Queries `data/search.sqlite` read-only (written by `pipeline/build_search_index.py`) |
 | `app/routes/` | One module per group of endpoints, each defining `router` |
 | `app/services/` | Calls made while answering a request: `psi_links.py` asks PSI for download links |
