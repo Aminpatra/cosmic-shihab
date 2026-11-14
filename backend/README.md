@@ -24,6 +24,8 @@ Interactive docs: `/api/docs`. Schema: `/api/openapi.json`.
 | `GET /api/files` | `{total, limit, offset, items}`, one item per `files.csv` row. Filters: `accession` (404 if unknown), `kind`, `category`. `limit` 1 to 500, default 100; `offset` from 0 |
 | `GET /api/files/{file_id}/download` | A `307` redirect to a fresh PSI download link, with `Cache-Control: no-store`. Asks PSI each time (about 2 s); the link expires after about an hour and is never stored. 404 if the id is not in the catalogue, 502 if PSI fails or answers with anything but a `psi-repo-prod.s3.amazonaws.com` link. Use it as a plain link: `<a href="/api/files/{file_id}/download">` |
 | `GET /api/search?q=` | `{query, total, limit, offset, items}`: passages of about 150 words from PSI documents matching any word of `q`, best first. Each item: `accession`, `title`, `investigationAcronym`, `doi`, `file_id`, `file_name`, `category`, `page` (PDF page or slide from 1; `null` for Word), `snippet` (matched words between `[[` and `]]`), `text` (the whole passage). Filter: `accession` (404 if unknown). `limit` 1 to 50, default 10. 422 if `q` has no words; 503 if `data/search.sqlite` is not built |
+| `GET /api/rank?` | `{scenario, method, notice, message, gravity_note, items, not_ranked}`. Scenario as query parameters, all optional: `environment` (`spacecraft`, `lunar`, `mars`, `custom`; sets gravity only), `gravity_g` (0 to 1, only with `custom`), `oxygen` (mole fraction), `pressure` (atm), `flow_velocity` (cm/s), `fuel` (text), `fuel_phase` (`gas`, `liquid`, `solid`), `concern` (`prevention`, `detection`, `suppression`), and `weight_<variable>` (0 to 10, default 1). Each item: `accession`, `title`, `investigationAcronym`, `doi`, `score` (0 to 100, the best test's), `close_tests`, `rows_scored`, `row_unit`, `used_variables`, `matches` and `differences` (`variable`, `scenario`, and for numbers `tested_min`, `tested_max`, `closest`, `unit`; else `tested`), `unavailable`, `best_tests` (up to 3: `file`, `line`, `run_id`, `score`, `values`), `measured_outcomes`, `gravity_note`. `not_ranked` items carry a `reason`. No condition set: 200 with `items: []` and `message`. 422 for values out of range |
+| `GET /api/rank/options` | `{variables: {oxygen, pressure, flow_velocity: {unit, min, max, rows}}, fuels: [{name, rows}], fuel_phases, concerns, environments: {name: gravity in g}}`, all from the data |
 
 Field names are PSI's own; what FLARE computed is under `derived` (see `data/README.md`). In file
 items, a blank `subcategory` or `updated` comes back as `null`.
@@ -39,6 +41,8 @@ services share one domain, and in development the Vite dev server proxies `/api`
 | `main.py` | Defines `app`, Vercel's entrypoint, and includes each router |
 | `app/catalogue.py` | Loads `data/` once per process |
 | `app/search.py` | Queries `data/search.sqlite` read-only (written by `pipeline/build_search_index.py`) |
+| `app/runs.py` | Loads `data/runs/` once per process |
+| `app/ranking.py` | Scores each PSI test against a scenario and rolls up to investigations (design: `docs/superpowers/specs/2026-11-14-ranking-engine-design.md`) |
 | `app/routes/` | One module per group of endpoints, each defining `router` |
 | `app/services/` | Calls made while answering a request: `psi_links.py` asks PSI for download links |
 | `tests/` | Endpoint tests against the committed `data/` |
