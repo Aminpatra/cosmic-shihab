@@ -29,6 +29,10 @@ Interactive docs: `/api/docs`. Schema: `/api/openapi.json`.
 | `GET /api/runs` | The 22 experimental tables, without rows: `accession`, `file`, `psi_file_name`, `doi_url`, `encoding`, `row_is`, `row_count`, `columns` (`[{name, unit, unit_inferred}]`, PSI's headers exactly), `standard_columns`. Filter: `accession` (404 if unknown; `[]` for an investigation with no table) |
 | `GET /api/runs/rows` | `{total, limit, offset, items}`, rows in accession, table and line order, each as stored in `data/runs/` plus its `accession` and `table`. Filters: `accession` (404 if unknown), `table` (a `file` from `/api/runs`; 404 if unknown). `cells=false` leaves out the per-column cells and keeps `standard`, enough for charts (500 rows: 174 KB instead of 580 KB). `limit` 1 to 500, default 100; `offset` from 0 |
 
+| `GET /api/assistant/status` | `{mode, model}`: `generated` with the model id when `ANTHROPIC_API_KEY` is set, else `retrieval_only` and `null` |
+| `POST /api/assistant/ask` | Body `{question, accessions}` (question 3 to 1000 characters; up to 4 accessions, empty means those the question names, else all). Returns `{question, mode, reason, model, blocks, sources}`. `blocks`: `{text, kind, citations}`, where `kind` is `source` (rests on the cited `{source_id, cited_text}`) or `explanation`. `sources`: `{id, kind, accession, title, label, url, doi, text}` plus `file_id`, `file_name`, `page`, `snippet` for document passages. `mode` is `retrieval_only`, with `blocks` empty and `reason` saying why, when there is no key, the model declines, the call fails, or nothing matches. 404 for an unknown accession, 422 for a bad body |
+| `GET /api/assistant/summaries/{accession}` | A stored, AI-generated summary (`pipeline/write_summaries.py`): `{accession, note, model, generated, reviewed, reviewed_by, blocks, sources}`. Show it as reviewed only when `reviewed` is true. 404 if none has been written |
+
 Field names are PSI's own; what FLARE computed is under `derived` (see `data/README.md`). In file
 items, a blank `subcategory` or `updated` comes back as `null`.
 
@@ -46,9 +50,9 @@ services share one domain, and in development the Vite dev server proxies `/api`
 |---|---|
 | `main.py` | Defines `app`, Vercel's entrypoint, and includes each router |
 | `app/catalogue.py` | Loads `data/` once per process |
-| `app/runs.py` | Loads `data/runs/` once per process (written by `pipeline/process_tables.py`); ranking can read rows from here too |
+| `app/runs.py` | Loads `data/runs/` once per process (written by `pipeline/process_tables.py`); ranking reads `runs()` from here too |
+| `app/assistant.py` | The research assistant: gathers records and passages for a question, asks Claude Opus 5.5 with citations, or returns the sources alone |
 | `app/search.py` | Queries `data/search.sqlite` read-only (written by `pipeline/build_search_index.py`) |
-| `app/runs.py` | Loads `data/runs/` once per process |
 | `app/ranking.py` | Scores each PSI test against a scenario and rolls up to investigations (design: `docs/superpowers/specs/2026-11-14-ranking-engine-design.md`) |
 | `app/routes/` | One module per group of endpoints, each defining `router` |
 | `app/services/` | Calls made while answering a request: `psi_links.py` asks PSI for download links |
@@ -58,3 +62,17 @@ services share one domain, and in development the Vite dev server proxies `/api`
 
 **AI use:** the code in this folder was written with Claude Code (Claude Opus 5.5) and reviewed by
 the team. It serves NASA's data unchanged; it does not generate any.
+
+## The assistant's key
+
+The assistant reads `ANTHROPIC_API_KEY` from the environment and works without it, returning
+sources only. Locally, keep the key in the repo's `.env` (ignored by git) and load it into the
+shell before starting the server:
+
+```
+set -a; source ../.env; set +a
+.venv/bin/python -m uvicorn main:app --reload
+```
+
+On Vercel, set `ANTHROPIC_API_KEY` in the project's environment variables. An answer takes the
+model several seconds to tens of seconds, so the function's timeout must allow for it.
