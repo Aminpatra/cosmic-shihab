@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import FlameGravity from '../components/FlameGravity.jsx'
 import './Sources.css'
 import './Methodology.css'
 
@@ -202,6 +203,7 @@ export default function Methodology() {
                 the gravity its own tests ran in, microgravity or normal gravity, and says it is not partial gravity.
                 Gravity is left out of the score, because nothing could match it.
               </p>
+              <FlameGravity />
             </section>
 
             <section id="assistant" aria-labelledby="assistant-title">
