@@ -1,0 +1,25 @@
+fuel,condition,condition_column,outcome,outcome_column,n,distinct_condition_values,spearman_rho
+Heptane,oxygen,O initial ambient composition; mole fraction,burn_time,Burn time; s,111,14,0.77
+Heptane,oxygen,O initial ambient composition; mole fraction,burning_rate,Burning rate; mm,107,14,0.43
+Heptane,oxygen,O initial ambient composition; mole fraction,extinction_diameter,Visible flame extinction diameter; mm,80,14,-0.29
+Heptane,helium,He initial ambient composition; mole fraction,burn_time,Burn time; s,111,9,-0.13
+Heptane,helium,He initial ambient composition; mole fraction,burning_rate,Burning rate; mm,107,10,0.36
+Heptane,helium,He initial ambient composition; mole fraction,extinction_diameter,Visible flame extinction diameter; mm,80,8,-0.11
+Heptane,pressure,Ambient pressure; mmHg,burn_time,Burn time; s,111,85,0.19
+Heptane,pressure,Ambient pressure; mmHg,burning_rate,Burning rate; mm,107,83,-0.01
+Heptane,pressure,Ambient pressure; mmHg,extinction_diameter,Visible flame extinction diameter; mm,80,64,-0.14
+Heptane,initial_diameter,Droplet initial diameter; mm,burn_time,Burn time; s,106,92,0.18
+Heptane,initial_diameter,Droplet initial diameter; mm,burning_rate,Burning rate; mm,107,93,-0.31
+Heptane,initial_diameter,Droplet initial diameter; mm,extinction_diameter,Visible flame extinction diameter; mm,80,74,0.78
+Methanol,oxygen,O initial ambient composition; mole fraction,burn_time,Burn time; s,155,15,0.41
+Methanol,oxygen,O initial ambient composition; mole fraction,burning_rate,Burning rate; mm,151,15,0.69
+Methanol,oxygen,O initial ambient composition; mole fraction,extinction_diameter,Visible flame extinction diameter; mm,117,14,-0.42
+Methanol,helium,He initial ambient composition; mole fraction,burn_time,Burn time; s,155,10,-0.36
+Methanol,helium,He initial ambient composition; mole fraction,burning_rate,Burning rate; mm,151,10,0.48
+Methanol,helium,He initial ambient composition; mole fraction,extinction_diameter,Visible flame extinction diameter; mm,117,9,0.09
+Methanol,pressure,Ambient pressure; mmHg,burn_time,Burn time; s,154,119,0.04
+Methanol,pressure,Ambient pressure; mmHg,burning_rate,Burning rate; mm,150,115,-0.34
+Methanol,pressure,Ambient pressure; mmHg,extinction_diameter,Visible flame extinction diameter; mm,116,94,-0.19
+Methanol,initial_diameter,Droplet initial diameter; mm,burn_time,Burn time; s,153,104,0.62
+Methanol,initial_diameter,Droplet initial diameter; mm,burning_rate,Burning rate; mm,151,103,-0.14
+Methanol,initial_diameter,Droplet initial diameter; mm,extinction_diameter,Visible flame extinction diameter; mm,117,86,0.59
