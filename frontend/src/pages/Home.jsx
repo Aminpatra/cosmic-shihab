@@ -5,6 +5,7 @@ import { countOf, formatDate, formatTB, summarise } from '../catalogue.js'
 import { FLEX_EXAMPLE } from '../content/flexExample.js'
 import ConditionLanes from '../components/ConditionLanes.jsx'
 import CatalogueLane from '../components/CatalogueLane.jsx'
+import Astronaut from '../components/Astronaut.jsx'
 import { Empty, LoadError, Loading } from '../components/ApiState.jsx'
 import './Home.css'
 
@@ -39,6 +40,7 @@ export default function Home() {
             A relevance score says how closely an investigation's tested conditions match yours. It is not a safety
             assessment.
           </p>
+          <Astronaut />
         </div>
 
         <div className="home-record">
