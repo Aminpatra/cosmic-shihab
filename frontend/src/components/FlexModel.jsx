@@ -123,13 +123,19 @@ function PerClass({ perClass, classes }) {
   )
 }
 
-function Shap({ shap, classes }) {
+function Shap({ shap, classes, perClass }) {
   const max = Math.max(...classes.flatMap((c) => shap.by_end[c].map((f) => f.mean_abs_shap)))
   return (
     <div className="fm-shap">
       {classes.map((c) => (
         <div key={c} className="fm-shap-group">
-          <h4>{c}</h4>
+          <h5>{c}</h5>
+          {perClass[c].recall === 0 && (
+            <p className="fm-shap-warn">
+              The forest found 0 of the {perClass[c].tests} held-out {c.toLowerCase()}s, so this shows what it leans on,
+              not what it gets right.
+            </p>
+          )}
           <ul>
             {shap.by_end[c].map((f) => (
               <li key={f.feature}>
@@ -177,10 +183,11 @@ export default function FlexModel() {
 
       <p className="fm-lead">
         The random forest was chosen beforehand for the highest cross-validated score; on the held-out days logistic
-        regression scored higher, and the choice was kept. Shuffling the outcomes {chance.shuffles} times on the same
-        folds gave a mean macro-F1 of {f3(chance.shuffled_mean)} (best {f3(chance.shuffled_max)}) against{' '}
-        {f3(chance.macro_f1)} for the real outcomes: p = {chance.p_value}, the smallest {chance.shuffles} shuffles can
-        give.
+        regression scored higher, and the choice was kept. Is the forest better than chance? On the training days, one
+        cross-validation pass of the random forest gave {f3(chance.macro_f1)} (the bar's {f3(m.cross_validation.scores[m.chosen_model].mean)} averages
+        five passes); trained on outcomes shuffled {chance.shuffles} times it averaged {f3(chance.shuffled_mean)} (best{' '}
+        {f3(chance.shuffled_max)}): p = {chance.p_value}, the smallest {chance.shuffles} shuffles can give. This check
+        uses the training days, not the held-out tests.
       </p>
 
       <div className="fm-tables">
@@ -191,9 +198,10 @@ export default function FlexModel() {
       <h4 className="fm-subhead">What the random forest relies on, by outcome</h4>
       <p className="fm-key">
         Mean absolute SHAP value on the held-out tests: how much each condition moves the model's answer. The last
-        column says whether a higher value of that condition pushes the answer toward or away from that outcome.
+        column says whether a higher value of that condition pushes the answer toward or away from that outcome; mixed
+        means it pushes both ways across tests.
       </p>
-      <Shap shap={m.shap} classes={m.classes} />
+      <Shap shap={m.shap} classes={m.classes} perClass={rf.per_class} />
 
       <h4 className="fm-subhead">Limits</h4>
       <ul className="fm-limits">
@@ -206,7 +214,8 @@ export default function FlexModel() {
         Source: <span className="id">backend/data/flex_model/results.json</span>, written by{' '}
         <span className="id">{m.reproduce.command}</span> (seed {m.reproduce.seed}, scikit-learn{' '}
         {m.reproduce.scikit_learn}, shap {m.reproduce.shap}) from {m.data.tests} FLEX tests in{' '}
-        <span className="id">{m.source.file}</span>.
+        <span className="id">{m.source.file}</span>, columns{' '}
+        {m.features.map((f) => `“${f.psi_column}”`).join(', ')}.
       </p>
     </figure>
   )
