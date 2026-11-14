@@ -38,6 +38,7 @@ export const PAGES = [
     title: 'Data Visualization',
     summary: "Charts drawn from the investigations' own experimental tables, in their original units.",
     issue: 35,
+    ready: true,
   },
   {
     path: '/assistant',

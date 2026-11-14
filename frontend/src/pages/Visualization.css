@@ -1,0 +1,458 @@
+.viz {
+  --mark-own: var(--blue-yonder);
+  /* Context marks: validated against Blue Yonder on Deep Blue (dataviz validator: normal-vision
+     ΔE 15.4, CVD ΔE 14.4, contrast ≥ 3:1). A data colour, not a neutral. */
+  --mark-other: #4867aa;
+  min-width: 0;
+  padding: var(--space-8) var(--gutter) var(--space-9);
+  font-variant-numeric: tabular-nums;
+}
+
+.viz-head h1 {
+  max-width: 18ch;
+}
+
+.viz-lede {
+  max-width: 52ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.viz-block {
+  min-width: 0;
+  max-width: 72rem;
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.viz-block h2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  align-items: baseline;
+}
+
+.viz-count {
+  color: var(--ramp-5);
+  font: 400 var(--text-data) / 1.3 var(--font-body);
+}
+
+.viz-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin: var(--space-3) 0 var(--space-4);
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.key-swatch {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--band-edge);
+}
+
+.key-full {
+  background: color-mix(in oklab, var(--blue-yonder) 70%, var(--ramp-1));
+}
+
+.key-group {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  margin-right: var(--space-4);
+}
+
+.key-absent {
+  border-color: var(--ramp-4);
+  background: var(--hatch);
+}
+
+/* The coverage matrix */
+.matrix-wrap {
+  /* Positioned, so the cells' visually-hidden labels stay inside this scroller instead of
+     widening the page at phone width. */
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.matrix {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+  font-size: var(--text-data);
+}
+
+.matrix thead th {
+  padding: 0 var(--space-2) var(--space-2);
+  color: var(--ramp-5);
+  font: 700 var(--text-data) / 1.2 var(--font-body);
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.matrix thead th:first-child {
+  text-align: left;
+}
+
+.matrix tbody th {
+  padding: 0 var(--space-3) 0 0;
+  text-align: left;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.matrix-name {
+  font-weight: 700;
+}
+
+.matrix-n {
+  margin-left: var(--space-2);
+  color: var(--ramp-5);
+}
+
+.matrix td {
+  height: 2.6rem;
+  padding: 0;
+}
+
+.matrix-absent {
+  border: 1px solid var(--ramp-4);
+  background: var(--hatch);
+}
+
+.matrix-cell {
+  width: 100%;
+  height: 100%;
+  min-width: 3.25rem;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--band-edge);
+  /* One hue, light to dark by share: the ramp ground mixed toward Blue Yonder */
+  /* Capped at 70% so white numerals keep at least 5:1 on a full cell */
+  background: color-mix(in oklab, var(--blue-yonder) calc(var(--share) * 70%), var(--ramp-1));
+  color: var(--white);
+  font: 700 var(--text-data) / 1 var(--font-body);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: box-shadow 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+
+.matrix-cell:hover {
+  transform: translateY(-2px);
+}
+
+.matrix-cell[aria-pressed='true'] {
+  box-shadow: inset 0 0 0 3px var(--neon-yellow);
+}
+
+/* The chosen cell */
+.chosen {
+  margin: var(--space-6) 0 0;
+  /* Clear the sticky top bar when a phone scrolls the figure into view */
+  scroll-margin-top: calc(var(--bar-height) + var(--space-3));
+}
+
+.chosen h3 {
+  text-transform: none;
+  letter-spacing: 0;
+  font: 600 var(--text-body) / 1.3 var(--font-body);
+}
+
+.chosen figcaption p,
+.fixed-figure figcaption p {
+  max-width: 72ch;
+  margin-top: var(--space-2);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.chosen-empty {
+  margin-top: var(--space-4);
+  color: var(--ramp-5);
+}
+
+.strip-box {
+  max-width: 54rem;
+  margin-top: var(--space-4);
+}
+
+.strip {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.strip-track {
+  fill: var(--ramp-1);
+}
+
+.strip-label {
+  fill: var(--ramp-5);
+  font: 700 15px var(--font-body);
+}
+
+.axis-line,
+.axis-tick {
+  stroke: var(--ramp-4);
+  stroke-width: 1;
+}
+
+.axis-label {
+  fill: var(--ramp-5);
+  font: 400 15px var(--font-body);
+}
+
+.axis-title {
+  fill: var(--ramp-6);
+  font: 700 15px var(--font-body);
+}
+
+.matrix-field {
+  display: none;
+}
+
+.grid {
+  stroke: var(--ramp-3);
+  stroke-width: 1;
+}
+
+.plot-bg {
+  fill: var(--ramp-1);
+}
+
+.dot-own {
+  fill: var(--mark-own);
+  stroke: var(--deep-blue);
+  stroke-width: 1.5;
+}
+
+.dot-other {
+  fill: var(--mark-other);
+}
+
+.dot-other-ring {
+  fill: var(--deep-blue);
+  stroke: var(--mark-other);
+  stroke-width: 1.5;
+}
+
+.dot-ring {
+  fill: var(--deep-blue);
+  stroke: var(--mark-own);
+  stroke-width: 2;
+}
+
+.counts {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 44rem;
+  margin-top: var(--space-4);
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-data);
+}
+
+.counts li {
+  display: grid;
+  grid-template-columns: minmax(8rem, 14rem) 1fr 3rem;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.counts-label {
+  overflow-wrap: anywhere;
+}
+
+.counts-bar {
+  height: 0.9rem;
+  width: calc(var(--w) * 100%);
+  min-width: 2px;
+  background: var(--mark-own);
+}
+
+.counts-n {
+  color: var(--ramp-6);
+  text-align: right;
+}
+
+.counts-rest {
+  display: block !important;
+  color: var(--ramp-5);
+}
+
+.footnote {
+  max-width: 80ch;
+  margin-top: var(--space-3);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Fixed figures */
+.fixed-figure {
+  margin: 0;
+}
+
+.fixed-figure h3 {
+  text-transform: none;
+  letter-spacing: 0;
+  font: 400 var(--text-h2) / 1.2 var(--font-body);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+.legend li {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.multiples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.multiples-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 52rem;
+}
+
+.multiple-head {
+  /* Two lines reserved, so every plot in a row starts at the same height */
+  min-height: 3.2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0 var(--space-3);
+  align-items: baseline;
+  font-size: var(--text-data);
+}
+
+.multiple-head span {
+  color: var(--ramp-5);
+}
+
+.multiple-note {
+  margin-top: var(--space-1);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+}
+
+.scatter {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.viz-provenance {
+  max-width: 72ch;
+  margin-top: var(--space-7);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.viz-provenance a {
+  color: var(--ramp-6);
+  text-decoration-color: var(--ramp-4);
+}
+
+.viz-provenance a:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+@media (max-width: 1023px) {
+  .multiples {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 719px) {
+  .multiples,
+  .multiples-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Each table becomes a block: its name on one line, its six cells beneath */
+  .matrix,
+  .matrix thead,
+  .matrix tbody {
+    display: block;
+  }
+
+  .matrix tr {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 3px;
+  }
+
+  .matrix tbody tr {
+    margin-top: var(--space-3);
+  }
+
+  /* Each cell names its field on phones, so the header row is not needed */
+  .matrix thead {
+    display: none;
+  }
+
+  .matrix-field {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--ramp-6);
+    font: 600 0.75rem / 1 var(--font-body);
+  }
+
+  .matrix td {
+    height: auto;
+    min-height: 2.9rem;
+  }
+
+  .matrix-absent {
+    padding: 4px 0 0 4px;
+  }
+
+  .matrix-absent .matrix-field {
+    display: inline-block;
+    padding: 1px 3px;
+    background: var(--ramp-0);
+  }
+
+  .matrix tbody th {
+    grid-column: 1 / -1;
+    padding: 0 0 var(--space-1);
+    white-space: normal;
+  }
+
+  .matrix td {
+    display: block;
+  }
+
+  .matrix-cell {
+    min-width: 0;
+    min-height: 2.9rem;
+    padding: 4px 0;
+  }
+
+  .counts li {
+    grid-template-columns: minmax(6rem, 1fr) 1fr 2.5rem;
+  }
+}
