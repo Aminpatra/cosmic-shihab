@@ -1,0 +1,354 @@
+.explorer,
+.inv-page {
+  padding: var(--space-8) var(--gutter) var(--space-9);
+  font-variant-numeric: tabular-nums;
+}
+
+.ex-lede {
+  max-width: 50ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.ex-h2 {
+  margin: 0;
+}
+
+.ex-note,
+.ex-source {
+  max-width: 72ch;
+  margin-top: var(--space-3);
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+}
+
+.ex-source {
+  margin-top: var(--space-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.ex-message {
+  max-width: 72ch;
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border: 1px solid var(--ramp-3);
+  background: var(--ramp-1);
+  font-size: var(--text-data);
+}
+
+.explorer .api-loading,
+.explorer .api-error,
+.inv-page .api-loading,
+.inv-page .api-error {
+  margin-top: var(--space-5);
+}
+
+.absent {
+  color: var(--ramp-5);
+}
+
+/* Document search: the page's first action and its one filled button */
+.ex-search {
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.ex-search-form {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 48rem;
+  margin-top: var(--space-4);
+}
+
+.ex-search-input {
+  flex: 1;
+  min-width: 0;
+  height: 3rem;
+  padding: 0.2rem var(--space-4) 0;
+  border: 1px solid var(--ramp-4);
+  border-radius: var(--radius);
+  background: var(--ramp-1);
+  color: var(--white);
+  font: 400 var(--text-body) / 1 var(--font-body);
+  transition: background-color 160ms var(--ease-out);
+}
+
+.ex-search-input::placeholder {
+  color: var(--ramp-5);
+}
+
+.ex-search-input:hover {
+  background: var(--ramp-2);
+}
+
+.ex-results {
+  margin-top: var(--space-5);
+  font-size: var(--text-data);
+}
+
+.ex-count {
+  color: var(--ramp-6);
+}
+
+.hits {
+  max-width: 64rem;
+  margin: var(--space-3) 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ramp-3);
+}
+
+.hit {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+.hit-snippet {
+  max-width: 80ch;
+  color: var(--ramp-6);
+  line-height: 1.6;
+}
+
+.hit-snippet mark {
+  padding: 0 0.1em;
+  background: var(--band-fill);
+  box-shadow: inset 0 -1px 0 var(--band-edge);
+  color: var(--white);
+}
+
+.hit-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+}
+
+.hit-meta a,
+.ex-name,
+.inv-page a:not(.button):not(.button-quiet) {
+  color: var(--white);
+  text-decoration-color: var(--ramp-4);
+}
+
+.hit-meta a:hover,
+.ex-name:hover,
+.inv-page a:not(.button):not(.button-quiet):hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+.hit-meta > a:first-child {
+  font-weight: 700;
+}
+
+.hit-file {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.hit-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Filters: outlined chips, pressed ones carry the action yellow */
+.ex-list {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--ramp-3);
+}
+
+.ex-filters {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.ex-filter {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ex-filter > legend {
+  float: left;
+  padding: 0.55rem 0 0;
+}
+
+.ex-filter-label {
+  color: var(--ramp-5);
+  font-size: var(--text-data);
+  font-weight: 600;
+}
+
+.ex-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.ex-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem 0.35rem;
+  border: 1px solid var(--ramp-4);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ramp-6);
+  font: 600 var(--text-data) / 1.2 var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms var(--ease-out), background-color 160ms var(--ease-out);
+}
+
+.ex-chip:hover {
+  border-color: var(--ramp-5);
+  background: var(--ramp-1);
+}
+
+.ex-chip[aria-pressed='true'] {
+  border-color: var(--neon-yellow);
+  background: var(--ramp-1);
+  color: var(--white);
+  box-shadow: inset 0 0 0 1px var(--neon-yellow);
+}
+
+.ex-chip-count {
+  color: var(--ramp-5);
+  font-weight: 400;
+}
+
+.ex-showing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  min-height: 2.5rem;
+  margin-top: var(--space-6);
+  color: var(--ramp-6);
+  font-size: var(--text-data);
+}
+
+/* The list: a ruled table, stacked records below 720px */
+.ex-table-wrap {
+  margin-top: var(--space-3);
+}
+
+.ex-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-data);
+}
+
+.ex-table th,
+.ex-table td {
+  padding: var(--space-3) var(--space-4) var(--space-3) 0;
+  border-bottom: 1px solid var(--ramp-3);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ex-table thead th {
+  border-bottom-color: var(--ramp-4);
+  color: var(--ramp-5);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ex-table tbody tr:hover > * {
+  background: var(--ramp-1);
+}
+
+.ex-table tbody th {
+  min-width: 18rem;
+  font-weight: 400;
+}
+
+.ex-table .num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ex-name {
+  font-weight: 700;
+}
+
+.ex-acc {
+  color: var(--ramp-5);
+}
+
+.ex-title {
+  display: block;
+  color: var(--ramp-5);
+}
+
+@media (max-width: 719px) {
+  .ex-search-form {
+    flex-direction: column;
+  }
+
+  .ex-search-form .button {
+    justify-content: center;
+  }
+
+  .ex-filter {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ex-filter > legend {
+    padding: 0;
+  }
+
+  .ex-table,
+  .ex-table tbody,
+  .ex-table tr,
+  .ex-table th,
+  .ex-table td {
+    display: block;
+  }
+
+  .ex-table thead {
+    display: none;
+  }
+
+  .ex-table tr {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--ramp-3);
+  }
+
+  .ex-table tbody th,
+  .ex-table td {
+    min-width: 0;
+    padding: var(--space-1) 0;
+    border: 0;
+  }
+
+  .ex-table td {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: var(--space-3);
+    text-align: left;
+  }
+
+  .ex-table td::before {
+    content: attr(data-label);
+    color: var(--ramp-5);
+  }
+
+  .ex-table .num {
+    text-align: left;
+  }
+}

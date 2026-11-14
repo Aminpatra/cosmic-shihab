@@ -14,6 +14,7 @@ export const PAGES = [
     title: 'NASA Research Explorer',
     summary: 'Browse the 24 investigations, filter them, read their metadata and open the original NASA sources.',
     issue: 13,
+    ready: true,
   },
   {
     path: '/scenario',
