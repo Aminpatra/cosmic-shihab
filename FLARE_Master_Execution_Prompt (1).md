@@ -574,7 +574,7 @@ The user should understand what FLARE does within the first few seconds.
     long file names and long free-text fuel descriptions.
 -   The statement that a relevance score is not a safety assessment is
     visible wherever a score is shown.
--   Credit the team, Cosmic Shihab, with `Logo.jpg` and the six members
+-   Credit the team, Cosmic Shihab, with the logo in `brand/` and the six members
     in the order given in `PRODUCT.md`.
 
 ------------------------------------------------------------------------

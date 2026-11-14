@@ -20,7 +20,9 @@ Read each file against its sources before setting `reviewed`. It passes only if 
 
 1. Every `source` sentence says only what its `cited_text` says. Each number, material and condition
    appears in the cited text, with the same unit.
-2. No `explanation` sentence states a fact about an investigation, its results or its conditions.
+2. No `explanation` sentence states a fact about an investigation, its results or its conditions
+   that the file's own `sources` don't state. An explanation may restate those sources in plainer
+   words without a citation; it never adds to them.
 3. It says what the sources don't state (results, conditions) instead of filling the gap.
 4. It gives no safety advice and never calls a relevance score a safety assessment.
 5. A reading keeps the ranking's order and scores, includes the gravity note when the ranking has
