@@ -215,7 +215,8 @@ export default function FlexModel() {
         <span className="id">{m.reproduce.command}</span> (seed {m.reproduce.seed}, scikit-learn{' '}
         {m.reproduce.scikit_learn}, shap {m.reproduce.shap}) from {m.data.tests} FLEX tests in{' '}
         <span className="id">{m.source.file}</span>, columns{' '}
-        {m.features.map((f) => `“${f.psi_column}”`).join(', ')}.
+        {m.features.map((f) => `“${f.psi_column}”`).join(', ')}. PSI's headings drop subscripts: O is O₂ and CO is
+        CO₂.
       </p>
     </figure>
   )
