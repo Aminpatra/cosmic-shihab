@@ -30,7 +30,7 @@ test('a rover scenario becomes API parameters, leaving empty fields out', () => 
   assert.equal(p.get('environment'), 'lunar')
   assert.equal(p.get('place'), 'rover')
   assert.equal(p.get('oxygen'), '0.3')
-  assert.equal(p.get('pressure'), '0.694071')
+  assert.equal(p.get('pressure'), '0.69407114')
   assert.equal(p.get('p_unit'), 'psi')
   assert.equal(p.get('fuel_phase'), 'solid')
   assert.equal(p.has('flow_velocity'), false)
@@ -51,6 +51,7 @@ test('the form survives a round trip through the URL', () => {
   }
   assert.deepEqual(paramsToForm(formToParams(form)), form)
   assert.equal(paramsToForm(formToParams({ ...EMPTY_FORM, pressure: '10.2' })).pressure, '10.2')
+  assert.equal(paramsToForm(formToParams({ ...EMPTY_FORM, pressure: '4.3' })).pressure, '4.3')
 })
 
 test('a hand-edited URL falls back instead of breaking', () => {

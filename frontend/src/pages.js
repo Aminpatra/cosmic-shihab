@@ -29,6 +29,7 @@ export const PAGES = [
     title: 'Investigation Comparison',
     summary: 'Ranked investigations, lane by lane: the conditions that match your scenario, the ones that differ, and the ones never recorded.',
     issue: 13,
+    ready: true,
   },
   {
     path: '/visualization',

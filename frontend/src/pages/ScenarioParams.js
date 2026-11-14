@@ -52,8 +52,10 @@ const CONCERNS = ['prevention', 'detection', 'suppression']
 const CONDITIONS = ['oxygen', 'pressure', 'flow_velocity', 'fuel', 'fuel_phase', 'concern']
 const API_KEYS = new Set(['environment', 'gravity_g', ...CONDITIONS])
 
-// Six significant figures, so 10.2 psi -> 0.694071 atm -> 10.2 psi survives the round trip.
+// Values read back are rounded to six significant figures; pressure is written in atm with
+// eight, so 4.3 psi -> 0.29259861 atm -> 4.3 psi survives the round trip.
 const round6 = (x) => Number(x.toPrecision(6))
+const round8 = (x) => Number(x.toPrecision(8))
 
 export function parseNumber(text) {
   const t = String(text ?? '').trim().replace(',', '.')
@@ -128,7 +130,7 @@ export function formToParams(form) {
   if (oxygen != null) p.set('oxygen', String(round6(oxygen / 100)))
   const pressure = parseNumber(form.pressure)
   const pUnit = PRESSURE_UNITS.includes(form.pUnit) ? form.pUnit : 'psi'
-  if (pressure != null) p.set('pressure', String(round6(toAtm(pressure, pUnit))))
+  if (pressure != null) p.set('pressure', String(round8(toAtm(pressure, pUnit))))
   const flow = parseNumber(form.flow)
   if (flow != null) p.set('flow_velocity', String(round6(flow)))
   const fuel = String(form.fuel ?? '').trim()
