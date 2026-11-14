@@ -62,7 +62,9 @@ running and tests; SQLite with full-text search (public domain).
 **Analysis charts:** Matplotlib 3.10.3 (Matplotlib License, PSF-based).
 
 **Team tooling:** Model Context Protocol Python SDK, `mcp` 1.x (MIT), for our task coordinator;
-Playwright 1.65.1 and playwright-core (Apache-2.0) for browser QA.
+Playwright 1.65.1 and playwright-core 1.56.1 (Apache-2.0) for browser QA, with Google Chrome
+and Microsoft Edge run headless (Edge also driven through its DevTools protocol for the test
+report).
 
 **Runtimes:** Python and Node.js.
 
@@ -117,8 +119,9 @@ by source:
 ## Images
 
 - **Team logo** (Cosmic Shihab): the team's own work, not made with AI (`brand/`).
-- **Illustrations:** the pitch opening's drawings and the flame drawings on the Methodology and
-  Scenario pages, made with AI (Claude Code), each marked "Illustration made with AI".
+- **Illustrations:** the pitch opening's drawings, the flame drawings on the Methodology and
+  Scenario pages and the astronaut on the Home page, made with AI (Claude Code), each marked
+  "Illustration made with AI".
 - **Charts:** drawn by FLARE from NASA PSI data (SVG on the website; Matplotlib in our analysis).
 - No other images, and no copyrighted music, images or text.
 

@@ -10,11 +10,12 @@ not built.
 - All 24 NASA PSI combustion investigations: records, file lists (60,866 files) and DOIs, read from
   PSI's public web service.
 - 22 experimental tables from 20 investigations, 2,009 test rows, each value kept as NASA published
-  it, with conversions (psi, kPa, mmHg to atm; percent to mole fraction) marked as calculated.
+  it, with every conversion marked as calculated (FLEX's 757.7 mmHg stays 757.7 mmHg, shown as
+  0.997 atm, converted by FLARE).
 - Data profiling: missing values shown as "not recorded", 117 suspect values listed with file and
   line.
 - Full-text search over the text of NASA's documents for 19 investigations.
-- Download links to every NASA file, fetched fresh from PSI.
+- Download links to NASA's files, fetched fresh from PSI when clicked.
 
 **Ranking and comparison**
 - Scenario form with six environments, oxygen, pressure in three units, airflow, fuel, fuel phase

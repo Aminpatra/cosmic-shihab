@@ -41,7 +41,8 @@ and FLARE makes them easier to reach for anyone who studies it.
 
 ## Built to last
 
-FLARE uses only NASA's public data, keeps every value as NASA published it, and is open source.
+FLARE uses only NASA's public data, keeps every value as NASA published it, and its code is
+public.
 When PSI adds investigations, such as the partial-gravity results expected from LUCI and FM2, the
 pipeline can read them the same way, and once their tables are processed, the ranking and
 comparison work on them without changes.
