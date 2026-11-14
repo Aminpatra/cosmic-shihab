@@ -9,6 +9,7 @@ import {
   validate,
   hasScenario,
   rankPath,
+  niceAxis,
 } from './ScenarioParams.js'
 
 test('parseNumber reads trimmed numbers and a decimal comma', () => {
@@ -75,6 +76,15 @@ test('validate catches what the API would reject, and hints at a fraction typed 
     'Enter at least one condition. FLARE ranks only on what you set.',
   )
   assert.deepEqual(validate({ ...EMPTY_FORM, fuelPhase: 'gas' }).errors, {})
+})
+
+test('niceAxis covers the range with round ticks', () => {
+  assert.deepEqual(niceAxis(0, 100).ticks, [0, 25, 50, 75, 100])
+  assert.deepEqual(niceAxis(0, 73.5).ticks, [0, 20, 40, 60, 80])
+  const flow = niceAxis(-5.92, 85.28)
+  assert.ok(flow.min <= -5.92 && flow.max >= 85.28)
+  const one = niceAxis(20, 20)
+  assert.ok(one.min < 20 && one.max > 20)
 })
 
 test('hasScenario and rankPath', () => {

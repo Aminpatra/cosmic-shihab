@@ -18,6 +18,7 @@ import Layout from './Layout.jsx'
 import Home from './pages/Home.jsx'
 import Sources from './pages/Sources.jsx'
 import Assistant from './pages/Assistant.jsx'
+import Scenario from './pages/Scenario.jsx'
 import InProgress from './pages/InProgress.jsx'
 import NotFound from './pages/NotFound.jsx'
 import { PAGES } from './pages.js'
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'sources', element: <Sources /> },
       { path: 'assistant', element: <Assistant /> },
+      { path: 'scenario', element: <Scenario /> },
       ...slots,
       { path: '*', element: <NotFound /> },
     ],

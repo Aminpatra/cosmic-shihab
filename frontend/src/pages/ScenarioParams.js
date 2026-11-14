@@ -24,13 +24,13 @@ export const REFERENCE_SOURCE = {
 export const REFERENCES = {
   oxygen: [
     { label: 'Spacesuit', value: 100 },
-    { label: 'Moon base and rovers', value: 30, bound: 'at least', note: 'expected, not final' },
+    { label: 'Moon base', value: 30, bound: 'at least', note: 'expected for a Moon base and pressurized rovers, not final' },
   ],
   // in psi, as the challenge page states them
   pressure: [
     { label: 'Spacesuit', value: 4.3 },
-    { label: 'Moon base and rovers', value: 10.2, bound: 'at most', note: 'expected, not final' },
-    { label: 'Earth at sea level', value: 14.7 },
+    { label: 'Moon base', value: 10.2, bound: 'at most', note: 'expected for a Moon base and pressurized rovers, not final' },
+    { label: 'Sea level', value: 14.7 },
   ],
 }
 
@@ -60,6 +60,27 @@ export function parseNumber(text) {
   if (t === '') return null
   const n = Number(t)
   return Number.isFinite(n) ? n : null
+}
+
+// At most three significant figures, for readouts; never used for what is sent.
+export const formatValue = (n) => n.toLocaleString('en-US', { maximumSignificantDigits: 3 })
+
+// A measurement axis with 3 to 6 round ticks that covers lo..hi, shared by the Scenario
+// field lanes and the Comparison figures.
+export function niceAxis(lo, hi) {
+  if (lo === hi) {
+    const pad = Math.abs(lo) / 4 || 1
+    lo -= pad
+    hi += pad
+  }
+  const raw = (hi - lo) / 4
+  const mag = 10 ** Math.floor(Math.log10(raw))
+  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw)
+  const ticks = []
+  for (let t = Math.floor(lo / step) * step; t <= Math.ceil(hi / step) * step + step / 1e6; t += step) {
+    ticks.push(Number(t.toPrecision(6)))
+  }
+  return { min: ticks[0], max: ticks.at(-1), ticks }
 }
 
 export const toAtm = (value, unit) => value / ATM_IN[unit]

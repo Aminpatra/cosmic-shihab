@@ -21,6 +21,7 @@ export const PAGES = [
     title: 'Scenario Explorer',
     summary: 'Choose a space environment and enter the conditions you know. Fields you leave empty stay empty; FLARE never fills them in.',
     issue: 13,
+    ready: true,
   },
   {
     path: '/comparison',
@@ -34,7 +35,7 @@ export const PAGES = [
     nav: 'Visualization',
     title: 'Data Visualization',
     summary: "Charts drawn from the investigations' own experimental tables, in their original units.",
-    issue: 13,
+    issue: 35,
   },
   {
     path: '/assistant',
