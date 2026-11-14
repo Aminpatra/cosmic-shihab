@@ -19,6 +19,7 @@ import Home from './pages/Home.jsx'
 import Sources from './pages/Sources.jsx'
 import Assistant from './pages/Assistant.jsx'
 import Methodology from './pages/Methodology.jsx'
+import Visualization from './pages/Visualization.jsx'
 import InProgress from './pages/InProgress.jsx'
 import NotFound from './pages/NotFound.jsx'
 import { PAGES } from './pages.js'
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       { path: 'sources', element: <Sources /> },
       { path: 'assistant', element: <Assistant /> },
       { path: 'methodology', element: <Methodology /> },
+      { path: 'visualization', element: <Visualization /> },
       ...slots,
       { path: '*', element: <NotFound /> },
     ],
