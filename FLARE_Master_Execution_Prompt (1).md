@@ -722,11 +722,10 @@ Create a `submission/` folder containing all written materials.
 
 ### Additions
 
--   Confirm the 2026 submission requirements on the Space Apps site
-    before preparing anything: the deadline in local time, the demo
-    format and its length limit, and how AI use must be disclosed. They
-    could not be read while this prompt was revised. Record them in
-    `CLAUDE.md`.
+-   The 2026 submission requirements are in `CRITERIA.md`: the
+    deadline, the form fields, the demo limits and how AI use must be
+    marked. Check the package against it. The "Use of SI" field is
+    written from `docs/ai-use/`.
 -   Demo and visuals use the free routes in `CLAUDE.md`: `ui-demo` to
     record the app, Remotion for video, `frontend-slides` for a deck.
     No paid image or video service.
@@ -867,31 +866,39 @@ Three agreements come before parallel work, one line each in
 
 ------------------------------------------------------------------------
 
-## 14. OPEN DECISIONS
+## 14. DECISIONS
 
-Nobody has decided these. Each one changes what gets built.
+Settled on 2026-11-14:
+
+  Decision                     Answer
+  ---------------------------- --------------------------------------------------
+  Deadline and submission      Sunday 15 November 2026, 11:59 p.m. local. The
+  requirements                 rules are in `CRITERIA.md`.
+  AI provider and key          Claude Opus 5.5 through the Anthropic API. The
+                               key arrives later, in `.env`. Build the
+                               retrieval-only fallback first so nothing waits
+                               for it.
+  Where the data comes from    Proposed in `docs/DATA_PLAN.md`: all 24 PSI
+                               combustion investigations as a catalogue, eight
+                               of them with enough rows to rank and model.
+
+Still open. Each one changes what gets built.
 
   Decision                     Recommendation and why
   ---------------------------- --------------------------------------------------
-  Deadline and submission      Unknown in this repo. Someone registered checks
-  requirements                 the Space Apps site today; it sets every cut.
-  Whether FLARE has a machine  One small model on FLEX: predict how a test
-  learning model               ended from fuel, pressure, atmosphere and droplet
+  Which machine learning       `CRITERIA.md` expects a model judged against a
+  model                        baseline. One small model on FLEX: predict how a test
+                               ended from fuel, pressure, atmosphere and droplet
                                size, against a majority-class baseline (186 of
                                274 tests ended in extinction), scored with
                                macro-F1 on held-out tests. It answers the
                                challenge's "predictive modeling" point without
-                               claiming to predict fires. The alternative is no
-                               model and an export only.
-  What gets ranked             Score runs and roll them up to investigations.
-                               Only three investigations have run data, so a
-                               ranking of investigations alone has three rows.
-  AI provider and key          Needs someone's API key and its cost. The
-                               retrieval-only fallback works without one, so
-                               build that first.
+                               claiming to predict fires.
+  What gets ranked             Score rows of the experimental tables and roll
+                               them up to investigations. Twenty investigations
+                               have a table; eight have enough rows to matter.
   Backend on Vercel            Have the pipeline write read-only data files and
                                keep the API stateless. Check Vercel's current
                                Python limits before building on it.
-  Investigations beyond the    Catalogue every combustion investigation as
-  three with data on hand      metadata; add run data only where a file can be
-                               downloaded and profiled in the time left.
+  Folder for the data code     `app/services/` or `pipeline/` and `backend/`.
+                               Pick one and record it in `docs/DECISIONS.md`.

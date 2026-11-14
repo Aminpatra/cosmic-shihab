@@ -69,8 +69,8 @@ tool, never a fire predictor or safety assessment.
 - The assistant cites sources, separates source findings from its own explanation, and says when
   it can't find an answer. It needs a working fallback when no API key is present.
 - Terminology: PSI, investigation, run, scenario, relevance score.
-- Undecided: which AI provider powers the assistant; which investigations make the final dataset
-  beyond those on hand.
+- Decided 2026-11-14: Claude Opus 5.5 powers the assistant. Proposed in `docs/DATA_PLAN.md`:
+  which investigations make the final dataset.
 
 ## Brand Commitments
 

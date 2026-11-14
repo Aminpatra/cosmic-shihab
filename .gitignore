@@ -1,3 +1,8 @@
 claude-starter-kit/
 .mcp.json
 .claude/skills/impeccable/scripts/bin/
+
+# Secrets
+.env
+.env.*
+!.env.example

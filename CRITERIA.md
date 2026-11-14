@@ -20,6 +20,46 @@ dated 13 November 2026). Check every feature, slide and claim against this file 
 - [ ] Both checkboxes ticked: the Submission Guide / Terms / Privacy agreement, and the original-work declaration.
 - [ ] No prohibited bilateral activity with China or a Chinese-owned entity (NASA reviews this).
 
+## From the Project Submission Guide
+
+Source: NASA Space Apps Challenge, *Project Submission Guide* (dated 13 November 2026).
+
+**The form.** Submission opened Saturday 14 November at 9:00 a.m. local. We can save and resubmit
+as often as we like; only the last saved submission is judged. The fields are:
+
+- [ ] Project Name
+- [ ] High-Level Project Summary: what we built, how it addresses the challenge, why it matters
+- [ ] Link to Project Demo (the 7 slides or the 30-second video)
+- [ ] Link to Final Project (the deployed site or the repository)
+- [ ] Detailed Project Description: what it does, how it works, benefits, goals, tools and languages
+- [ ] Use of Super Intelligence (SI): written from `docs/ai-use/`
+- [ ] NASA Data: specific details of the PSI data and resources used (at least one is needed for a
+      Global Award)
+- [ ] Space Agency Partner Data and Other References
+
+**Links.**
+
+- [ ] Every link opens with no login, permission or registration. Test each one in a private
+      browser window before submitting. A project the judges can't open isn't judged.
+- [ ] The page takes images only (JPG, PNG, GIF, up to 10 MB). Videos and documents are linked.
+- [ ] Recommended for a new website: request a FortiGuard Web Filter Classification for the
+      deployed URL so judges' networks don't block it (company name "N/A").
+
+**AI use.** AI tools are allowed to speed up the work, not to come up with the idea.
+
+- [ ] AI-made images and videos carry a visible watermark.
+- [ ] AI-made audio is acknowledged in descriptive text and metadata.
+- [ ] AI-made code and data are acknowledged in descriptive text and metadata.
+- [ ] No AI-made content uses or alters NASA logos, flags or mission identifiers.
+
+Judges don't see the SI answer itself, but they see these marks in the project and judge
+originality by them.
+
+**Demo content.**
+
+- [ ] A slide deck shows the team name, the members' names and the challenge chosen.
+- [ ] Nothing shows the image, video, audio or likeness of anyone under 18.
+
 ## Scoring: five criteria, each scored 1 to 5
 
 | Criterion | What judges look for | What a 5 means | What it means for FLARE |
