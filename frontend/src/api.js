@@ -3,7 +3,12 @@ import { useCallback, useEffect, useState } from 'react'
 // Every backend route starts with /api (docs/DECISIONS.md, #8).
 export async function getJSON(path, { signal } = {}) {
   const res = await fetch(`/api${path}`, { signal, headers: { Accept: 'application/json' } })
-  if (!res.ok) throw new Error(`The FLARE API answered ${res.status} for ${path}.`)
+  if (!res.ok) {
+    // `status` lets the error box say the API answered with an error, not that it was unreachable.
+    const error = new Error(`The FLARE API answered ${res.status} for ${path}.`)
+    error.status = res.status
+    throw error
+  }
   return res.json()
 }
 

@@ -14,6 +14,7 @@ export const PAGES = [
     title: 'NASA Research Explorer',
     summary: 'Browse the 24 investigations, filter them, read their metadata and open the original NASA sources.',
     issue: 13,
+    ready: true,
   },
   {
     path: '/scenario',
@@ -21,6 +22,7 @@ export const PAGES = [
     title: 'Scenario Explorer',
     summary: 'Choose a space environment and enter the conditions you know. Fields you leave empty stay empty; FLARE never fills them in.',
     issue: 13,
+    ready: true,
   },
   {
     path: '/comparison',
@@ -28,13 +30,15 @@ export const PAGES = [
     title: 'Investigation Comparison',
     summary: 'Ranked investigations, lane by lane: the conditions that match your scenario, the ones that differ, and the ones never recorded.',
     issue: 13,
+    ready: true,
   },
   {
     path: '/visualization',
     nav: 'Visualization',
     title: 'Data Visualization',
     summary: "Charts drawn from the investigations' own experimental tables, in their original units.",
-    issue: 13,
+    issue: 35,
+    ready: true,
   },
   {
     path: '/assistant',

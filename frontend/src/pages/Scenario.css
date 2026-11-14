@@ -1,0 +1,383 @@
+.scenario {
+  padding: var(--space-8) var(--gutter) var(--space-9);
+}
+
+.scenario-lede {
+  max-width: 50ch;
+  margin-top: var(--space-4);
+  color: var(--ramp-6);
+  font: 300 var(--text-lede) / 1.5 var(--font-body);
+}
+
+.scenario .api-error {
+  margin-top: var(--space-6);
+}
+
+/* The form reads like a test record's header: one row per condition, on the lanes' grid
+   (label column measured at 8.5rem, as in ConditionLanes). */
+.scenario-form {
+  max-width: 76rem;
+  margin-top: var(--space-7);
+  border-top: 1px solid var(--ramp-3);
+  font-size: var(--text-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(15rem, 24rem) minmax(0, 1fr);
+  gap: var(--space-3) var(--space-6);
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-5) 0;
+  border: 0;
+  border-bottom: 1px solid var(--ramp-3);
+}
+
+/* A floated legend joins the grid like any other child. */
+.row > legend {
+  float: left;
+  padding: 0;
+}
+
+.row-label {
+  padding-top: 0.7rem;
+}
+
+.row-name {
+  display: block;
+  font-weight: 700;
+}
+
+.row-unit {
+  display: block;
+  color: var(--ramp-5);
+}
+
+.row-field {
+  min-width: 0;
+}
+
+.field-line {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.field-input,
+.field-select {
+  height: 2.75rem;
+  border: 1px solid var(--ramp-4);
+  border-radius: var(--radius);
+  background: var(--ramp-1);
+  color: var(--white);
+  font: 400 var(--text-data) / 1 var(--font-body);
+  font-variant-numeric: tabular-nums;
+  transition: background-color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+}
+
+.field-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.2rem var(--space-3) 0;
+}
+
+.field-input:hover,
+.field-select:hover {
+  background: var(--ramp-2);
+}
+
+.field-input[aria-invalid] {
+  border-color: var(--white);
+}
+
+.field-select {
+  padding: 0.2rem var(--space-2) 0;
+  cursor: pointer;
+}
+
+.field-text {
+  width: 100%;
+}
+
+.field-unit {
+  align-self: center;
+  min-width: 3rem;
+  color: var(--ramp-5);
+}
+
+.field-note,
+.field-error {
+  max-width: 44ch;
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+}
+
+.field-hint {
+  color: var(--ramp-6);
+}
+
+.field-error {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--white);
+}
+
+.field-error svg {
+  flex: none;
+  margin-top: 0.1rem;
+  color: var(--neon-yellow);
+}
+
+/* Reference values: quiet controls that fill a field only when clicked. */
+.refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.ref {
+  min-height: 2.25rem;
+  padding: 0.45rem 0.7rem 0.3rem;
+  border: 1px solid var(--ramp-4);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ramp-6);
+  font: 600 var(--text-data) / 1.1 var(--font-body);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: border-color 160ms var(--ease-out), background-color 160ms var(--ease-out);
+}
+
+.ref:hover {
+  border-color: var(--neon-yellow);
+  background: var(--ramp-1);
+}
+
+/* NASA's tested span under each number: band for what was tested, tick for your value. */
+.row-span {
+  min-width: 0;
+  padding-top: 0.75rem;
+}
+
+.span-lane {
+  position: relative;
+  height: 1.25rem;
+  background: var(--ramp-1);
+}
+
+.span-unit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--ramp-3);
+}
+
+.span-band {
+  position: absolute;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  min-width: 3px;
+  background: var(--band-fill);
+  border: 1px solid var(--band-edge);
+}
+
+.span-tick {
+  position: absolute;
+  top: -0.3rem;
+  bottom: -0.3rem;
+  width: 3px;
+  margin-left: -1px;
+  background: var(--tick);
+  transition: left 180ms var(--ease-out);
+}
+
+.span-scale {
+  position: relative;
+  height: 1.1rem;
+  margin-top: 0.3rem;
+  color: var(--ramp-5);
+  line-height: 1;
+}
+
+.span-scale span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.span-scale span:first-child {
+  transform: none;
+}
+
+.span-scale span:last-child {
+  transform: translateX(-100%);
+}
+
+.span-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+  color: var(--ramp-5);
+}
+
+.span-words > :first-child {
+  color: var(--ramp-6);
+  font-weight: 600;
+}
+
+.row-span > .span-words:only-child {
+  margin-top: 0;
+}
+
+.span-words .span-outside {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Choices drawn as the lanes' stops: the visitor's pick carries the scenario's yellow frame. */
+.stops {
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 1px;
+  max-width: calc(var(--n) * 10rem);
+  padding: 1px;
+}
+
+.stop-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem var(--space-3) 0.4rem;
+  background: var(--ramp-1);
+  box-shadow: 0 0 0 1px var(--ramp-3);
+  color: var(--ramp-5);
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background-color 160ms var(--ease-out);
+}
+
+.stop-choice:hover {
+  background: var(--ramp-2);
+}
+
+.stop-choice[data-checked] {
+  box-shadow: inset 0 0 0 3px var(--tick), 0 0 0 1px var(--ramp-3);
+  color: var(--white);
+}
+
+/* "Not set" is no part of the scenario, so it never takes the scenario's yellow. */
+.stop-choice[data-checked][data-empty] {
+  box-shadow: inset 0 0 0 1px var(--ramp-5), 0 0 0 1px var(--ramp-3);
+}
+
+.stop-choice:has(:focus-visible) {
+  outline: 2px solid var(--neon-yellow);
+  outline-offset: 2px;
+}
+
+.stop-name {
+  display: block;
+  font-weight: 600;
+}
+
+.stop-name::first-letter {
+  text-transform: uppercase;
+}
+
+.stop-detail {
+  color: var(--ramp-5);
+}
+
+.scenario-submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-5);
+  padding-top: var(--space-6);
+}
+
+.scenario .button:disabled {
+  background: var(--ramp-2);
+  color: var(--ramp-5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scenario .button:disabled svg {
+  transform: none;
+}
+
+.submit-note {
+  max-width: 52ch;
+  color: var(--ramp-5);
+}
+
+.scenario-source {
+  max-width: 72ch;
+  margin-top: var(--space-6);
+  color: var(--ramp-5);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.scenario-source a {
+  color: var(--ramp-6);
+  text-decoration-color: var(--ramp-4);
+}
+
+.scenario-source a:hover {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+}
+
+@media (max-width: 1023px) {
+  .row {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+  }
+
+  .row-span {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 719px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+
+  .row > legend {
+    width: 100%;
+  }
+
+  .row-label {
+    padding-top: 0;
+  }
+
+  .row-name,
+  .row-unit {
+    display: inline;
+  }
+
+  .row-unit::before {
+    content: ' · ';
+  }
+
+  .row-span,
+  .stops {
+    grid-column: 1;
+  }
+
+  .stops {
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    max-width: none;
+  }
+}

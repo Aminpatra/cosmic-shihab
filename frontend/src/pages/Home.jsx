@@ -1,16 +1,18 @@
 import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { useApi } from '../api.js'
-import { formatDate, formatNumber, formatTB, summarise } from '../catalogue.js'
+import { countOf, formatDate, formatTB, summarise } from '../catalogue.js'
 import { FLEX_EXAMPLE } from '../content/flexExample.js'
 import ConditionLanes from '../components/ConditionLanes.jsx'
 import CatalogueLane from '../components/CatalogueLane.jsx'
-import { LoadError, Loading } from '../components/ApiState.jsx'
+import { Empty, LoadError, Loading } from '../components/ApiState.jsx'
 import './Home.css'
 
 export default function Home() {
   const catalogue = useApi('/investigations')
-  const facts = catalogue.status === 'ready' ? summarise(catalogue.data) : null
+  const empty = catalogue.status === 'ready' && catalogue.data.length === 0
+  // The count comes from the API, never the copy: PSI adds investigations over time.
+  const facts = catalogue.status === 'ready' && !empty ? summarise(catalogue.data) : null
 
   return (
     <>
@@ -20,8 +22,9 @@ export default function Home() {
         <div className="home-intro">
           <h1>Which NASA fire experiments match your mission?</h1>
           <p className="home-lede">
-            FLARE compares the scenario you describe with NASA's 24 PSI combustion investigations and shows why each
-            one fits: what matches, what differs, and what was never recorded.
+            FLARE compares the scenario you describe with NASA's{' '}
+            {facts ? countOf(facts.count, 'PSI combustion investigation') : 'PSI combustion investigations'} and shows
+            why each one fits: what matches, what differs, and what was never recorded.
           </p>
           <div className="home-actions">
             <Link className="button" to="/scenario">
@@ -29,7 +32,7 @@ export default function Home() {
               <ArrowRight size={18} strokeWidth={2.5} aria-hidden="true" />
             </Link>
             <Link className="home-browse" to="/explorer">
-              Browse all 24 investigations
+              {facts?.count > 1 ? `Browse all ${facts.count} investigations` : 'Browse the catalogue'}
             </Link>
           </div>
           <p className="home-note">
@@ -65,16 +68,19 @@ export default function Home() {
           <h2 id="catalogue-title">What NASA PSI holds, and how far FLARE can use it</h2>
           {facts && (
             <p>
-              PSI lists {formatNumber(facts.files)} files ({formatTB(facts.bytes)}) for these {facts.count}{' '}
-              investigations. FLARE ranks only on their small experimental tables; everything else is linked back to
-              NASA, never copied.
+              PSI lists {countOf(facts.files, 'file')} ({formatTB(facts.bytes)}) for{' '}
+              {facts.count === 1 ? 'this investigation' : `these ${countOf(facts.count, 'investigation')}`}. FLARE
+              ranks only on their small experimental tables; everything else is linked back to NASA, never copied.
             </p>
           )}
         </div>
 
         {catalogue.status === 'loading' && <Loading label="Loading the PSI catalogue…" />}
-        {catalogue.status === 'error' && <LoadError what="The PSI catalogue" retry={catalogue.retry} />}
-        {catalogue.status === 'ready' && <CatalogueLane investigations={catalogue.data} />}
+        {catalogue.status === 'error' && (
+          <LoadError what="The PSI catalogue" retry={catalogue.retry} error={catalogue.error} />
+        )}
+        {empty && <Empty what="The PSI catalogue" retry={catalogue.retry} />}
+        {facts && <CatalogueLane investigations={catalogue.data} />}
 
         {facts && (
           <p className="provenance">

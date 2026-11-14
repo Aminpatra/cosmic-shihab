@@ -18,7 +18,12 @@ import Layout from './Layout.jsx'
 import Home from './pages/Home.jsx'
 import Sources from './pages/Sources.jsx'
 import Assistant from './pages/Assistant.jsx'
+import Scenario from './pages/Scenario.jsx'
+import Comparison from './pages/Comparison.jsx'
+import Explorer from './pages/Explorer.jsx'
+import ExplorerInvestigation from './pages/ExplorerInvestigation.jsx'
 import Methodology from './pages/Methodology.jsx'
+import Visualization from './pages/Visualization.jsx'
 import InProgress from './pages/InProgress.jsx'
 import NotFound from './pages/NotFound.jsx'
 import { PAGES } from './pages.js'
@@ -36,7 +41,12 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'sources', element: <Sources /> },
       { path: 'assistant', element: <Assistant /> },
+      { path: 'explorer', element: <Explorer /> },
+      { path: 'explorer/:accession', element: <ExplorerInvestigation /> },
+      { path: 'scenario', element: <Scenario /> },
+      { path: 'comparison', element: <Comparison /> },
       { path: 'methodology', element: <Methodology /> },
+      { path: 'visualization', element: <Visualization /> },
       ...slots,
       { path: '*', element: <NotFound /> },
     ],
