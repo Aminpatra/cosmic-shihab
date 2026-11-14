@@ -31,6 +31,9 @@ export function summarise(investigations) {
 
 export const formatNumber = (n) => n.toLocaleString('en-US')
 
+// "1 investigation", "24 investigations"
+export const countOf = (n, one, many = `${one}s`) => `${formatNumber(n)} ${n === 1 ? one : many}`
+
 export const formatTB = (bytes) => `${(bytes / 1e12).toFixed(1)} TB`
 
 export function formatDate(iso) {
