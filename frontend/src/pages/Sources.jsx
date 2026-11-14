@@ -73,7 +73,12 @@ function InvestigationTable({ investigations }) {
                 </td>
                 <th scope="row" data-label="Investigation">
                   {nameOf(inv) !== inv.accession && <span className="inv-acronym">{nameOf(inv)}</span>}
-                  <span className="inv-full">{inv.title}</span>
+                  <span
+                    className={nameOf(inv) === inv.accession ? 'inv-full inv-full-whole' : 'inv-full'}
+                    title={inv.title}
+                  >
+                    {inv.title}
+                  </span>
                 </th>
                 <td data-label="Flown on">
                   {!flown ? (

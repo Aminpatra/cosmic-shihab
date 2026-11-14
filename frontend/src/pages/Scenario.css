@@ -337,7 +337,7 @@
   text-decoration-color: var(--neon-yellow);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 63.9375em) {
   .row {
     grid-template-columns: 8.5rem minmax(0, 1fr);
   }
@@ -348,7 +348,7 @@
   }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375em) {
   .row {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-3);
