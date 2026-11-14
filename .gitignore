@@ -6,3 +6,6 @@ claude-starter-kit/
 .env
 .env.*
 !.env.example
+
+# Downloaded PSI documents (rebuilt by the pipeline)
+.cache/

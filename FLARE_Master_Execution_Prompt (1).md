@@ -498,8 +498,8 @@ Lucide icons, Motion as the only animation library.
 **Data:** processed JSON/CSV files or a read-only SQLite file built by
 the pipeline. Avoid unnecessary infrastructure.
 
-**Deploy:** Vercel. How the Python backend runs there is open (section
-14).
+**Deploy:** Vercel, as two services in one project: `frontend/` and
+`backend/` (layout in section 13).
 
 Before using a library or platform API, check its current
 documentation through Context7 (`.claude/rules/context7.md`).
@@ -860,9 +860,34 @@ Three agreements come before parallel work, one line each in
     real rows from track B, so tracks C, E and F are not blocked.
 2.  **The API endpoints** and their response shape, from track C, so
     track E can build against fixtures.
-3.  **The folder layout.** Proposed: `research/`, `pipeline/`,
-    `data/processed/`, `backend/`, `frontend/`, `submission/`, with the
-    raw files left untouched in `datasets/`.
+3.  **The folder layout.** Decided 2026-11-14, shaped by how Vercel
+    deploys a frontend and a Python backend as two services in one
+    project (Vercel docs, read the same day):
+
+        vercel.json      the two services; /api/* goes to backend,
+                         everything else to frontend
+        frontend/        React + Vite app (deployed)
+        backend/         FastAPI app (deployed)
+          main.py        defines `app`; Vercel's entrypoint
+          app/           routes, ranking, and `services/` for calls
+                         made on request, such as PSI download links
+          data/          processed, read-only files the API serves
+          pyproject.toml runtime dependencies only
+        pipeline/        harvest, process and index PSI; run by hand,
+                         never deployed
+        datasets/        raw PSI files, unchanged
+        research/        inventories and notes
+        submission/      written materials
+        .cache/          downloaded documents; ignored by git
+
+    Three Vercel rules drive this. Each service is built from its own
+    folder, so everything the API reads at run time lives inside
+    `backend/`. The deployed filesystem is read-only apart from `/tmp`,
+    so the pipeline writes `backend/data/` before deployment and the
+    API only reads it. A Python function may be at most 500 MB, so
+    harvesting code, its dependencies and the cache stay out of
+    `backend/`. Vercel runs Python 3.12 to 3.14, so backend code must
+    not need a newer version than that.
 
 ------------------------------------------------------------------------
 
@@ -881,6 +906,10 @@ Settled on 2026-11-14:
   Where the data comes from    Proposed in `docs/DATA_PLAN.md`: all 24 PSI
                                combustion investigations as a catalogue, eight
                                of them with enough rows to rank and model.
+  Folders and Vercel           The layout in section 13: `frontend/` and
+                               `backend/` are deployed as two Vercel services;
+                               `pipeline/` runs offline and writes read-only
+                               files into `backend/data/`.
 
 Still open. Each one changes what gets built.
 
@@ -897,8 +926,7 @@ Still open. Each one changes what gets built.
   What gets ranked             Score rows of the experimental tables and roll
                                them up to investigations. Twenty investigations
                                have a table; eight have enough rows to matter.
-  Backend on Vercel            Have the pipeline write read-only data files and
-                               keep the API stateless. Check Vercel's current
-                               Python limits before building on it.
-  Folder for the data code     `app/services/` or `pipeline/` and `backend/`.
-                               Pick one and record it in `docs/DECISIONS.md`.
+  Size of the search index     It ships inside `backend/data/`, so it counts
+                               toward Vercel's 500 MB limit. Start with a
+                               keyword index and measure it before adding
+                               embeddings.

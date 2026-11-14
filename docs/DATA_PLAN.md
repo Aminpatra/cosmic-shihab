@@ -91,14 +91,28 @@ Traps found while testing:
 
 | In git | Not in git |
 |---|---|
-| One normalized metadata file per investigation | Any zip, video or `.dat` file |
-| One file manifest for all 60,866 files (name, category, size, type, version, date) | The document cache |
-| The 22 experimental tables, unchanged (210 KB) | Presigned download links |
-| The harvest and index scripts, and their tests | |
-| A few small saved API responses for the tests | |
+| `backend/data/`: one normalized metadata file per investigation | Any zip, video or `.dat` file |
+| `backend/data/`: one file manifest for all 60,866 files (name, category, size, type, version, date) | `.cache/`: the downloaded documents |
+| `datasets/`: the 22 experimental tables, unchanged (210 KB) | Presigned download links |
+| `pipeline/`: the harvest and index scripts, and their tests | |
+| `pipeline/tests/fixtures/`: a few small saved API responses | |
 
-The search index is rebuilt by a script. It is committed only if it stays small enough for GitHub
-and for the deployment.
+The search index is rebuilt by a script in `pipeline/` and written to `backend/data/`. Everything in
+`backend/` ships in the deployed function, which Vercel limits to 500 MB, and GitHub refuses any
+single file over 100 MB. Measure the index before committing it.
+
+## Where the code lives
+
+The folder layout is decided (master prompt, section 13) and follows how Vercel deploys:
+
+- **`pipeline/`** holds the harvesting and indexing logic. It runs by hand, is never deployed, and
+  may use heavy libraries such as PDF readers. The data-strategy prompt asked for `app/services/`;
+  that would put this code and its dependencies inside the deployed function.
+- **`backend/app/services/`** holds only what runs on a user's request: looking up a download link
+  and querying the index.
+- **`backend/data/`** is what the pipeline writes and the API reads. The deployed filesystem is
+  read-only, so the API never writes there.
+- Backend code must run on Python 3.12 to 3.14, the versions Vercel offers.
 
 ## Tasks
 
@@ -107,7 +121,7 @@ catalogue and are enough for the deadline. Tasks 7 to 9 add search inside docume
 
 | # | Task | Done when |
 |---|---|---|
-| 0 | Agree the folder for this code, and ignore the cache folder | One line in `docs/DECISIONS.md`; `git status` ignores a file placed in the cache |
+| 0 | Create `pipeline/` with its test setup; the cache folder `.cache/` is already ignored | One command runs an empty test suite; `git status` ignores a file placed in `.cache/` |
 | 1 | Save sample API responses as test fixtures: one search page, two small records, their file lists, one download-link response with its signature removed | The fixtures load in a test |
 | 2 | List investigations, with paging and the research-area filter | Test on the fixture returns 24 of 26; a response without `hits.hits` raises an error |
 | 3 | Fetch one record safely (gzip, timeout, parse check, rename) | A cut-short fixture raises an error and leaves no file behind |
@@ -121,8 +135,6 @@ catalogue and are enough for the deadline. Tasks 7 to 9 add search inside docume
 
 ## Open points
 
-- **Folder.** The data-strategy prompt says `app/services/`; the master prompt proposes
-  `pipeline/` and `backend/`. Task 0 settles it.
 - **Embeddings.** Start with a keyword index. Add embeddings only if time remains after the
   catalogue, ranking and demo work.
 - **How much to index before the deadline.** Record text and the 22 tables for all 24
