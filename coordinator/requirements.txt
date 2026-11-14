@@ -3,3 +3,4 @@ mcp>=1.10,<2
 uvicorn
 # tests only
 pytest
+httpx2    # Starlette's TestClient warns when it falls back to httpx
