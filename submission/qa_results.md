@@ -73,3 +73,66 @@ The fix for each, with file and line, is in the issue.
   shows as "12,845 runs".
 - On a laptop, a widened Sources table scrolls inside its own frame rather than moving the page.
 - No console errors other than the failed request in the error and offline runs.
+
+## Every other page and the deployed site (#29)
+
+**Tested** 15 November 2026 on https://cosmic-shihab.vercel.app, deployed from `main` at `9f86da2`
+(#68), and on the local build of the same commit (then again after this branch's fixes, `fe17798`).
+playwright-core 1.56.1 driving Google Chrome 157, headless.
+
+**How.** Eleven routes (Explorer, an investigation page `/explorer/PSI-69`, Explorer search,
+Scenario, Comparison with no scenario and with a lunar one, Visualization, Assistant, Methodology,
+Sources, Home, and an unknown path) were loaded at 320px, 375px, 720px (a 1440px screen at 200%
+zoom) and 1440px, and at 1440px with **Chrome's default text size set to 32px**, the reader's
+setting. (Raising the page's own `font-size` from CSS does not move `em` media queries, so it is
+not a valid stand-in; a first run that did so reported a false navigation overflow on every page.)
+Each route was also loaded with the API answering 500 and with the network cut. With the same
+checks as #37 (sideways scroll and its cause, `undefined`/`NaN`/`null`, links with no target,
+console errors), this made 84 loads per site. Then `break-ui` data was swapped in at the API
+boundary, without changing page code, at 320, 375 and 1440px (30 loads): a 39-character acronym
+and a 205-character title, a title with `&`, quotes and tags, an investigation with no PSI link or
+DOI, 60 investigations, an empty list, an unknown accession, a record with every text field empty,
+ranked results with those long names, a ranking with no results, and an assistant answer of 30
+blocks citing 40 sources with 112-character file names and unbreakable tokens. Every link on the
+investigation, Comparison, Visualization and Methodology pages was followed (75 links).
+
+### What broke
+
+| # | Severity | Page | Data | What happens | Issue |
+|---|---|---|---|---|---|
+| 11 | Broken | Investigation | Real | Every sampled PSI document link (25 of 25 on `/explorer/PSI-69`) answers 502: PSI now serves legacy files from `psi-curation-prod.s3.amazonaws.com`, which the download endpoint refuses | #73 |
+| 12 | Partly | Comparison | Real, lunar | The microgravity notice is shown once above the list, not on every result, though the API gives each result its own note | #70 |
+| 13 | Ugly | Investigation | Real, 320px | The publications list pushes the page 11px sideways | #71 |
+| 14 | Fragile | Explorer | Empty | The lede still says "The 24 NASA combustion investigations"; the empty message blames filters when none is set | #71 |
+| 15 | Fragile | Home, Sources | Worst case | An empty `page_url` still makes a link with no target (`??` does not catch `''`); #47 covered a missing one | #72 |
+| 16 | Ugly | Visualization | Real, 320 and 720px, text 200% | Page scrolled 23, 37 and 110px sideways (strip labels, FLEX tables) | fixed here (`fe17798`) |
+| 17 | Fragile | Assistant | Worst case, phones | An answer quoting an unbreakable file name pushed the page 136 to 189px sideways; live answers do quote file names | fixed here (`fe17798`) |
+
+Also fixed here: Assistant, Methodology and Visualization breakpoints moved from px to em, as the
+team decided (`docs/DECISIONS.md`). After the fixes, the local build passes every check above at
+every width and with text at 200%, except the issues still open (11 to 15). At 320px the two FLEX
+tables sit 5px into the right margin (inside the screen, nothing hidden).
+
+### Concrete checks (master prompt section 8), on the deployed site
+
+| Check | Result | Evidence |
+|---|---|---|
+| 129 BASS-II runs and 274 FLEX tests load | Pass | `GET /api/runs`: row_count 129 and 274 |
+| 757.7 mmHg stays 757.7 mmHg, conversion marked | Pass | FLEX row: `original {757.7 mmHg}`, `calculated: true`; Comparison shows e.g. "529 mmHg (0.696 atm, converted by FLARE)" |
+| Empty scenario gives an explained result | Pass | `GET /api/rank`: no items, "Set at least one condition to rank."; the page says so too |
+| Lunar scenario shows the microgravity notice on every result | Partly | API: 18 of 18 results carry `gravity_note`; the page shows it once (#70) |
+| Changing one value changes the right scores and the explanation names it | Pass | Oxygen 0.21 to 0.30: BASS-II, SAFFIRE-I and -II, CFI drop (100 to 51-57); FLEX, ACME, CFI-G stay 100 (tests at both values); all 18 name oxygen (7 as match or difference, 11 as unavailable) |
+| An unanswerable question gets "not found" with nothing invented | Pass | Nonsense: retrieval only, "No NASA source in FLARE matches this question." Plausible but unanswerable ("the astronaut who ran FLEX test 114"), Claude Opus 5.5: "The documents provided don't name the astronaut…", every claim cited |
+| Every page works at 375px and survives `break-ui` | Partly | Yes after this branch's fixes, except 13 to 15 |
+| The deployed URL passes the same page checks as the local build | Pass | Same findings on both, before the fixes; the download failure (11) reproduces locally too |
+
+### What held up
+
+- Error and offline: every page shows its error box with "Try again" and no broken layout; the
+  investigation page keeps its back link. Empty states explain themselves (Comparison with no
+  results lists the six investigations it could not rank, with the reason).
+- Long acronyms, 205-character titles, 60 investigations and empty records render without
+  `undefined`, `NaN` or `null` on Explorer, the investigation page and Comparison.
+- With text at 200%, every page switches to the menu and none scrolls sideways (after fix 16).
+- Outside links open, apart from issnationallab.org, which refuses automated requests (403).
+- The deployed assistant runs Claude Opus 5.5 (`GET /api/assistant/status`: generated).
