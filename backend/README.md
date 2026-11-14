@@ -1,0 +1,45 @@
+# backend
+
+The FLARE API: a FastAPI app that serves the read-only PSI catalogue in `data/`. On Vercel it is
+the backend service, and every request under `/api/` reaches it with the path unchanged, so all
+routes start with `/api`. Python 3.12 to 3.14.
+
+```
+cd backend
+python -m venv .venv
+.venv/Scripts/python -m pip install -r requirements-dev.txt     # macOS/Linux: .venv/bin/python
+.venv/Scripts/python -m uvicorn main:app --reload               # http://127.0.0.1:8000/api/docs
+.venv/Scripts/python -m unittest discover -s tests -v
+```
+
+## Endpoints
+
+Interactive docs: `/api/docs`. Schema: `/api/openapi.json`.
+
+| Endpoint | Returns |
+|---|---|
+| `GET /api/health` | `{status, investigations, files, retrieved}` |
+| `GET /api/investigations` | All 24 investigations, summary fields only: `accession`, `title`, `investigationAcronym`, `doi`, `licenseIdentifier`, `researchArea`, `subResearchArea`, `projectType`, `flightProgram`, `experimentHardware`, `investigationStartDate`, `investigationEndDate`, `derived` |
+| `GET /api/investigations/{accession}` | The whole stored record (objective, hypothesis, approach, contacts, publications, ...). 404 if unknown |
+| `GET /api/files` | `{total, limit, offset, items}`, one item per `files.csv` row. Filters: `accession` (404 if unknown), `kind`, `category`. `limit` 1 to 500, default 100; `offset` from 0 |
+
+Field names are PSI's own; what FLARE computed is under `derived` (see `data/README.md`). In file
+items, a blank `subcategory` or `updated` comes back as `null`.
+
+The API sends no CORS headers. The frontend calls relative `/api/...` paths: on Vercel both
+services share one domain, and in development the Vite dev server proxies `/api` to
+`http://127.0.0.1:8000`.
+
+## Layout
+
+| Path | What it is |
+|---|---|
+| `main.py` | Defines `app`, Vercel's entrypoint, and includes each router |
+| `app/catalogue.py` | Loads `data/` once per process |
+| `app/routes/` | One module per group of endpoints, each defining `router` |
+| `tests/` | Endpoint tests against the committed `data/` |
+| `pyproject.toml` | Runtime dependencies only; this is what Vercel installs |
+| `requirements-dev.txt` | Local server and test client |
+
+**AI use:** the code in this folder was written with Claude Code (Claude Opus 5.5) and reviewed by
+the team. It serves NASA's data unchanged; it does not generate any.

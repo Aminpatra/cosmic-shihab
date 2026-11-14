@@ -13,3 +13,4 @@ claude-starter-kit/
 # Python
 __pycache__/
 *.pyc
+.venv/

@@ -1,0 +1,12 @@
+[project]
+name = "flare-backend"
+version = "0.1.0"
+description = "FLARE API: serves the NASA PSI combustion catalogue in data/."
+requires-python = ">=3.12,<3.15"
+# Runtime only: this is what Vercel installs. Local tools are in requirements-dev.txt.
+dependencies = [
+    "fastapi==0.162.7",
+]
+
+[tool.vercel]
+entrypoint = "main:app"
