@@ -6,9 +6,10 @@ from typing import Annotated, Literal
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from app import assistant, catalogue
+from app import assistant, catalogue, ranking
 
 router = APIRouter(prefix="/api/assistant", tags=["assistant"])
+READINGS_DIR = catalogue.DATA_DIR / "summaries" / "readings"
 
 
 class Question(BaseModel):
@@ -30,12 +31,12 @@ class Block(BaseModel):
 
 class Source(BaseModel):
     id: str
-    kind: Literal["record", "document"]
-    accession: str
+    kind: Literal["record", "document", "ranking"]  # "ranking": only in comparison readings
+    accession: str  # empty for a ranking
     title: str
     label: str  # acronym, or accession when PSI gives none
-    url: str  # PSI page for a record; /api/files/{file_id}/download for a document
-    doi: str
+    url: str  # PSI page for a record; /api/files/{file_id}/download for a document; /api/rank?... for a ranking
+    doi: str  # empty for a ranking
     text: str
     file_id: str | None = None
     file_name: str | None = None
@@ -60,6 +61,31 @@ class Summary(BaseModel):
     model: str
     generated: str  # date written, YYYY-MM-DD
     reviewed: bool  # true only after a person read it against its sources
+    reviewed_by: str | None
+    blocks: list[Block]
+    sources: list[Source]
+
+
+class Ranked(BaseModel):
+    accession: str
+    label: str
+    score: float
+
+
+class Reading(BaseModel):
+    """A stored, AI-generated reading of the ranking for one preset scenario (pipeline/write_summaries.py)."""
+
+    preset: str
+    label: str
+    scenario: dict[str, str | float]  # /api/rank parameters
+    scenario_source: str  # where the scenario's values come from
+    ranking_version: str
+    top: list[Ranked]  # the ranking's top investigations when the reading was written
+    current: bool  # the live ranking still puts the same investigations in the same order
+    note: str
+    model: str
+    generated: str
+    reviewed: bool
     reviewed_by: str | None
     blocks: list[Block]
     sources: list[Source]
@@ -96,3 +122,17 @@ def summary(accession: str) -> Summary:
     if not path.exists():
         raise HTTPException(status_code=404, detail=f"No summary of {accession} has been written yet")
     return Summary(**json.loads(path.read_text(encoding="utf-8")))
+
+
+@router.get("/readings")
+def readings() -> list[Reading]:
+    """The stored readings of the ranking for the preset scenarios; an empty list when none exist."""
+    out = []
+    for path in sorted(READINGS_DIR.glob("*.json")):
+        stored = json.loads(path.read_text(encoding="utf-8"))
+        # A reading explains one ranking. If the data or the method has moved since it was written,
+        # say so rather than show an explanation of an order the page no longer displays.
+        live = ranking.rank(ranking.Scenario(**stored["scenario"]))["items"][: len(stored["top"])]
+        current = [item["accession"] for item in live] == [item["accession"] for item in stored["top"]]
+        out.append(Reading(**stored, current=current))
+    return out
