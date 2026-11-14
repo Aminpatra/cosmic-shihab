@@ -12,7 +12,8 @@ The index is one SQLite file with two tables, read by backend/app/search.py:
   one slide (PowerPoint) or one stretch of a Word document, with its `file_id` and `page`
   (None for Word, which has no fixed pages). English stemming, so "flames" finds "flame".
 
-The text is NASA's, extracted unchanged apart from joining lines and collapsing whitespace.
+The text is NASA's, extracted unchanged apart from joining lines, collapsing whitespace, spelling
+out ligature characters ("ﬂ" becomes "fl") and replacing invalid characters with U+FFFD.
 PDFs need `pypdf` (pipeline/requirements.txt); Word and PowerPoint use the standard library.
 
 AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
@@ -24,6 +25,7 @@ import os
 import re
 import sqlite3
 import sys
+import unicodedata
 import zipfile
 from datetime import date
 from xml.etree import ElementTree
@@ -79,8 +81,21 @@ def pptx_pages(path: str) -> list[tuple[int, str]]:
 READERS = {".pdf": pdf_pages, ".docx": docx_pages, ".pptx": pptx_pages}
 
 
+# PDFs often store "fl", "fi", "ff" as one ligature character ("ﬂame"), which a search for
+# "flame" would miss (425 passages on 2026-11-14). Only these seven are spelled out; full NFKC
+# would also rewrite superscripts and change how units such as cm² read.
+LIGATURES = {code: unicodedata.normalize("NFKC", chr(code)) for code in range(0xFB00, 0xFB07)}
+
+
+def clean(text: str) -> str:
+    """Spell out ligatures, rejoin surrogate pairs and replace lone surrogates with U+FFFD. pypdf
+    returns surrogates for some mathematical symbols, and SQLite refuses text that is not UTF-8."""
+    text = text.encode("utf-16", "surrogatepass").decode("utf-16", "replace")
+    return text.translate(LIGATURES)
+
+
 def passages(text: str, size: int = PASSAGE_WORDS) -> list[str]:
-    words = text.split()
+    words = clean(text).split()
     return [" ".join(words[start : start + size]) for start in range(0, len(words), size)]
 
 

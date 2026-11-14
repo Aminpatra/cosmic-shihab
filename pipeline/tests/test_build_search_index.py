@@ -76,6 +76,15 @@ class Passages(unittest.TestCase):
         self.assertEqual([len(c.split()) for c in chunks], [150, 150, 20])
         self.assertEqual(bsi.passages("  \n "), [])
 
+    def test_surrogates_from_pdf_text_become_valid_utf8(self):
+        # A lone high surrogate (seen in a real PSI PDF) and a split pair for U+1D400.
+        chunk = bsi.passages("bad\ud835 pair𝐀")[0]
+        self.assertEqual(chunk, "bad� pair\U0001d400")
+        chunk.encode("utf-8")  # raises if anything invalid is left
+
+    def test_ligatures_are_spelled_out_but_superscripts_kept(self):
+        self.assertEqual(bsi.passages("ﬂame eﬃcient 5 cm²")[0], "flame efficient 5 cm²")
+
 
 @unittest.skipUnless(HAVE_PYPDF, "pypdf is not installed (pip install -r pipeline/requirements.txt)")
 class WithPdfs(unittest.TestCase):
