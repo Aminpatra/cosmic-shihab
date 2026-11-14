@@ -157,7 +157,7 @@ function Scope({ catalogue, chosen, setChosen }) {
 
 function SourceList({ sources, quotes }) {
   return (
-    <ol className="sources">
+    <ol className="answer-sources">
       {sources.map((source, i) => {
         const cited = quotes[source.id] ?? []
         const where = source.kind === 'record' ? 'PSI record' : source.page ? `Document, page ${source.page}` : 'Document'
@@ -435,7 +435,7 @@ export default function Assistant() {
 
         <p className="provenance">
           The assistant reads FLARE's copies of NASA PSI records and documents and never changes the{' '}
-          <Link to="/sources#ranking">relevance ranking</Link>. It reports what the investigations recorded; it is not a
+          <Link to="/methodology#ranking">relevance ranking</Link>. It reports what the investigations recorded; it is not a
           fire-safety assessment.
         </p>
       </section>

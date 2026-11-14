@@ -79,7 +79,7 @@ export default function Home() {
         {facts && (
           <p className="provenance">
             Source: NASA Physical Sciences Informatics, retrieved {formatDate(facts.retrieved)}. How the tiers were set:{' '}
-            <Link to="/sources#reading">Sources and methodology</Link>.
+            <Link to="/methodology#tables">Methodology</Link>.
           </p>
         )}
       </section>

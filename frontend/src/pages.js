@@ -45,9 +45,15 @@ export const PAGES = [
     ready: true,
   },
   {
+    path: '/methodology',
+    nav: 'Methodology',
+    title: 'Methodology',
+    ready: true,
+  },
+  {
     path: '/sources',
     nav: 'Sources',
-    title: 'Sources and Methodology',
+    title: 'Sources',
     ready: true,
   },
 ]
