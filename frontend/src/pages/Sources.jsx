@@ -64,7 +64,7 @@ function InvestigationTable({ investigations }) {
                 <td data-label="Accession">
                   <a
                     className="id"
-                    href={inv.derived?.page_url ?? `https://psi.nasa.gov/physci/repo/data/investigations/${inv.accession}`}
+                    href={inv.derived?.page_url?.trim() || `https://psi.nasa.gov/physci/repo/data/investigations/${inv.accession}`}
                     target="_blank"
                     rel="noreferrer"
                   >
