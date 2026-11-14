@@ -52,6 +52,7 @@ curl -s "$B/api/rank?oxygen=0.3&pressure=0.7" | head -c 200    # JSON with ranke
 |---|---|---|
 | First deploy | `main` at #24 plus `vercel.json` | Every page, `/api/health`, `/api/investigations/{accession}`, `/api/files`, `/api/search`, the download redirect and `/api/docs` answered correctly |
 | Redeploy | `main` at #34, adding the ranking API (#31) | All of the above plus `/api/rank` and `/api/rank/options` answered correctly. The download redirect returned 502 "PSI did not answer", because PSI's download-link service was timing out for everyone, even called directly; PSI's search and website were up |
+| Redeploy | `main` at #41, adding the AI assistant | All of the above plus `/assistant`, `/api/assistant/status` and `/api/assistant/ask`, which answer in `retrieval_only` mode (sources, no generated text) because no `ANTHROPIC_API_KEY` is set yet. `/api/assistant/summaries/{accession}` returns 404 until #28 writes summaries. PSI's download links were still timing out |
 
 A 502 from `/api/files/{file_id}/download` means PSI is not answering, not that the deploy is broken.
 Call PSI directly to tell the two apart (see `download_url` in `pipeline/psi_client.py`).
