@@ -1,0 +1,2049 @@
+{
+ "accession": "PSI-22",
+ "tables": [
+  {
+   "file": "PSI-22_Experimental table_ACME E-FIELD Flames.csv",
+   "psi_file_name": "PSI-22_Experimental table_ACME E-FIELD Flames.csv",
+   "doi_url": "https://doi.org/10.60555/se5a-8c73",
+   "encoding": "utf-8",
+   "row_is": "test_day",
+   "row_count": 32,
+   "columns": [
+    {
+     "name": "Test Type",
+     "unit": null
+    },
+    {
+     "name": "Test Day",
+     "unit": null
+    },
+    {
+     "name": "Year",
+     "unit": null
+    },
+    {
+     "name": "Month",
+     "unit": null
+    },
+    {
+     "name": "Date",
+     "unit": null
+    },
+    {
+     "name": "Mesh Polarity",
+     "unit": null
+    },
+    {
+     "name": "Fuel Bottle",
+     "unit": null
+    },
+    {
+     "name": "Fuel Conc",
+     "unit": null
+    },
+    {
+     "name": "Flames Ignited",
+     "unit": null
+    },
+    {
+     "name": "Notes",
+     "unit": null
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Fuel Bottle"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "18073",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18073",
+       "kind": "number",
+       "value": 18073
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Date": {
+       "raw": "14",
+       "kind": "number",
+       "value": 14
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "Test day is formatted YYDDD where YY identifies year and DDD identifies day of year (GMT). ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "18078",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18078",
+       "kind": "number",
+       "value": 18078
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Date": {
+       "raw": "19",
+       "kind": "number",
+       "value": 19
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "70%",
+       "kind": "number",
+       "value": 70,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "Mesh polarity refers to the polarity of the high-voltage power supply and the copper electrode relative to the burner. ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "Fuel Conc. (diluted with nitrogen on a volume basis) was varied between tests, but typically matched the bottle. The list only accounts for flames ignited. ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": "18080",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18080",
+       "kind": "number",
+       "value": 18080
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Date": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "40% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "40%",
+       "kind": "number",
+       "value": 40,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Notes": {
+       "raw": "Flames Ignited is the number ignited on that day (neglecting the day change on ISS). ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "40% CH4"
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": "18087",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18087",
+       "kind": "number",
+       "value": 18087
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Date": {
+       "raw": "28",
+       "kind": "number",
+       "value": 28
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "80%",
+       "kind": "number",
+       "value": 80,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": "18092",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18092",
+       "kind": "number",
+       "value": 18092
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Date": {
+       "raw": "2",
+       "kind": "number",
+       "value": 2
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "30% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "30%",
+       "kind": "number",
+       "value": 30,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "30% C2H4"
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": "18095",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18095",
+       "kind": "number",
+       "value": 18095
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Date": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "30% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "30%",
+       "kind": "number",
+       "value": 30,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "30% C2H4"
+      }
+     }
+    },
+    {
+     "line": 10,
+     "run_id": "18102",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18102",
+       "kind": "number",
+       "value": 18102
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Date": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "40% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "40%",
+       "kind": "number",
+       "value": 40,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "40% CH4"
+      }
+     }
+    },
+    {
+     "line": 11,
+     "run_id": "18106",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18106",
+       "kind": "number",
+       "value": 18106
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Date": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "40% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "40%",
+       "kind": "number",
+       "value": 40,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "40% CH4"
+      }
+     }
+    },
+    {
+     "line": 12,
+     "run_id": "18113",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18113",
+       "kind": "number",
+       "value": 18113
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Date": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      }
+     }
+    },
+    {
+     "line": 13,
+     "run_id": "18130",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18130",
+       "kind": "number",
+       "value": 18130
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Date": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "70%",
+       "kind": "number",
+       "value": 70,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      }
+     }
+    },
+    {
+     "line": 14,
+     "run_id": "18137",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with coflow burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18137",
+       "kind": "number",
+       "value": 18137
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "5",
+       "kind": "number",
+       "value": 5
+      },
+      "Date": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "80%",
+       "kind": "number",
+       "value": 80,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      }
+     }
+    },
+    {
+     "line": 15,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 7
+    },
+    {
+     "line": 16,
+     "run_id": "18269",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18269",
+       "kind": "number",
+       "value": 18269
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Date": {
+       "raw": "26",
+       "kind": "number",
+       "value": 26
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "40% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "40%",
+       "kind": "number",
+       "value": 40,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "40% CH4"
+      }
+     }
+    },
+    {
+     "line": 17,
+     "run_id": "18274",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18274",
+       "kind": "number",
+       "value": 18274
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Date": {
+       "raw": "1",
+       "kind": "number",
+       "value": 1
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "30% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "30%",
+       "kind": "number",
+       "value": 30,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "30% C2H4"
+      }
+     }
+    },
+    {
+     "line": 18,
+     "run_id": "18282",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18282",
+       "kind": "number",
+       "value": 18282
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Date": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "70%",
+       "kind": "number",
+       "value": 70,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      }
+     }
+    },
+    {
+     "line": 19,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 7
+    },
+    {
+     "line": 20,
+     "run_id": "18285",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18285",
+       "kind": "number",
+       "value": 18285
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Date": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      }
+     }
+    },
+    {
+     "line": 21,
+     "run_id": "18290",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18290",
+       "kind": "number",
+       "value": 18290
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Date": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Mesh Polarity": {
+       "raw": "negative",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "80%",
+       "kind": "number",
+       "value": 80,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      }
+     }
+    },
+    {
+     "line": 22,
+     "run_id": "18298",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18298",
+       "kind": "number",
+       "value": 18298
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Date": {
+       "raw": "25",
+       "kind": "number",
+       "value": 25
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "40% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "40%",
+       "kind": "number",
+       "value": 40,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "40% CH4"
+      }
+     }
+    },
+    {
+     "line": 23,
+     "run_id": "18302",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18302",
+       "kind": "number",
+       "value": 18302
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Date": {
+       "raw": "29",
+       "kind": "number",
+       "value": 29
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "30% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "30%",
+       "kind": "number",
+       "value": 30,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "30% C2H4"
+      }
+     }
+    },
+    {
+     "line": 24,
+     "run_id": "18312",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18312",
+       "kind": "number",
+       "value": 18312
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Date": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% CH4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "70%",
+       "kind": "number",
+       "value": 70,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% CH4"
+      }
+     }
+    },
+    {
+     "line": 25,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 7
+    },
+    {
+     "line": 26,
+     "run_id": "18319",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18319",
+       "kind": "number",
+       "value": 18319
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Date": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "25%",
+       "kind": "number",
+       "value": 25,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      }
+     }
+    },
+    {
+     "line": 27,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "50%",
+       "kind": "number",
+       "value": 50,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 28,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "80%",
+       "kind": "number",
+       "value": 80,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     }
+    },
+    {
+     "line": 29,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 7
+    },
+    {
+     "line": 30,
+     "run_id": "18319",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with gas-jet burner",
+       "kind": "text"
+      },
+      "Test Day": {
+       "raw": "18319",
+       "kind": "number",
+       "value": 18319
+      },
+      "Year": {
+       "raw": "2018",
+       "kind": "number",
+       "value": 2018
+      },
+      "Month": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Date": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Mesh Polarity": {
+       "raw": "positive",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% C2H4",
+       "kind": "text"
+      },
+      "Fuel Conc": {
+       "raw": "25%",
+       "kind": "number",
+       "value": 25,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% C2H4"
+      }
+     },
+     "same_as_line": 26
+    },
+    {
+     "line": 31,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "50%",
+       "kind": "number",
+       "value": 50,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 27
+    },
+    {
+     "line": 32,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "80%",
+       "kind": "number",
+       "value": 80,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 28
+    },
+    {
+     "line": 33,
+     "run_id": "",
+     "cells": {
+      "Test Type": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Test Day": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Year": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Month": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Date": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Mesh Polarity": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Bottle": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Fuel Conc": {
+       "raw": "100%",
+       "kind": "number",
+       "value": 100,
+       "unit": "%"
+      },
+      "Flames Ignited": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "missing": "empty"
+      }
+     },
+     "same_as_line": 7
+    }
+   ]
+  }
+ ]
+}

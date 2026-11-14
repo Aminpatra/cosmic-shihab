@@ -1,0 +1,1049 @@
+{
+ "accession": "PSI-23",
+ "tables": [
+  {
+   "file": "PSI-23_Experimental table_ACME s-Flame.csv",
+   "psi_file_name": "PSI-23_Experimental table_ACME s-Flame.csv",
+   "doi_url": "https://doi.org/10.60555/k57n-p030",
+   "encoding": "utf-8",
+   "row_is": "test_day",
+   "row_count": 18,
+   "columns": [
+    {
+     "name": "Test Type",
+     "unit": null
+    },
+    {
+     "name": "Test Day*",
+     "unit": null
+    },
+    {
+     "name": "Year",
+     "unit": null
+    },
+    {
+     "name": "Month",
+     "unit": null
+    },
+    {
+     "name": "Date",
+     "unit": null
+    },
+    {
+     "name": "Atmosphere*",
+     "unit": null
+    },
+    {
+     "name": "Fuel Bottle",
+     "unit": null
+    },
+    {
+     "name": "Flames Ignited*",
+     "unit": null
+    },
+    {
+     "name": "Notes",
+     "unit": null
+    }
+   ],
+   "standard_columns": {
+    "fuel": "Fuel Bottle"
+   },
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "19254",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "19254",
+       "kind": "number",
+       "value": 19254
+      },
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Sept.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N2",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4 with N2",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Notes": {
+       "raw": "*Test Day is formatted YYDDD where YY identfies year and DDD identifies day of year (GMT). ",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4 with N2"
+      }
+     }
+    },
+    {
+     "line": 3,
+     "run_id": "19256",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "19256",
+       "kind": "number",
+       "value": 19256
+      },
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Sept.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N3",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4 with N3",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Flames Ignited*": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Notes": {
+       "raw": "*Atmosphere is ~1 atm but pressure increases and O2% drops with vitiation.",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4 with N3"
+      }
+     }
+    },
+    {
+     "line": 4,
+     "run_id": "19304",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "19304",
+       "kind": "number",
+       "value": 19304
+      },
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Oct.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "31",
+       "kind": "number",
+       "value": 31
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N4",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Fuel Bottle": {
+       "raw": "45% CH4 with N2",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Notes": {
+       "raw": "*Flames Ignited is the number ignited on that day (neglecting the day change on ISS).",
+       "kind": "text"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "45% CH4 with N2"
+      }
+     }
+    },
+    {
+     "line": 5,
+     "run_id": "19308",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "19308",
+       "kind": "number",
+       "value": 19308
+      },
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Nov.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "4",
+       "kind": "number",
+       "value": 4
+      },
+      "Atmosphere*": {
+       "raw": "~30% O2 with N2",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "45% CH4 with N3",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Flames Ignited*": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "45% CH4 with N3"
+      }
+     }
+    },
+    {
+     "line": 6,
+     "run_id": "19352",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "19352",
+       "kind": "number",
+       "value": 19352
+      },
+      "Year": {
+       "raw": "2019",
+       "kind": "number",
+       "value": 2019
+      },
+      "Month": {
+       "raw": "Dec.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N2",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "100% H2",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "10",
+       "kind": "number",
+       "value": 10
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% H2"
+      }
+     }
+    },
+    {
+     "line": 7,
+     "run_id": "20006",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20006",
+       "kind": "number",
+       "value": 20006
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Jan.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "6",
+       "kind": "number",
+       "value": 6
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N3",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Fuel Bottle": {
+       "raw": "44.4% H2 with CH4",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "44.4% H2 with CH4"
+      }
+     }
+    },
+    {
+     "line": 8,
+     "run_id": "20013",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20013",
+       "kind": "number",
+       "value": 20013
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Jan.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "13",
+       "kind": "number",
+       "value": 13
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N4",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Fuel Bottle": {
+       "raw": "66.7% H2 with CH4",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "22",
+       "kind": "number",
+       "value": 22
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "66.7% H2 with CH4"
+      }
+     }
+    },
+    {
+     "line": 9,
+     "run_id": "20024",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20024",
+       "kind": "number",
+       "value": 20024
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Jan.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N5",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Fuel Bottle": {
+       "raw": "100% H2",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "16",
+       "kind": "number",
+       "value": 16
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "100% H2"
+      }
+     }
+    },
+    {
+     "line": 10,
+     "run_id": "20029",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20029",
+       "kind": "number",
+       "value": 20029
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "Jan.",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "29",
+       "kind": "number",
+       "value": 29
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with N6",
+       "kind": "text",
+       "flags": [
+        "impossible_formula"
+       ]
+      },
+      "Fuel Bottle": {
+       "raw": "50% C2H4 with N2",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "50% C2H4 with N2"
+      }
+     }
+    },
+    {
+     "line": 11,
+     "run_id": "20132",
+     "cells": {
+      "Test Type": {
+       "raw": "First round of tests with nitrogen-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20132",
+       "kind": "number",
+       "value": 20132
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "May",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "25% H2, 20% CH4, with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "7",
+       "kind": "number",
+       "value": 7
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "25% H2, 20% CH4, with He"
+      }
+     }
+    },
+    {
+     "line": 12,
+     "run_id": "20136",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20136",
+       "kind": "number",
+       "value": 20136
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "May",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "15",
+       "kind": "number",
+       "value": 15
+      },
+      "Atmosphere*": {
+       "raw": "~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "20% H2, 25% CH4, with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "20% H2, 25% CH4, with He"
+      }
+     }
+    },
+    {
+     "line": 13,
+     "run_id": "20142",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20142",
+       "kind": "number",
+       "value": 20142
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "May",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Atmosphere*": {
+       "raw": "~30% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "30% H2, 15% CH4, with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "17",
+       "kind": "number",
+       "value": 17
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "30% H2, 15% CH4, with He"
+      }
+     }
+    },
+    {
+     "line": 14,
+     "run_id": "20155",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20155",
+       "kind": "number",
+       "value": 20155
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "June",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "3",
+       "kind": "number",
+       "value": 3
+      },
+      "Atmosphere*": {
+       "raw": "~30% and ~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "45% H2 with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "9",
+       "kind": "number",
+       "value": 9
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "45% H2 with He"
+      }
+     }
+    },
+    {
+     "line": 15,
+     "run_id": "20160",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20160",
+       "kind": "number",
+       "value": 20160
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "June",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Atmosphere*": {
+       "raw": "~30% and ~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "45% CH4 with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "45% CH4 with He"
+      }
+     }
+    },
+    {
+     "line": 16,
+     "run_id": "20164",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20164",
+       "kind": "number",
+       "value": 20164
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "June",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "12",
+       "kind": "number",
+       "value": 12
+      },
+      "Atmosphere*": {
+       "raw": "~30% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "20% C2H4 with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "11",
+       "kind": "number",
+       "value": 11
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "20% C2H4 with He"
+      }
+     }
+    },
+    {
+     "line": 17,
+     "run_id": "20170",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20170",
+       "kind": "number",
+       "value": 20170
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "June",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "18",
+       "kind": "number",
+       "value": 18
+      },
+      "Atmosphere*": {
+       "raw": "~30% and ~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "25% C2H4 with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "20",
+       "kind": "number",
+       "value": 20
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "25% C2H4 with He"
+      }
+     }
+    },
+    {
+     "line": 18,
+     "run_id": "20176",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20176",
+       "kind": "number",
+       "value": 20176
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "June",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "24",
+       "kind": "number",
+       "value": 24
+      },
+      "Atmosphere*": {
+       "raw": "~30% and ~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "30% C2H4 with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "23",
+       "kind": "number",
+       "value": 23
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "30% C2H4 with He"
+      }
+     }
+    },
+    {
+     "line": 19,
+     "run_id": "20190",
+     "cells": {
+      "Test Type": {
+       "raw": "Second round of tests with helium-diluted fuel and oxygen",
+       "kind": "text"
+      },
+      "Test Day*": {
+       "raw": "20190",
+       "kind": "number",
+       "value": 20190
+      },
+      "Year": {
+       "raw": "2020",
+       "kind": "number",
+       "value": 2020
+      },
+      "Month": {
+       "raw": "July",
+       "kind": "text"
+      },
+      "Date": {
+       "raw": "8",
+       "kind": "number",
+       "value": 8
+      },
+      "Atmosphere*": {
+       "raw": "~30% and ~21% O2 with He",
+       "kind": "text"
+      },
+      "Fuel Bottle": {
+       "raw": "35% H2 with He",
+       "kind": "text"
+      },
+      "Flames Ignited*": {
+       "raw": "21",
+       "kind": "number",
+       "value": 21
+      },
+      "Notes": {
+       "raw": "",
+       "kind": "missing",
+       "missing": "empty"
+      }
+     },
+     "standard": {
+      "fuel": {
+       "column": "Fuel Bottle",
+       "role": "condition",
+       "text": "35% H2 with He"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

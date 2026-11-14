@@ -1,0 +1,92 @@
+{
+ "accession": "PSI-47",
+ "tables": [
+  {
+   "file": "PSI-47_Experimental table_DAFT.csv",
+   "psi_file_name": "PSI-47_Experimental table_DAFT.csv",
+   "doi_url": "https://doi.org/10.60555/ztgj-d202",
+   "encoding": "utf-8",
+   "row_is": "session",
+   "row_count": 2,
+   "columns": [
+    {
+     "name": "Session Name",
+     "unit": null
+    },
+    {
+     "name": "Actual Day",
+     "unit": null
+    },
+    {
+     "name": "Hardware Description",
+     "unit": null
+    },
+    {
+     "name": "Sample Material",
+     "unit": null
+    },
+    {
+     "name": "Sampled Location",
+     "unit": null
+    }
+   ],
+   "standard_columns": {},
+   "rows": [
+    {
+     "line": 2,
+     "run_id": "D1",
+     "cells": {
+      "Session Name": {
+       "raw": "D1",
+       "kind": "text"
+      },
+      "Actual Day": {
+       "raw": "GMT 54 (2005)",
+       "kind": "text"
+      },
+      "Hardware Description": {
+       "raw": "Contained the modified P-Trak with Alcohol Wick and batteries",
+       "kind": "text"
+      },
+      "Sample Material": {
+       "raw": "Arizona Road Dust (ARD Fine) in combination with ISS GN2 to create an aerosol for measurement purposes.",
+       "kind": "text"
+      },
+      "Sampled Location": {
+       "raw": "Sampled air near Express rack 4",
+       "kind": "text"
+      }
+     },
+     "standard": {}
+    },
+    {
+     "line": 3,
+     "run_id": "D2",
+     "cells": {
+      "Session Name": {
+       "raw": "D2",
+       "kind": "text"
+      },
+      "Actual Day": {
+       "raw": "GMT 63 (2005)",
+       "kind": "text"
+      },
+      "Hardware Description": {
+       "raw": "Contained DustTrak and batteries",
+       "kind": "text"
+      },
+      "Sample Material": {
+       "raw": "Arizona Road Dust (ARD Fine) in combination with ISS GN2 to create an aerosol for measurement purposes.",
+       "kind": "text"
+      },
+      "Sampled Location": {
+       "raw": "Sampled separated Velcro and the air near Port rack 6 and in Node 1",
+       "kind": "text"
+      }
+     },
+     "standard": {}
+    }
+   ]
+  }
+ ]
+}
