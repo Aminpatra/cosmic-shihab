@@ -23,3 +23,8 @@ frontend/dist/
 .impeccable/mocks/
 .impeccable/review/
 .impeccable/config.local.json
+*.egg-info/
+backend/build/
+
+# Vercel CLI link and local caches
+.vercel/

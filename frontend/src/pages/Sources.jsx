@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { useApi } from '../api.js'
 import {
   TIERS,
@@ -16,9 +17,6 @@ import './Sources.css'
 
 const SECTIONS = [
   ['data', 'NASA data'],
-  ['reading', 'How FLARE read PSI'],
-  ['ranking', 'Ranking method'],
-  ['limits', 'Assumptions and limits'],
   ['team', 'Team and credits'],
   ['references', 'References'],
 ]
@@ -111,12 +109,13 @@ export default function Sources() {
 
   return (
     <>
-      <title>Sources and methodology · FLARE</title>
+      <title>Sources · FLARE</title>
       <div className="sources">
         <header className="sources-head">
-          <h1>Sources and methodology</h1>
+          <h1>Sources</h1>
           <p className="sources-lede">
-            Where FLARE's data comes from, how it was read, what FLARE assumes, and what it cannot tell you.
+            The NASA investigations FLARE uses, who built it, and every outside resource it relies on. How the data is
+            read, ranked and limited is on the <Link to="/methodology">Methodology</Link> page.
           </p>
         </header>
 
@@ -151,65 +150,12 @@ export default function Sources() {
               {catalogue.status === 'loading' && <Loading label="Loading the 24 investigations…" />}
               {catalogue.status === 'error' && <LoadError what="The investigation list" retry={catalogue.retry} />}
               {catalogue.status === 'ready' && <InvestigationTable investigations={catalogue.data} />}
-            </section>
-
-            <section id="reading" aria-labelledby="reading-title">
-              <h2 id="reading-title">How FLARE read PSI</h2>
-              <ul className="facts-list">
-                <li>
-                  For each investigation FLARE stores PSI's record as published: title, objective, hypothesis, approach,
-                  hardware, DOI, licence and publications. Contact e-mail addresses and phone numbers are left out.
-                </li>
-                <li>
-                  The full file list of each investigation is stored as a list, not as files. Duplicate entries are removed
-                  by file id, and each list is checked for completeness against the total size PSI reports.
-                </li>
-                <li>
-                  Only the 22 small experimental tables, one row per test or test day, are downloaded, unchanged. Every
-                  other file stays at NASA and is linked; download links are requested from PSI when needed.
-                </li>
-                <li>
-                  <strong>Rank and compare</strong> covers the eight investigations whose tables have 87 to 469 runs.{' '}
-                  <strong>Show and compare</strong> covers the twelve with 2 to 32 runs: shown in full, too few to model.{' '}
-                  <strong>Catalogue only</strong> covers four ground-based modelling studies with no run table.
-                </li>
-                <li>
-                  Table columns differ between investigations: FLEX records pressure and gas fractions, BASS records the
-                  sample and its material. Columns are compared across investigations only when they mean the same thing.
-                </li>
-              </ul>
-            </section>
-
-            <section id="ranking" aria-labelledby="ranking-title">
-              <h2 id="ranking-title">Ranking method</h2>
-              <p>
-                Not published yet. FLARE shows no relevance score until this section lists the variables it uses, their
-                weights, and how a missing value counts. The ranking engine is being built now.
-              </p>
-            </section>
-
-            <section id="limits" aria-labelledby="limits-title">
-              <h2 id="limits-title">Assumptions and limits</h2>
-              <ul className="facts-list">
-                <li>
-                  A relevance score measures how closely an investigation's tested conditions match a scenario. It is not
-                  a safety assessment, and FLARE never predicts whether a real fire will start or spread.
-                </li>
-                <li>
-                  Every flight investigation here ran in microgravity. None tested lunar or Martian gravity, so for a
-                  partial-gravity scenario FLARE says the evidence comes from microgravity.
-                </li>
-                <li>A condition an investigation did not record is shown as not recorded, never estimated.</li>
-                <li>Values keep their original units; any conversion is shown beside the original value.</li>
-                <li>
-                  The Saffire experiments matter most for spacecraft fires but have 2 to 15 runs each. FLARE shows them in
-                  full and says how few runs there are.
-                </li>
-                <li>
-                  PSI-142 is an index of published figures, not a table of tests. PSI-10 (ACME Flame Design) states no
-                  licence; the other 23 investigations are released under CC0-1.0.
-                </li>
-              </ul>
+              {catalogue.status === 'ready' && (
+                <p className="sources-note">
+                  How the three groups in the FLARE use column were set:{' '}
+                  <Link to="/methodology#tables">Methodology</Link>.
+                </p>
+              )}
             </section>
 
             <section id="team" aria-labelledby="team-title" className="team">

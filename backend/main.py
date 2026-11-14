@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 
-from app.routes import catalogue, downloads, flex_model, ranking, search
+from app.routes import assistant, catalogue, downloads, flex_model, ranking, runs, search
 
 app = FastAPI(
     title="FLARE API",
@@ -18,3 +18,5 @@ app.include_router(downloads.router)
 app.include_router(flex_model.router)
 app.include_router(ranking.router)
 app.include_router(search.router)
+app.include_router(runs.router)
+app.include_router(assistant.router)

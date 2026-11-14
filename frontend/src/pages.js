@@ -1,4 +1,4 @@
-// The seven pages of FLARE, in navigation order. Paths are fixed so each task drops its page
+// The eight pages of FLARE, in navigation order. Paths are fixed so each task drops its page
 // into a known slot (docs/DECISIONS.md, #9). When a page lands, set `ready: true` and point
 // its route in main.jsx at the real component.
 export const PAGES = [
@@ -42,11 +42,18 @@ export const PAGES = [
     title: 'AI Research Assistant',
     summary: 'Ask about the investigations. Answers cite their NASA sources and say plainly when no source answers the question.',
     issue: 10,
+    ready: true,
+  },
+  {
+    path: '/methodology',
+    nav: 'Methodology',
+    title: 'Methodology',
+    ready: true,
   },
   {
     path: '/sources',
     nav: 'Sources',
-    title: 'Sources and Methodology',
+    title: 'Sources',
     ready: true,
   },
 ]
