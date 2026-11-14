@@ -27,8 +27,9 @@ table has no column for, a Neon Yellow frame on the chosen cell, provenance foot
 figure naming the PSI column, Fira Code for file names only.
 
 STORY: The visitor sees which fields each of the 14 test tables gives, opens a cell to see its
-spread, then reads two fixed figures (oxygen by pressure, FLEX burning rate by oxygen) with their
-caveats, and leaves knowing what can and cannot be compared.
+spread, then reads three fixed figures (oxygen by pressure, FLEX burning rate by oxygen, and the
+FLEX test-outcome model panel with its notice, held-out scores against the baseline and limits,
+added by #40) with their caveats, and leaves knowing what can and cannot be compared.
 
 FIRST VIEWPORT: H1 and lede at left; below, the full-width coverage matrix (tables as rows, six
 fields as columns, cells shaded by share recorded, hatched where absent) with one cell preselected
