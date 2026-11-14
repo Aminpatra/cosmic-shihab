@@ -1,4 +1,5 @@
-# Local development and tests. Keep the fastapi pin equal to pyproject.toml.
+# Local development and tests. Keep the fastapi and anthropic pins equal to pyproject.toml.
+anthropic==2.8.0
 fastapi==0.162.7
 httpx2==2.16.0    # TestClient (Starlette 1.x prefers it to httpx)
 uvicorn==0.54.0   # local server; Vercel runs the app itself
