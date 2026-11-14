@@ -80,6 +80,51 @@ class Generator(unittest.TestCase):
         self.assertIn("do not re-rank", sent[-1]["text"])  # the instruction forbids re-ranking
 
 
+class ThroughDeployedSite(unittest.TestCase):
+    """--via: the deployed assistant generates, this machine stores. The site is faked."""
+
+    GENERATED = {"mode": "generated", "reason": None, "model": "claude-opus-5-5",
+                 "blocks": [{"text": "FLEX burned droplets.", "kind": "source",
+                             "citations": [{"source_id": "record:PSI-69", "cited_text": "droplets"}]}],
+                 "sources": [{"id": "record:PSI-69", "kind": "record", "accession": "PSI-69", "title": "t",
+                              "label": "FLEX", "url": "u", "doi": "d", "text": "x"}]}
+
+    def fake(self, answer):
+        calls = []
+        return calls, lambda url, body: calls.append((url, body)) or answer
+
+    def test_every_question_fits_the_endpoint(self):
+        from app import catalogue
+        for accession in catalogue.investigations():
+            self.assertLessEqual(len(write_summaries.summary_question(accession)), write_summaries.MAX_QUESTION)
+        for name, preset in write_summaries.PRESETS.items():
+            self.assertLessEqual(len(write_summaries.reading_question(preset, live(name))), write_summaries.MAX_QUESTION)
+
+    def test_summary_is_stored_unreviewed_with_the_sites_sources(self):
+        calls, post = self.fake(self.GENERATED)
+        summary = write_summaries.summarise_live("https://example.test/", "PSI-69", post)
+        self.assertEqual(calls[0][0], "https://example.test/api/assistant/ask")
+        self.assertEqual(calls[0][1]["accessions"], ["PSI-69"])
+        self.assertEqual(summary["blocks"], self.GENERATED["blocks"])
+        self.assertFalse(summary["reviewed"])
+        self.assertIn("AI-generated", summary["note"])
+
+    def test_sources_only_reply_is_refused(self):
+        _, post = self.fake({"mode": "retrieval_only", "reason": "No AI key is configured", "blocks": [], "sources": []})
+        with self.assertRaises(RuntimeError):
+            write_summaries.summarise_live("https://example.test", "PSI-69", post)
+
+    def test_reading_carries_the_ranking_and_keeps_its_order(self):
+        calls, post = self.fake(self.GENERATED)
+        reading = write_summaries.read_ranking_live("https://example.test", "lunar-base", post)
+        question = calls[0][1]["question"]
+        self.assertIn("Keep this order and these scores", question)
+        self.assertIn("not partial gravity", question)
+        self.assertEqual(reading["sources"][0]["kind"], "ranking")
+        expected = [item["accession"] for item in live("lunar-base")["items"][:write_summaries.TOP]]
+        self.assertEqual([item["accession"] for item in reading["top"]], expected)
+
+
 class Endpoint(unittest.TestCase):
     def setUp(self):
         self.folder = tempfile.TemporaryDirectory()
