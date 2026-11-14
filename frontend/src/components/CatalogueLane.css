@@ -13,14 +13,18 @@
   height: 2.6rem;
 }
 
+/* Each tier's strip stays inside its column whatever the count: with 60 investigations the
+   cells thin to 1px and the overflow is clipped instead of widening the page. */
 .catalogue-segment {
   display: flex;
   gap: 3px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .cell {
   flex: 1 1 0;
-  min-width: 4px;
+  min-width: 1px;
   transition: outline-color 160ms var(--ease-out), transform 200ms var(--ease-out);
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -142,7 +146,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 63.9375em) {
   .catalogue {
     --tier-cols: 8fr 12fr 4fr;
     --tier-gap: var(--space-3);
@@ -154,7 +158,7 @@
   }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375em) {
   .catalogue-group:nth-child(2) ul {
     column-count: 1;
   }

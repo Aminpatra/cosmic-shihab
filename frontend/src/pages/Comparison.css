@@ -176,7 +176,7 @@
   opacity: 0.6;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 80em) {
   .cmp-body {
     grid-template-columns: minmax(22rem, 28rem) minmax(0, 1fr);
     align-items: start;
@@ -458,7 +458,7 @@
   background: var(--hatch), var(--ramp-1);
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375em) {
   .cmp-scenario {
     display: grid;
     justify-items: start;

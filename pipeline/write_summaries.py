@@ -3,10 +3,17 @@
     python3 pipeline/write_summaries.py                  # every investigation without a summary
     python3 pipeline/write_summaries.py --only PSI-69    # one or more
     python3 pipeline/write_summaries.py --force --only PSI-69   # replace an existing summary
+    python3 pipeline/write_summaries.py --readings       # the preset comparison readings instead
+    python3 pipeline/write_summaries.py --via https://flare-sandy.vercel.app   # generate on the deployed site
 
 Needs ANTHROPIC_API_KEY and the backend's packages (backend/pyproject.toml). Uses the assistant's
 own evidence gathering and model call (backend/app/assistant.py), so a summary rests on the same
 sources an answer would. Writes backend/data/summaries/<ACCESSION>.json with `reviewed: false`.
+
+A comparison reading explains, in plain language, how NASA's investigations rank against one of
+the scenarios the challenge page gives numbers for (PRESETS). The ranking itself (#7) is computed
+first and passed to the model as a cited document, so the reading can explain the order but never
+change it. Readings go to backend/data/summaries/readings/<preset>.json.
 
 A summary is shown as reviewed only after a person has read it against its sources and set
 `reviewed` to true and `reviewed_by` to their GitHub login. An existing file is never replaced
@@ -23,17 +30,19 @@ import datetime
 import json
 import os
 import sys
+import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "backend"))
-from app import assistant, catalogue  # noqa: E402
+from app import assistant, catalogue, ranking  # noqa: E402
 
 OUT = os.path.join(ROOT, "backend", "data", "summaries")
 
 INSTRUCTION = """Summarise this NASA investigation for a researcher or mission planner, in about \
 150 to 250 words: what it set out to learn, what was burned or measured and under which conditions, \
 the hardware and platform, and what data FLARE holds for it. Say what the sources do not state \
-(for example results, if no source gives them). Use only the documents provided."""
+(for example results, if no source gives them). Use only the documents provided. Write plain \
+text without Markdown."""
 
 
 def search_words(record: dict) -> str:
@@ -61,24 +70,258 @@ def summarise(accession: str, client=None) -> dict:
     }
 
 
-def write(summary: dict) -> str:
-    os.makedirs(OUT, exist_ok=True)
-    path = os.path.join(OUT, f"{summary['accession']}.json")
+# ── Comparison readings ──────────────────────────────────────────────────────────────────────────
+
+READINGS_OUT = os.path.join(OUT, "readings")
+PSI_PER_ATM = 14.696
+CHALLENGE = 'NASA Space Apps 2026 challenge "Flame in Freefall", Potential Considerations (read 2026-11-14)'
+
+# Only scenarios the challenge page gives numbers for. It gives none for a spacecraft cabin, a
+# space station or a Mars habitat, so those are not preset (master prompt, section 5).
+PRESETS = {
+    "lunar-base": {
+        "label": "Moon base or pressurized rover",
+        "scenario": {"environment": "lunar", "oxygen": 0.30, "pressure": round(10.2 / PSI_PER_ATM, 4)},
+        "source": f'{CHALLENGE}: "The intermediate oxygen concentration used on the Moon will likely be '
+                  f'30% or greater, with a corresponding pressure of 10.2 psi or less." Read here as 30% '
+                  f'oxygen at 10.2 psi.',
+    },
+    "spacesuit": {
+        "label": "Spacesuit atmosphere",
+        "scenario": {"oxygen": 1.0, "pressure": round(4.3 / PSI_PER_ATM, 4)},
+        "source": f'{CHALLENGE}: "spacesuits are filled with 100% oxygen to only 4.3 psi".',
+    },
+    "sea-level-air": {
+        "label": "Earth sea-level air",
+        "scenario": {"oxygen": 0.21, "pressure": 1.0},
+        "source": f"{CHALLENGE}: the page compares the Moon base against \"Earth's atmosphere\" and "
+                  f"\"the Earth's pressure at sea level is 14.7 psi\". Air is 21% oxygen.",
+    },
+}
+
+READING_INSTRUCTION = """Explain the FLARE ranking document in plain language for a mission planner, \
+in about 150 to 250 words: which NASA investigations rank highest for this scenario and why (the \
+conditions that match), what differs, and what the investigations did not record. Keep the order \
+and the scores exactly as the ranking document gives them; do not re-rank, add investigations or \
+estimate missing values. Say that a relevance score is not a safety assessment. If the ranking \
+document has a gravity note, include it. Use only the documents provided. Write plain text \
+without Markdown."""
+
+TOP = 5  # investigations described in the ranking document
+
+
+def _entry(entry: dict) -> str:
+    """One match or difference, as the ranking reports it (tested values to 3 significant digits)."""
+    if "tested_min" in entry:
+        return (f"{entry['variable']} {entry['scenario']:g} {entry['unit']} (tested "
+                f"{entry['tested_min']:.3g} to {entry['tested_max']:.3g}, closest {entry['closest']:.3g})")
+    return f"{entry['variable']} {entry['scenario']} (tested: {entry.get('tested')})"
+
+
+def _scenario_text(scenario: dict) -> str:
+    parts = []
+    for key, value in scenario.items():
+        if key == "oxygen":
+            parts.append(f"oxygen {value:g} mole fraction ({value * 100:g}%)")
+        elif key == "pressure":
+            parts.append(f"pressure {value:g} atm ({value * PSI_PER_ATM:.1f} psi)")
+        else:
+            parts.append(f"{key} {value}")
+    return "; ".join(parts)
+
+
+def ranking_source(name: str, preset: dict, result: dict) -> dict:
+    """The ranking for one preset, written as a document the model can cite."""
+    scenario = preset["scenario"]
+    query = "&".join(f"{key}={value}" for key, value in scenario.items())
+    lines = [
+        f'FLARE ranking (version {result["method"]["version"]}) for the scenario "{preset["label"]}".',
+        f"Scenario: {_scenario_text(scenario)}.",
+        f"Where these values come from: {preset['source']}",
+        f"Variables scored: {', '.join(result['method']['variables'])}, with equal weights. "
+        f"{result['method']['weights_reason']}",
+        result["notice"],
+    ]
+    if result["gravity_note"]:
+        lines.append(f"Gravity note: {result['gravity_note']}")
+    items = result["items"]
+    lines.append(f"Ranked investigations, best first ({min(TOP, len(items))} of {len(items)} ranked shown; "
+                 f"{len(result['not_ranked'])} could not be ranked):")
+    for position, item in enumerate(items[:TOP], 1):
+        name_ = item["investigationAcronym"] or item["accession"]
+        matches = "; ".join(_entry(e) for e in item["matches"]) or "none"
+        differences = "; ".join(_entry(e) for e in item["differences"]) or "none"
+        unavailable = ", ".join(item["unavailable"]) or "none"
+        lines.append(f"{position}. {name_} ({item['accession']}), relevance score {item['score']} of 100; "
+                     f"{item['close_tests']} of {item['rows_scored']} {item['row_unit'].replace('_', ' ')}s close. "
+                     f"Matches: {matches}. Differences: {differences}. Not recorded: {unavailable}.")
+    return {
+        "id": f"ranking:{name}",
+        "kind": "ranking",
+        "accession": "",
+        "title": f"FLARE ranking for {preset['label']}",
+        "label": "FLARE ranking",
+        "url": f"/api/rank?{query}",
+        "doi": "",
+        "text": "\n".join(lines),
+    }
+
+
+def read_ranking(name: str, client=None) -> dict:
+    """Rank the preset, then have the assistant explain that ranking with citations."""
+    preset = PRESETS[name]
+    result = ranking.rank(ranking.Scenario(**preset["scenario"]))
+    top = result["items"][:TOP]
+    sources = [ranking_source(name, preset, result)]
+    sources += assistant.gather("oxygen pressure conditions flammability results",
+                                [item["accession"] for item in top[:3]])
+    reply = assistant.generate(READING_INSTRUCTION, sources, client)
+    if reply["mode"] != "generated":
+        raise RuntimeError(f"{name}: {reply['reason']}")
+    return {
+        "preset": name,
+        "label": preset["label"],
+        "scenario": preset["scenario"],
+        "scenario_source": preset["source"],
+        "ranking_version": result["method"]["version"],
+        "top": [{"accession": item["accession"], "label": item["investigationAcronym"] or item["accession"],
+                 "score": item["score"]} for item in top],
+        "note": "AI-generated by FLARE's assistant from the FLARE ranking and the cited NASA sources; "
+                "it explains the ranking and never changes it. Check `reviewed` before relying on it.",
+        "model": reply["model"],
+        "generated": datetime.date.today().isoformat(),
+        "reviewed": False,
+        "reviewed_by": None,
+        "blocks": reply["blocks"],
+        "sources": reply["sources"],
+    }
+
+
+# ── Generating through the deployed site ─────────────────────────────────────────────────────────
+# The team's key lives only in Vercel, which never returns a Secret's value. With --via, the text is
+# generated by the deployed assistant (POST /api/assistant/ask) and stored here, so the key never
+# leaves Vercel. The deployed endpoint takes a question of at most 1,000 characters and attaches its
+# own sources, so the ranking facts travel in the question: sentences explaining them come back as
+# the assistant's explanation, not as cited source sentences.
+
+MAX_QUESTION = 1000
+
+
+def _post(url: str, body: dict) -> dict:
+    request = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json", "Accept": "application/json"})
+    with urllib.request.urlopen(request, timeout=300) as response:
+        return json.loads(response.read())
+
+
+def ask_live(base: str, question: str, accessions: list[str], post=_post) -> dict:
+    """One generated answer from the deployed assistant; refuses a sources-only reply."""
+    if len(question) > MAX_QUESTION:
+        raise ValueError(f"question is {len(question)} characters; the endpoint takes {MAX_QUESTION}")
+    reply = post(f"{base.rstrip('/')}/api/assistant/ask", {"question": question, "accessions": accessions})
+    if reply.get("mode") != "generated":
+        raise RuntimeError(f"the deployed assistant did not generate an answer: {reply.get('reason')}")
+    return reply
+
+
+def summary_question(accession: str) -> str:
+    record = catalogue.investigations()[accession]
+    return f"{record['investigationAcronym'] or record['title']} ({accession}). {INSTRUCTION}"
+
+
+def summarise_live(base: str, accession: str, post=_post) -> dict:
+    reply = ask_live(base, summary_question(accession), [accession], post)
+    return {
+        "accession": accession,
+        "note": "AI-generated by FLARE's deployed assistant from the cited NASA sources; check "
+                "`reviewed` before relying on it.",
+        "model": reply["model"],
+        "generated": datetime.date.today().isoformat(),
+        "reviewed": False,
+        "reviewed_by": None,
+        "blocks": reply["blocks"],
+        "sources": reply["sources"],
+    }
+
+
+def reading_question(preset: dict, result: dict) -> str:
+    """The ranking's top three and its gravity note, with the instruction, in one short question."""
+    parts = [f"For a {preset['label']} ({_scenario_text(preset['scenario'])}), FLARE's ranking puts:"]
+    for position, item in enumerate(result["items"][:3], 1):
+        differs = ", ".join(e["variable"] for e in item["differences"]) or "nothing"
+        missing = ", ".join(item["unavailable"]) or "nothing"
+        parts.append(f"{position}. {item['investigationAcronym'] or item['accession']} ({item['accession']}), "
+                     f"score {item['score']}, {item['close_tests']} close tests, differs on {differs}, "
+                     f"missing {missing}.")
+    if result["gravity_note"]:
+        parts.append(result["gravity_note"])
+    parts.append("In about 200 words of plain text without Markdown, explain why these rank highest, "
+                 "what differs and what was not recorded. Keep this order and these scores. Say a "
+                 "relevance score is not a safety assessment.")
+    return " ".join(parts)
+
+
+def read_ranking_live(base: str, name: str, post=_post) -> dict:
+    preset = PRESETS[name]
+    result = ranking.rank(ranking.Scenario(**preset["scenario"]))
+    top = result["items"][:TOP]
+    reply = ask_live(base, reading_question(preset, result), [item["accession"] for item in top[:3]], post)
+    return {
+        "preset": name,
+        "label": preset["label"],
+        "scenario": preset["scenario"],
+        "scenario_source": preset["source"],
+        "ranking_version": result["method"]["version"],
+        "top": [{"accession": item["accession"], "label": item["investigationAcronym"] or item["accession"],
+                 "score": item["score"]} for item in top],
+        "note": "AI-generated by FLARE's deployed assistant from the FLARE ranking (given in the question, "
+                "so sentences about it are marked as explanation) and the cited NASA sources; it explains "
+                "the ranking and never changes it. Check `reviewed` before relying on it.",
+        "model": reply["model"],
+        "generated": datetime.date.today().isoformat(),
+        "reviewed": False,
+        "reviewed_by": None,
+        "blocks": reply["blocks"],
+        "sources": [ranking_source(name, preset, result)] + reply["sources"],
+    }
+
+
+def write(document: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     temporary = path + ".part"
     with open(temporary, "w", encoding="utf-8") as handle:
-        json.dump(summary, handle, indent=2, ensure_ascii=False)
+        json.dump(document, handle, indent=2, ensure_ascii=False)
         handle.write("\n")
     os.replace(temporary, path)
     return path
 
 
+def write_readings(names: list[str], force: bool, via: str | None = None) -> None:
+    unknown = [name for name in names if name not in PRESETS]
+    if unknown:
+        sys.exit(f"no such preset: {unknown}; presets are {list(PRESETS)}")
+    for name in names:
+        path = os.path.join(READINGS_OUT, f"{name}.json")
+        if os.path.exists(path) and not force:
+            print(f"{name}: kept the existing reading (use --force to replace it)")
+            continue
+        reading = read_ranking_live(via, name) if via else read_ranking(name)
+        cited = sum(1 for block in reading["blocks"] if block["citations"])
+        print(f"{name}: {len(reading['blocks'])} blocks, {cited} cited -> {write(reading, path)}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--only", nargs="+", metavar="ACCESSION")
-    parser.add_argument("--force", action="store_true", help="replace existing summaries")
+    parser.add_argument("--only", nargs="+", metavar="ACCESSION_OR_PRESET")
+    parser.add_argument("--force", action="store_true", help="replace existing files")
+    parser.add_argument("--readings", action="store_true", help="write the preset comparison readings")
+    parser.add_argument("--via", metavar="URL", help="generate through this deployed FLARE site instead of a local key")
     args = parser.parse_args()
-    if not assistant.key_present():
-        sys.exit("ANTHROPIC_API_KEY is not set; summaries need the model.")
+    if not args.via and not assistant.key_present():
+        sys.exit("ANTHROPIC_API_KEY is not set; use --via https://<deployed site> to generate there.")
+    if args.readings:
+        write_readings(args.only or list(PRESETS), args.force, args.via)
+        return
     records = catalogue.investigations()
     accessions = args.only or list(records)
     unknown = [accession for accession in accessions if accession not in records]
@@ -89,10 +332,13 @@ def main() -> None:
         if os.path.exists(path) and not args.force:
             print(f"{accession}: kept the existing summary (use --force to replace it)")
             continue
-        summary = summarise(accession)
+        summary = summarise_live(args.via, accession) if args.via else summarise(accession)
         cited = sum(1 for block in summary["blocks"] if block["citations"])
-        print(f"{accession}: {len(summary['blocks'])} blocks, {cited} cited -> {write(summary)}")
+        print(f"{accession}: {len(summary['blocks'])} blocks, {cited} cited -> {write(summary, path)}")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except RuntimeError as error:  # a sources-only reply: nothing was stored for that item
+        sys.exit(str(error))
