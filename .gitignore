@@ -9,3 +9,7 @@ claude-starter-kit/
 
 # Downloaded PSI documents (rebuilt by the pipeline)
 .cache/
+
+# Python
+__pycache__/
+*.pyc

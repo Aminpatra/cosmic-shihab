@@ -1,0 +1,25 @@
+file,accession,investigation,doi_url,psi_file_name,psi_category,bytes_here,bytes_at_psi,check
+BASS-II Test Matrix by PI Final.xlsx,PSI-25,BASS-II,https://doi.org/10.60555/4qc4-de67,PSI-25_Science Documents_BASS-II_Test.Matrices.xlsx,Science Documents,28956,28956,same size as PSI: yes
+PSI-100_Experimental table_SAFFIRE-3.csv,PSI-100,SAFFIRE-III,https://doi.org/10.60555/040q-4h36,PSI-100_Experimental table_SAFFIRE-3.csv,Experimental table,239,239,same size as PSI: yes
+PSI-101_Experimental table_SAME-R.csv,PSI-101,SAME-R,https://doi.org/10.60555/2np7-jv14,PSI-101_Experimental table_SAME-R.csv,Experimental table,5674,5674,same size as PSI: yes
+PSI-102_Experimental table_SAME.csv,PSI-102,SAME,https://doi.org/10.60555/gd4k-8h62,PSI-102_Experimental table_SAME.csv,Experimental table,331,331,same size as PSI: yes
+PSI-106_Experimental table_Slice.csv,PSI-106,SLICE,https://doi.org/10.60555/pm12-rg61,PSI-106_Experimental table_Slice.csv,Experimental table,734,734,same size as PSI: yes
+PSI-107_Experimental table_Spice.csv,PSI-107,SPICE,https://doi.org/10.60555/9kbh-e962,PSI-107_Experimental table_Spice.csv,Experimental table,31205,31205,same size as PSI: yes
+PSI-10_Experimental table_Flame Design_Inverse Flame.csv,PSI-10,ACME/Flame Design,https://doi.org/10.60555/w4zy-bt45,PSI-10_Experimental table_Flame Design_Inverse Flame.csv,Experimental table,17314,17314,same size as PSI: yes
+PSI-10_Experimental table_Flame Design_Normal Flame.csv,PSI-10,ACME/Flame Design,https://doi.org/10.60555/w4zy-bt45,PSI-10_Experimental table_Flame Design_Normal Flame.csv,Experimental table,26933,26933,same size as PSI: yes
+PSI-142_Experimental table_Data Summary Table.csv,PSI-142,,https://doi.org/10.60555/80qf-vj95,PSI-142_Experimental table_Data Summary Table.csv,Experimental table,727,727,same size as PSI: yes
+PSI-159_Experimental table_CFI-G_Inverse Flames.csv,PSI-159,ACME CFI-G,https://doi.org/10.60555/cyt1-kh64,PSI-159_Experimental table_CFI-G_Inverse Flames.csv,Experimental table,39422,39422,same size as PSI: yes
+PSI-159_Experimental table_CFI-G_Normal Flames.csv,PSI-159,ACME CFI-G,https://doi.org/10.60555/cyt1-kh64,PSI-159_Experimental table_CFI-G_Normal Flames.csv,Experimental table,22166,22166,same size as PSI: yes
+PSI-159_Raw Data_Final ACME Chamber Calculator - 2021-03-09 to 2021-10-21.xlsx,PSI-159,ACME CFI-G,https://doi.org/10.60555/cyt1-kh64,PSI-159_Raw Data_Final ACME Chamber Calculator - 2021-03-09 to 2021-10-21.xlsx,Raw Data,929664,929664,same size as PSI: yes
+PSI-20_Experimental table_ACME BRE.csv,PSI-20,ACME BRE,https://doi.org/10.60555/vb93-3y72,PSI-20_Experimental table_ACME BRE.csv,Experimental table,1113,1113,same size as PSI: yes
+PSI-21_Experimental table_CLD Flame.csv,PSI-21,ACME CLD Flame,https://doi.org/10.60555/23e1-9950,PSI-21_Experimental table_CLD Flame.csv,Experimental table,2454,2454,same size as PSI: yes
+PSI-22_Experimental table_ACME E-FIELD Flames.csv,PSI-22,ACME E-FIELD Flames,https://doi.org/10.60555/se5a-8c73,PSI-22_Experimental table_ACME E-FIELD Flames.csv,Experimental table,2475,2475,same size as PSI: yes
+PSI-23_Experimental table_ACME s-Flame.csv,PSI-23,ACME s-Flame,https://doi.org/10.60555/k57n-p030,PSI-23_Experimental table_ACME s-Flame.csv,Experimental table,2456,2456,same size as PSI: yes
+PSI-25_Experimental table_BASS-II.csv,PSI-25,BASS-II,https://doi.org/10.60555/4qc4-de67,PSI-25_Experimental table_BASS-II.csv,Experimental table,16590,16590,same size as PSI: yes
+PSI-26_Experimental table_BASS.csv,PSI-26,BASS,https://doi.org/10.60555/58h4-dy80,PSI-26_Experimental table_BASS.csv,Experimental table,4726,4726,same size as PSI: yes
+PSI-39_Experimental table_CFI.csv,PSI-39,CFI,https://doi.org/10.60555/m6pj-a914,PSI-39_Experimental table_CFI.csv,Experimental table,7792,7792,same size as PSI: yes
+PSI-47_Experimental table_DAFT.csv,PSI-47,DAFT / DAFT-2,https://doi.org/10.60555/ztgj-d202,PSI-47_Experimental table_DAFT.csv,Experimental table,518,518,same size as PSI: yes
+PSI-68_Experimental table_Flex2.csv,PSI-68,FLEX-2,https://doi.org/10.60555/byp8-h018,PSI-68_Experimental table_Flex2.csv,Experimental table,1029,1029,same size as PSI: yes
+PSI-69_Experimental table_FLEX.csv,PSI-69,FLEX,https://doi.org/10.60555/mbq8-0451,PSI-69_Experimental table_FLEX.csv,Experimental table,24776,24776,same size as PSI: yes
+PSI-98_Experimental table_SAFFIRE-1.csv,PSI-98,SAFFIRE-I,https://doi.org/10.60555/0t15-1z43,PSI-98_Experimental table_SAFFIRE-1.csv,Experimental table,469,469,same size as PSI: yes
+PSI-99_Experimental table_SAFFIRE-2.csv,PSI-99,SAFFIRE-II,https://doi.org/10.60555/2chp-m469,PSI-99_Experimental table_SAFFIRE-2.csv,Experimental table,1973,1973,same size as PSI: yes

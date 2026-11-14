@@ -860,7 +860,9 @@ Three agreements come before parallel work, one line each in
     real rows from track B, so tracks C, E and F are not blocked.
 2.  **The API endpoints** and their response shape, from track C, so
     track E can build against fixtures.
-3.  **The folder layout.** Decided 2026-11-14, shaped by how Vercel
+3.  **The folder layout.** Proposed 2026-11-14 for the lead's
+    approval, and already used by `pipeline/` and `backend/data/`.
+    It is shaped by how Vercel
     deploys a frontend and a Python backend as two services in one
     project (Vercel docs, read the same day):
 
@@ -906,7 +908,8 @@ Settled on 2026-11-14:
   Where the data comes from    Proposed in `docs/DATA_PLAN.md`: all 24 PSI
                                combustion investigations as a catalogue, eight
                                of them with enough rows to rank and model.
-  Folders and Vercel           The layout in section 13: `frontend/` and
+  Folders and Vercel           Proposed, for the lead's approval: the layout in
+                               section 13. `frontend/` and
                                `backend/` are deployed as two Vercel services;
                                `pipeline/` runs offline and writes read-only
                                files into `backend/data/`.

@@ -1,4 +1,3 @@
-# Append-only log: let git combine lines added by parallel branches instead of conflicting.
-docs/DECISIONS.md merge=union
-# The session-start hook is a bash script; keep LF endings on Windows checkouts or it will not run.
-.claude/hooks/*.sh text eol=lf
+# Raw NASA files and saved API responses are kept byte for byte: no line-ending conversion.
+datasets/** -text
+pipeline/tests/fixtures/** -text

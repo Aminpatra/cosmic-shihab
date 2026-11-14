@@ -1,6 +1,7 @@
 # PSI data plan
 
-**Status: proposed, for review. No code is written yet.**
+**Status: the catalogue is built (tasks 0 to 6). Search inside documents (tasks 7 to 10) is
+proposed, for the lead's review.**
 Everything below was measured against the live PSI API on 14 November 2026.
 
 ## What PSI holds for combustion
@@ -103,7 +104,8 @@ single file over 100 MB. Measure the index before committing it.
 
 ## Where the code lives
 
-The folder layout is decided (master prompt, section 13) and follows how Vercel deploys:
+The folder layout (master prompt, section 13) is a proposal for the lead's approval. It follows
+how Vercel deploys:
 
 - **`pipeline/`** holds the harvesting and indexing logic. It runs by hand, is never deployed, and
   may use heavy libraries such as PDF readers. The data-strategy prompt asked for `app/services/`;
@@ -116,8 +118,10 @@ The folder layout is decided (master prompt, section 13) and follows how Vercel 
 
 ## Tasks
 
-Each task is one small change with its own check. Tasks 1 to 6 give FLARE a complete, reliable
-catalogue and are enough for the deadline. Tasks 7 to 9 add search inside documents.
+Each task is one small change with its own check. Tasks 0 to 6 give FLARE a complete, reliable
+catalogue and are **done**: the code is in `pipeline/`, the output in `backend/data/` and
+`datasets/`, and `python3 -m unittest discover -s pipeline/tests` runs their 15 checks. Tasks 7
+to 10 add search inside documents and are not started.
 
 | # | Task | Done when |
 |---|---|---|

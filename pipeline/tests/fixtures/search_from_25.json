@@ -1,0 +1,13 @@
+{
+ "hits": {
+  "total": 26,
+  "hits": [
+   {
+    "_source": {
+     "Accession": "PSI-101",
+     "Research Area": "Combustion Science"
+    }
+   }
+  ]
+ }
+}
