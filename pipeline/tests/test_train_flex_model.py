@@ -69,7 +69,12 @@ class CommittedResults(unittest.TestCase):
             committed = json.load(handle)
         if committed["reproduce"]["scikit_learn"] != tfm.sklearn.__version__:
             self.skipTest("results were made with another scikit-learn version")
-        self.assertEqual(json.loads(json.dumps(tfm.train())), committed)
+        fresh = json.loads(json.dumps(tfm.train()))
+        # The Python version is recorded for the reader; the numbers depend on the libraries,
+        # checked above, so a teammate on another Python must still match.
+        for results in (fresh, committed):
+            results["reproduce"].pop("python")
+        self.assertEqual(fresh, committed)
 
 
 if __name__ == "__main__":

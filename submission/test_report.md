@@ -31,9 +31,11 @@ Vercel; the live checks below are what exercise that version.
 - The pages themselves have no automated tests; they are checked by hand (`qa_results.md`).
 - The run-analysis tests compare the CSV files and `summary.md`, not the charts, so they ran
   without matplotlib.
-- The FLEX model's reproducibility test only passes on Python 3.15.2. The stored results record the
-  Python version and the test compares that too, so it fails on any other version even though the
-  model's numbers match (found by #51). A fix follows #38.
+- The FLEX model's reproducibility test used to fail on any Python but 3.15.2. The stored results
+  record the Python version and the test compared that too, although the model's numbers matched
+  (found by #51). It is fixed in #38: the test now leaves the recorded Python version out. Run as
+  if on Python 3.12.9 (`platform.python_version` replaced), the fixed test prints `Ran 1 test in
+  246.907s OK`. It still skips when the scikit-learn version differs.
 
 ## Concrete checks (master prompt, section 8)
 
@@ -162,7 +164,7 @@ What each PR says it checked, and whether that was run again for this report.
 | #42 | Methodology page | Numbers traced to repo files by hand; no tests listed | The build passes; not checked at 375px yet |
 | #43 | Vercel deploy | The curl checks in `docs/DEPLOY.md` | Yes; see check 8 |
 | #44 | Runs API | 10 endpoint checks (85 backend tests at the time) | Yes (`test_runs_api`, 10) |
-| #45 | FLEX outcome model | A test reruns training and requires the committed results to match exactly | Yes on Python 3.15.2 (`test_committed_results_are_what_this_code_produces`), plus 6 FLEX data tests and 8 API tests. It fails on other Python versions; see "Test suites" |
+| #45 | FLEX outcome model | A test reruns training and requires the committed results to match exactly | Yes (`test_committed_results_are_what_this_code_produces`, `Ran 1 test in 80.343s OK`), plus 6 FLEX data tests and 8 API tests. Fixed for other Python versions; see "Test suites" |
 | #48 | QA of Home and Sources | `qa_results.md` | Not run again; its findings are #46 (open) and #47 (fixed by #50) |
 | #49 | Explorer, Scenario, Comparison | 22 helper tests | Yes, 22 pass; checks 2 to 5 were rendered on its Comparison page |
 | #50 | Empty and changing data on Home and Sources | Edge at 375 and 1440px with the API's answer swapped (real, empty, one, no link or DOI, 500, offline); build and 22 tests | The build and tests pass; the Edge check was not run again |
@@ -176,7 +178,6 @@ What each PR says it checked, and whether that was run again for this report.
 - Home and Sources still break at 200% text and in places at 375px (#46).
 - The lunar notice is shown once above the ranked list rather than on each result (check 4). That
   needs a team decision.
-- The FLEX reproducibility test fails on any Python other than 3.15.2.
 - The assistant has never made a live model call; the key has not arrived.
 - #50 reports, not rerun here, that the Assistant, Scenario, Comparison and Explorer pages don't
   yet tell an API error apart from no answer, and that the Assistant still says "Loading the 24
