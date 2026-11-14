@@ -5,6 +5,7 @@ description = "FLARE API: serves the NASA PSI combustion catalogue in data/."
 requires-python = ">=3.12,<3.15"
 # Runtime only: this is what Vercel installs. Local tools are in requirements-dev.txt.
 dependencies = [
+    "anthropic==2.8.0",  # the assistant (app/assistant.py); unused without ANTHROPIC_API_KEY
     "fastapi==0.162.7",
 ]
 
