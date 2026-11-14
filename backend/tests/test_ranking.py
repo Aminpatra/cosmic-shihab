@@ -96,5 +96,79 @@ class RowScoring(Fixtures):
         self.assertEqual(scenario.set_variables(), ["oxygen"])
 
 
+def item(out: dict, accession: str) -> dict:
+    return next(i for i in out["items"] if i["accession"] == accession)
+
+
+class Ranking(Fixtures):
+    def test_flex_ranks_first_for_its_own_conditions(self):
+        top = ranking.rank(ranking.Scenario(oxygen=0.21, pressure=1.0, fuel="methanol"))["items"][0]
+        self.assertEqual(top["accession"], "PSI-69")
+        self.assertGreaterEqual(top["score"], 99)
+        self.assertEqual({m["variable"] for m in top["matches"]}, {"oxygen", "pressure", "fuel"})
+        self.assertEqual(top["best_tests"][0]["file"], "PSI-69_Experimental table_FLEX.csv")
+
+    def test_changing_oxygen_changes_only_rows_with_oxygen(self):
+        a = ranking.Scenario(oxygen=0.21, fuel="methanol")
+        b = ranking.Scenario(oxygen=0.40, fuel="methanol")
+        self.assertNotEqual(ranking.score_row(a, self.flex1, self.flex_tags),
+                            ranking.score_row(b, self.flex1, self.flex_tags))
+        self.assertEqual(ranking.score_row(a, self.spice_row, self.spice_tags),
+                         ranking.score_row(b, self.spice_row, self.spice_tags))
+        flex = item(ranking.rank(b), "PSI-69")
+        named = [d["scenario"] for d in flex["matches"] + flex["differences"] if d["variable"] == "oxygen"]
+        self.assertEqual(named, [0.40])
+
+    def test_missing_information_is_named(self):
+        out = ranking.rank(ranking.Scenario(oxygen=0.21, flow_velocity=20))
+        self.assertIn("flow_velocity", item(out, "PSI-69")["unavailable"])
+        self.assertIn("oxygen", item(out, "PSI-107")["unavailable"])
+
+    def test_lunar_scenario_notes_microgravity_on_every_result(self):
+        out = ranking.rank(ranking.Scenario(environment="lunar", oxygen=0.21))
+        self.assertTrue(out["items"])
+        self.assertTrue(all("not partial gravity" in i["gravity_note"] for i in out["items"]))
+        spacecraft = ranking.rank(ranking.Scenario(environment="spacecraft", oxygen=0.21))
+        self.assertTrue(all(i["gravity_note"] is None for i in spacecraft["items"]))
+
+    def test_empty_scenario_is_explained_not_ranked(self):
+        for scenario in [ranking.Scenario(), ranking.Scenario(environment="mars"),
+                         ranking.Scenario(oxygen=0.21, weights={"oxygen": 0})]:  # Review Focus 2
+            out = ranking.rank(scenario)
+            self.assertEqual((out["items"], out["message"]), ([], "Set at least one condition to rank."))
+            self.assertEqual(len(out["not_ranked"]), 24)
+        self.assertIsNotNone(ranking.rank(ranking.Scenario(environment="mars"))["gravity_note"])
+
+    def test_structural_not_ranked_set(self):
+        out = ranking.rank(ranking.Scenario(oxygen=0.21))
+        self.assertEqual({n["accession"] for n in out["not_ranked"]},
+                         {"PSI-47", "PSI-60", "PSI-62", "PSI-115", "PSI-117", "PSI-142"})
+        self.assertEqual(len(out["items"]) + len(out["not_ranked"]), 24)
+
+    def test_out_of_range_values_score_zero_as_differences(self):  # Review Focus 3
+        for scenario in [ranking.Scenario(oxygen=1.0), ranking.Scenario(pressure=0.0, flow_velocity=500)]:
+            for result in ranking.rank(scenario)["items"]:
+                self.assertGreaterEqual(result["score"], 0)
+        flex = item(ranking.rank(ranking.Scenario(oxygen=1.0)), "PSI-69")
+        self.assertEqual([d["variable"] for d in flex["differences"]], ["oxygen"])
+
+    def test_unknown_fuel_scores_zero_and_still_ranks(self):  # Review Focus 4
+        out = ranking.rank(ranking.Scenario(oxygen=0.21, fuel="kerosene"))
+        self.assertTrue(out["items"])
+        self.assertTrue(all(i["score"] <= 50 for i in out["items"]))
+
+    def test_zero_weight_equals_leaving_the_variable_out(self):
+        with_zero = ranking.rank(ranking.Scenario(oxygen=0.21, flow_velocity=20, weights={"flow_velocity": 0}))
+        without = ranking.rank(ranking.Scenario(oxygen=0.21))
+        self.assertEqual([(i["accession"], i["score"]) for i in with_zero["items"]],
+                         [(i["accession"], i["score"]) for i in without["items"]])
+
+    def test_calculated_pressure_keeps_original(self):
+        flex = item(ranking.rank(ranking.Scenario(pressure=1.0)), "PSI-69")
+        pressure = flex["best_tests"][0]["values"]["pressure"]
+        self.assertTrue(pressure["calculated"])
+        self.assertEqual(pressure["original"]["unit"], "mmHg")
+
+
 if __name__ == "__main__":
     unittest.main()

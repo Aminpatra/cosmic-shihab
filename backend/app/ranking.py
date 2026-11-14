@@ -10,7 +10,7 @@ import re
 from dataclasses import dataclass, field
 from functools import cache
 
-from app import runs
+from app import catalogue, runs
 
 NUMERIC = ("oxygen", "pressure", "flow_velocity")
 UNITS = {"oxygen": "mole fraction", "pressure": "atm", "flow_velocity": "cm/s"}
@@ -148,3 +148,125 @@ def score_row(scenario: Scenario, row: dict, tags: dict) -> tuple[float, dict[st
     if not total:
         return 0.0, parts
     return sum(scenario.weight(v) * (parts[v] or 0.0) for v in variables) / total, parts
+
+
+NOTICE = ("A relevance score shows how closely NASA's tests match this scenario. "
+          "It is not a safety assessment.")
+EMPTY = "Set at least one condition to rank."
+VERSION = "1"
+
+
+def _summary(record: dict) -> dict:
+    return {key: record[key] for key in ("accession", "title", "investigationAcronym", "doi")}
+
+
+def _has_fuel(row: dict) -> bool:
+    fuel = row.get("standard", {}).get("fuel") or {}
+    return bool(fuel.get("text") or fuel.get("material"))
+
+
+def _structural_reason(accession: str) -> str | None:
+    """Why an investigation cannot be ranked whatever the scenario, or None."""
+    content = runs.runs().get(accession)
+    if content is None:
+        return "No experimental table: catalogue only"
+    if all(table["row_is"] == "published_figure" for table in content["tables"]):
+        return "An index of published figures, not tests"
+    rows = [row for table in content["tables"] for row in table["rows"]]
+    if not any(_has_fuel(r) or any(scorable_value(r, v) is not None for v in NUMERIC) for r in rows):
+        return "No test conditions recorded"
+    return None
+
+
+def _gravity_note(g: float | None, tags: dict | None = None) -> str | None:
+    if not g:  # microgravity (0) or unknown (custom without gravity_g)
+        return None
+    if tags is None:
+        evidence = "NASA's evidence comes from microgravity and normal-gravity tests"
+    else:
+        levels = tag_values(tags, "gravity_level") or ["untagged"]
+        evidence = f"The evidence comes from {' and '.join(levels)} tests"
+    return f"This scenario is at {g:g} g. {evidence}, not partial gravity."
+
+
+def _comparison(scenario, variable, scored, tags) -> dict:
+    entry = {"variable": variable, "scenario": getattr(scenario, variable)}
+    if variable in NUMERIC:
+        values = [v for _, _, _, row in scored if (v := scorable_value(row, variable)) is not None]
+        target = getattr(scenario, variable)
+        entry |= {"tested_min": min(values), "tested_max": max(values),
+                  "closest": min(values, key=lambda v: abs(v - target)), "unit": UNITS[variable]}
+    elif variable == "fuel":
+        texts = {row["standard"]["fuel"].get("text") for _, _, _, row in scored if _has_fuel(row)}
+        entry["tested"] = sorted(t for t in texts if t)[:10]
+    else:
+        entry["tested"] = tag_values(tags, "fuel_phase" if variable == "fuel_phase" else "fire_safety_role")
+    return entry
+
+
+def _rank_one(scenario: Scenario, variables: list[str], record: dict, content: dict, g) -> dict:
+    tags = record["derived"]["tags"]["values"]
+    scored = []
+    for table in content["tables"]:
+        for row in table["rows"]:
+            score, parts = score_row(scenario, row, tags)
+            scored.append((score, parts, table, row))
+    scored.sort(key=lambda entry: -entry[0])  # stable: equal scores keep PSI's row order
+    best_score, best_parts = scored[0][0], scored[0][1]
+
+    matches, differences, unavailable = [], [], []
+    for variable in variables:
+        if all(parts[variable] is None for _, parts, _, _ in scored):
+            unavailable.append(variable)
+            continue
+        entry = _comparison(scenario, variable, scored, tags)
+        (matches if (best_parts[variable] or 0) >= CLOSE else differences).append(entry)
+
+    best_tests = []
+    for score, _, table, row in scored[:3]:
+        standard = row.get("standard", {})
+        values = {v: standard[v] for v in variables if v in standard}
+        best_tests.append({"file": table["file"], "line": row["line"], "run_id": row.get("run_id"),
+                           "score": round(score * 100), "values": values})
+    outcomes = {key for _, _, _, row in scored for key, value in row.get("standard", {}).items()
+                if value.get("role") == "outcome"}
+    units = sorted({table["row_is"] for table in content["tables"]})
+    return {
+        **_summary(record),
+        "score": round(best_score * 100),
+        "close_tests": sum(1 for score, _, _, _ in scored if score >= CLOSE),
+        "rows_scored": len(scored),
+        "row_unit": "; ".join(units),
+        "used_variables": {v: scenario.weight(v) for v in variables},
+        "matches": matches,
+        "differences": differences,
+        "unavailable": unavailable,
+        "best_tests": best_tests,
+        "measured_outcomes": sorted(outcomes),
+        "gravity_note": _gravity_note(g, tags),
+    }
+
+
+def rank(scenario: Scenario) -> dict:
+    """Every investigation, ranked against the scenario or listed as not ranked with a reason."""
+    variables = scenario.set_variables()
+    g = scenario.gravity()
+    out = {
+        "message": None if variables else EMPTY,
+        "gravity_note": _gravity_note(g),
+        "method": {"variables": variables, "weights": {v: scenario.weight(v) for v in variables},
+                   "weights_reason": WEIGHTS_REASON, "tolerances": tolerances(), "units": UNITS,
+                   "close": CLOSE, "version": VERSION},
+        "notice": NOTICE,
+        "items": [],
+        "not_ranked": [],
+    }
+    for accession, record in catalogue.investigations().items():
+        reason = _structural_reason(accession) or (None if variables else EMPTY)
+        if reason:
+            out["not_ranked"].append({**_summary(record), "reason": reason})
+        else:
+            out["items"].append(_rank_one(scenario, variables, record, runs.runs()[accession], g))
+    out["items"].sort(key=lambda i: (-i["score"], -i["close_tests"],
+                                     catalogue._accession_number(i["accession"])))
+    return out
