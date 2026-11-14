@@ -69,7 +69,7 @@ export default function Layout() {
         </p>
         <p>
           Data: NASA Physical Sciences Informatics. FLARE helps people find and compare research. A relevance score is
-          not a safety assessment, and FLARE never predicts a real fire. <Link to="/sources">Sources and methodology</Link>
+          not a safety assessment, and FLARE never predicts a real fire. <Link to="/methodology">Methodology</Link>
         </p>
       </footer>
       <ScrollRestoration />
