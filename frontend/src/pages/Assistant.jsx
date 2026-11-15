@@ -21,7 +21,13 @@ async function ask(question, accessions, signal) {
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({ question, accessions }),
   })
-  if (!res.ok) throw new Error(`The FLARE API answered ${res.status}.`)
+  if (!res.ok) {
+    const error = new Error(`The FLARE API answered ${res.status}.`)
+    error.status = res.status
+    // 429: this address asked too often (#81); the API says how long to wait.
+    if (res.status === 429) error.detail = (await res.json().catch(() => null))?.detail
+    throw error
+  }
   return res.json()
 }
 
@@ -370,6 +376,8 @@ export default function Assistant() {
               onKeyDown={(event) => {
                 if (event.key === 'Enter' && !event.shiftKey) {
                   event.preventDefault()
+                  // One question at a time: a held or repeated Enter must not start another request.
+                  if (event.repeat || state.status === 'asking') return
                   submit()
                 }
               }}
@@ -420,10 +428,17 @@ export default function Assistant() {
           <div className="api-error" role="alert">
             <TriangleAlert size={20} aria-hidden="true" />
             <div>
-              <p>
-                <strong>The question could not be answered.</strong> The FLARE API did not respond, so no answer is
-                shown rather than a guess.
-              </p>
+              {state.error?.status === 429 ? (
+                <p>
+                  <strong>Too many questions from this address.</strong>{' '}
+                  {state.error.detail ?? 'Wait a minute, then try again.'}
+                </p>
+              ) : (
+                <p>
+                  <strong>The question could not be answered.</strong> The FLARE API did not respond, so no answer is
+                  shown rather than a guess.
+                </p>
+              )}
               <button type="button" className="button-quiet" onClick={() => submit(state.question)}>
                 <RotateCw size={16} aria-hidden="true" />
                 Try again
