@@ -46,7 +46,12 @@ curl -s -o /dev/null -w "%{http_code}\n" $B/explorer       # 200, text/html
 curl -s -o /dev/null -w "%{http_code}\n" $B/favicon.svg    # 200, image/svg+xml
 curl -s -o /dev/null -w "%{http_code}\n" $B/api/nope       # 404
 curl -s "$B/api/rank?oxygen=0.3&pressure=0.7" | head -c 200    # JSON with ranked items
+curl -sI $B/ | grep -iE "content-security|nosniff|referrer"     # the three security headers (#85)
 ```
+
+Then open `$B/pitch.html` and play slides 4 to 6, and open `$B/api/docs`: a Content-Security-Policy
+that is too strict blanks them, and `vercel dev` does not apply `vercel.json`'s headers, so only a
+deployment shows them.
 
 **Deploy log**
 
