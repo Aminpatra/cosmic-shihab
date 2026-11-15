@@ -2,7 +2,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, ExternalLink, FileText, Info, RotateCw, TriangleAlert, X } from 'lucide-react'
 import { getJSON, useApi } from '../api.js'
-import { TIERS, nameOf, runsOf, tierOf } from '../catalogue.js'
+import { TIERS, countOf, nameOf, runsOf, tierOf } from '../catalogue.js'
 import { LoadError, Loading } from '../components/ApiState.jsx'
 import './Assistant.css'
 
@@ -89,7 +89,7 @@ function ScopeLane({ investigations, chosen, onToggle, onPoint }) {
 
 function Scope({ catalogue, chosen, setChosen }) {
   const [pointed, setPointed] = useState(null)
-  if (catalogue.status === 'loading') return <Loading label="Loading the 24 investigations…" />
+  if (catalogue.status === 'loading') return <Loading label="Loading the investigations…" />
   if (catalogue.status === 'error') return <LoadError what="The investigation list" retry={catalogue.retry} error={catalogue.error} />
 
   const byId = Object.fromEntries(catalogue.data.map((inv) => [inv.accession, inv]))
@@ -152,7 +152,8 @@ function Scope({ catalogue, chosen, setChosen }) {
           </ul>
         ) : (
           <p className="scope-note">
-            None chosen: FLARE uses the investigations your question names, or searches all 24.
+            None chosen: FLARE uses the investigations your question names, or searches all{' '}
+            {countOf(catalogue.data.length, 'investigation')}.
           </p>
         )}
       </div>
@@ -362,7 +363,11 @@ export default function Assistant() {
         <header className="assistant-head">
           <h1>AI Research Assistant</h1>
           <p className="assistant-lede">
-            Ask about the 24 NASA combustion investigations. Answers come only from their PSI records and documents,
+            Ask about the{' '}
+            {catalogue.status === 'ready' && catalogue.data.length > 0
+              ? countOf(catalogue.data.length, 'NASA combustion investigation')
+              : 'NASA combustion investigations'}
+            . Answers come only from their PSI records and documents,
             cite each source, and say so when no source answers.
           </p>
         </header>

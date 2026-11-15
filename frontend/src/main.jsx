@@ -26,6 +26,7 @@ import Methodology from './pages/Methodology.jsx'
 import Visualization from './pages/Visualization.jsx'
 import InProgress from './pages/InProgress.jsx'
 import NotFound from './pages/NotFound.jsx'
+import RouteError from './components/RouteError.jsx'
 import { PAGES } from './pages.js'
 
 const slots = PAGES.filter((page) => !page.ready).map((page) => ({
@@ -37,7 +38,13 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
+    // If the layout itself fails there is no header to keep: the message stands on its own.
+    errorElement: <RouteError />,
     children: [
+      {
+        // A page that throws while drawing shows FLARE's message inside the layout, header kept (#86).
+        errorElement: <RouteError />,
+        children: [
       { index: true, element: <Home /> },
       { path: 'sources', element: <Sources /> },
       { path: 'assistant', element: <Assistant /> },
@@ -49,6 +56,8 @@ const router = createBrowserRouter([
       { path: 'visualization', element: <Visualization /> },
       ...slots,
       { path: '*', element: <NotFound /> },
+        ],
+      },
     ],
   },
 ])
