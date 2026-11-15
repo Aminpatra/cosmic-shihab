@@ -57,8 +57,8 @@ export default function Methodology() {
               <ul className="facts-list">
                 <li>
                   <strong>Records.</strong> Each investigation's PSI record is stored as published: title, objective,
-                  hypothesis, approach, hardware, DOI, licence and publications. Contact e-mail addresses and phone
-                  numbers are left out.
+                  hypothesis, approach, hardware, DOI, licence and publications. The contacts' e-mail addresses and phone
+                  numbers are left out of these records.
                 </li>
                 <li>
                   <strong>File lists.</strong> PSI lists 60,866 files (13.5 TB) for these investigations. FLARE stores the
@@ -74,7 +74,9 @@ export default function Methodology() {
                   <strong>Documents.</strong> 256 of the 352 PSI documents in scope are indexed for search, as 18,036
                   passages of about 150 words. The other 96 could not be read: 72 hold no text (mostly engineering
                   drawings), 15 are in old Word and PowerPoint formats, 7 could not be served by PSI on the day (5 of them
-                  Saffire) and 2 are damaged PDFs.
+                  Saffire) and 2 are damaged PDFs. Passages keep the documents' own words, so where a NASA document prints
+                  its authors' work e-mail addresses or phone numbers, they appear in search results and among the
+                  assistant's sources.
                 </li>
               </ul>
             </section>
