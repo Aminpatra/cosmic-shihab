@@ -18,6 +18,14 @@ test('parseNumber reads trimmed numbers and a decimal comma', () => {
   assert.equal(parseNumber('4.3'), 4.3)
   assert.equal(parseNumber(''), null)
   assert.equal(parseNumber('abc'), null)
+  // Number() alone reads these as 16, 5 and 7; nobody types them meaning that.
+  assert.equal(parseNumber('0x10'), null)
+  assert.equal(parseNumber('0b101'), null)
+  assert.equal(parseNumber('0o7'), null)
+  // Exponents stay: the page's own links write a tiny gravity as 1e-7.
+  assert.equal(parseNumber(String(1e-7)), 1e-7)
+  assert.equal(parseNumber('.5'), 0.5)
+  assert.equal(parseNumber('1e999'), null)
 })
 
 test('pressure converts to atm', () => {
@@ -78,6 +86,29 @@ test('validate catches what the API would reject, and hints at a fraction typed 
     'Enter at least one condition. FLARE ranks only on what you set.',
   )
   assert.deepEqual(validate({ ...EMPTY_FORM, fuelPhase: 'gas' }).errors, {})
+})
+
+test("validate holds to GET /api/rank's upper limits, in the visitor's unit", () => {
+  const errors = (form) => validate({ ...EMPTY_FORM, ...form }).errors
+  assert.equal(errors({ pressure: '200', pUnit: 'psi' }).pressure, 'Pressure must be at most 146.959 psi (10 atm), the most the ranking accepts.')
+  assert.equal(errors({ pressure: '1100', pUnit: 'kPa' }).pressure, 'Pressure must be at most 1013.25 kPa (10 atm), the most the ranking accepts.')
+  assert.equal(errors({ pressure: '10.5', pUnit: 'atm' }).pressure, 'Pressure must be at most 10 atm, the most the ranking accepts.')
+  // The limit itself passes in every unit, and is sent as no more than 10 atm.
+  for (const [pressure, pUnit] of [['146.959', 'psi'], ['1013.25', 'kPa'], ['10', 'atm']]) {
+    assert.equal(errors({ pressure, pUnit }).pressure, undefined, `${pressure} ${pUnit}`)
+    assert.ok(Number(formToParams({ ...EMPTY_FORM, pressure, pUnit }).get('pressure')) <= 10, `${pressure} ${pUnit}`)
+  }
+  assert.equal(errors({ flow: '5000' }).flow, 'Airflow must be at most 1000 cm/s, the most the ranking accepts.')
+  assert.equal(errors({ flow: '1000' }).flow, undefined)
+  assert.equal(errors({ fuel: 'x'.repeat(101) }).fuel, 'Fuel must be at most 100 characters.')
+  assert.equal(errors({ fuel: ` ${'x'.repeat(100)} ` }).fuel, undefined)
+  // The ranking reads a fuel by its words of two or more letters or digits, so "a" would be dropped.
+  for (const fuel of ['a', 'a b', '-', 'メタン']) {
+    assert.match(errors({ fuel }).fuel ?? '', /can't read a fuel name/, fuel)
+  }
+  for (const fuel of ['ethylene', 'C2H4', 'n-heptane', '75 % propylene']) {
+    assert.equal(errors({ fuel }).fuel, undefined, fuel)
+  }
 })
 
 test('niceAxis covers the range with round ticks', () => {
