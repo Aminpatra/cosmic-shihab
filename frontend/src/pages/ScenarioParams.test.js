@@ -10,6 +10,7 @@ import {
   hasScenario,
   rankPath,
   niceAxis,
+  fuelSuggestions,
 } from './ScenarioParams.js'
 
 test('parseNumber reads trimmed numbers and a decimal comma', () => {
@@ -93,4 +94,14 @@ test('hasScenario and rankPath', () => {
   assert.equal(hasScenario(new URLSearchParams('oxygen=0.3')), true)
   const p = new URLSearchParams('environment=lunar&oxygen=0.3&place=rover&p_unit=psi&pick=PSI-69&weight_oxygen=3')
   assert.equal(rankPath(p), '/rank?environment=lunar&oxygen=0.3&weight_oxygen=3')
+})
+
+test('fuel suggestions keep every name that contains the typed text, in the given order', () => {
+  const names = ['propylene', 'methanol', 'ethane', 'pmma', 'dodecane iso dodecane', 'methane', 'dodecane']
+  assert.deepEqual(fuelSuggestions(names, ''), names)
+  assert.deepEqual(fuelSuggestions(names, '   '), names)
+  assert.deepEqual(fuelSuggestions(names, 'ethan'), ['methanol', 'ethane', 'methane'])
+  assert.deepEqual(fuelSuggestions(names, ' PMMA '), ['pmma'])
+  assert.deepEqual(fuelSuggestions(names, 'dodecane  iso'), ['dodecane iso dodecane'])
+  assert.deepEqual(fuelSuggestions(names, 'water'), [])
 })
