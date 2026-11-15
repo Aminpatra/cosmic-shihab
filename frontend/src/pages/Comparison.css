@@ -126,6 +126,8 @@
 
 .weight input[type='range'] {
   width: 7rem;
+  /* 24px tall tap target (WCAG 2.5.8); the native track stays centred */
+  height: 1.5rem;
   accent-color: var(--neon-yellow);
   cursor: pointer;
 }
@@ -229,7 +231,13 @@
 }
 
 .ranked-pick {
+  /* The label around the checkbox is the tap target: at least 24px each way (WCAG 2.5.8) */
+  display: flex;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
   padding-top: 0.1rem;
+  cursor: pointer;
 }
 
 .ranked-pick input {
