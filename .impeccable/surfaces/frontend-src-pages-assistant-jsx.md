@@ -26,7 +26,7 @@ Fira Code for accessions and file names only.
 
 STORY: The visitor sees which investigations a question covers, asks, reads an answer whose every
 sentence says whether it rests on NASA text or is the assistant's explanation, follows a citation
-to the source, and is told plainly when FLARE has no source or no AI key.
+to the source, and is told plainly when FLARE has no source or no SI key.
 
 FIRST VIEWPORT: H1 and lede at left; a full-width question field with the one Neon Yellow Ask
 button; directly below, the catalogue lane at full width labelled SCOPE, chosen cells framed in

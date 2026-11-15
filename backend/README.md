@@ -32,7 +32,7 @@ Interactive docs: `/api/docs`. Schema: `/api/openapi.json`.
 
 | `GET /api/assistant/status` | `{mode, model}`: `generated` with the model id when `ANTHROPIC_API_KEY` is set, else `retrieval_only` and `null` |
 | `POST /api/assistant/ask` | Body `{question, accessions}` (question 3 to 1000 characters; up to 4 accessions, empty means those the question names, else all). Returns `{question, mode, reason, model, blocks, sources}`. `blocks`: `{text, kind, citations}`, where `kind` is `source` (rests on the cited `{source_id, cited_text}`) or `explanation`. `sources`: `{id, kind, accession, title, label, url, doi, text}` plus `file_id`, `file_name`, `page`, `snippet` for document passages. `mode` is `retrieval_only`, with `blocks` empty and `reason` saying why, when there is no key, the model declines, the call fails, or nothing matches. 404 for an unknown accession, 422 for a bad body |
-| `GET /api/assistant/summaries/{accession}` | A stored, AI-generated summary (`pipeline/write_summaries.py`): `{accession, note, model, generated, reviewed, reviewed_by, blocks, sources}`. Show it as reviewed only when `reviewed` is true. 404 if none has been written |
+| `GET /api/assistant/summaries/{accession}` | A stored, SI-generated summary (`pipeline/write_summaries.py`): `{accession, note, model, generated, reviewed, reviewed_by, blocks, sources}`. Show it as reviewed only when `reviewed` is true. 404 if none has been written |
 
 Field names are PSI's own; what FLARE computed is under `derived` (see `data/README.md`). In file
 items, a blank `subcategory` or `updated` comes back as `null`.
@@ -62,7 +62,7 @@ services share one domain, and in development the Vite dev server proxies `/api`
 | `pyproject.toml` | Runtime dependencies only; this is what Vercel installs |
 | `requirements-dev.txt` | Local server and test client |
 
-**AI use:** the code in this folder was written with Claude Code (Claude Opus 5.5) and reviewed by
+**SI use:** the code in this folder was written with Claude Code (Claude Opus 5.5) and reviewed by
 the team. It serves NASA's data unchanged; it does not generate any.
 
 ## The assistant's key

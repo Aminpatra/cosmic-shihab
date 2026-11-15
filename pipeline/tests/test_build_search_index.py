@@ -4,7 +4,7 @@
 
 The PDF checks need pypdf (pipeline/requirements.txt) and are skipped without it.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 import importlib.util

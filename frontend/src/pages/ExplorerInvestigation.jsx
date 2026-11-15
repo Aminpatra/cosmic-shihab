@@ -360,15 +360,15 @@ function People({ rec }) {
   )
 }
 
-// The stored AI summary (#28). An investigation without one shows nothing in its place.
+// The stored SI summary (#28). An investigation without one shows nothing in its place.
 function StoredSummary({ accession }) {
   const summary = useApi(`/assistant/summaries/${encodeURIComponent(accession)}`)
   if (summary.status === 'error' && summary.error?.status === 404) return null
   return (
     <div className="rec-summary">
-      {summary.status === 'loading' && <Loading label="Loading the AI summary…" />}
-      {summary.status === 'error' && <LoadError what="The AI summary" retry={summary.retry} error={summary.error} />}
-      {summary.status === 'ready' && <AiSummary id="summary" title="AI summary" data={summary.data} />}
+      {summary.status === 'loading' && <Loading label="Loading the SI summary…" />}
+      {summary.status === 'error' && <LoadError what="The SI summary" retry={summary.retry} error={summary.error} />}
+      {summary.status === 'ready' && <AiSummary id="summary" title="SI summary" data={summary.data} />}
     </div>
   )
 }

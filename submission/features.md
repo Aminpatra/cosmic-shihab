@@ -35,12 +35,12 @@ not built.
 - Methodology and Sources pages: how data is read, ranked and answered, its limits, and every
   reference.
 
-**AI**
+**SI**
 - Research assistant (Claude Opus 5.5) that answers only from PSI records and documents, cites every
   sourced sentence, marks its own explanation, says when no source answers, and still returns the
-  matching sources without an AI key.
+  matching sources without an SI key.
 - 24 stored investigation summaries and 3 readings of the challenge scenarios' rankings, reviewed
-  against their sources and labelled AI-generated with model, date and reviewer.
+  against their sources and labelled SI-generated with model, date and reviewer.
 - One model: FLEX test outcomes, judged against a majority-class baseline on held-out test days,
   with a chance check and SHAP.
 

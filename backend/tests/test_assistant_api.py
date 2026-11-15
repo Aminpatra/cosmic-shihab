@@ -213,7 +213,7 @@ class Endpoints(unittest.TestCase):
         body = res.json()
         self.assertEqual(body["mode"], "retrieval_only")
         self.assertEqual(body["blocks"], [])
-        self.assertIn("No AI key", body["reason"])
+        self.assertIn("No SI key", body["reason"])
         self.assertNotIn("No passage", body["reason"])
         self.assertEqual(body["sources"][0]["id"], "record:PSI-69")
 

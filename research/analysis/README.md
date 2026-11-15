@@ -98,5 +98,5 @@ negative SPICE air rates, 50 duplicate rows, and the heptane oxygen and burn-tim
 - **`pipeline/process_tables.py`:** flagging those values, and not converting flagged cells into
   `standard`, would fix both of the above at the source.
 
-**AI use:** this analysis and its code were written with Claude Code (Claude Opus 5.5) and reviewed
+**SI use:** this analysis and its code were written with Claude Code (Claude Opus 5.5) and reviewed
 by the team. The data is NASA's; the charts are drawn from it and contain no generated content.

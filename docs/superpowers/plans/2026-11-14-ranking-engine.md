@@ -276,6 +276,6 @@ def test_options_come_from_the_data(self):
 ```
 
 - [ ] **Step 2: Run** `.venv/Scripts/python -m unittest tests.test_ranking_api -v`. Expected: 404s / failures (no route).
-- [ ] **Step 3: Implement** the router, register it, and write the README rows, DECISIONS line and AI-use row.
+- [ ] **Step 3: Implement** the router, register it, and write the README rows, DECISIONS line and SI-use row.
 - [ ] **Step 4: Run the whole suite** `.venv/Scripts/python -m unittest discover -s tests -v`. Expected: all tests OK (25 existing + 3 + 18 + 6 = 52).
 - [ ] **Step 5: Commit** all files above: "Serve the ranking at /api/rank with its options for the Scenario page (#7)".

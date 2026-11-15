@@ -43,7 +43,7 @@ export const PAGES = [
   {
     path: '/assistant',
     nav: 'Assistant',
-    title: 'AI Research Assistant',
+    title: 'SI Research Assistant',
     summary: 'Ask about the investigations. Answers cite their NASA sources and say plainly when no source answers the question.',
     issue: 10,
     ready: true,

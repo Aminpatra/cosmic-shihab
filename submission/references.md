@@ -1,6 +1,6 @@
 # References
 
-Every external resource FLARE uses or was built with: data, rules, software, fonts, AI tools,
+Every external resource FLARE uses or was built with: data, rules, software, fonts, SI tools,
 services and images. Licences are given where the resource states one.
 
 ## NASA data
@@ -68,7 +68,7 @@ report).
 
 **Runtimes:** Python and Node.js.
 
-## AI tools
+## SI tools
 
 - **Claude Code** by Anthropic, with the models Claude Opus 5.5 and Claude Fable 5.2: the coding
   agent the team built FLARE with (see Use of SI).
@@ -118,10 +118,10 @@ by source:
 
 ## Images
 
-- **Team logo** (Cosmic Shihab): the team's own work, not made with AI (`brand/`).
+- **Team logo** (Cosmic Shihab): the team's own work, not made with SI (`brand/`).
 - **Illustrations:** the pitch opening's drawings, the flame drawings on the Methodology and
-  Scenario pages and the astronaut on the Home page, made with AI (Claude Code), each marked
-  "Illustration made with AI".
+  Scenario pages and the astronaut on the Home page, made with SI (Claude Code), each marked
+  "Illustration made with SI".
 - **Charts:** drawn by FLARE from NASA PSI data (SVG on the website; Matplotlib in our analysis).
 - No other images, and no copyrighted music, images or text.
 
@@ -144,7 +144,7 @@ field, issue #36. Sources:
   repo not recorded in the repo); Karpathy guidelines: CLAUDE.md.
 - Context7 MCP: .claude/rules/context7.md.
 - Logo: brand/cosmic-shihab-logo-white.png (the copy in frontend/src/assets/ is on the Sources
-  page) and brand/cosmic-shihab-logo-black.png; the team's own, not AI-made (2026-11-15, #62).
+  page) and brand/cosmic-shihab-logo-black.png; the team's own, not SI-made (2026-11-15, #62).
 - Recharts and Motion are named in CLAUDE.md and PRODUCT.md but are not in frontend/package.json,
   so they are not listed. Add them if a later PR installs them.
 -->

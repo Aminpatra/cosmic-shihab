@@ -20,7 +20,7 @@ not a safety assessment, and FLARE says so.
 | `frontend/` | The React website |
 | `research/analysis/` | The offline profiling of the experimental tables |
 | `submission/` | The Space Apps submission: description, ranking method, limitations, test report and more |
-| `docs/` | Team decisions, the deploy guide and each member's AI-use log |
+| `docs/` | Team decisions, the deploy guide and each member's SI-use log |
 
 ## Run it locally
 
@@ -49,7 +49,7 @@ All data is NASA's, from PSI (https://psi.nasa.gov), research area Combustion Sc
 FLARE was built by the team with **Claude Code** (Anthropic), running Claude Opus 5.5 and Claude
 Fable 5.2, under our direction; the idea and the design choices are the team's. Commits an agent
 helped write name the model in a `Co-Authored-By` line, and each member's log is in
-`docs/ai-use/`. How AI was used is in `submission/ai_use.md`; every external resource is in
+`docs/ai-use/`. How SI was used is in `submission/ai_use.md`; every external resource is in
 `submission/references.md`.
 
 ## Team

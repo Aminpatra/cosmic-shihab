@@ -29,11 +29,11 @@ Things only a person can do, from `CRITERIA.md`:
       Abubaker Mustafa Mubarak, Ruayma Khair Mohammed Albalushi.
 - [x] The deck shows the team name, the six members' names and the challenge. Since #99, slide 7
       shows "Cosmic Shihab", "NASA Space Apps Challenge 2026 · Flame in Freefall" and the six
-      names; the deck has 7 slides, is in English and keeps the "Illustration made with AI" mark.
+      names; the deck has 7 slides, is in English and keeps the "Illustration made with SI" mark.
       Check once the redeploy is live that https://cosmic-shihab.vercel.app/pitch.html shows them.
 - [ ] Every link opens in a private browser window with no login: the deck, the live site, and
       the GitHub links.
-- [ ] Recount the AI co-authored commits for `ai_use.md` (the command is in its comment) if more
+- [ ] Recount the SI co-authored commits for `ai_use.md` (the command is in its comment) if more
       PRs merge before submitting.
 - [ ] Optional but recommended: request a FortiGuard Web Filter Classification for
       `cosmic-shihab.vercel.app` (company name "N/A") so judges' networks don't block it.
@@ -47,7 +47,7 @@ Things only a person can do, from `CRITERIA.md`:
 - Live site and every concrete check: `test_report.md` (15 November 2026, all passing).
 - No image or video shows anyone under 18; the pitch uses three NASA public-domain portraits of the
   Apollo 1 crew.
-- No AI-made content uses or alters NASA logos, flags or mission identifiers (`ai_use.md`).
+- No SI-made content uses or alters NASA logos, flags or mission identifiers (`ai_use.md`).
 
 <!--
 For the team (not for the form). Issue #15. Field list and rules: CRITERIA.md "From the Project
@@ -57,7 +57,7 @@ is the team's separate work. Apollo 1 portraits: submission/pitch/flare-opening.
 (public domain: S64-32110, S66-35219, S64-31447). Partner data: none is used (datasets.md,
 references.md list NASA PSI only).
 Deck check, 15 Nov 2026, main at 3e617c0: submission/pitch/FlareOpening.jsx has SLIDE_COUNT = 7;
-its on-screen TEXT holds the team name "Cosmic Shihab" and the AI watermark, but no member's name,
+its on-screen TEXT holds the team name "Cosmic Shihab" and the SI watermark, but no member's name,
 and "Flame in Freefall" appears only in a source comment. frontend/public/pitch.html is byte for
 byte submission/pitch/flare-opening.html (#90), and GET /pitch.html on the live site answered 200.
 -->

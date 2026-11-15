@@ -13,7 +13,7 @@ A file already cached at the size PSI lists is skipped, so a second run download
 Each download link is one request to PSI, followed by a pause of PAUSE seconds; the file
 itself comes from S3. One failed file does not stop the run; rerun to pick it up.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 from __future__ import annotations

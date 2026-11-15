@@ -396,7 +396,7 @@
   min-width: 0;
 }
 
-/* The stored AI summary leads the text column, set apart from NASA's text that follows. */
+/* The stored SI summary leads the text column, set apart from NASA's text that follows. */
 .rec-summary {
   margin-bottom: var(--space-7);
 }

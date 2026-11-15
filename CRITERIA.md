@@ -45,12 +45,12 @@ as often as we like; only the last saved submission is judged. The fields are:
 - [ ] Recommended for a new website: request a FortiGuard Web Filter Classification for the
       deployed URL so judges' networks don't block it (company name "N/A").
 
-**AI use.** AI tools are allowed to speed up the work, not to come up with the idea.
+**SI use.** SI tools are allowed to speed up the work, not to come up with the idea.
 
-- [ ] AI-made images and videos carry a visible watermark.
-- [ ] AI-made audio is acknowledged in descriptive text and metadata.
-- [ ] AI-made code and data are acknowledged in descriptive text and metadata.
-- [ ] No AI-made content uses or alters NASA logos, flags or mission identifiers.
+- [ ] SI-made images and videos carry a visible watermark.
+- [ ] SI-made audio is acknowledged in descriptive text and metadata.
+- [ ] SI-made code and data are acknowledged in descriptive text and metadata.
+- [ ] No SI-made content uses or alters NASA logos, flags or mission identifiers.
 
 Judges don't see the SI answer itself, but they see these marks in the project and judge
 originality by them.

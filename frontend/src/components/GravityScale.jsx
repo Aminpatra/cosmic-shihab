@@ -5,7 +5,7 @@ import './GravityScale.css'
 // A Scenario row that shows where NASA's combustion evidence sits on the gravity axis. It reuses the
 // page's own span lane (span-lane, span-band, span-tick, span-scale, span-words in Scenario.css):
 // tested gravity as bands, the untested gap hatched, the visitor's gravity as the Neon Yellow tick.
-// The flames are the pitch opening's. AI use: made with Claude Code and reviewed by the team.
+// The flames are the pitch opening's. SI use: made with Claude Code and reviewed by the team.
 
 const TESTED = 0.025 // width of each tested end on the 0 to 1 g axis; 0 g and 1 g are points
 const NAMES = { lunar: 'Moon', mars: 'Mars' }
@@ -86,7 +86,7 @@ export default function GravityScale({ place, customGravity, environments = {} }
         </div>
         <p className="gs-credit">
           Source: each investigation's gravity tag. Moon and Mars as FLARE's ranking sets them. Illustration made with
-          AI.
+          SI.
         </p>
       </div>
     </div>

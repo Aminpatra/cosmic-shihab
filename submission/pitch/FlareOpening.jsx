@@ -9,7 +9,7 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from
  *   3  The flame becomes FLARE.
  *   4  The live FLARE website on the spacecraft computer: a scenario and its comparison.
  *   5  The live site's visualization.
- *   6  The live site's AI assistant answering a question.
+ *   6  The live site's SI assistant answering a question.
  *   7  The team: logo, name, the six members, the challenge and the QR code of the website.
  *
  * The presenter moves between slides; nothing ever changes the slide by itself. Inside a
@@ -53,8 +53,8 @@ const TEXT = {
   explore: 'Explore FLARE',
   siteLabel: 'cosmic-shihab.vercel.app',
   photoCredit: 'Photos: NASA',
-  // The Space Apps rules ask for a visible watermark on AI-made images and video.
-  watermark: 'Illustration made with AI',
+  // The Space Apps rules ask for a visible watermark on SI-made images and video.
+  watermark: 'Illustration made with SI',
 }
 
 /** The live FLARE website, used when this page is not served from the site's own address. */
@@ -132,7 +132,7 @@ const BEATS = [
   { id: 'flare', slide: 3, scene: '03 FLARE', label: `${TEXT.title}: ${TEXT.subtitle}` },
   { id: 'compare', slide: 4, scene: '04 Scenario and comparison', label: 'The live FLARE website ranks NASA investigations for a spacecraft scenario' },
   { id: 'visualize', slide: 5, scene: '05 Visualization', label: 'The live FLARE website charts the tests near that scenario' },
-  { id: 'assistant', slide: 6, scene: '06 AI assistant', label: 'The live FLARE assistant answers a question from NASA sources' },
+  { id: 'assistant', slide: 6, scene: '06 SI assistant', label: 'The live FLARE assistant answers a question from NASA sources' },
   { id: 'team', slide: 7, scene: '07 Team', label: `${TEXT.team}: ${TEXT.members.flat().join(', ')}. ${TEXT.challenge}. ${TEXT.explore} at ${TEXT.siteLabel}` },
 ]
 const SLIDE_COUNT = 7
@@ -181,7 +181,7 @@ function hintFor(beatId, costShown) {
     case 'compare':
       return 'Next: Visualization'
     case 'visualize':
-      return 'Next: AI assistant'
+      return 'Next: SI assistant'
     case 'assistant':
       return 'Next: Our team'
     default:
@@ -1949,7 +1949,7 @@ export default function FlareOpening() {
     if (event.detail > 0) event.currentTarget.blur() // a mouse click leaves no focused button behind
   }
   const shownBeat = nav.index === 0 && nav.costShown ? 1 : nav.index
-  // Slide 7 shows the team's own logo and the real QR code; the AI illustration leaves with the warp.
+  // Slide 7 shows the team's own logo and the real QR code; the SI illustration leaves with the warp.
   const credit = beat.slide === 1 ? TEXT.photoCredit : beat.slide === 7 && phase !== 'warp' ? '' : TEXT.watermark
   const label = nav.index === 0 && v.costVisible ? BEATS[1].label : beat.label
 

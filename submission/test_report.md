@@ -149,7 +149,7 @@ Run on Windows 11, Python 3.15.2 and Node 26.13.1, on `25b8889`. The deployed ba
 - flare-sandy.vercel.app still answers with the older build: `/api/assistant/summaries/PSI-69`,
   `/api/assistant/readings` and `/api/flex-model` return 404.
 
-## Stored AI summaries and readings (#28, #39): **Pass**
+## Stored SI summaries and readings (#28, #39): **Pass**
 
 - Live API: all 24 summaries (`/api/assistant/summaries/{accession}`) and the 3 readings
   (`/api/assistant/readings`) are `reviewed: true`, `reviewed_by: "Aminpatra"` (#63). Each reading
@@ -223,7 +223,7 @@ What each PR says it checked, and whether that was run again for this report.
 | #31 | Ranking | 27 new tests (52 backend tests at the time) | Yes (`test_ranking` 18, `test_ranking_api` 6, `test_runs` 3) |
 | #32 | Run analysis | 5 tests, one fails if the committed output goes stale | Yes, 5 pass |
 | #34 | Coordinator | 14 tests | Yes, 14 pass |
-| #41 | AI assistant | 23 tests with a fake model client; live model call untested (no key) | Yes (`test_assistant_api`); the live page was asked three questions (check 6) |
+| #41 | SI assistant | 23 tests with a fake model client; live model call untested (no key) | Yes (`test_assistant_api`); the live page was asked three questions (check 6) |
 | #42 | Methodology page | Numbers traced to repo files by hand; no tests listed | The build passes; fits at 320 and 375px |
 | #43 | Vercel deploy | The curl checks in `docs/DEPLOY.md` | Yes, on cosmic-shihab.vercel.app; see check 8 |
 | #44 | Runs API | 10 endpoint checks (85 backend tests at the time) | Yes (`test_runs_api`, 10) |
@@ -242,7 +242,7 @@ What each PR says it checked, and whether that was run again for this report.
 | #61 | This report's start (#38) and the FLEX test fix | Every suite and check, run on `299dba6` | Yes, all of it, on `25b8889` |
 | #63 | Summaries and readings signed as reviewed (#28) | The README's five checks on all 27 files; 103 backend tests | Yes: live, all 24 summaries and 3 readings are `reviewed: true` |
 | #64 | The team's own logos | Sources at 1440 and 375px | The live bundle uses `cosmic-shihab-logo-white`; `Logo.jpg` is no longer in the repo; Sources fits at 320 and 375px |
-| #67 | AI summaries on Explorer and Comparison (#39) | 27 frontend tests; Edge at 1440 and 375px (citation clicks, unreviewed and missing files, a weight hiding the reading) | Yes, live; see "Stored AI summaries and readings" |
+| #67 | SI summaries on Explorer and Comparison (#39) | 27 frontend tests; Edge at 1440 and 375px (citation clicks, unreviewed and missing files, a weight hiding the reading) | Yes, live; see "Stored SI summaries and readings" |
 | #68 | Docs name cosmic-shihab.vercel.app; QR code | `docs/DEPLOY.md`'s checks against the new URL | Yes; see check 8. The QR code was not decoded again |
 | #69 | Visualization follows a scenario; Home astronaut (#65) | 1440 and 375px in a headless browser; build and 27 tests | Visualization and Home fit at 320 and 375px (Visualization also at 720px); the new figures were not checked by eye here |
 | #74 | Whole-app QA (#29) and its Visualization and Assistant fixes | `qa_results.md`: findings 11 to 17, the eight concrete checks, what held up | Fixes for 13 to 16 rerun; see "Whole-app QA" |
@@ -272,6 +272,6 @@ What each PR says it checked, and whether that was run again for this report.
   (finding 17). `pipeline/psi_client.py` still accepts only `psi-repo-prod` (#78's note), which is
   fine for the tables it downloads today.
 
-**AI use:** this report was put together with Claude Code (Claude Opus 5.5) and reviewed by the
+**SI use:** this report was put together with Claude Code (Claude Opus 5.5) and reviewed by the
 team. Every output in it comes from a command or page run on 14 or 15 November 2026; none was
 written by the model. #29's results are from its own run, recorded in `qa_results.md`.

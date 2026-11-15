@@ -5,7 +5,7 @@
 No test calls PSI. The client tests use small saved responses in fixtures/;
 the catalogue tests read the committed files in backend/data/ and datasets/.
 
-AI use: written with Claude Code (Claude Fable 5.2), reviewed by the team.
+SI use: written with Claude Code (Claude Fable 5.2), reviewed by the team.
 """
 
 import csv
