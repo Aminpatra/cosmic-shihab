@@ -20,6 +20,8 @@ from __future__ import annotations
 import logging
 import os
 import re
+import threading
+from datetime import datetime, timezone
 
 from app import catalogue, search
 
@@ -28,6 +30,17 @@ log = logging.getLogger(__name__)
 MODEL = "claude-opus-5-5"
 MAX_INVESTIGATIONS = 4  # records sent with one question
 MAX_PASSAGES = 8  # document passages sent with one question
+
+# What answers may cost (#81). The team's API credit for the assistant is about $5 a day, so each
+# answer is capped and the day's spend is added up from the token counts the API reports.
+PRICES = {MODEL: (4.00, 20.00)}  # US$ per million input and output tokens: Claude Opus 5.5
+FALLBACK_PRICES = (10.00, 50.00)  # a declined request reruns on a fallback model: priced at the dearest rate
+CACHE_READ, CACHE_WRITE = 0.05, 1.25  # cached input, as a share of the input price
+MAX_OUTPUT_TOKENS = 2048  # thinking included; an answer is asked to stay under about 250 words
+TIMEOUT_S = 45.0  # one try, no retry: a slow call falls back to the sources instead of running on
+DAILY_BUDGET_USD = float(os.environ.get("ASSISTANT_DAILY_BUDGET_USD") or 4.0)
+BUDGET_REASON = ("Today's budget for AI answers is used up, so FLARE shows the matching sources without a "
+                 "generated answer. Generated answers resume tomorrow (UTC).")
 PAGE_URL = "https://psi.nasa.gov/physci/repo/data/investigations/{accession}"
 
 SYSTEM = """You are FLARE's research assistant. You help researchers and mission planners read \
@@ -45,7 +58,8 @@ clearly separate from what the sources say.
 - Do not give safety recommendations or operational advice for spacecraft. If asked, say that \
 FLARE reports what NASA's investigations found and that design decisions need qualified review.
 - Where investigations used different conditions or measures, say so rather than merging them.
-Write in plain English for a technical reader, in short paragraphs, without headings."""
+Write in plain English for a technical reader, in short paragraphs, without headings, and keep the \
+answer under about 250 words."""
 
 _STOP = set("""a about after all also an and any are as at be been being but by can could did do
 does each for from had has have how i if in into is it its may more most of on or our should so
@@ -182,6 +196,47 @@ def gather(question: str, accessions: list[str] | None = None) -> list[dict]:
     return sources
 
 
+# The day's spend, per server instance (Vercel may run more than one, so the budget leaves headroom).
+_spend_lock = threading.Lock()
+_spend = {"day": "", "usd": 0.0}
+
+
+def _today() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def spent_today() -> float:
+    with _spend_lock:
+        return _spend["usd"] if _spend["day"] == _today() else 0.0
+
+
+def _add_spend(usd: float) -> float:
+    with _spend_lock:
+        if _spend["day"] != _today():
+            _spend.update(day=_today(), usd=0.0)
+        _spend["usd"] += usd
+        return _spend["usd"]
+
+
+def cost_of(model: str, usage) -> float:
+    """US$ for one response, from the token counts in its `usage`; 0 when it carries none."""
+    if usage is None:
+        return 0.0
+    price_in, price_out = PRICES.get(model, FALLBACK_PRICES)
+    count = lambda name: getattr(usage, name, 0) or 0  # noqa: E731
+    return (count("input_tokens") * price_in
+            + count("cache_read_input_tokens") * price_in * CACHE_READ
+            + count("cache_creation_input_tokens") * price_in * CACHE_WRITE
+            + count("output_tokens") * price_out) / 1e6
+
+
+def worst_case_cost(question: str, sources: list[dict]) -> float:
+    """The most one call could cost: every input character a token (an overestimate) and a full answer."""
+    characters = len(SYSTEM) + len(question) + sum(len(s["text"]) + len(s["title"]) for s in sources)
+    price_in, price_out = PRICES[MODEL]
+    return (characters * price_in + MAX_OUTPUT_TOKENS * price_out) / 1e6
+
+
 def retrieval_only(question: str, sources: list[dict], reason: str) -> dict:
     """The answer without generated prose: the sources, and why there is nothing more."""
     return {"question": question, "mode": "retrieval_only", "reason": reason,
@@ -191,7 +246,7 @@ def retrieval_only(question: str, sources: list[dict], reason: str) -> dict:
 def _client():
     import anthropic  # imported here so the no-key path needs no SDK at all
 
-    return anthropic.Anthropic()
+    return anthropic.Anthropic(timeout=TIMEOUT_S, max_retries=0)
 
 
 def generate(question: str, sources: list[dict], client=None) -> dict:
@@ -209,14 +264,19 @@ def generate(question: str, sources: list[dict], client=None) -> dict:
     ]
     response = client.beta.messages.create(
         model=MODEL,
-        max_tokens=16000,
+        max_tokens=MAX_OUTPUT_TOKENS,
         system=SYSTEM,
-        output_config={"effort": "medium"},
+        # Low effort: a short answer from given passages needs little thinking, and thinking bills as output.
+        output_config={"effort": "low"},
         # On a policy decline the API reruns the request on a fallback model inside this call.
         betas=["server-side-fallback-2026-07-01"],
         fallbacks="default",
         messages=[{"role": "user", "content": [*documents, {"type": "text", "text": question}]}],
     )
+    usd = cost_of(response.model, getattr(response, "usage", None))
+    total = _add_spend(usd)
+    log.warning("assistant: answer cost $%.4f (%s); this instance has spent $%.3f of $%.2f today",
+                usd, response.model, total, DAILY_BUDGET_USD)
     if response.stop_reason == "refusal":
         return retrieval_only(question, sources, "The model declined to answer; these are the matching sources.")
 
@@ -259,9 +319,16 @@ def answer(question: str, accessions: list[str] | None = None, client=None) -> d
         return retrieval_only(question, sources, _no_key_reason(sources))
     import anthropic
 
+    # Never start a call that could take the day's spend past the budget.
+    if spent_today() + worst_case_cost(question, sources) > DAILY_BUDGET_USD:
+        log.warning("assistant: daily budget of $%.2f reached; answering with sources only", DAILY_BUDGET_USD)
+        return retrieval_only(question, sources, BUDGET_REASON)
     try:
         return generate(question, sources, client)
     except anthropic.APIError as error:  # status errors, timeouts, network failures
+        if isinstance(error, anthropic.APITimeoutError):
+            # The API may still finish and bill a call the client gave up on: count the most it could cost.
+            _add_spend(worst_case_cost(question, sources))
         log.warning("assistant: Claude call failed: %r", error)
         name = type(error).__name__
         return retrieval_only(question, sources,
