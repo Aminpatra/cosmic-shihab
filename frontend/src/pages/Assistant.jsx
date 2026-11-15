@@ -2,7 +2,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, ExternalLink, FileText, Info, RotateCw, TriangleAlert, X } from 'lucide-react'
 import { getJSON, useApi } from '../api.js'
-import { TIERS, nameOf, runsOf, tierOf } from '../catalogue.js'
+import { TIERS, countOf, nameOf, runsOf, tierOf } from '../catalogue.js'
 import { LoadError, Loading } from '../components/ApiState.jsx'
 import './Assistant.css'
 
@@ -89,7 +89,7 @@ function ScopeLane({ investigations, chosen, onToggle, onPoint }) {
 
 function Scope({ catalogue, chosen, setChosen }) {
   const [pointed, setPointed] = useState(null)
-  if (catalogue.status === 'loading') return <Loading label="Loading the 24 investigations…" />
+  if (catalogue.status === 'loading') return <Loading label="Loading the investigations…" />
   if (catalogue.status === 'error') return <LoadError what="The investigation list" retry={catalogue.retry} error={catalogue.error} />
 
   const byId = Object.fromEntries(catalogue.data.map((inv) => [inv.accession, inv]))
@@ -152,7 +152,8 @@ function Scope({ catalogue, chosen, setChosen }) {
           </ul>
         ) : (
           <p className="scope-note">
-            None chosen: FLARE uses the investigations your question names, or searches all 24.
+            None chosen: FLARE uses the investigations your question names, or searches all{' '}
+            {countOf(catalogue.data.length, 'investigation')}.
           </p>
         )}
       </div>
@@ -161,14 +162,14 @@ function Scope({ catalogue, chosen, setChosen }) {
   )
 }
 
-function SourceList({ sources, quotes }) {
+function SourceList({ sources, quotes, pointed }) {
   return (
     <ol className="answer-sources">
       {sources.map((source, i) => {
         const cited = quotes[source.id] ?? []
         const where = source.kind === 'record' ? 'PSI record' : source.page ? `Document, page ${source.page}` : 'Document'
         return (
-          <li key={source.id} id={`src-${i + 1}`} className="source">
+          <li key={source.id} id={`src-${i + 1}`} className={pointed === i + 1 ? 'source is-pointed' : 'source'} tabIndex={-1}>
             <span className="source-n">{i + 1}</span>
             <div className="source-body">
               <p className="source-head">
@@ -240,6 +241,18 @@ function Result({ result, retry }) {
       for (const c of block.citations) (q[c.source_id] ??= []).includes(c.cited_text) || q[c.source_id].push(c.cited_text)
     return q
   }, [result])
+  const [pointed, setPointed] = useState(null)
+  useEffect(() => setPointed(null), [result])
+  // A citation brings its source into view here, not through the #hash: the router's scroll
+  // restoration would put a hash jump straight back (#101, as AiSummary does since #67).
+  const goTo = (event, n) => {
+    event.preventDefault()
+    const item = document.getElementById(`src-${n}`)
+    if (!item) return
+    item.scrollIntoView({ block: 'start' })
+    item.focus({ preventScroll: true })
+    setPointed(n)
+  }
 
   if (result.mode === 'retrieval_only') {
     return (
@@ -289,7 +302,7 @@ function Result({ result, retry }) {
                 <Fragment key={piece.key}>
                   <span className="said">{piece.text}</span>
                   {[...new Set(piece.citations.map((c) => index[c.source_id]))].map((n) => (
-                    <a key={n} href={`#src-${n}`} className="cite" aria-label={`Source ${n}`}>
+                    <a key={n} href={`#src-${n}`} className="cite" aria-label={`Source ${n}`} onClick={(event) => goTo(event, n)}>
                       {n}
                     </a>
                   ))}
@@ -310,7 +323,7 @@ function Result({ result, retry }) {
       <h2 className="answer-h">
         Sources <span className="answer-count">{result.sources.length}</span>
       </h2>
-      <SourceList sources={result.sources} quotes={quotes} />
+      <SourceList sources={result.sources} quotes={quotes} pointed={pointed} />
     </>
   )
 }
@@ -350,7 +363,11 @@ export default function Assistant() {
         <header className="assistant-head">
           <h1>AI Research Assistant</h1>
           <p className="assistant-lede">
-            Ask about the 24 NASA combustion investigations. Answers come only from their PSI records and documents,
+            Ask about the{' '}
+            {catalogue.status === 'ready' && catalogue.data.length > 0
+              ? countOf(catalogue.data.length, 'NASA combustion investigation')
+              : 'NASA combustion investigations'}
+            . Answers come only from their PSI records and documents,
             cite each source, and say so when no source answers.
           </p>
         </header>

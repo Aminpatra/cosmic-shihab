@@ -1,0 +1,17 @@
+/* The page-error panel sits where the page would have been, held to the page gutter. */
+.route-error {
+  max-width: 48rem;
+  padding: var(--space-8) var(--gutter);
+}
+
+.route-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  align-items: center;
+  margin-top: var(--space-4);
+}
+
+.route-error-actions a {
+  font-weight: 600;
+}
