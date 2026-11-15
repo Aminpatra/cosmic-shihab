@@ -14,6 +14,18 @@ export const LANE_VARIABLES = {
   fuel: { label: 'Fuel', kind: 'pair' },
 }
 
+// The weighted conditions in GET /api/rank's own order, so the sliders follow the figures.
+const WEIGHTED = ['oxygen', 'pressure', 'flow_velocity', 'fuel', 'fuel_phase', 'concern']
+
+// The conditions the weight sliders cover. The API leaves a condition out of method.variables
+// once its weight is 0, so a condition the link sets at weight 0 keeps its slider here, or
+// nothing on the page could weight it back.
+export function weightVariables(method, params) {
+  return WEIGHTED.filter(
+    (v) => method.variables.includes(v) || (params.get(v) && Number(params.get(`weight_${v}`)) === 0),
+  )
+}
+
 const MAX_FUEL_NAMES = 3
 
 // Display units, rounded so 0.34 x 100 is 34 and not 34.00000000000001.

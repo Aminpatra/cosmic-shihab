@@ -1,14 +1,62 @@
 """The research assistant's endpoints. The logic is in app/assistant.py."""
 
 import json
+import math
+import os
+import threading
+import time
+from collections import deque
 from typing import Annotated, Literal
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from app import assistant, catalogue, ranking
 
 router = APIRouter(prefix="/api/assistant", tags=["assistant"])
+
+# Questions one address may ask (#81): (window in seconds, most questions in it, how to say it).
+LIMITS = [
+    (60, int(os.environ.get("ASSISTANT_PER_MINUTE") or 4), "a minute"),
+    (86400, int(os.environ.get("ASSISTANT_PER_DAY") or 40), "a day"),
+]
+_asked: dict[str, deque] = {}
+_asked_lock = threading.Lock()
+
+
+def _address(request: Request) -> str:
+    """The visitor's address, as Vercel's edge reports it (X-Real-IP, else the first X-Forwarded-For)."""
+    forwarded = request.headers.get("x-forwarded-for", "").split(",")[0].strip()
+    return request.headers.get("x-real-ip") or forwarded or (request.client.host if request.client else "unknown")
+
+
+def _check_limits(address: str) -> None:
+    """Count this question, or raise 429 with Retry-After when the address is over a limit."""
+    now = time.monotonic()
+    longest = max(window for window, _, _ in LIMITS)
+    with _asked_lock:
+        times = _asked.setdefault(address, deque())
+        while times and now - times[0] > longest:
+            times.popleft()
+        for window, most, words in LIMITS:
+            recent = [t for t in times if now - t < window]
+            if len(recent) >= most:
+                wait = math.ceil(window - (now - recent[0]))
+                raise HTTPException(
+                    status_code=429,
+                    detail=f"FLARE answers at most {most} questions {words} from one address, so its AI "
+                           f"budget lasts. Try again in {wait} seconds.",
+                    headers={"Retry-After": str(wait)})
+        times.append(now)
+        if len(_asked) > 10000:  # forget addresses that have gone quiet, so memory stays bounded
+            for key in [k for k, v in _asked.items() if not v or now - v[-1] > longest]:
+                del _asked[key]
+
+
+def reset_limits() -> None:
+    """Forget every address's questions (for tests)."""
+    with _asked_lock:
+        _asked.clear()
 READINGS_DIR = catalogue.DATA_DIR / "summaries" / "readings"
 
 
@@ -105,8 +153,9 @@ def status() -> Status:
 
 
 @router.post("/ask")
-def ask(body: Question) -> Answer:
+def ask(body: Question, request: Request) -> Answer:
     """Answer one question from FLARE's NASA sources, each sentence tied to the source it uses."""
+    _check_limits(_address(request))
     unknown = [accession for accession in body.accessions if accession not in catalogue.investigations()]
     if unknown:
         raise HTTPException(status_code=404, detail=f"No investigation {unknown[0]!r} in the catalogue")

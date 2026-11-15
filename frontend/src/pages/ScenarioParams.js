@@ -176,3 +176,10 @@ export function rankPath(params) {
   }
   return `/rank?${out}`
 }
+
+// The fuel names to suggest for what the visitor has typed: each name that contains the text,
+// ignoring case and extra spaces, in the order given (the API's, most rows first).
+export function fuelSuggestions(names, typed) {
+  const text = String(typed ?? '').trim().toLowerCase().replace(/\s+/g, ' ')
+  return text ? names.filter((name) => name.toLowerCase().includes(text)) : names
+}

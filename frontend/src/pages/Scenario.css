@@ -99,6 +99,99 @@
   width: 100%;
 }
 
+/* Fuel suggestions. The list lies over the rows below it, so it takes the overlay drop the phone
+   menu uses; options lift one ramp step when active and are 44px tall where pointers are coarse. */
+.combo {
+  position: relative;
+}
+
+.combo-input {
+  padding-right: 2.75rem;
+}
+
+.combo-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ramp-5);
+  cursor: pointer;
+}
+
+.combo-toggle:hover {
+  color: var(--white);
+}
+
+.combo-toggle svg {
+  transition: transform 160ms var(--ease-out);
+}
+
+.combo-toggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.combo-list {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 0.25rem);
+  right: 0;
+  left: 0;
+  max-height: min(18rem, 45vh);
+  margin: 0;
+  padding: 0.25rem 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--ramp-4);
+  border-radius: var(--radius);
+  background: var(--ramp-1);
+  box-shadow: 0 16px 32px rgb(3 10 30 / 0.5);
+  list-style: none;
+  animation: combo-in 140ms var(--ease-out);
+  transform-origin: top;
+}
+
+@keyframes combo-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+}
+
+.combo-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  padding: 0.2rem var(--space-3) 0;
+  color: var(--ramp-6);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+@media (pointer: fine) {
+  .combo-option {
+    min-height: 2.25rem;
+  }
+}
+
+.combo-option[data-active],
+.combo-option:active {
+  background: var(--ramp-2);
+  color: var(--white);
+}
+
+.combo-option svg {
+  flex: none;
+  color: var(--tick);
+}
+
 .field-unit {
   align-self: center;
   min-width: 3rem;
