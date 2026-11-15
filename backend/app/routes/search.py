@@ -9,6 +9,10 @@ from app import catalogue, search
 
 router = APIRouter(prefix="/api", tags=["search"])
 
+# Far above the number of passages in the index, and far below what SQLite can take: a larger
+# offset is refused with 422 instead of overflowing into a 500.
+MAX_OFFSET = 100_000
+
 
 class SearchHit(BaseModel):
     """One passage of about 150 words, with the investigation it belongs to."""
@@ -38,7 +42,7 @@ def search_documents(
     q: Annotated[str, Query(min_length=1, max_length=300, description="Words or a question")],
     accession: str | None = None,
     limit: Annotated[int, Query(ge=1, le=50)] = 10,
-    offset: Annotated[int, Query(ge=0)] = 0,
+    offset: Annotated[int, Query(ge=0, le=MAX_OFFSET)] = 0,
 ) -> SearchPage:
     """Passages from PSI documents that match any word of `q`, best first."""
     records = catalogue.investigations()
