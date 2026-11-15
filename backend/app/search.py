@@ -26,13 +26,24 @@ LIMIT ? OFFSET ?
 _TOTAL = "SELECT count(*) FROM passages JOIN documents d USING (file_id) WHERE passages MATCH ? {extra}"
 
 
+MAX_TERMS = 32  # words a query searches for; each one more OR term costs time
+
+
 def words(text: str) -> list[str]:
     return re.findall(r"\w+", text.lower())
 
 
+def terms(text: str) -> list[str]:
+    """The words searched for: each once, in the order typed, at most MAX_TERMS of them.
+
+    A repeated word would add a repeated OR term that slows the query without finding anything new.
+    """
+    return list(dict.fromkeys(words(text)))[:MAX_TERMS]
+
+
 def search(text: str, accession: str | None = None, limit: int = 10, offset: int = 0):
     """(total, hits) for a query. Raises FileNotFoundError when the index has not been built."""
-    found = words(text)
+    found = terms(text)
     if not found:
         return 0, []
     if not INDEX.exists():
