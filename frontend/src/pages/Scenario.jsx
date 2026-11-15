@@ -332,8 +332,10 @@ export default function Scenario() {
   }
 
   const vars = options.data?.variables
+  // NASA's tested span without the values FLARE treats as suspect (`tested`, #87); the ranking's
+  // own span (`min`/`max`) can still include them.
   const spanFor = (key, display) => {
-    const v = vars?.[key]
+    const v = vars?.[key]?.tested ?? vars?.[key]
     return v ? { span: SPAN[key](v, form.pUnit), rows: v.rows, value: display } : { span: null }
   }
 

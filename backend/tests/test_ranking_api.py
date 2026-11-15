@@ -47,11 +47,25 @@ class RankingApi(unittest.TestCase):
     def test_options_come_from_the_data(self):
         body = client.get("/api/rank/options").json()
         self.assertEqual(body["variables"]["oxygen"],
-                         {"unit": "mole fraction", "min": 0.12, "max": 0.85, "rows": 1147})
+                         {"unit": "mole fraction", "min": 0.12, "max": 0.85, "rows": 1147,
+                          "tested": {"min": 0.12, "max": 0.85, "rows": 1147}})
         names = [f["name"] for f in body["fuels"]]
         self.assertIn("pmma", names)
         self.assertIn("ethylene", names)
         self.assertEqual(body["environments"], {"spacecraft": 0.0, "lunar": 0.17, "mars": 0.38})
+
+    def test_tested_ranges_leave_out_the_suspect_values_the_ranking_still_scores(self):
+        variables = client.get("/api/rank/options").json()["variables"]
+        pressure, flow = variables["pressure"], variables["flow_velocity"]
+        # The ranking's span, which sets its tolerances, still holds them (#87, option 2).
+        self.assertEqual((pressure["min"], pressure["rows"]), (0.0, 1001))
+        self.assertEqual((flow["min"], flow["rows"]), (-5.92, 570))
+        # The tested range leaves out FLEX's 0 mmHg test and SPICE's eight negative air rates.
+        self.assertEqual(pressure["tested"]["rows"], 1000)
+        self.assertGreater(pressure["tested"]["min"], 0)
+        self.assertEqual((flow["tested"]["min"], flow["tested"]["rows"]), (0.0, 562))
+        self.assertEqual(pressure["tested"]["max"], pressure["max"])
+        self.assertEqual(flow["tested"]["max"], flow["max"])
 
 
 if __name__ == "__main__":

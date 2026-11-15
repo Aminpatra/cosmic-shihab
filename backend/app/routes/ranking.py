@@ -15,6 +15,16 @@ router = APIRouter(prefix="/api", tags=["ranking"])
 
 Weight = Annotated[float | None, Query(ge=0, le=10)]
 
+# Values FLARE's charts leave out as suspect (research/analysis/README.md, Visualization.jsx): a
+# pressure at or below 0 and a negative airflow. The ranking still scores them (#87, option 2), so
+# `min`/`max` stay the ranking's own span, which sets its tolerances and the charts' window (#65);
+# `tested` is the range without them, which is what the Scenario page shows as NASA's tested span.
+SUSPECT = {"pressure": lambda value: value <= 0, "flow_velocity": lambda value: value < 0}
+
+
+def _span(values: list[float]) -> dict[str, Any]:
+    return {"min": min(values), "max": max(values), "rows": len(values)}
+
 
 @router.get("/rank")
 def rank(
@@ -67,8 +77,11 @@ def options() -> dict[str, Any]:
                 for name in {_fuel_name(n) for n in names} - {""}:
                     fuels[name] += 1
     return {
-        "variables": {v: {"unit": ranking.UNITS[v], "min": min(xs), "max": max(xs), "rows": len(xs)}
-                      for v, xs in values.items()},
+        "variables": {
+            v: {"unit": ranking.UNITS[v], **_span(xs),
+                "tested": _span([x for x in xs if not SUSPECT.get(v, lambda _: False)(x)])}
+            for v, xs in values.items()
+        },
         "fuels": [{"name": name, "rows": count} for name, count in fuels.most_common()],
         "fuel_phases": ["gas", "liquid", "solid"],
         "concerns": ["prevention", "detection", "suppression"],
