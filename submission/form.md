@@ -9,7 +9,7 @@ and corrected until the deadline: **Sunday 15 November 2026, 11:59 p.m. local ti
 |---|---|
 | **Project Name** | `FLARE: Fire Learning, Analysis & Research Explorer` |
 | **High-Level Project Summary** | The "Summary" section of `description.md` (one paragraph). |
-| **Link to Project Demo** | The 7-slide deck, published at `https://cosmic-shihab.vercel.app/pitch.html` once the team's deck is copied to `frontend/public/pitch.html` and the site is redeployed. **Not ready yet**: open the link in a private window before pasting it. |
+| **Link to Project Demo** | `https://cosmic-shihab.vercel.app/pitch.html`, the 7-slide deck (#90). Live: it answered 200 on 15 November 2026. Open it in a private window before pasting it, and see the deck item in the checklist below. |
 | **Link to Final Project** | `https://cosmic-shihab.vercel.app` |
 | **Detailed Project Description** | `description.md` from "The solution" to "Team", then the short version of the ranking: the first paragraph of `ranking.md` and its "An example" table. Add a line: "Method, limitations, impact and our test report: https://github.com/Aminpatra/cosmic-shihab/tree/main/submission". |
 | **Use of Super Intelligence (SI)** | `ai_use.md`, all of it above the comment. |
@@ -27,9 +27,11 @@ Things only a person can do, from `CRITERIA.md`:
 - [ ] All six members registered for the same Local Event (none waitlisted) and shown on the
       Members tab: Amin Mohamed Amin, Gheath Wahab, Mohammed Al-julandani, Samin Rezaei, Rahaf
       Abubaker Mustafa Mubarak, Ruayma Khair Mohammed Albalushi.
-- [ ] The deck has at most 7 slides (the 3-slide opening counts), shows the team name, the six
-      names and the challenge, is in English, and keeps the "Illustration made with AI" marks on
-      the AI-made drawings.
+- [ ] The deck shows the team name, the six members' names and the challenge. **Checked on
+      15 November: it has 7 slides, is in English, shows "Cosmic Shihab" on slide 7 and keeps the
+      "Illustration made with AI" mark, but its text has neither the members' names nor "Flame in
+      Freefall".** Add both (slide 7 is the team slide) and republish `frontend/public/pitch.html`
+      before submitting; `CRITERIA.md` requires them on the deck.
 - [ ] Every link opens in a private browser window with no login: the deck, the live site, and
       the GitHub links.
 - [ ] Recount the AI co-authored commits for `ai_use.md` (the command is in its comment) if more
@@ -55,4 +57,8 @@ Submission Guide" and "Hard requirements". Deck location: decided by @Aminpatra 
 is the team's separate work. Apollo 1 portraits: submission/pitch/flare-opening.html header
 (public domain: S64-32110, S66-35219, S64-31447). Partner data: none is used (datasets.md,
 references.md list NASA PSI only).
+Deck check, 15 Nov 2026, main at 3e617c0: submission/pitch/FlareOpening.jsx has SLIDE_COUNT = 7;
+its on-screen TEXT holds the team name "Cosmic Shihab" and the AI watermark, but no member's name,
+and "Flame in Freefall" appears only in a source comment. frontend/public/pitch.html is byte for
+byte submission/pitch/flare-opening.html (#90), and GET /pitch.html on the live site answered 200.
 -->

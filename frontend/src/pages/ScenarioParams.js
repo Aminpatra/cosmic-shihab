@@ -57,12 +57,26 @@ const API_KEYS = new Set(['environment', 'gravity_g', ...CONDITIONS])
 const round6 = (x) => Number(x.toPrecision(6))
 const round8 = (x) => Number(x.toPrecision(8))
 
+// Plain decimals only: Number() alone would read 0x10 as 16. Exponents stay, because the page's
+// own links write a tiny value such as 1e-7 g that way.
+const DECIMAL = /^[+-]?(\d+\.?\d*|\.\d+)(e[+-]?\d+)?$/i
+
 export function parseNumber(text) {
   const t = String(text ?? '').trim().replace(',', '.')
-  if (t === '') return null
+  if (!DECIMAL.test(t)) return null
   const n = Number(t)
   return Number.isFinite(n) ? n : null
 }
+
+// GET /api/rank's own upper limits (backend/app/routes/ranking.py), so the form never sends a
+// scenario the ranking refuses.
+const MAX_PRESSURE_ATM = 10
+const MAX_FLOW = 1000
+export const MAX_FUEL_CHARS = 100
+
+// The ranking reads a fuel by its words of two or more letters or digits (_fuel_words in
+// backend/app/ranking.py) and ignores a fuel with none.
+const fuelWords = (text) => text.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 1)
 
 // At most three significant figures, for readouts; never used for what is sent.
 export const formatValue = (n) => n.toLocaleString('en-US', { maximumSignificantDigits: 3 })
@@ -105,9 +119,21 @@ export function validate(form) {
       hints.oxygen = `Read as ${oxygen} %. If you meant a mole fraction of ${oxygen}, enter ${round6(oxygen * 100)} %.`
   }
   const pressure = number('pressure')
+  const pUnit = PRESSURE_UNITS.includes(form.pUnit) ? form.pUnit : 'psi'
   if (pressure != null && pressure < 0) errors.pressure = 'Pressure cannot be negative.'
+  // Checked on the value formToParams sends, so the limit itself passes in every unit.
+  else if (pressure != null && round8(toAtm(pressure, pUnit)) > MAX_PRESSURE_ATM) {
+    const atm = `${MAX_PRESSURE_ATM} atm`
+    const limit = pUnit === 'atm' ? atm : `${round6(fromAtm(MAX_PRESSURE_ATM, pUnit))} ${pUnit} (${atm})`
+    errors.pressure = `Pressure must be at most ${limit}, the most the ranking accepts.`
+  }
   const flow = number('flow')
   if (flow != null && flow < 0) errors.flow = 'Airflow cannot be negative.'
+  else if (flow != null && flow > MAX_FLOW) errors.flow = `Airflow must be at most ${MAX_FLOW} cm/s, the most the ranking accepts.`
+  const fuel = String(form.fuel ?? '').trim()
+  if ([...fuel].length > MAX_FUEL_CHARS) errors.fuel = `Fuel must be at most ${MAX_FUEL_CHARS} characters.`
+  else if (fuel && fuelWords(fuel).length === 0)
+    errors.fuel = "FLARE can't read a fuel name here. Use a name or formula in English letters, such as ethylene or C2H4."
   if (form.place === 'custom') {
     const gravity = number('gravity')
     if (gravity != null && (gravity < 0 || gravity > 1)) errors.gravity = 'Gravity must be between 0 and 1 g.'
