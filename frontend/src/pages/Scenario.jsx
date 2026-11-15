@@ -392,7 +392,7 @@ export default function Scenario() {
         </p>
       </header>
 
-      {options.status === 'error' && <LoadError what="NASA's tested ranges" retry={options.retry} />}
+      {options.status === 'error' && <LoadError what="NASA's tested ranges" retry={options.retry} error={options.error} />}
 
       <form className="scenario-form" onSubmit={submit} noValidate>
         <Stops

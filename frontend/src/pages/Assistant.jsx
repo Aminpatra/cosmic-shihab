@@ -90,7 +90,7 @@ function ScopeLane({ investigations, chosen, onToggle, onPoint }) {
 function Scope({ catalogue, chosen, setChosen }) {
   const [pointed, setPointed] = useState(null)
   if (catalogue.status === 'loading') return <Loading label="Loading the 24 investigations…" />
-  if (catalogue.status === 'error') return <LoadError what="The investigation list" retry={catalogue.retry} />
+  if (catalogue.status === 'error') return <LoadError what="The investigation list" retry={catalogue.retry} error={catalogue.error} />
 
   const byId = Object.fromEntries(catalogue.data.map((inv) => [inv.accession, inv]))
   const toggle = (accession) =>

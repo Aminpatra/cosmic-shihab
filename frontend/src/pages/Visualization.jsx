@@ -804,7 +804,7 @@ export default function Visualization() {
         <ScenarioProbeBar {...scenario} />
 
         {runs.status === 'loading' && <Loading label="Loading PSI's test rows…" />}
-        {runs.status === 'error' && <LoadError what="The experimental tables" retry={runs.retry} />}
+        {runs.status === 'error' && <LoadError what="The experimental tables" retry={runs.retry} error={runs.error} />}
 
         {model && (
           <>

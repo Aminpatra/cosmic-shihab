@@ -69,7 +69,8 @@ export default function ExplorerSearch({ accession }) {
     )
   }
 
-  const status = state.error?.message ?? ''
+  // The status code itself: the message also holds the query, so a search for "503" would match.
+  const status = state.error?.status
   return (
     <section className="ex-search" aria-labelledby="search-title">
       <h2 id="search-title" className="ex-h2">
@@ -100,12 +101,12 @@ export default function ExplorerSearch({ accession }) {
 
       {state.status === 'loading' && <Loading label="Searching NASA's documents…" />}
       {state.status === 'error' &&
-        (status.includes('503') ? (
+        (status === 503 ? (
           <p className="ex-message">Document search is not available: the search index has not been built.</p>
-        ) : status.includes('422') ? (
+        ) : status === 422 ? (
           <p className="ex-message">Enter at least one word to search for.</p>
         ) : (
-          <LoadError what="Document search" retry={() => setAttempt((n) => n + 1)} />
+          <LoadError what="Document search" retry={() => setAttempt((n) => n + 1)} error={state.error} />
         ))}
       {(state.status === 'ready' || state.status === 'more') && (
         <div className="ex-results">
