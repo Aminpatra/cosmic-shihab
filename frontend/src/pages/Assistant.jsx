@@ -161,14 +161,14 @@ function Scope({ catalogue, chosen, setChosen }) {
   )
 }
 
-function SourceList({ sources, quotes }) {
+function SourceList({ sources, quotes, pointed }) {
   return (
     <ol className="answer-sources">
       {sources.map((source, i) => {
         const cited = quotes[source.id] ?? []
         const where = source.kind === 'record' ? 'PSI record' : source.page ? `Document, page ${source.page}` : 'Document'
         return (
-          <li key={source.id} id={`src-${i + 1}`} className="source">
+          <li key={source.id} id={`src-${i + 1}`} className={pointed === i + 1 ? 'source is-pointed' : 'source'} tabIndex={-1}>
             <span className="source-n">{i + 1}</span>
             <div className="source-body">
               <p className="source-head">
@@ -240,6 +240,18 @@ function Result({ result, retry }) {
       for (const c of block.citations) (q[c.source_id] ??= []).includes(c.cited_text) || q[c.source_id].push(c.cited_text)
     return q
   }, [result])
+  const [pointed, setPointed] = useState(null)
+  useEffect(() => setPointed(null), [result])
+  // A citation brings its source into view here, not through the #hash: the router's scroll
+  // restoration would put a hash jump straight back (#101, as AiSummary does since #67).
+  const goTo = (event, n) => {
+    event.preventDefault()
+    const item = document.getElementById(`src-${n}`)
+    if (!item) return
+    item.scrollIntoView({ block: 'start' })
+    item.focus({ preventScroll: true })
+    setPointed(n)
+  }
 
   if (result.mode === 'retrieval_only') {
     return (
@@ -289,7 +301,7 @@ function Result({ result, retry }) {
                 <Fragment key={piece.key}>
                   <span className="said">{piece.text}</span>
                   {[...new Set(piece.citations.map((c) => index[c.source_id]))].map((n) => (
-                    <a key={n} href={`#src-${n}`} className="cite" aria-label={`Source ${n}`}>
+                    <a key={n} href={`#src-${n}`} className="cite" aria-label={`Source ${n}`} onClick={(event) => goTo(event, n)}>
                       {n}
                     </a>
                   ))}
@@ -310,7 +322,7 @@ function Result({ result, retry }) {
       <h2 className="answer-h">
         Sources <span className="answer-count">{result.sources.length}</span>
       </h2>
-      <SourceList sources={result.sources} quotes={quotes} />
+      <SourceList sources={result.sources} quotes={quotes} pointed={pointed} />
     </>
   )
 }

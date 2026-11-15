@@ -441,8 +441,13 @@
   scroll-margin-top: calc(var(--bar-height) + var(--space-4));
 }
 
-.source:target {
+.source.is-pointed {
   background: var(--ramp-1);
+}
+
+/* Focus lands here when a citation is followed; the highlight above shows where */
+.source:focus {
+  outline: none;
 }
 
 .source-n {
