@@ -58,11 +58,16 @@ function useRecord(accession) {
     })
       .then(async (res) => {
         if (res.status === 404) return setState({ status: 'missing', data: null })
-        if (!res.ok) throw new Error(`The FLARE API answered ${res.status}.`)
+        if (!res.ok) {
+          // Like getJSON's errors, so LoadError can say the API answered rather than that it did not.
+          const error = new Error(`The FLARE API answered ${res.status}.`)
+          error.status = res.status
+          throw error
+        }
         setState({ status: 'ready', data: await res.json() })
       })
       .catch((error) => {
-        if (error.name !== 'AbortError') setState({ status: 'error', data: null })
+        if (error.name !== 'AbortError') setState({ status: 'error', data: null, error })
       })
     return () => controller.abort()
   }, [accession, attempt])
@@ -216,7 +221,7 @@ function Files({ rec }) {
       </div>
 
       {files.status === 'loading' && <Loading label="Loading the file list…" />}
-      {files.status === 'error' && <LoadError what="The file list" retry={files.retry} />}
+      {files.status === 'error' && <LoadError what="The file list" retry={files.retry} error={files.error} />}
       {files.status === 'ready' && (
         <>
           <div className="ex-table-wrap">
@@ -371,7 +376,7 @@ export default function ExplorerInvestigation() {
       </p>
 
       {rec.status === 'loading' && <Loading label="Loading the PSI record…" />}
-      {rec.status === 'error' && <LoadError what="This PSI record" retry={rec.retry} />}
+      {rec.status === 'error' && <LoadError what="This PSI record" retry={rec.retry} error={rec.error} />}
       {rec.status === 'missing' && (
         <div className="ex-message">
           <p>

@@ -156,7 +156,7 @@ function Shap({ shap, classes, perClass }) {
 export default function FlexModel() {
   const api = useApi('/flex-model')
   if (api.status === 'loading') return <Loading label="Loading the FLEX model's results…" />
-  if (api.status === 'error') return <LoadError what="The FLEX model's results" retry={api.retry} />
+  if (api.status === 'error') return <LoadError what="The FLEX model's results" retry={api.retry} error={api.error} />
   const m = api.data
   const rf = m.held_out[m.chosen_model]
   const chance = m.chance_check

@@ -154,7 +154,7 @@ export default function Explorer() {
       <ExplorerSearch />
 
       {list.status === 'loading' && <Loading label="Loading the PSI catalogue…" />}
-      {list.status === 'error' && <LoadError what="The PSI catalogue" retry={list.retry} />}
+      {list.status === 'error' && <LoadError what="The PSI catalogue" retry={list.retry} error={list.error} />}
       {list.status === 'ready' && count === 0 && <Empty what="The PSI catalogue" retry={list.retry} />}
       {list.status === 'ready' && count > 0 && (
         <Investigations investigations={list.data} params={params} setParams={setParams} />
