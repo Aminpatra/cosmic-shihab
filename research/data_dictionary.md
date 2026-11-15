@@ -101,7 +101,7 @@ merged across tables unless the columns mean the same thing. Columns whose meani
 
 Where the record and table do not define a column, it is described here only by its header.
 
-**AI use:** the files in `research/` were drafted with Claude Code (Claude Opus 5.5) from the
+**SI use:** the files in `research/` were drafted with Claude Code (Claude Opus 5.5) from the
 PSI records and tables, and every number was computed from the files in this session. The
 underlying data is NASA's. A team member should check the tags against the cited fields before
 the submission.

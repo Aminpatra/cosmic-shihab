@@ -5,7 +5,7 @@ and that the committed results come from this code; they assert nothing about ho
 
 Skipped unless scikit-learn and shap are installed (pip install -r pipeline/requirements.txt).
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 import importlib.util

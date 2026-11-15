@@ -82,5 +82,5 @@ Where a header states no unit and FLARE assumed one, the column has `unit_inferr
 ACME Flame Design and CFI-G (the usual symbol for mole fraction), and CFI's Oxygen, Nitrogen and
 Helium (they add up to 1).
 
-**AI use:** the scripts that wrote these files were written with Claude Code. The contents are
-NASA's data, rearranged, not AI-generated.
+**SI use:** the scripts that wrote these files were written with Claude Code. The contents are
+NASA's data, rearranged, not SI-generated.

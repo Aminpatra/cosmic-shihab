@@ -21,7 +21,7 @@ Method, following CLAUDE.md:
 
 This is a pattern in NASA's FLEX experiments, not a prediction of a real fire.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 from __future__ import annotations

@@ -5,7 +5,7 @@
 Each case named in the master prompt (section 4, "Real cases the pipeline must handle") has a test
 here, run against the real PSI rows in datasets/, not against made-up ones.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 import json

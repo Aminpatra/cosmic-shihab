@@ -12,7 +12,7 @@ Without ANTHROPIC_API_KEY, or when the call fails or is declined, the answer is 
 sources themselves, with their links, and no generated prose. The assistant never touches the
 ranking (#7); it only reads the catalogue.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 from __future__ import annotations
@@ -39,7 +39,7 @@ CACHE_READ, CACHE_WRITE = 0.05, 1.25  # cached input, as a share of the input pr
 MAX_OUTPUT_TOKENS = 2048  # thinking included; an answer is asked to stay under about 250 words
 TIMEOUT_S = 45.0  # one try, no retry: a slow call falls back to the sources instead of running on
 DAILY_BUDGET_USD = float(os.environ.get("ASSISTANT_DAILY_BUDGET_USD") or 4.0)
-BUDGET_REASON = ("Today's budget for AI answers is used up, so FLARE shows the matching sources without a "
+BUDGET_REASON = ("Today's budget for SI answers is used up, so FLARE shows the matching sources without a "
                  "generated answer. Generated answers resume tomorrow (UTC).")
 PAGE_URL = "https://psi.nasa.gov/physci/repo/data/investigations/{accession}"
 
@@ -302,7 +302,7 @@ def generate(question: str, sources: list[dict], client=None) -> dict:
 
 def _no_key_reason(sources: list[dict]) -> str:
     """Why the reply is sources only, saying plainly when no document passage matched."""
-    no_key = "No AI key is configured, so FLARE shows sources without a generated answer."
+    no_key = "No SI key is configured, so FLARE shows sources without a generated answer."
     if any(source["kind"] == "document" for source in sources):
         return no_key
     names = " or ".join(dict.fromkeys(source["label"] for source in sources))
@@ -332,4 +332,4 @@ def answer(question: str, accessions: list[str] | None = None, client=None) -> d
         log.warning("assistant: Claude call failed: %r", error)
         name = type(error).__name__
         return retrieval_only(question, sources,
-                              f"The AI service could not answer ({name}); these are the matching sources.")
+                              f"The SI service could not answer ({name}); these are the matching sources.")

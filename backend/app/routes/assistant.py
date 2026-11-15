@@ -44,7 +44,7 @@ def _check_limits(address: str) -> None:
                 wait = math.ceil(window - (now - recent[0]))
                 raise HTTPException(
                     status_code=429,
-                    detail=f"FLARE answers at most {most} questions {words} from one address, so its AI "
+                    detail=f"FLARE answers at most {most} questions {words} from one address, so its SI "
                            f"budget lasts. Try again in {wait} seconds.",
                     headers={"Retry-After": str(wait)})
         times.append(now)
@@ -102,7 +102,7 @@ class Answer(BaseModel):
 
 
 class Summary(BaseModel):
-    """A stored, AI-generated summary of one investigation (pipeline/write_summaries.py)."""
+    """A stored, SI-generated summary of one investigation (pipeline/write_summaries.py)."""
 
     accession: str
     note: str
@@ -121,7 +121,7 @@ class Ranked(BaseModel):
 
 
 class Reading(BaseModel):
-    """A stored, AI-generated reading of the ranking for one preset scenario (pipeline/write_summaries.py)."""
+    """A stored, SI-generated reading of the ranking for one preset scenario (pipeline/write_summaries.py)."""
 
     preset: str
     label: str

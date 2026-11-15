@@ -49,7 +49,7 @@ tool, never a fire predictor or safety assessment.
 - Used mainly on laptops; demoed on a projector during judging. Phones (375px) must work but are
   not the main scene.
 - Pages planned in the brief: Home/Overview, NASA Research Explorer, Scenario Explorer,
-  Investigation Comparison, Data Visualization, AI Research Assistant, Sources and Methodology.
+  Investigation Comparison, Data Visualization, SI Research Assistant, Sources and Methodology.
 - Researchers cross-check against PSI investigation pages, data organization documents and
   publications.
 
@@ -64,7 +64,7 @@ tool, never a fire predictor or safety assessment.
 - Preserve original units; show conversions transparently. Distinguish measured, calculated,
   assumed and missing values.
 - Scenario fields may be left unspecified; FLARE never invents values for them.
-- Ranking weights are configurable and documented. The AI assistant is separate from the ranking
+- Ranking weights are configurable and documented. The SI assistant is separate from the ranking
   and cannot change it.
 - The assistant cites sources, separates source findings from its own explanation, and says when
   it can't find an answer. It needs a working fallback when no API key is present.
@@ -82,7 +82,7 @@ tool, never a fire predictor or safety assessment.
 - Team: **Cosmic Shihab**. Team logo: a shooting star crossing a ring, four-point stars and the
   "COSMIC SHIHAB" wordmark, as transparent PNGs in `brand/`: `cosmic-shihab-logo-white.png` for
   dark backgrounds (the site) and `cosmic-shihab-logo-black.png` for light ones. The team's own
-  work, not made with AI. It is the team's mark, not a FLARE product logo; FLARE has no separate
+  work, not made with SI. It is the team's mark, not a FLARE product logo; FLARE has no separate
   mark yet.
 - Team members to credit on the site, in this order: Amin Mohamed Amin, Gheath Wahab, Mohammed
   Al-julandani, Samin Rezaei, Rahaf Abubaker Mustafa Mubarak, Ruayma Khair Mohammed Albalushi.

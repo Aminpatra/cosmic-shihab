@@ -4,7 +4,7 @@ The PSI API is undocumented, so every function here checks the shape of what it
 gets back and raises PSIFormatError when it is not what we saw on 2026-11-14.
 How the API behaves, and the traps in it, are written up in docs/DATA_PLAN.md.
 
-AI use: this file was written with Claude Code (Claude Fable 5.2) and reviewed
+SI use: this file was written with Claude Code (Claude Fable 5.2) and reviewed
 by the team. It fetches NASA data; it never alters or generates any.
 """
 

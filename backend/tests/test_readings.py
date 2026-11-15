@@ -74,7 +74,7 @@ class Generator(unittest.TestCase):
         self.assertEqual([item["accession"] for item in reading["top"]], expected)
         self.assertFalse(reading["reviewed"])
         self.assertIsNone(reading["reviewed_by"])
-        self.assertIn("AI-generated", reading["note"])
+        self.assertIn("SI-generated", reading["note"])
         sent = fake.calls[0]["messages"][0]["content"]
         self.assertEqual(sent[0]["title"], "FLARE ranking for Moon base or pressurized rover")
         self.assertIn("do not re-rank", sent[-1]["text"])  # the instruction forbids re-ranking
@@ -107,10 +107,10 @@ class ThroughDeployedSite(unittest.TestCase):
         self.assertEqual(calls[0][1]["accessions"], ["PSI-69"])
         self.assertEqual(summary["blocks"], self.GENERATED["blocks"])
         self.assertFalse(summary["reviewed"])
-        self.assertIn("AI-generated", summary["note"])
+        self.assertIn("SI-generated", summary["note"])
 
     def test_sources_only_reply_is_refused(self):
-        _, post = self.fake({"mode": "retrieval_only", "reason": "No AI key is configured", "blocks": [], "sources": []})
+        _, post = self.fake({"mode": "retrieval_only", "reason": "No SI key is configured", "blocks": [], "sources": []})
         with self.assertRaises(RuntimeError):
             write_summaries.summarise_live("https://example.test", "PSI-69", post)
 

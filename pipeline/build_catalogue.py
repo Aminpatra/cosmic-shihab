@@ -14,8 +14,8 @@ Every value copied from PSI keeps PSI's own field name and is not changed.
 Anything FLARE computed sits under the "derived" key. Contact e-mail addresses
 and phone numbers are left out; names, affiliations and roles are kept.
 
-AI use: written with Claude Code (Claude Fable 5.2), reviewed by the team. The
-output files are NASA data rearranged by this script, not AI-generated content.
+SI use: written with Claude Code (Claude Fable 5.2), reviewed by the team. The
+output files are NASA data rearranged by this script, not SI-generated content.
 """
 
 from __future__ import annotations

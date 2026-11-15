@@ -6,7 +6,7 @@ non-overlapping tasks are handed out.
 
     COORD_TOKENS=tok1,tok2 python server.py      # serves http://127.0.0.1:8000/mcp
 
-AI use: written with Claude Code (Claude Opus 5.5) and reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5) and reviewed by the team.
 """
 
 from __future__ import annotations

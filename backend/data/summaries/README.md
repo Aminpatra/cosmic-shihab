@@ -1,6 +1,6 @@
 # backend/data/summaries
 
-AI-generated text that FLARE stores so the demo never depends on a live model call. Written by
+SI-generated text that FLARE stores so the demo never depends on a live model call. Written by
 `pipeline/write_summaries.py` with Claude Opus 5.5 through the assistant (`backend/app/assistant.py`),
 from the cited NASA sources. Every file starts as `"reviewed": false`.
 

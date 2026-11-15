@@ -11,7 +11,7 @@ describes a fire scenario, such as a Moon base at 30 % oxygen and 10.2 psi, and 
 24 combustion investigations in the Physical Sciences Informatics (PSI) repository by how closely
 their actual tests match it. For each one it shows which conditions match, which differ and what
 NASA never recorded, with a link to the NASA source. Investigations can be laid side by side on
-shared axes, filtered, searched inside NASA's own documents, and questioned through an AI assistant
+shared axes, filtered, searched inside NASA's own documents, and questioned through an SI assistant
 that separates what the sources say, with citations, from its own explanation. It answers the
 Flame in Freefall challenge by making NASA's flame research usable for the next cabin, habitat or
 rover design, and it says plainly what the evidence cannot show: a relevance score is not a safety
@@ -41,13 +41,13 @@ scenario.
 - **Visualization.** The experimental tables as charts, a coverage matrix that shows which
   conditions each table recorded, the tests that sit near the visitor's scenario, and the results
   of FLARE's one model.
-- **AI assistant.** Questions about the investigations, answered by Claude Opus 5.5 only from PSI
+- **SI assistant.** Questions about the investigations, answered by Claude Opus 5.5 only from PSI
   records and documents. Every sentence that rests on a source is cited and links to the quoted
   words; the assistant's own explanation is marked as such, and when no source answers it says so.
-  Without an AI key it still returns the matching sources.
-- **Stored summaries and readings.** An AI-written summary of each investigation and a plain
+  Without an SI key it still returns the matching sources.
+- **Stored summaries and readings.** An SI-written summary of each investigation and a plain
   reading of the ranking for the three challenge scenarios, generated once, checked by a team
-  member against their sources, and labelled as AI-generated with the model, the date and the
+  member against their sources, and labelled as SI-generated with the model, the date and the
   reviewer.
 
 ## How it works

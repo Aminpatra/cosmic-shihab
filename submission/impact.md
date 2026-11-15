@@ -19,7 +19,7 @@ these tests looks like my cabin?", has no direct answer in it. FLARE gives it on
   coverage matrix shows which conditions each table holds, and a lunar or Martian scenario is told
   plainly that no NASA test ran in partial gravity. Knowing where the evidence is thin is as useful
   to a designer as knowing where it is thick, and it points the next experiment at the gap.
-- **AI that can be checked.** The assistant answers from NASA's sources only and ties each sourced
+- **SI that can be checked.** The assistant answers from NASA's sources only and ties each sourced
   sentence to the words it rests on, so a reader can verify it instead of trusting it.
 - **Honest about what the data cannot say.** FLARE never turns a relevance score into a safety
   verdict and never fills a missing value, which is what makes it usable for research.

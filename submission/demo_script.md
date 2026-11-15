@@ -27,7 +27,7 @@ Assistant, since a live answer takes several seconds.
 > 0.17 g, and NASA's evidence comes from microgravity, not partial gravity. And this is a relevance
 > score, not a safety assessment.
 
-**Point at** "Reading of this ranking": an AI-written reading, reviewed by a team member, with
+**Point at** "Reading of this ranking": an SI-written reading, reviewed by a team member, with
 every sourced sentence cited.
 
 ## 3. Compare on the same axes (30 s)
@@ -44,7 +44,7 @@ third can be ticked in the list.
 
 **Open** https://cosmic-shihab.vercel.app/explorer/PSI-69
 
-> The AI summary leads, labelled with the model, the date and the reviewer, and each sourced
+> The SI summary leads, labelled with the model, the date and the reviewer, and each sourced
 > sentence links to the words it came from. Below it is NASA's own record, unchanged, its files with download
 > links, and a search inside its documents.
 
@@ -73,9 +73,9 @@ third can be ticked in the list.
 <!--
 For the team (not for the form). The demonstration script the brief asks for (section 9, item 10),
 issue #15. Every on-screen claim is from submission/test_report.md (live site, 15 Nov 2026):
-- Moon base preset link and the scores: test_report.md "Stored AI summaries and readings";
+- Moon base preset link and the scores: test_report.md "Stored SI summaries and readings";
   59 of 274 close: ranking.rank on the Moon base scenario (submission/ranking.md example).
-- Note on every result: check 4. 757.7 mmHg: check 2. The FLEX page's summary: "Stored AI
+- Note on every result: check 4. 757.7 mmHg: check 2. The FLEX page's summary: "Stored SI
   summaries". The Assistant's answer: check 6. Model panel and numbers: check 8 and
   backend/data/flex_model/results.json (held_out random_forest 0.475, baseline 0.267).
 - "2,009 test rows": GET /api/runs/rows total.

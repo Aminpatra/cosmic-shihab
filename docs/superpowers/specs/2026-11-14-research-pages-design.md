@@ -26,7 +26,7 @@ judges will look first in the demo:
 
 ## Non-goals
 
-- Data Visualization (#35), stored AI summaries on these pages (#39), Methodology (#26).
+- Data Visualization (#35), stored SI summaries on these pages (#39), Methodology (#26).
 - Changing the ranking backend (#7): no range or bound inputs, no new environments.
 - Fixing the fuel names the pipeline produced (#12); report them instead (see Constraints).
 - Export of filtered runs as CSV/JSON (master prompt, section 5); not in this task.

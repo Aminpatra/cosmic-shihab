@@ -3,7 +3,7 @@
 Expected numbers are counted straight from the files here, not through app.runs, so a loader bug
 cannot hide behind itself. Run from backend/: python -m unittest discover -s tests -v
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 import json

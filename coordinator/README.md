@@ -106,4 +106,4 @@ cd coordinator && .venv/bin/python -m pytest -v
 The tests call the tools directly: readiness, ordering, 20 threads racing for one task, lease
 expiry and heartbeat, other agents being refused, and the 401 for a missing or wrong token.
 
-**AI use:** written with Claude Code (Claude Opus 5.5) and reviewed by the team.
+**SI use:** written with Claude Code (Claude Opus 5.5) and reviewed by the team.
