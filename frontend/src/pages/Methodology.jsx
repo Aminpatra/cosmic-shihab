@@ -117,7 +117,9 @@ export default function Methodology() {
                   <dd>
                     Kept as written and flagged: a negative gas reading, a percentage over 100, a chemical formula a
                     spreadsheet counted upwards (CH4, CH5, CH6…), a number with a stray leading zero. A flagged value is
-                    never scored.
+                    never scored. Nine more look wrong but are not flagged yet, so the ranking still scores them: one
+                    FLEX test recorded at 0 mmHg and eight SPICE tests with a negative air rate. The charts and the
+                    tested ranges on the Scenario page leave them out, so a ranked test can sit outside a chart.
                   </dd>
                 </div>
               </dl>
