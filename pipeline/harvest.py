@@ -9,7 +9,7 @@ downloaded: PSI holds 13.5 TB and over 99% of it is zips and video.
 
 Run pipeline/build_catalogue.py afterwards to write backend/data/.
 
-AI use: written with Claude Code (Claude Fable 5.2), reviewed by the team.
+SI use: written with Claude Code (Claude Fable 5.2), reviewed by the team.
 """
 
 from __future__ import annotations

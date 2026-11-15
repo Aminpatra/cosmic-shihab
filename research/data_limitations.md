@@ -98,7 +98,7 @@ on 14 November 2026; the counts come from the files themselves. Per-file details
 - The NASA web pages in `source_references.csv` marked "not accessed" have not been read. The
   hardware families and roles stated here do not rely on them.
 
-**AI use:** the files in `research/` were drafted with Claude Code (Claude Opus 5.5) from the
+**SI use:** the files in `research/` were drafted with Claude Code (Claude Opus 5.5) from the
 PSI records and tables, and every number was computed from the files in this session. The
 underlying data is NASA's. A team member should check the tags against the cited fields before
 the submission.

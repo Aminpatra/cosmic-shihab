@@ -270,13 +270,13 @@ function ClosestTests({ items }) {
   )
 }
 
-// The stored AI reading of this ranking (#28), when the scenario is one a reading was written for.
+// The stored SI reading of this ranking (#28), when the scenario is one a reading was written for.
 function Reading({ match }) {
   const { reading } = match
   if (!match.shown) {
     return (
       <p className="cmp-message">
-        An AI reading was written for “{reading.label}”, but the ranking has changed since, so it is not shown: it would
+        An SI reading was written for “{reading.label}”, but the ranking has changed since, so it is not shown: it would
         explain an order this page no longer displays.
       </p>
     )
@@ -304,7 +304,7 @@ function PresetLinks() {
   if (readings.status !== 'ready' || readings.data.length === 0) return null
   return (
     <div className="cmp-presets">
-      <p>Or start from a scenario the challenge page gives values for, with an AI reading of its ranking:</p>
+      <p>Or start from a scenario the challenge page gives values for, with an SI reading of its ranking:</p>
       <ul>
         {readings.data.map((reading) => {
           const form = presetForm(reading.scenario)

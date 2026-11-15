@@ -6,7 +6,7 @@ The CSV files and summary.md are rebuilt in memory and compared with the committ
 change to backend/data/runs/ that is not followed by a rerun fails here. The figures need
 matplotlib and are not compared.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 import csv

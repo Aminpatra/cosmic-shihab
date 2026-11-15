@@ -4,7 +4,7 @@ Their text is test text, labelled "Fixture", not NASA's. Each row borrows a real
 the backend can join it to the catalogue for title, acronym and DOI. Used by
 test_build_search_index.py and by backend/tests/test_search_api.py.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 from __future__ import annotations

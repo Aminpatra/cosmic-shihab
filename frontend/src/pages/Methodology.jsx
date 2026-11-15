@@ -234,14 +234,14 @@ export default function Methodology() {
                 <div>
                   <dt>Without a key</dt>
                   <dd>
-                    When no AI key is configured, or the model declines or fails, it shows only the matching sources and
+                    When no SI key is configured, or the model declines or fails, it shows only the matching sources and
                     says why, with no generated text.
                   </dd>
                 </div>
                 <div>
                   <dt>Stored summaries</dt>
                   <dd>
-                    Per-investigation summaries are generated once from the same sources and labelled as AI-generated. A
+                    Per-investigation summaries are generated once from the same sources and labelled as SI-generated. A
                     summary counts as reviewed only after a team member has checked it against its citations.
                   </dd>
                 </div>

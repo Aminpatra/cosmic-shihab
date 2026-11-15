@@ -7,7 +7,7 @@
 // there) into one minified script, puts it in place of the script in flare-opening.html (the
 // head, with its comment and inline fonts, stays as it is), and copies the page byte for byte to
 // frontend/public/pitch.html, which the live site serves (#90).
-// AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+// SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 import { createRequire } from 'node:module'
 import { copyFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'

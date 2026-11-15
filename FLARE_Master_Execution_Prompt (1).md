@@ -1,6 +1,6 @@
 # MASTER EXECUTION PROMPT --- NASA SPACE APPS 2026: FLARE
 
-You are my lead AI engineer, data scientist, scientific research
+You are my lead SI engineer, data scientist, scientific research
 assistant, UI/UX designer, and project execution agent.
 
 Your task is to **actively build and execute FLARE from start to
@@ -65,7 +65,7 @@ FLARE will be an interactive research platform that allows users to:
 5.  Compare experimental conditions and research findings.
 6.  Understand why investigations are relevant and where they differ.
 7.  Identify missing information and research gaps.
-8.  Ask an AI assistant questions about the research, with answers
+8.  Ask an SI assistant questions about the research, with answers
     grounded in NASA sources.
 
 **Important:** FLARE is a research exploration and comparison tool. It
@@ -530,7 +530,7 @@ missing information.
 
 Show meaningful charts based on real experimental data.
 
-**6. AI Research Assistant**
+**6. SI Research Assistant**
 
 Allow users to ask questions about NASA investigations and research
 findings.
@@ -579,9 +579,9 @@ The user should understand what FLARE does within the first few seconds.
 
 ------------------------------------------------------------------------
 
-## 7. PHASE FIVE --- BUILD THE AI RESEARCH ASSISTANT
+## 7. PHASE FIVE --- BUILD THE SI RESEARCH ASSISTANT
 
-Create an AI assistant that helps users understand the NASA research.
+Create an SI assistant that helps users understand the NASA research.
 
 It should answer questions such as:
 
@@ -607,10 +607,10 @@ The assistant must:
 
 Use retrieval-augmented generation (RAG) if appropriate.
 
-Keep the AI assistant separate from the scientific ranking algorithm. AI
+Keep the SI assistant separate from the scientific ranking algorithm. SI
 explanations must not silently change the underlying ranking.
 
-If an AI API key is required, create a secure configuration using
+If an SI API key is required, create a secure configuration using
 environment variables and provide a working fallback when the key is
 unavailable.
 
@@ -659,7 +659,7 @@ Test the actual system.
 -   Do source links open?
 -   Does the application handle errors and empty results?
 
-### AI tests
+### SI tests
 
 -   Can it answer questions using the available sources?
 -   Does it cite its evidence?
@@ -708,7 +708,7 @@ Create:
 6.  A transparent explanation of the ranking methodology.
 7.  The scientific limitations and assumptions.
 8.  The expected impact on space fire-safety research.
-9.  A list of technologies and AI tools used.
+9.  A list of technologies and SI tools used.
 10. A demonstration script.
 11. A list of features that are fully implemented versus planned.
 
@@ -723,13 +723,13 @@ Create a `submission/` folder containing all written materials.
 ### Additions
 
 -   The 2026 submission requirements are in `CRITERIA.md`: the
-    deadline, the form fields, the demo limits and how AI use must be
+    deadline, the form fields, the demo limits and how SI use must be
     marked. Check the package against it. The "Use of SI" field is
     written from `docs/ai-use/`.
 -   Demo and visuals use the free routes in `CLAUDE.md`: `ui-demo` to
     record the app, Remotion for video, `frontend-slides` for a deck.
     No paid image or video service.
--   The list of AI tools is honest and complete, including Claude Code
+-   The list of SI tools is honest and complete, including Claude Code
     for the build and whichever model powers the assistant.
 -   Every number in the submission comes from a run in the repo.
 
@@ -747,7 +747,7 @@ parallel against agreed contracts, so nobody waits for the step above:
   3          Process data                Structured research database
   4          Build comparison engine     Explainable ranking
   5          Build web application       Working interface
-  6          Add AI assistant            Source-grounded answers
+  6          Add SI assistant            Source-grounded answers
   7          Test everything             Test report
   8          Prepare submission          Complete submission package
 
@@ -778,7 +778,7 @@ orders compete for the time left, say so and let the team choose.
 ## 11. HOW TO WORK WITH ME
 
 We are six students participating in NASA Space Apps as team Cosmic
-Shihab. The person you work with is one of them. I understand AI and
+Shihab. The person you work with is one of them. I understand SI and
 programming concepts, but I want to learn what we are building rather
 than receive an unexplained finished product.
 
@@ -848,7 +848,7 @@ it differently.
           Home, Sources and Methodology, credits
   E       Explorer, Scenario, Comparison and Visualization       6
           pages, built against the API contract
-  F       AI assistant, and the model if the team chooses one    7, 4
+  F       SI assistant, and the model if the team chooses one    7, 4
 
 The submission package (section 9) gets an owner once the app can be
 demonstrated.
@@ -901,7 +901,7 @@ Settled on 2026-11-14:
   ---------------------------- --------------------------------------------------
   Deadline and submission      Sunday 15 November 2026, 11:59 p.m. local. The
   requirements                 rules are in `CRITERIA.md`.
-  AI provider and key          Claude Opus 5.5 through the Anthropic API. The
+  SI provider and key          Claude Opus 5.5 through the Anthropic API. The
                                key arrives later, in `.env`. Build the
                                retrieval-only fallback first so nothing waits
                                for it.

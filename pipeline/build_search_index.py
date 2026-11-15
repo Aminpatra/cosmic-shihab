@@ -16,7 +16,7 @@ The text is NASA's, extracted unchanged apart from joining lines, collapsing whi
 out ligature characters ("ﬂ" becomes "fl") and replacing invalid characters with U+FFFD.
 PDFs need `pypdf` (pipeline/requirements.txt); Word and PowerPoint use the standard library.
 
-AI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
+SI use: written with Claude Code (Claude Opus 5.5), reviewed by the team.
 """
 
 from __future__ import annotations

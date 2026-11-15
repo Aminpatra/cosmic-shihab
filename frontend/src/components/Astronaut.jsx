@@ -4,8 +4,8 @@ import './Astronaut.css'
 
 // FLARE's astronaut: floating in microgravity, reaching toward the spherical flame the challenge
 // describes, so the one illustration on Home carries the product's subject.
-// AI use: drawn in SVG by Claude Code and reviewed by the team; shown with the visible
-// "Illustration made with AI" the Space Apps rules ask for.
+// SI use: drawn in SVG by Claude Code and reviewed by the team; shown with the visible
+// "Illustration made with SI" the Space Apps rules ask for.
 
 // The flame's glow, reflected in the visor (the same warm colour FlameGlyph uses).
 const FIRE_GLOW = '#FFB25B'
@@ -69,7 +69,7 @@ function AstronautArt({ className }) {
   )
 }
 
-/** The Home figure: the astronaut beside a microgravity flame, with its source and AI mark. */
+/** The Home figure: the astronaut beside a microgravity flame, with its source and SI mark. */
 export default function Astronaut() {
   return (
     <figure className="astro" aria-labelledby="astro-caption">
@@ -82,7 +82,7 @@ export default function Astronaut() {
           In orbit a candle flame becomes a “ghostly blue sphere”: with no buoyancy, hot gas does not rise.
         </span>
         <span className="astro-source">
-          Quote: NASA Space Apps 2026 challenge “Flame in Freefall”. Illustration made with AI.
+          Quote: NASA Space Apps 2026 challenge “Flame in Freefall”. Illustration made with SI.
         </span>
       </figcaption>
     </figure>

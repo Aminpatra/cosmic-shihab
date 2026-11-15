@@ -3,8 +3,8 @@ import './FlameGravity.css'
 
 // The two flames of the pitch opening (submission/pitch/FlareOpening.jsx, `Flame` and `Defs`):
 // the same paths, gradients and flicker, so the app and the pitch draw fire the same way.
-// AI use: illustration and code made with Claude Code and reviewed by the team; every place that
-// shows it carries the visible "Illustration made with AI" the Space Apps rules ask for.
+// SI use: illustration and code made with Claude Code and reviewed by the team; every place that
+// shows it carries the visible "Illustration made with SI" the Space Apps rules ask for.
 
 // Colours of the opening's fire, used for the illustration only, never for text or data.
 const FIRE = '#FF8A3D'
@@ -126,7 +126,7 @@ export default function FlameGravity() {
           flame becomes a ghostly blue sphere reliant on diffusion for its oxygen.” Lunar (0.17 g) and Martian
           (0.38 g) gravity lie between the two, and no investigation here tested them.
         </p>
-        <p>Illustration made with AI.</p>
+        <p>Illustration made with SI.</p>
       </div>
     </figure>
   )

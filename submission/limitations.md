@@ -46,13 +46,13 @@ These are the limits a researcher should know before relying on it.
 - **Not compared:** research objectives and the outcomes each investigation measured. The
   outcomes are listed, not scored.
 
-## The AI assistant and the stored summaries
+## The SI assistant and the stored summaries
 
 - Answers come only from the PSI records and indexed documents, and every sourced sentence cites
   the words it rests on. A model can still misread a source; the citations are there so a reader
   can check, and the assistant's own explanation is marked apart.
 - The 24 summaries and 3 readings were generated once by Claude Opus 5.5 and reviewed by one team
-  member against their sources, with an AI checking each citation first. They describe what the
+  member against their sources, with an SI checking each citation first. They describe what the
   sources say, not new findings.
 
 ## The FLEX model
@@ -84,7 +84,7 @@ For the team (not for the form). Draft for the limitations part of the package, 
 - Tags cite a record field: the investigation page's footnote (frontend/src/pages/ExplorerInvestigation.jsx)
   and research/investigation_tags.csv.
 - Bounds: master prompt section 5, "Presets need a source"; frontend REFERENCES "at least"/"at most".
-- Summaries: backend/data/summaries/README.md, #63 (reviewed by Aminpatra after an AI check,
+- Summaries: backend/data/summaries/README.md, #63 (reviewed by Aminpatra after an SI check,
   docs/ai-use/Aminpatra.md).
 - Model: backend/data/flex_model/results.json `limitations`, `cross_validation.scores`, `held_out`.
 -->

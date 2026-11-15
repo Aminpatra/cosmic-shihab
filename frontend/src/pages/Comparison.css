@@ -532,7 +532,7 @@
   }
 }
 
-/* The stored AI reading sits between the scenario notes and the weights. */
+/* The stored SI reading sits between the scenario notes and the weights. */
 .cmp-reading {
   margin-top: var(--space-5);
 }

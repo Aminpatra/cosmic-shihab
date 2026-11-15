@@ -37,5 +37,5 @@ How PSI behaves, which investigations are reliable, and what is still to build a
 The fixtures in `tests/fixtures/` are real PSI responses from 14 November 2026. The search pages
 are cut down to the two fields the client reads, and contact details are blanked in the record.
 
-**AI use:** the code in this folder was written with Claude Code (Claude Fable 5.2) and reviewed
+**SI use:** the code in this folder was written with Claude Code (Claude Fable 5.2) and reviewed
 by the team. It fetches and rearranges NASA data; it does not generate any.
