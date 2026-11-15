@@ -14,6 +14,7 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 from app import search
+from app.routes.search import MAX_OFFSET
 from main import app
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -82,6 +83,21 @@ class SearchTests(unittest.TestCase):
     def test_queries_without_words_are_refused(self):
         self.assertEqual(self.get(q="").status_code, 422)
         self.assertEqual(self.get(q="?! …").status_code, 422)
+
+    def test_huge_offset_is_refused_not_a_500(self):
+        # Too large for SQLite: it used to overflow into a 500 (#84).
+        self.assertEqual(self.get(q="fixture", offset=999999999999999999999).status_code, 422)
+        self.assertEqual(self.get(q="fixture", offset=MAX_OFFSET + 1).status_code, 422)
+        body = self.get(q="fixture", offset=MAX_OFFSET).json()
+        self.assertEqual((body["total"], body["items"]), (4, []))
+
+    def test_repeated_words_are_searched_once(self):
+        self.assertEqual(search.terms("Flame flame FLAME soot flame"), ["flame", "soot"])
+        self.assertEqual(self.get(q="cotton " * 40).json()["items"], self.get(q="cotton").json()["items"])
+
+    def test_a_long_query_searches_its_first_words_only(self):
+        found = search.terms(" ".join(f"w{i}" for i in range(search.MAX_TERMS + 20)))
+        self.assertEqual(found, [f"w{i}" for i in range(search.MAX_TERMS)])
 
     def test_missing_index_is_a_clear_503(self):
         built, search.INDEX = search.INDEX, search.INDEX.with_name("absent.sqlite")

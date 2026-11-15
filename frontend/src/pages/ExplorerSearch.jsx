@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { ExternalLink, Search } from 'lucide-react'
 import { getJSON } from '../api.js'
@@ -19,31 +19,41 @@ export default function ExplorerSearch({ accession }) {
   const [params, setParams] = useSearchParams()
   const q = (params.get('q') ?? '').trim()
   const [draft, setDraft] = useState(q)
-  const [state, setState] = useState({ status: 'idle', items: [], total: 0, error: null })
+  // moreError: the last "Show more" failed; the passages already loaded stay on screen.
+  const [state, setState] = useState({ status: 'idle', items: [], total: 0, error: null, moreError: null })
   const [attempt, setAttempt] = useState(0)
+  const moreRequest = useRef(null)
 
   useEffect(() => setDraft(q), [q])
 
   useEffect(() => {
     if (!q) {
-      setState({ status: 'idle', items: [], total: 0, error: null })
+      setState({ status: 'idle', items: [], total: 0, error: null, moreError: null })
       return
     }
     const controller = new AbortController()
-    setState({ status: 'loading', items: [], total: 0, error: null })
+    setState({ status: 'loading', items: [], total: 0, error: null, moreError: null })
     getJSON(searchPath(q, 0, accession), { signal: controller.signal })
-      .then((data) => setState({ status: 'ready', items: data.items, total: data.total, error: null }))
+      .then((data) => setState({ status: 'ready', items: data.items, total: data.total, error: null, moreError: null }))
       .catch((error) => {
-        if (error.name !== 'AbortError') setState({ status: 'error', items: [], total: 0, error })
+        if (error.name !== 'AbortError') setState({ status: 'error', items: [], total: 0, error, moreError: null })
       })
-    return () => controller.abort()
+    return () => {
+      controller.abort()
+      // A "Show more" still on its way belongs to this query: it must not land in the next one.
+      moreRequest.current?.abort()
+    }
   }, [q, accession, attempt])
 
   const more = () => {
-    setState((s) => ({ ...s, status: 'more' }))
-    getJSON(searchPath(q, state.items.length, accession))
+    const controller = new AbortController()
+    moreRequest.current = controller
+    setState((s) => ({ ...s, status: 'more', moreError: null }))
+    getJSON(searchPath(q, state.items.length, accession), { signal: controller.signal })
       .then((data) => setState((s) => ({ ...s, status: 'ready', items: [...s.items, ...data.items] })))
-      .catch((error) => setState((s) => ({ ...s, status: 'error', error })))
+      .catch((error) => {
+        if (error.name !== 'AbortError') setState((s) => ({ ...s, status: 'ready', moreError: error }))
+      })
   }
 
   const submit = (e) => {
@@ -130,6 +140,15 @@ export default function ExplorerSearch({ accession }) {
             <button type="button" className="button-quiet" onClick={more} disabled={state.status === 'more'}>
               {state.status === 'more' ? 'Loading…' : `Show ${Math.min(PAGE, state.total - state.items.length)} more`}
             </button>
+          )}
+          {state.moreError && (
+            <p className="ex-message" role="alert">
+              The next passages could not load:{' '}
+              {state.moreError.status
+                ? `the FLARE API answered with an error (${state.moreError.status})`
+                : 'the FLARE API did not answer'}
+              . The passages above are unchanged; Show more tries again.
+            </p>
           )}
         </div>
       )}
