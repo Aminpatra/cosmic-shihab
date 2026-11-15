@@ -5,6 +5,7 @@ import { useApi } from '../api.js'
 import { LoadError } from '../components/ApiState.jsx'
 import GravityScale from '../components/GravityScale.jsx'
 import {
+  MAX_FUEL_CHARS,
   PLACES,
   PRESSURE_UNITS,
   REFERENCES,
@@ -171,7 +172,7 @@ function NumberRow({ id, label, unit, unitControl, value, onChange, converted, e
 // Fuel: free text with NASA's fuel names as suggestions, in a list FLARE draws itself. A native
 // datalist ignores the theme on desktop and becomes a keyboard strip, or nothing, on phones.
 // The ARIA 1.2 combobox pattern: focus stays in the input and arrows move the active option.
-function FuelField({ value, onChange, names }) {
+function FuelField({ value, onChange, names, error }) {
   const [open, setOpen] = useState(false)
   const [typed, setTyped] = useState(false) // filter only once the visitor types, so a picked fuel still shows them all
   const [active, setActive] = useState(-1)
@@ -261,6 +262,9 @@ function FuelField({ value, onChange, names }) {
         autoComplete="off"
         autoCapitalize="none"
         spellCheck={false}
+        maxLength={MAX_FUEL_CHARS}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? 'fuel-error' : undefined}
         value={value}
         onChange={(e) => {
           onChange(e.target.value)
@@ -507,7 +511,13 @@ export default function Scenario() {
             <span className="row-unit">or material</span>
           </label>
           <div className="row-field">
-            <FuelField value={form.fuel} onChange={set('fuel')} names={fuels} />
+            <FuelField value={form.fuel} onChange={set('fuel')} names={fuels} error={errors.fuel} />
+            {errors.fuel && (
+              <p id="fuel-error" className="field-error">
+                <TriangleAlert size={16} aria-hidden="true" />
+                {errors.fuel}
+              </p>
+            )}
           </div>
           <div className="row-span">
             <p className="span-words">
