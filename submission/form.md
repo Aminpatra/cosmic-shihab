@@ -27,11 +27,10 @@ Things only a person can do, from `CRITERIA.md`:
 - [ ] All six members registered for the same Local Event (none waitlisted) and shown on the
       Members tab: Amin Mohamed Amin, Gheath Wahab, Mohammed Al-julandani, Samin Rezaei, Rahaf
       Abubaker Mustafa Mubarak, Ruayma Khair Mohammed Albalushi.
-- [ ] The deck shows the team name, the six members' names and the challenge. **Checked on
-      15 November: it has 7 slides, is in English, shows "Cosmic Shihab" on slide 7 and keeps the
-      "Illustration made with AI" mark, but its text has neither the members' names nor "Flame in
-      Freefall".** Add both (slide 7 is the team slide) and republish `frontend/public/pitch.html`
-      before submitting; `CRITERIA.md` requires them on the deck.
+- [x] The deck shows the team name, the six members' names and the challenge. Since #99, slide 7
+      shows "Cosmic Shihab", "NASA Space Apps Challenge 2026 · Flame in Freefall" and the six
+      names; the deck has 7 slides, is in English and keeps the "Illustration made with AI" mark.
+      Check once the redeploy is live that https://cosmic-shihab.vercel.app/pitch.html shows them.
 - [ ] Every link opens in a private browser window with no login: the deck, the live site, and
       the GitHub links.
 - [ ] Recount the AI co-authored commits for `ai_use.md` (the command is in its comment) if more
