@@ -33,7 +33,7 @@ export default function InProgress({ page }) {
         </div>
         <p className="slot-next">
           Meanwhile, the <Link to="/">Home page</Link> shows a real investigation against an example scenario, and{' '}
-          <Link to="/sources">Sources and methodology</Link> lists all 24 investigations.
+          <Link to="/sources">Sources and methodology</Link> lists every investigation.
         </p>
       </section>
     </>

@@ -74,13 +74,23 @@ function useRecord(accession) {
   return { ...state, retry: () => setAttempt((n) => n + 1) }
 }
 
+// A hardware link FLARE can show: one that parses as an http(s) URL. PSI's field is free text, and a
+// malformed entry passed to new URL() would throw while the page draws (#86).
+function isWebLink(text) {
+  try {
+    return ['http:', 'https:'].includes(new URL(text).protocol)
+  } catch {
+    return false
+  }
+}
+
 function Facts({ rec }) {
   const d = rec.derived ?? {}
   const tags = d.tags ?? {}
   const hardwareLinks = String(rec.experimentHardwareLink ?? '')
     .split(',')
     .map((u) => u.trim())
-    .filter((u) => u.startsWith('http'))
+    .filter(isWebLink)
   const start = rec.investigationStartDate
   const end = rec.investigationEndDate
   const facts = [
@@ -91,9 +101,10 @@ function Facts({ rec }) {
         {rec.doi}
       </a>,
     ],
-    d.page_url && [
+    [
       'PSI page',
-      <a href={d.page_url} target="_blank" rel="noreferrer">
+      // The same fallback as Home and Sources (#76): an empty page_url still links to the record on PSI.
+      <a href={d.page_url || `https://psi.nasa.gov/physci/repo/data/investigations/${rec.accession}`} target="_blank" rel="noreferrer">
         Open on NASA PSI
       </a>,
     ],
