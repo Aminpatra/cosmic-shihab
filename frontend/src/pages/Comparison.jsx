@@ -7,7 +7,7 @@ import AiSummary from '../components/AiSummary.jsx'
 import ConditionLanes from '../components/ConditionLanes.jsx'
 import { LoadError, Loading } from '../components/ApiState.jsx'
 import { PLACES, formatValue, hasScenario, paramsToForm, rankPath } from './ScenarioParams.js'
-import { LANE_VARIABLES, countsOf, figuresFor, formatCell, parsePicks } from './ComparisonLanes.js'
+import { LANE_VARIABLES, countsOf, figuresFor, formatCell, parsePicks, weightVariables } from './ComparisonLanes.js'
 import { presetForm, presetLink, readingFor } from './ComparisonReading.js'
 import './Comparison.css'
 
@@ -78,8 +78,7 @@ function Counts({ item }) {
   )
 }
 
-function Weights({ method, params, setParams }) {
-  const variables = method.variables.filter((v) => LANE_VARIABLES[v])
+function Weights({ method, variables, params, setParams }) {
   const fromUrl = () =>
     Object.fromEntries(variables.map((v) => [v, Number(params.get(`weight_${v}`) ?? method.weights?.[v] ?? 1)]))
   const [weights, setWeights] = useState(fromUrl)
@@ -340,17 +339,20 @@ function Results({ params, setParams }) {
     return () => clearTimeout(timer)
   }, [ready, settled])
 
-  if (ranking.status === 'loading' || !ready) return <Loading label="Ranking NASA's tests against your scenario…" />
+  // An error leaves no data, so it is checked before the loading line or it would never show.
   if (ranking.status === 'error') {
-    return ranking.error?.message?.includes('422') ? (
+    return ranking.error?.status === 422 ? (
       <p className="cmp-message">
         The ranking refused a value in this scenario as out of range. <Link to={`/scenario?${params}`}>Edit the scenario</Link>.
       </p>
     ) : (
-      <LoadError what="The ranking" retry={ranking.retry} />
+      <LoadError what="The ranking" retry={ranking.retry} error={ranking.error} />
     )
   }
-  if (data.message) return <p className="cmp-message">{data.message}</p>
+  if (!ready) return <Loading label="Ranking NASA's tests against your scenario…" />
+  const sliders = weightVariables(data.method, params)
+  // When the sliders caused the message (every weight at 0), they stay below so it can be undone.
+  if (data.message && sliders.length === 0) return <p className="cmp-message">{data.message}</p>
 
   const picks = parsePicks(params.get('pick'), data.items)
   const toggle = (accession) => {
@@ -390,9 +392,11 @@ function Results({ params, setParams }) {
         </p>
       )}
       {reading && <Reading match={reading} />}
-      <Weights method={data.method} params={params} setParams={setParams} />
+      <Weights method={data.method} variables={sliders} params={params} setParams={setParams} />
 
-      {data.items.length === 0 ? (
+      {data.message ? (
+        <p className="cmp-message">{data.message}</p>
+      ) : data.items.length === 0 ? (
         <div className="cmp-body">
           <p className="cmp-message">No investigation could be ranked on these conditions.</p>
           <Ranked items={[]} notRanked={data.not_ranked} picks={[]} toggle={() => {}} notice={data.notice} />

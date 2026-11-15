@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { axisFor, statusOf, countsOf, laneFor, figuresFor, parsePicks, formatCell } from './ComparisonLanes.js'
+import { axisFor, statusOf, countsOf, laneFor, figuresFor, parsePicks, formatCell, weightVariables } from './ComparisonLanes.js'
 
 // Shaped like GET /api/rank output. FLEX's numbers are its real ranges; TEST-1 is synthetic.
 const OPTIONS = {
@@ -142,4 +142,23 @@ test('best-test cells read every shape the API sends', () => {
   assert.equal(formatCell({ values: [0.17, 0.21, 0.25, 0.3], unit: 'mole fraction' }), '0.17, 0.21, 0.25, 0.3 mole fraction')
   assert.equal(formatCell({ range: [0.1, 5], unit: 'cm/s' }), '0.1–5 cm/s')
   assert.equal(formatCell({ column: 'Fuel Bottle' }), 'not recorded')
+})
+
+test('a condition weighted 0 keeps its slider, so it can be weighted back', () => {
+  const params = (s) => new URLSearchParams(s)
+  // The API drops a 0-weight condition from method.variables, as for oxygen here.
+  assert.deepEqual(
+    weightVariables({ variables: ['pressure'] }, params('oxygen=0.21&pressure=1&weight_oxygen=0')),
+    ['oxygen', 'pressure'],
+  )
+  // Every weight at 0: the API ranks nothing and lists no variables.
+  assert.deepEqual(weightVariables({ variables: [] }, params('oxygen=0.21&weight_oxygen=0')), ['oxygen'])
+  // No condition set, or a weight with no condition: no sliders.
+  assert.deepEqual(weightVariables({ variables: [] }, params('')), [])
+  assert.deepEqual(weightVariables({ variables: [] }, params('weight_oxygen=0')), [])
+  // The API's own order, whatever order the link is in.
+  assert.deepEqual(
+    weightVariables({ variables: ['fuel', 'concern'] }, params('concern=prevention&fuel=ethanol&pressure=1&weight_pressure=0')),
+    ['pressure', 'fuel', 'concern'],
+  )
 })
