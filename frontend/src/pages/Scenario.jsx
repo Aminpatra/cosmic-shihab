@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
-import { ArrowRight, TriangleAlert } from 'lucide-react'
+import { ArrowRight, Check, ChevronDown, TriangleAlert } from 'lucide-react'
 import { useApi } from '../api.js'
 import { LoadError } from '../components/ApiState.jsx'
 import GravityScale from '../components/GravityScale.jsx'
@@ -12,6 +12,7 @@ import {
   formToParams,
   formatValue,
   fromAtm,
+  fuelSuggestions,
   niceAxis,
   paramsToForm,
   parseNumber,
@@ -163,6 +164,152 @@ function NumberRow({ id, label, unit, unitControl, value, onChange, converted, e
         )}
       </div>
       <div className="row-span">{span}</div>
+    </div>
+  )
+}
+
+// Fuel: free text with NASA's fuel names as suggestions, in a list FLARE draws itself. A native
+// datalist ignores the theme on desktop and becomes a keyboard strip, or nothing, on phones.
+// The ARIA 1.2 combobox pattern: focus stays in the input and arrows move the active option.
+function FuelField({ value, onChange, names }) {
+  const [open, setOpen] = useState(false)
+  const [typed, setTyped] = useState(false) // filter only once the visitor types, so a picked fuel still shows them all
+  const [active, setActive] = useState(-1)
+  const field = useRef(null)
+  const input = useRef(null)
+  const list = useRef(null)
+  const pointer = useRef('mouse')
+
+  const shown = typed ? fuelSuggestions(names, value) : names
+  const expanded = open && shown.length > 0
+  const chosen = value.trim().toLowerCase()
+
+  const show = () => {
+    setOpen(true)
+    setTyped(false)
+    setActive(-1)
+  }
+  const close = () => {
+    setOpen(false)
+    setActive(-1)
+  }
+  const pick = (name) => {
+    onChange(name)
+    setTyped(false)
+    close()
+    if (pointer.current === 'touch') input.current?.blur() // put the phone keyboard away
+  }
+
+  // A press anywhere else closes the list; on a phone it can be open without the input focused.
+  useEffect(() => {
+    if (!open) return
+    const away = (e) => field.current?.contains(e.target) || close()
+    document.addEventListener('pointerdown', away)
+    return () => document.removeEventListener('pointerdown', away)
+  }, [open])
+
+  // Bring the opened list, then the keyboard's option, into view.
+  useEffect(() => {
+    if (!expanded) return
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    list.current?.scrollIntoView({ block: 'nearest', behavior: still ? 'auto' : 'smooth' })
+  }, [expanded])
+  useEffect(() => {
+    if (active >= 0) list.current?.children[active]?.scrollIntoView({ block: 'nearest' })
+  }, [active])
+
+  const onKeyDown = (e) => {
+    const n = shown.length
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      if (n === 0) return
+      const down = e.key === 'ArrowDown'
+      if (!open) {
+        setOpen(true)
+        setActive(e.altKey ? -1 : down ? 0 : n - 1)
+      } else if (e.altKey && !down) {
+        close()
+      } else if (!e.altKey) {
+        setActive((i) => (down ? (i + 1) % n : i <= 0 ? n - 1 : i - 1))
+      }
+    } else if (e.key === 'Enter' && expanded && active >= 0) {
+      e.preventDefault() // pick the option, don't submit the form
+      pick(shown[active])
+    } else if (e.key === 'Escape' && open) {
+      e.preventDefault()
+      close()
+    }
+  }
+
+  // Presses on the list and the toggle keep focus where it is, so the input never blurs mid-pick.
+  const hold = (e) => {
+    e.preventDefault()
+    pointer.current = e.pointerType
+  }
+
+  return (
+    <div className="combo" ref={field}>
+      <input
+        ref={input}
+        id="fuel"
+        className={`field-input field-text${names.length ? ' combo-input' : ''}`}
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded={expanded}
+        aria-controls="fuel-list"
+        aria-activedescendant={expanded && active >= 0 ? `fuel-option-${active}` : undefined}
+        autoComplete="off"
+        autoCapitalize="none"
+        spellCheck={false}
+        value={value}
+        onChange={(e) => {
+          onChange(e.target.value)
+          setOpen(true)
+          setTyped(true)
+          setActive(-1)
+        }}
+        onPointerDown={(e) => (pointer.current = e.pointerType)}
+        onClick={() => open || show()}
+        onKeyDown={onKeyDown}
+        onBlur={close}
+      />
+      {names.length > 0 && (
+        <button
+          type="button"
+          className="combo-toggle"
+          tabIndex={-1}
+          aria-label="Fuel suggestions"
+          aria-expanded={expanded}
+          aria-controls="fuel-list"
+          onPointerDown={hold}
+          onClick={() => {
+            if (open) return close()
+            show()
+            if (pointer.current !== 'touch') input.current?.focus() // a phone keeps its keyboard down
+          }}
+        >
+          <ChevronDown size={18} aria-hidden="true" />
+        </button>
+      )}
+      {expanded && (
+        <ul id="fuel-list" ref={list} className="combo-list" role="listbox" aria-label="Fuels" onPointerDown={hold}>
+          {shown.map((name, i) => (
+            <li
+              key={name}
+              id={`fuel-option-${i}`}
+              role="option"
+              aria-selected={i === active}
+              className="combo-option"
+              data-active={i === active || undefined}
+              onPointerMove={(e) => e.pointerType === 'mouse' && i !== active && setActive(i)}
+              onClick={() => pick(name)}
+            >
+              <span>{name}</span>
+              {name.toLowerCase() === chosen && <Check size={16} aria-hidden="true" />}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
@@ -360,19 +507,7 @@ export default function Scenario() {
             <span className="row-unit">or material</span>
           </label>
           <div className="row-field">
-            <input
-              id="fuel"
-              className="field-input field-text"
-              list="fuel-names"
-              autoComplete="off"
-              value={form.fuel}
-              onChange={(e) => set('fuel')(e.target.value)}
-            />
-            <datalist id="fuel-names">
-              {fuels.map((name) => (
-                <option key={name} value={name} />
-              ))}
-            </datalist>
+            <FuelField value={form.fuel} onChange={set('fuel')} names={fuels} />
           </div>
           <div className="row-span">
             <p className="span-words">

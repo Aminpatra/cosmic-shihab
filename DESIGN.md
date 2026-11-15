@@ -210,7 +210,7 @@ Breakpoints are 1280px (intro stacks, wordmark drops its full name), 1024px (pho
 Flat. Depth is tonal: a surface rises by stepping one notch up the blue ramp (ramp-0 ground, ramp-1 raised band, ramp-2 lifted on hover or focus). Hairline ramp-3 rules divide regions.
 
 ### Shadow Vocabulary
-- **Overlay drop** (`box-shadow: 0 16px 32px rgb(3 10 30 / 0.5)`): the phone menu panel only, where it lies over page content.
+- **Overlay drop** (`box-shadow: 0 16px 32px rgb(3 10 30 / 0.5)`): only the two surfaces that lie over page content, the phone menu panel and the Scenario page's fuel suggestion list.
 
 ### Named Rules
 **The Lift Rule.** Hover and focus raise an element one ramp step; nothing rises by shadow, scale or glow.
