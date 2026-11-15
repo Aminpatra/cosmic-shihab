@@ -57,4 +57,8 @@ Submission Guide" and "Hard requirements". Deck location: decided by @Aminpatra 
 is the team's separate work. Apollo 1 portraits: submission/pitch/flare-opening.html header
 (public domain: S64-32110, S66-35219, S64-31447). Partner data: none is used (datasets.md,
 references.md list NASA PSI only).
+Deck check, 15 Nov 2026, main at 3e617c0: submission/pitch/FlareOpening.jsx has SLIDE_COUNT = 7;
+its on-screen TEXT holds the team name "Cosmic Shihab" and the AI watermark, but no member's name,
+and "Flame in Freefall" appears only in a source comment. frontend/public/pitch.html is byte for
+byte submission/pitch/flare-opening.html (#90), and GET /pitch.html on the live site answered 200.
 -->
