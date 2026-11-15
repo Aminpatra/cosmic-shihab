@@ -15,6 +15,7 @@ import httpx2
 from fastapi.testclient import TestClient
 
 from app import assistant
+from app.routes import assistant as assistant_routes
 from main import app
 
 client = TestClient(app)
@@ -42,8 +43,8 @@ class FakeClient:
         return self.response
 
 
-def reply(*blocks, stop="end_turn"):
-    return NS(content=list(blocks), stop_reason=stop, model="claude-opus-5-5")
+def reply(*blocks, stop="end_turn", usage=None):
+    return NS(content=list(blocks), stop_reason=stop, model="claude-opus-5-5", usage=usage)
 
 
 class NamedInvestigations(unittest.TestCase):
@@ -134,8 +135,75 @@ class Generation(unittest.TestCase):
         self.assertIn("cut off", result["blocks"][-1]["text"])
 
 
+class Costs(unittest.TestCase):
+    """#81: what one answer may cost, and the day's budget."""
+
+    QUESTION = "Which suppressants did FLEX test?"
+
+    def setUp(self):
+        assistant._spend.update(day="", usd=0.0)
+
+    def test_request_is_capped(self):
+        fake = FakeClient(reply(text("FLEX tested CO2.", (0, "CO2"))))
+        assistant.answer(self.QUESTION, client=fake)
+        sent = fake.calls[0]
+        self.assertEqual(sent["max_tokens"], assistant.MAX_OUTPUT_TOKENS)
+        self.assertLessEqual(sent["max_tokens"], 2048)
+        self.assertEqual(sent["output_config"], {"effort": "low"})
+        self.assertIn("250 words", sent["system"])
+
+    @mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key"})
+    def test_client_gives_up_after_one_try(self):
+        real = assistant._client()
+        self.assertEqual(real.max_retries, 0)
+        self.assertEqual(real.timeout, assistant.TIMEOUT_S)
+
+    def test_cost_is_counted_from_usage(self):
+        usage = NS(input_tokens=4000, output_tokens=500, cache_read_input_tokens=0, cache_creation_input_tokens=0)
+        assistant.answer(self.QUESTION, client=FakeClient(reply(text("FLEX tested CO2.", (0, "CO2")), usage=usage)))
+        self.assertAlmostEqual(assistant.spent_today(), (4000 * 4.00 + 500 * 20.00) / 1e6)
+
+    def test_fallback_model_is_priced_at_the_dearest_rate(self):
+        usage = NS(input_tokens=1000, output_tokens=1000)
+        self.assertAlmostEqual(assistant.cost_of("another-model", usage), (1000 * 10.00 + 1000 * 50.00) / 1e6)
+
+    def test_budget_reached_answers_with_sources_only_and_calls_nothing(self):
+        assistant._spend.update(day=assistant._today(), usd=assistant.DAILY_BUDGET_USD)
+        fake = FakeClient(reply(text("never sent", (0, "x"))))
+        result = assistant.answer(self.QUESTION, client=fake)
+        self.assertEqual(fake.calls, [])
+        self.assertEqual(result["mode"], "retrieval_only")
+        self.assertEqual(result["reason"], assistant.BUDGET_REASON)
+        self.assertTrue(result["sources"])
+
+    def test_spend_starts_again_each_day(self):
+        assistant._spend.update(day="2000-01-01", usd=99.0)
+        self.assertEqual(assistant.spent_today(), 0.0)
+
+    def test_timeout_counts_the_most_the_call_could_cost(self):
+        error = anthropic.APITimeoutError(request=httpx2.Request("POST", "https://api.anthropic.com/v1/messages"))
+        result = assistant.answer(self.QUESTION, client=FakeClient(error=error))
+        self.assertEqual(result["mode"], "retrieval_only")
+        self.assertGreater(assistant.spent_today(), 0.0)
+
+
 @mock.patch.dict(os.environ, NO_KEY)
 class Endpoints(unittest.TestCase):
+    def setUp(self):
+        assistant_routes.reset_limits()
+
+    def test_burst_from_one_address_is_refused(self):
+        ask = lambda ip: client.post("/api/assistant/ask", headers={"X-Real-IP": ip},  # noqa: E731
+                                     json={"question": "Which suppressants did FLEX test?"})
+        per_minute = assistant_routes.LIMITS[0][1]
+        for _ in range(per_minute):
+            self.assertEqual(ask("203.0.113.7").status_code, 200)
+        refused = ask("203.0.113.7")
+        self.assertEqual(refused.status_code, 429)
+        self.assertIn(f"at most {per_minute} questions a minute", refused.json()["detail"])
+        self.assertGreater(int(refused.headers["Retry-After"]), 0)
+        self.assertEqual(ask("198.51.100.4").status_code, 200)  # another address is not affected
+
     def test_status_without_key(self):
         self.assertEqual(client.get("/api/assistant/status").json(), {"mode": "retrieval_only", "model": None})
 
