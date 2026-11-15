@@ -83,24 +83,39 @@
   margin-top: var(--space-4);
 }
 
+/* The link is a 24px tap target (WCAG 2.5.8); the visible badge is drawn by ::before at its old
+   size, so the text keeps its look */
 .ai-cite {
-  display: inline-block;
-  min-width: 1.4rem;
-  margin: 0 0.1rem 0 0.2rem;
-  padding: 0.1rem 0.3rem 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  margin: 0 0.05rem 0 0.1rem;
+  padding: 0 0.3rem;
+  color: var(--ramp-6);
+  font: 700 0.75rem / 1 var(--font-body);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.ai-cite::before {
+  content: '';
+  position: absolute;
+  inset: 0.2rem 0;
   border: 1px solid var(--ramp-4);
   border-radius: var(--radius);
-  color: var(--ramp-6);
-  font: 700 0.75rem / 1.2 var(--font-body);
-  font-variant-numeric: tabular-nums;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: 0.15em;
+  pointer-events: none;
 }
 
 .ai-cite:hover {
-  border-color: var(--neon-yellow);
   color: var(--neon-yellow);
+}
+
+.ai-cite:hover::before {
+  border-color: var(--neon-yellow);
 }
 
 /* The source register, folded under the text */
