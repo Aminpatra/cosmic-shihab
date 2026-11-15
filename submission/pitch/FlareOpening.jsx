@@ -10,7 +10,7 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from
  *   4  The live FLARE website on the spacecraft computer: a scenario and its comparison.
  *   5  The live site's visualization.
  *   6  The live site's AI assistant answering a question.
- *   7  The team: logo, name and the QR code of the website.
+ *   7  The team: logo, name, the six members, the challenge and the QR code of the website.
  *
  * The presenter moves between slides; nothing ever changes the slide by itself. Inside a
  * slide, its sequence plays from the moment the presenter enters it (the cost on slide 1
@@ -43,6 +43,13 @@ const TEXT = {
   tagline: 'Turning NASA microgravity combustion research into fire safety insight.',
   caution: 'FIRE',
   team: 'Cosmic Shihab',
+  // The Space Apps rules ask a deck to show the team name, the members' names and the challenge.
+  // Names in PRODUCT.md's order, three per line.
+  members: [
+    ['Amin Mohamed Amin', 'Gheath Wahab', 'Mohammed Al-julandani'],
+    ['Samin Rezaei', 'Rahaf Abubaker Mustafa Mubarak', 'Ruayma Khair Mohammed Albalushi'],
+  ],
+  challenge: 'NASA Space Apps Challenge 2026 · Flame in Freefall',
   explore: 'Explore FLARE',
   siteLabel: 'cosmic-shihab.vercel.app',
   photoCredit: 'Photos: NASA',
@@ -126,7 +133,7 @@ const BEATS = [
   { id: 'compare', slide: 4, scene: '04 Scenario and comparison', label: 'The live FLARE website ranks NASA investigations for a spacecraft scenario' },
   { id: 'visualize', slide: 5, scene: '05 Visualization', label: 'The live FLARE website charts the tests near that scenario' },
   { id: 'assistant', slide: 6, scene: '06 AI assistant', label: 'The live FLARE assistant answers a question from NASA sources' },
-  { id: 'team', slide: 7, scene: '07 Team', label: `${TEXT.team}. ${TEXT.explore} at ${TEXT.siteLabel}` },
+  { id: 'team', slide: 7, scene: '07 Team', label: `${TEXT.team}: ${TEXT.members.flat().join(', ')}. ${TEXT.challenge}. ${TEXT.explore} at ${TEXT.siteLabel}` },
 ]
 const SLIDE_COUNT = 7
 const LAST = BEATS.length - 1
@@ -224,6 +231,8 @@ const LOGO_AT = { s: 0.62, x: CX - (1073 * 0.62) / 2, y: 440 - (743 * 0.62) / 2 
 // Final layout: the logo moves 239 left and the QR card sits 90 to its right, so the pair is centred.
 // The card's white margin gives the code a quiet zone of about four modules, for phone cameras.
 const QR_AT = { x: 1018, y: 232, size: 320, pad: 34, cx: 1178, shift: -239 }
+// The challenge and the members, centred under the pair, above the presenter's controls.
+const CREDITS_AT = { x: CX, y: 724, line: 34 }
 
 const portraitX = (i) => CX - (PORTRAIT.w * 3 + PORTRAIT.gap * 2) / 2 + i * (PORTRAIT.w + PORTRAIT.gap)
 const cam = (x, y, s) => `translate(${CX - x * s}px, ${CY - y * s}px) scale(${s})`
@@ -427,6 +436,8 @@ function deriveScene(id, { layout, reduced, costShown, focus }) {
         : fade(false, { outMs: 0, outDelay: 520 }, reset('transform'))),
       transform: t >= 5 ? 'translate(0px, 0px) scale(1)' : `translate(${QR_AT.cx * (1 - qrStart)}px, ${(QR_AT.y + QR_AT.size / 2) * (1 - qrStart)}px) scale(${qrStart})`,
     },
+    // The challenge and the members settle in once the QR card has arrived.
+    credits: fade(t >= 5, { inMs: 900, inDelay: reduced ? 0 : 1100, outMs: 0, outDelay: 520 }),
   }
 }
 
@@ -1338,6 +1349,21 @@ function Warp() {
   )
 }
 
+// Parts joined by a middle dot with an even gap each side. The dot's ink sits off-centre in its
+// glyph box in this font, so a spaced " · " looks lopsided; the offsets are set to balance it.
+function Separated({ parts }) {
+  return parts.map((part, i) =>
+    i === 0 ? (
+      <tspan key={i}>{part}</tspan>
+    ) : (
+      <React.Fragment key={i}>
+        <tspan dx="0.32em" aria-hidden="true">·</tspan>
+        <tspan dx="0.62em">{part}</tspan>
+      </React.Fragment>
+    ),
+  )
+}
+
 function TeamReveal({ v, drawing }) {
   return (
     <g data-layer="team" style={v.team}>
@@ -1375,6 +1401,16 @@ function TeamReveal({ v, drawing }) {
             {TEXT.siteLabel}
           </text>
         )}
+      </g>
+      <g data-layer="credits" style={v.credits}>
+        <text x={CREDITS_AT.x} y={CREDITS_AT.y} textAnchor="middle" fontSize="24" fontWeight="600" fill={COLORS.text} style={{ fontFamily: FONTS.text, letterSpacing: '0.02em' }}>
+          <Separated parts={TEXT.challenge.split(' · ')} />
+        </text>
+        {TEXT.members.map((line, i) => (
+          <text key={i} x={CREDITS_AT.x} y={CREDITS_AT.y + CREDITS_AT.line * (i + 1) + 6} textAnchor="middle" fontSize="21" fill={COLORS.textSoft} style={{ fontFamily: FONTS.text }}>
+            <Separated parts={line} />
+          </text>
+        ))}
       </g>
     </g>
   )
